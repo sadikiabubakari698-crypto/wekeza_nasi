@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>WEKEZA NASI</title>
+
+        <style>
+            * {
+                      box-sizing: border-box;
+            }
+
+                body {
+                          margin: 0;
+                                font-family: Arial, sans-serif;
+                                      background: #07130f;
+                                            color: white;
+                }
+
+                    .container {
+                              width: min(90%, 900px);
+                                    margin: auto;
+                                          padding: 80px 0;
+                                                text-align: center;
+                    }
+
+                        .brand {
+                                  color: #79d8a5;
+                                        font-weight: bold;
+                                              letter-spacing: 3px;
+                        }
+
+                            h1 {
+                                      font-size: clamp(45px, 10vw, 80px);
+                                            margin: 25px 0 15px;
+                            }
+
+                                .tagline {
+                                          font-size: 22px;
+                                                line-height: 1.5;
+                                                      color: #c5d1cc;
+                                                            max-width: 650px;
+                                                                  margin: auto;
+                                }
+
+                                    .cards {
+                                              display: grid;
+                                                    grid-template-columns: repeat(2, 1fr);
+                                                          gap: 20px;
+                                                                margin-top: 50px;
+                                    }
+
+                                        .card {
+                                                  padding: 30px;
+                                                        background: #0d211a;
+                                                              border: 1px solid #214437;
+                                                                    border-radius: 20px;
+                                        }
+
+                                            .card h2 {
+                                                      margin-top: 0;
+                                            }
+
+                                                button {
+                                                          margin-top: 20px;
+                                                                padding: 15px 25px;
+                                                                      border: none;
+                                                                            border-radius: 12px;
+                                                                                  background: #79d8a5;
+                                                                                        color: #07130f;
+                                                                                              font-size: 16px;
+                                                                                                    font-weight: bold;
+                                                                                                          cursor: pointer;
+                                                }
+
+                                                    #message {
+                                                              margin-top: 25px;
+                                                                    color: #79d8a5;
+                                                                          font-weight: bold;
+                                                    }
+
+                                                        @media (max-width: 600px) {
+                                                                  .cards {
+                                                                            grid-template-columns: 1fr;
+                                                                  }
+                                                        }
+                                                          </style>
+                                                          </head>
+
+                                                          <body>
+
+                                                            <main class="container">
+
+                                                                <div class="brand">
+                                                                      WEKEZA NASI
+                                                                          </div>
+
+                                                                              <h1>
+                                                                                    Jifunze.<br>
+                                                                                          Uliza.<br>
+                                                                                                Kua.
+                                                                                                    </h1>
+
+                                                                                                        <p class="tagline">
+                                                                                                              Mshirika wako katika safari ya kujifunza
+                                                                                                                    na kuelewa uwekezaji.
+                                                                                                                        </p>
+
+                                                                                                                            <div class="cards">
+
+                                                                                                                                  <section class="card">
+                                                                                                                                          <h2>🎓 Academy</h2>
+
+                                                                                                                                                  <p>
+                                                                                                                                                            Jifunze uwekezaji hatua kwa hatua,
+                                                                                                                                                                      kuanzia mwanzo kabisa.
+                                                                                                                                                                              </p>
+
+                                                                                                                                                                                      <button onclick="startLearning()">
+                                                                                                                                                                                                Anza Kujifunza
+                                                                                                                                                                                                        </button>
+                                                                                                                                                                                                              </section>
+
+                                                                                                                                                                                                                    <section class="card">
+                                                                                                                                                                                                                            <h2>🤖 AI</h2>
+
+                                                                                                                                                                                                                                    <p>
+                                                                                                                                                                                                                                              Uliza swali na pata msaada
+                                                                                                                                                                                                                                                        wa kuelewa maarifa ya uwekezaji.
+                                                                                                                                                                                                                                                                </p>
+
+                                                                                                                                                                                                                                                                        <button onclick="askAI()">
+                                                                                                                                                                                                                                                                                  Uliza AI
+                                                                                                                                                                                                                                                                                          </button>
+                                                                                                                                                                                                                                                                                                </section>
+
+                                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                                        <div id="message"></div>
+
+                                                                                                                                                                                                                                                                                                          </main>
+
+                                                                                                                                                                                                                                                                                                            <script>
+
+                                                                                                                                                                                                                                                                                                                function startLearning() {
+                                                                                                                                                                                                                                                                                                                          document.getElementById("message").innerText =
+                                                                                                                                                                                                                                                                                                                                  "Karibu kwenye Academy ya WEKEZA NASI 🌱";
+                                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                                    function askAI() {
+                                                                                                                                                                                                                                                                                                                              document.getElementById("message").innerText =
+                                                                                                                                                                                                                                                                                                                                      "AI ya WEKEZA NASI inakuja — tutajenga pamoja 🤖";
+                                                                                                                                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                                                                                                                                      </script>
+
+                                                                                                                                                                                                                                                                                                                      </body>
+                                                                                                                                                                                                                                                                                                                      </html>
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                }
+                                                                  }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }

@@ -1,0 +1,537 @@
+# WEKEZA NASI — PROJECT BIBLE
+
+## 1. IDENTITY
+
+Name: WEKEZA NASI
+
+WEKEZA NASI is an investment education, information,
+analysis and community platform.
+
+Starting market:
+Tanzania — Dar es Salaam Stock Exchange (DSE)
+
+Long-term direction:
+Tanzania → Africa
+
+Mission:
+To help every investor understand investment through
+simple, accurate, timely and trustworthy information.
+
+Core promise:
+"WEKEZA NASI ni mshirika wa safari yako ya uwekezaji."
+
+Desired user feeling:
+"Nimekutana na mkombozi wa uwekezaji."
+
+---
+
+## 2. TARGET USERS
+
+WEKEZA NASI serves:
+
+L0 — Complete beginner
+L1 — Beginner
+L2 — Learner
+L3 — Investor
+L4 — Advanced investor
+L5 — Investment coach / expert
+
+The system should support a user from beginner
+to advanced investor progressively.
+
+---
+
+## 3. CORE PILLARS
+
+1. ACADEMY
+   - Courses
+      - Lessons
+         - Learning paths
+            - Examples
+               - Quizzes
+                  - Progress
+                     - Levels
+
+                     2. AI
+                        - Explain
+                           - Teach
+                              - Answer questions
+                                 - Compare
+                                    - Summarize
+                                       - Interpret information
+                                          - Guide users
+                                             - Personalize learning
+
+                                             3. COMMUNITY
+                                                - Discussions
+                                                   - Questions
+                                                      - Answers
+                                                         - Learning groups
+                                                            - Investor interaction
+                                                               - Expert/coach participation
+
+                                                               ---
+
+                                                               ## 4. INFORMATION & ANALYSIS
+
+                                                               WEKEZA NASI should provide:
+
+                                                               - Market information
+                                                               - Company information
+                                                               - Prices
+                                                               - Dividends
+                                                               - Corporate actions
+                                                               - Market events
+                                                               - Company analysis
+                                                               - Market analysis
+                                                               - Risk information
+                                                               - Opportunities
+                                                               - Comparisons
+
+                                                               Information must prioritize:
+
+                                                               ACCURACY + TIMELINESS + SIMPLICITY + TRUST
+
+                                                               ---
+
+                                                               ## 5. INVESTOR JOURNEY
+
+                                                               New user
+                                                                  ↓
+                                                                  Doesn't understand investment
+                                                                     ↓
+                                                                     ACADEMY
+                                                                        ↓
+                                                                        Learns
+                                                                           ↓
+                                                                           AI
+                                                                              ↓
+                                                                              Understands concepts
+                                                                                 ↓
+                                                                                 MARKET INFORMATION
+                                                                                    ↓
+                                                                                    Observes companies/markets
+                                                                                       ↓
+                                                                                       ANALYSIS
+                                                                                          ↓
+                                                                                          COMMUNITY
+                                                                                             ↓
+                                                                                             Discusses and learns
+                                                                                                ↓
+                                                                                                INVESTOR
+                                                                                                   ↓
+                                                                                                   Continued learning
+
+                                                                                                   ---
+
+                                                                                                   ## 6. PRODUCT PRINCIPLES
+
+                                                                                                   WEKEZA NASI must:
+
+                                                                                                   - Put education first
+                                                                                                   - Use simple language
+                                                                                                   - Prioritize accurate information
+                                                                                                   - Provide timely information
+                                                                                                   - Build trust
+                                                                                                   - Avoid investment hype
+                                                                                                   - Help users understand before acting
+                                                                                                   - Support progressive learning
+                                                                                                   - Build community
+                                                                                                   - Keep the user at the center
+
+                                                                                                   AI should educate and assist.
+                                                                                                   It should not simply tell users what to buy or sell.
+
+                                                                                                   ---
+
+                                                                                                   ## 7. TECHNICAL FOUNDATION
+
+                                                                                                   Current tools:
+
+                                                                                                   GitHub
+                                                                                                   → Source code and project history
+
+                                                                                                   GitHub Codespaces
+                                                                                                   → Development environment
+
+                                                                                                   Vercel
+                                                                                                   → Deployment and hosting
+
+                                                                                                   AI / ChatGPT
+                                                                                                   → Planning, coding assistance and development support
+
+                                                                                                   Current repository:
+                                                                                                   wekeza_nasi
+
+                                                                                                   ---
+
+                                                                                                   ## 8. DEVELOPMENT METHOD
+
+                                                                                                   DO NOT build a huge blueprint before coding.
+
+                                                                                                   Use:
+
+                                                                                                   IDEA
+                                                                                                   ↓
+                                                                                                   SMALL DESIGN
+                                                                                                   ↓
+                                                                                                   SMALL CODE
+                                                                                                   ↓
+                                                                                                   TEST
+                                                                                                   ↓
+                                                                                                   IMPROVE
+                                                                                                   ↓
+                                                                                                   LOCK DECISION
+                                                                                                   ↓
+                                                                                                   NEXT FEATURE
+
+                                                                                                   Build small.
+                                                                                                   Test small.
+                                                                                                   Improve continuously.
+
+                                                                                                   Every completed feature should become part
+                                                                                                   of the working product.
+
+                                                                                                   ---
+
+                                                                                                   ## 9. DEVELOPMENT RULE
+
+                                                                                                   Never redesign the entire system without a strong reason.
+
+                                                                                                   Before implementing a feature:
+
+                                                                                                   1. Understand the current system.
+                                                                                                   2. Check the Project Bible.
+                                                                                                   3. Identify the smallest useful task.
+                                                                                                   4. Implement it.
+                                                                                                   5. Test it.
+                                                                                                   6. Improve it.
+                                                                                                   7. Update the Project Bible if necessary.
+
+                                                                                                   ---
+
+                                                                                                   ## 10. PRODUCT ROADMAP
+
+                                                                                                   PHASE 1 — Foundation
+
+                                                                                                   PHASE 2 — Academy
+
+                                                                                                   PHASE 3 — AI
+
+                                                                                                   PHASE 4 — Community
+
+                                                                                                   PHASE 5 — Market & Company Intelligence
+
+                                                                                                   PHASE 6 — Personalization
+
+                                                                                                   PHASE 7 — Tanzania → Africa expansion
+
+                                                                                                   Do not build all phases simultaneously.
+
+                                                                                                   ---
+
+                                                                                                   ## 11. FUTURE VISION
+
+                                                                                                   WEKEZA NASI should become a trusted investment
+                                                                                                   companion for African investors.
+
+                                                                                                   Starting point:
+                                                                                                   DSE / Tanzania
+
+                                                                                                   Expansion:
+                                                                                                   African markets
+
+                                                                                                   Long-term ecosystem:
+
+                                                                                                   EDUCATION
+                                                                                                   +
+                                                                                                   AI
+                                                                                                   +
+                                                                                                   INFORMATION
+                                                                                                   +
+                                                                                                   ANALYSIS
+                                                                                                   +
+                                                                                                   COMMUNITY
+
+                                                                                                   ---
+
+                                                                                                   ## 12. PROJECT BIBLE RULE
+
+                                                                                                   This document is the source of truth for the
+                                                                                                   WEKEZA NASI product direction.
+
+                                                                                                   AI agents and developers must read this document
+                                                                                                   before making major architectural decisions.
+
+                                                                                                   When the project evolves, update this document.
+
+                                                                                                   Do not replace the original mission merely because
+                                                                                                   a new feature is being introduced.# WEKEZA NASI — PROJECT BIBLE
+
+                                                                                                   ## 1. IDENTITY
+
+                                                                                                   Name: WEKEZA NASI
+
+                                                                                                   WEKEZA NASI is an investment education, information,
+                                                                                                   analysis and community platform.
+
+                                                                                                   Starting market:
+                                                                                                   Tanzania — Dar es Salaam Stock Exchange (DSE)
+
+                                                                                                   Long-term direction:
+                                                                                                   Tanzania → Africa
+
+                                                                                                   Mission:
+                                                                                                   To help every investor understand investment through
+                                                                                                   simple, accurate, timely and trustworthy information.
+
+                                                                                                   Core promise:
+                                                                                                   "WEKEZA NASI ni mshirika wa safari yako ya uwekezaji."
+
+                                                                                                   Desired user feeling:
+                                                                                                   "Nimekutana na mkombozi wa uwekezaji."
+
+                                                                                                   ---
+
+                                                                                                   ## 2. TARGET USERS
+
+                                                                                                   WEKEZA NASI serves:
+
+                                                                                                   L0 — Complete beginner
+                                                                                                   L1 — Beginner
+                                                                                                   L2 — Learner
+                                                                                                   L3 — Investor
+                                                                                                   L4 — Advanced investor
+                                                                                                   L5 — Investment coach / expert
+
+                                                                                                   The system should support a user from beginner
+                                                                                                   to advanced investor progressively.
+
+                                                                                                   ---
+
+                                                                                                   ## 3. CORE PILLARS
+
+                                                                                                   1. ACADEMY
+                                                                                                      - Courses
+                                                                                                         - Lessons
+                                                                                                            - Learning paths
+                                                                                                               - Examples
+                                                                                                                  - Quizzes
+                                                                                                                     - Progress
+                                                                                                                        - Levels
+
+                                                                                                                        2. AI
+                                                                                                                           - Explain
+                                                                                                                              - Teach
+                                                                                                                                 - Answer questions
+                                                                                                                                    - Compare
+                                                                                                                                       - Summarize
+                                                                                                                                          - Interpret information
+                                                                                                                                             - Guide users
+                                                                                                                                                - Personalize learning
+
+                                                                                                                                                3. COMMUNITY
+                                                                                                                                                   - Discussions
+                                                                                                                                                      - Questions
+                                                                                                                                                         - Answers
+                                                                                                                                                            - Learning groups
+                                                                                                                                                               - Investor interaction
+                                                                                                                                                                  - Expert/coach participation
+
+                                                                                                                                                                  ---
+
+                                                                                                                                                                  ## 4. INFORMATION & ANALYSIS
+
+                                                                                                                                                                  WEKEZA NASI should provide:
+
+                                                                                                                                                                  - Market information
+                                                                                                                                                                  - Company information
+                                                                                                                                                                  - Prices
+                                                                                                                                                                  - Dividends
+                                                                                                                                                                  - Corporate actions
+                                                                                                                                                                  - Market events
+                                                                                                                                                                  - Company analysis
+                                                                                                                                                                  - Market analysis
+                                                                                                                                                                  - Risk information
+                                                                                                                                                                  - Opportunities
+                                                                                                                                                                  - Comparisons
+
+                                                                                                                                                                  Information must prioritize:
+
+                                                                                                                                                                  ACCURACY + TIMELINESS + SIMPLICITY + TRUST
+
+                                                                                                                                                                  ---
+
+                                                                                                                                                                  ## 5. INVESTOR JOURNEY
+
+                                                                                                                                                                  New user
+                                                                                                                                                                     ↓
+                                                                                                                                                                     Doesn't understand investment
+                                                                                                                                                                        ↓
+                                                                                                                                                                        ACADEMY
+                                                                                                                                                                           ↓
+                                                                                                                                                                           Learns
+                                                                                                                                                                              ↓
+                                                                                                                                                                              AI
+                                                                                                                                                                                 ↓
+                                                                                                                                                                                 Understands concepts
+                                                                                                                                                                                    ↓
+                                                                                                                                                                                    MARKET INFORMATION
+                                                                                                                                                                                       ↓
+                                                                                                                                                                                       Observes companies/markets
+                                                                                                                                                                                          ↓
+                                                                                                                                                                                          ANALYSIS
+                                                                                                                                                                                             ↓
+                                                                                                                                                                                             COMMUNITY
+                                                                                                                                                                                                ↓
+                                                                                                                                                                                                Discusses and learns
+                                                                                                                                                                                                   ↓
+                                                                                                                                                                                                   INVESTOR
+                                                                                                                                                                                                      ↓
+                                                                                                                                                                                                      Continued learning
+
+                                                                                                                                                                                                      ---
+
+                                                                                                                                                                                                      ## 6. PRODUCT PRINCIPLES
+
+                                                                                                                                                                                                      WEKEZA NASI must:
+
+                                                                                                                                                                                                      - Put education first
+                                                                                                                                                                                                      - Use simple language
+                                                                                                                                                                                                      - Prioritize accurate information
+                                                                                                                                                                                                      - Provide timely information
+                                                                                                                                                                                                      - Build trust
+                                                                                                                                                                                                      - Avoid investment hype
+                                                                                                                                                                                                      - Help users understand before acting
+                                                                                                                                                                                                      - Support progressive learning
+                                                                                                                                                                                                      - Build community
+                                                                                                                                                                                                      - Keep the user at the center
+
+                                                                                                                                                                                                      AI should educate and assist.
+                                                                                                                                                                                                      It should not simply tell users what to buy or sell.
+
+                                                                                                                                                                                                      ---
+
+                                                                                                                                                                                                      ## 7. TECHNICAL FOUNDATION
+
+                                                                                                                                                                                                      Current tools:
+
+                                                                                                                                                                                                      GitHub
+                                                                                                                                                                                                      → Source code and project history
+
+                                                                                                                                                                                                      GitHub Codespaces
+                                                                                                                                                                                                      → Development environment
+
+                                                                                                                                                                                                      Vercel
+                                                                                                                                                                                                      → Deployment and hosting
+
+                                                                                                                                                                                                      AI / ChatGPT
+                                                                                                                                                                                                      → Planning, coding assistance and development support
+
+                                                                                                                                                                                                      Current repository:
+                                                                                                                                                                                                      wekeza_nasi
+
+                                                                                                                                                                                                      ---
+
+                                                                                                                                                                                                      ## 8. DEVELOPMENT METHOD
+
+                                                                                                                                                                                                      DO NOT build a huge blueprint before coding.
+
+                                                                                                                                                                                                      Use:
+
+                                                                                                                                                                                                      IDEA
+                                                                                                                                                                                                      ↓
+                                                                                                                                                                                                      SMALL DESIGN
+                                                                                                                                                                                                      ↓
+                                                                                                                                                                                                      SMALL CODE
+                                                                                                                                                                                                      ↓
+                                                                                                                                                                                                      TEST
+                                                                                                                                                                                                      ↓
+                                                                                                                                                                                                      IMPROVE
+                                                                                                                                                                                                      ↓
+                                                                                                                                                                                                      LOCK DECISION
+                                                                                                                                                                                                      ↓
+                                                                                                                                                                                                      NEXT FEATURE
+
+                                                                                                                                                                                                      Build small.
+                                                                                                                                                                                                      Test small.
+                                                                                                                                                                                                      Improve continuously.
+
+                                                                                                                                                                                                      Every completed feature should become part
+                                                                                                                                                                                                      of the working product.
+
+                                                                                                                                                                                                      ---
+
+                                                                                                                                                                                                      ## 9. DEVELOPMENT RULE
+
+                                                                                                                                                                                                      Never redesign the entire system without a strong reason.
+
+                                                                                                                                                                                                      Before implementing a feature:
+
+                                                                                                                                                                                                      1. Understand the current system.
+                                                                                                                                                                                                      2. Check the Project Bible.
+                                                                                                                                                                                                      3. Identify the smallest useful task.
+                                                                                                                                                                                                      4. Implement it.
+                                                                                                                                                                                                      5. Test it.
+                                                                                                                                                                                                      6. Improve it.
+                                                                                                                                                                                                      7. Update the Project Bible if necessary.
+
+                                                                                                                                                                                                      ---
+
+                                                                                                                                                                                                      ## 10. PRODUCT ROADMAP
+
+                                                                                                                                                                                                      PHASE 1 — Foundation
+
+                                                                                                                                                                                                      PHASE 2 — Academy
+
+                                                                                                                                                                                                      PHASE 3 — AI
+
+                                                                                                                                                                                                      PHASE 4 — Community
+
+                                                                                                                                                                                                      PHASE 5 — Market & Company Intelligence
+
+                                                                                                                                                                                                      PHASE 6 — Personalization
+
+                                                                                                                                                                                                      PHASE 7 — Tanzania → Africa expansion
+
+                                                                                                                                                                                                      Do not build all phases simultaneously.
+
+                                                                                                                                                                                                      ---
+
+                                                                                                                                                                                                      ## 11. FUTURE VISION
+
+                                                                                                                                                                                                      WEKEZA NASI should become a trusted investment
+                                                                                                                                                                                                      companion for African investors.
+
+                                                                                                                                                                                                      Starting point:
+                                                                                                                                                                                                      DSE / Tanzania
+
+                                                                                                                                                                                                      Expansion:
+                                                                                                                                                                                                      African markets
+
+                                                                                                                                                                                                      Long-term ecosystem:
+
+                                                                                                                                                                                                      EDUCATION
+                                                                                                                                                                                                      +
+                                                                                                                                                                                                      AI
+                                                                                                                                                                                                      +
+                                                                                                                                                                                                      INFORMATION
+                                                                                                                                                                                                      +
+                                                                                                                                                                                                      ANALYSIS
+                                                                                                                                                                                                      +
+                                                                                                                                                                                                      COMMUNITY
+
+                                                                                                                                                                                                      ---
+
+                                                                                                                                                                                                      ## 12. PROJECT BIBLE RULE
+
+                                                                                                                                                                                                      This document is the source of truth for the
+                                                                                                                                                                                                      WEKEZA NASI product direction.
+
+                                                                                                                                                                                                      AI agents and developers must read this document
+                                                                                                                                                                                                      before making major architectural decisions.
+
+                                                                                                                                                                                                      When the project evolves, update this document.
+
+                                                                                                                                                                                                      Do not replace the original mission merely because
+                                                                                                                                                                                                      a new feature is being introduced.
