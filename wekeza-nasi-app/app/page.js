@@ -4,19 +4,21 @@ export default function Home() {
       <h1>WEKEZA NASI</h1>
       <h2>Somo la 1: Hisa ni nini?</h2>
       <p>
-        Fikiria kampuni kama keki kubwa. Badala ya mtu mmoja kumiliki keki nzima,
-        keki inaweza kukatwa vipande vipande, na kila mtu akanunua kipande chake.
-        Kila kipande hicho ndicho kinachoitwa hisa.
+        Fikiria shamba kubwa la mazao. Badala ya mtu mmoja kumiliki shamba lote,
+        wamiliki kadhaa wanaweza kugawana shamba hilo, kila mmoja akimiliki
+        sehemu yake. Sehemu hiyo ya umiliki ndicho kinachoitwa hisa.
       </p>
       <p>
-        Ukinunua hisa ya kampuni, unakuwa mmiliki mdogo wa kampuni hiyo.
-        Kampuni ikifanya vizuri na kupata faida, thamani ya hisa yako inaweza
-        kuongezeka, na huenda ukapata sehemu ya faida inayoitwa gawio.
-        Kampuni ikifanya vibaya, thamani ya hisa inaweza kushuka.
+        Ukimiliki hisa katika shamba, unakuwa mmiliki mdogo wa shamba hilo.
+        Mazao yakipandwa na kustawi vizuri, mavuno yanapoongezeka na kuuzwa
+        kwa faida, wewe kama mmiliki wa hisa unapata sehemu ya faida hiyo
+        inayoitwa gawio. Mazao yakiharibika au msimu ukiwa mbaya, thamani ya
+        umiliki wako inaweza kupungua.
       </p>
       <p>
-        Mahali ambapo watu wananunua na kuuza hisa hizi panaitwa soko la hisa.
-        Nchini Tanzania, mahali hapo panaitwa Dar es Salaam Stock Exchange.
+        Mahali ambapo watu wananunua na kuuza hisa za makampuni panaitwa
+        soko la hisa. Nchini Tanzania, mahali hapo panaitwa Dar es Salaam
+        Stock Exchange.
       </p>
     </main>
   );
