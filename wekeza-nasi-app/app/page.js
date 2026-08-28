@@ -21,8 +21,8 @@ export default function Home() {
         <h3>03. Maelezo Rahisi</h3>
         <p>
           Fikiria shamba kubwa la mazao. Badala ya mtu mmoja kumiliki shamba lote,
-          wamiliki kadhaa wanagawana shamba hilo. Sehemu ya umiliki wa kila mmoja
-          ndicho kinachoitwa hisa.
+          wamiliki kadhaa wanaweza kugawana shamba hilo, kila mmoja akimiliki
+          sehemu yake. Sehemu hiyo ya umiliki ndicho kinachoitwa hisa.
         </p>
       </div>
 
@@ -66,8 +66,10 @@ export default function Home() {
 
       <div style={box}>
         <h3>09. Hatua Inayofuata</h3>
-        <p>Somo la 2: Soko la Hisa la Dar es Salaam ni nini na linafanyaje kazi?</p>
+        <p>Somo 2: Kampuni kwa nini huuza hisa?</p>
       </div>
+
+      <p><a href="/somo2" style={{ fontSize: "1.1rem", fontWeight: "bold" }}>Endelea na Somo la 2 &rarr;</a></p>
     </main>
   );
 }
