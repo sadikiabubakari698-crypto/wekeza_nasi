@@ -560,3 +560,25 @@ RULE: No generic emoji icons in lesson UI. Use symbols from SYMBOLS_AND_VISUAL_L
 ## 15. CONTENT DEVELOPMENT PROCESS
 
 Founder and Chief Architect discuss and agree on content first. Only after approval does implementation begin.
+
+---
+
+## 16. ACADEMY INITIAL LEARNING PATH
+
+This is the official curriculum sequence for the first Academy course. Each lesson follows the 10-step template in Section 14.
+
+Somo 1 - Hisa ni nini?
+Somo 2 - Kampuni kwa nini huuza hisa?
+Somo 3 - Nani ananunua hisa?
+Somo 4 - Soko la hisa ni nini?
+Somo 5 - Soko la hisa lipo chini ya nani?
+Somo 6 - DSE ni nini?
+Somo 7 - Hisa inanunuaje na kuuzwaje?
+Somo 8 - Bei ya hisa hupanda na kushuka kwa nini?
+Somo 9 - Mwekezaji anapataje faida?
+Somo 10 - Hatari ya uwekezaji ni nini?
+Somo 11 - Diversification
+Somo 12 - Soko la Tanzania linafanyaje kazi?
+Somo 13 - Kuanza kuchambua kampuni
+
+RULE: This sequence supersedes any earlier lesson-order references (e.g. Somo la 1's original "Hatua Inayofuata" pointer, which will be corrected to match this list).
