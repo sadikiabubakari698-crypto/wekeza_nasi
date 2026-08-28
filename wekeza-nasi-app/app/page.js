@@ -1,5 +1,5 @@
 export default function Home() {
-  const box = { padding: "1.25rem", background: "#f7f7f7", borderRadius: "10px", marginBottom: "1.5rem" };
+  const box = { padding: "1.25rem", background: "#f7f7f7", borderRadius: "10px", marginBottom: "1.5rem", color: "#1a1a1a" };
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
       <h1>WEKEZA NASI</h1>
