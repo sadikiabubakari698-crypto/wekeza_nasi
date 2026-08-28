@@ -535,3 +535,28 @@ to advanced investor progressively.
 
                                                                                                                                                                                                       Do not replace the original mission merely because
                                                                                                                                                                                                       a new feature is being introduced.
+
+---
+
+## 14. ACADEMY LESSON TEMPLATE
+
+Every Academy lesson follows this fixed 10-step structure.
+
+01. Lengo la Somo
+02. Swali la Kuanza
+03. Mchoro Mkuu
+04. Maelezo Rahisi
+05. Mfano wa Tanzania
+06. Jambo la Muhimu
+07. Jaribu Kufikiri
+08. Kipimo Kidogo
+09. Muhtasari wa Dakika 1
+10. Hatua Inayofuata
+
+RULE: No generic emoji icons in lesson UI. Use symbols from SYMBOLS_AND_VISUAL_LANGUAGE.md, or plain numbering until custom icon assets exist.
+
+---
+
+## 15. CONTENT DEVELOPMENT PROCESS
+
+Founder and Chief Architect discuss and agree on content first. Only after approval does implementation begin.
