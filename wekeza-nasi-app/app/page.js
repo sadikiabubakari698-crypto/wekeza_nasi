@@ -1,6 +1,7 @@
 export default function Home() {
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif" }}>
+      <img src="/somo1-hisa.png" alt="Hisa ni nini - mfano wa shamba" style={{ width: "100%", height: "auto", borderRadius: "12px", marginBottom: "1.5rem" }} />
       <h1>WEKEZA NASI</h1>
       <h2>Somo la 1: Hisa ni nini?</h2>
       <p>
