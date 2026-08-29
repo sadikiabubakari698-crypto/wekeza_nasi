@@ -24,3 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.lesson-box {
+  padding: 1.25rem;
+  background: #f7f7f7;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.quiz-answer {
+  font-size: 0.85rem;
+  color: #2f8f4e;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.lesson-box {
+  padding: 1.25rem;
+  background: #f7f7f7;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.quiz-answer {
+  font-size: 0.85rem;
+  color: #2f8f4e;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
