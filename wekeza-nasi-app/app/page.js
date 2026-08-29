@@ -10,6 +10,7 @@ export default function Home() {
       <a href="/somo2" style={link}>Somo 2: Kampuni kwa nini huuza hisa?</a>
       <a href="/somo3" style={link}>Somo 3: Nani ananunua hisa?</a>
       <a href="/somo4" style={link}>Somo 4: Soko la hisa ni nini?</a>
+      <a href="/somo5" style={link}>Somo 5: Soko la hisa lipo chini ya nani?</a>
     </main>
   );
 }
