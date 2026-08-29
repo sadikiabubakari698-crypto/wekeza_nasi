@@ -9,6 +9,7 @@ export default function Home() {
       <a href="/somo1" style={link}>Somo 1: Hisa ni nini?</a>
       <a href="/somo2" style={link}>Somo 2: Kampuni kwa nini huuza hisa?</a>
       <a href="/somo3" style={link}>Somo 3: Nani ananunua hisa?</a>
+      <a href="/somo4" style={link}>Somo 4: Soko la hisa ni nini?</a>
     </main>
   );
 }
