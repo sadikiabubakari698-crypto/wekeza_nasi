@@ -64,7 +64,7 @@ export default function Somo2() {
         <p>Somo 3: Nani ananunua hisa?</p>
       </div>
 
-      <p><a href="/">Rudi Somo la 1</a></p>
+      <p><a href="/somo1" style={{ marginRight: "1.5rem" }}>&larr; Somo la 1</a><a href="/somo3" style={{ fontWeight: "bold" }}>Endelea na Somo la 3 &rarr;</a></p>
     </main>
   );
 }
