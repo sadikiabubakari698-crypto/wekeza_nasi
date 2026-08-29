@@ -67,7 +67,7 @@ export default function Somo5() {
         <p>Somo 6: DSE ni nini?</p>
       </div>
 
-      <p><a href="/somo4">&larr; Somo la 4</a></p>
+      <p><a href="/somo4" style={{ marginRight: "1.5rem" }}>&larr; Somo la 4</a><a href="/somo6" style={{ fontWeight: "bold" }}>Endelea na Somo la 6 &rarr;</a></p>
     </main>
   );
 }

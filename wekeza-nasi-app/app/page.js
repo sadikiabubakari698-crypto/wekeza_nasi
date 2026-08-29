@@ -11,6 +11,7 @@ export default function Home() {
       <a href="/somo3" style={link}>Somo 3: Nani ananunua hisa?</a>
       <a href="/somo4" style={link}>Somo 4: Soko la hisa ni nini?</a>
       <a href="/somo5" style={link}>Somo 5: Soko la hisa lipo chini ya nani?</a>
+      <a href="/somo6" style={link}>Somo 6: DSE ni nini?</a>
     </main>
   );
 }
