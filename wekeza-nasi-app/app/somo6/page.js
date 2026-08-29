@@ -72,7 +72,7 @@ export default function Somo6() {
         <p>Somo 7: Hisa inanunuaje na kuuzwaje?</p>
       </div>
 
-      <p><a href="/somo5">&larr; Somo la 5</a></p>
+      <p><a href="/somo5" style={{ marginRight: "1.5rem" }}>&larr; Somo la 5</a><a href="/somo7" style={{ fontWeight: "bold" }}>Endelea na Somo la 7 &rarr;</a></p>
     </main>
   );
 }

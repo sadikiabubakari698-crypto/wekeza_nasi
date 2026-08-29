@@ -7,6 +7,7 @@ export default function Home() {
     { href: "/somo4", title: "Somo 4: Soko la hisa ni nini?", icon: "mche" },
     { href: "/somo5", title: "Somo 5: Soko la hisa lipo chini ya nani?", icon: "mche" },
     { href: "/somo6", title: "Somo 6: DSE ni nini?", icon: "mche" },
+    { href: "/somo7", title: "Somo 7: Hisa inanunuaje na kuuzwaje?", icon: "mche" },
   ];
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
@@ -23,6 +24,9 @@ export default function Home() {
           <span>{l.title}</span>
         </a>
       ))}
+
+      <h2 style={{ marginTop: "2rem" }}>Rasilimali</h2>
+      <a href="/madalali" style={link}>Madalali Walioidhinishwa</a>
     </main>
   );
 }
