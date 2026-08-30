@@ -70,7 +70,7 @@ export default function Somo7() {
         <p>Somo 8: Bei ya hisa hupanda na kushuka kwa nini?</p>
       </div>
 
-      <p><a href="/somo6">&larr; Somo la 6</a></p>
+      <p><a href="/somo6" style={{ marginRight: "1.5rem" }}>&larr; Somo la 6</a><a href="/somo8" style={{ fontWeight: "bold" }}>Endelea na Somo la 8 &rarr;</a></p>
     </main>
   );
 }

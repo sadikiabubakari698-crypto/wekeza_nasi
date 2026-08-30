@@ -8,6 +8,7 @@ export default function Home() {
     { href: "/somo5", title: "Somo 5: Soko la hisa lipo chini ya nani?", icon: "mche" },
     { href: "/somo6", title: "Somo 6: DSE ni nini?", icon: "mche" },
     { href: "/somo7", title: "Somo 7: Hisa inanunuaje na kuuzwaje?", icon: "mche" },
+    { href: "/somo8", title: "Somo 8: Bei ya hisa hupanda na kushuka kwa nini?", icon: "mti" },
   ];
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
