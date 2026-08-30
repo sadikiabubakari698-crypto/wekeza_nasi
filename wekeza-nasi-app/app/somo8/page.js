@@ -67,7 +67,7 @@ export default function Somo8() {
         <p>Somo 9: Mwekezaji anapataje faida?</p>
       </div>
 
-      <p><a href="/somo7">&larr; Somo la 7</a></p>
+      <p><a href="/somo7" style={{ marginRight: "1.5rem" }}>&larr; Somo la 7</a><a href="/somo9" style={{ fontWeight: "bold" }}>Endelea na Somo la 9 &rarr;</a></p>
     </main>
   );
 }
