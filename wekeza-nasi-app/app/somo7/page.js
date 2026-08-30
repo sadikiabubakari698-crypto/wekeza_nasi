@@ -24,7 +24,7 @@ export default function Somo7() {
           kununua au kuuza hisa.
         </p>
         <p>
-          <a href="/madalali">Ona orodha ya madalali walioidhinishwa &rarr;</a>
+          <a href="/madalali">Ona vigezo vya kuchagua broker mzuri &rarr;</a>
         </p>
       </div>
 
