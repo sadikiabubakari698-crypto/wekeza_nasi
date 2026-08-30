@@ -582,3 +582,9 @@ Somo 12 - Soko la Tanzania linafanyaje kazi?
 Somo 13 - Kuanza kuchambua kampuni
 
 RULE: This sequence supersedes any earlier lesson-order references (e.g. Somo la 1's original "Hatua Inayofuata" pointer, which will be corrected to match this list).
+
+---
+
+## 17. NOTE ON PHASE 5 (Market Intelligence)
+
+Confirmed by real Academy content (Somo 8, price movements): learners will need a system for timely market and company information (news, price data, company reports) to apply what they learn in practice. This validates Phase 5 as planned. Do not build this now, this requires data source agreements and possibly a database, which is out of scope for the current Academy Foundation phase.
