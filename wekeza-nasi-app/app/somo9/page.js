@@ -71,7 +71,7 @@ export default function Somo9() {
         <p>Somo 10: Hatari ya uwekezaji ni nini?</p>
       </div>
 
-      <p><a href="/somo8">&larr; Somo la 8</a></p>
+      <p><a href="/somo8" style={{ marginRight: "1.5rem" }}>&larr; Somo la 8</a><a href="/somo10" style={{ fontWeight: "bold" }}>Endelea na Somo la 10 &rarr;</a></p>
     </main>
   );
 }
