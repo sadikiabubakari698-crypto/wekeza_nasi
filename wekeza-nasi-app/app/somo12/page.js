@@ -72,7 +72,7 @@ export default function Somo12() {
         <p>Somo 13: IPO ni nini?</p>
       </div>
 
-      <p><a href="/somo11">&larr; Somo la 11</a></p>
+      <p><a href="/somo11" style={{ marginRight: "1.5rem" }}>&larr; Somo la 11</a><a href="/somo13" style={{ fontWeight: "bold" }}>Endelea na Somo la 13 &rarr;</a></p>
     </main>
   );
 }
