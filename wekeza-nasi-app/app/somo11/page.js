@@ -69,7 +69,7 @@ export default function Somo11() {
         <p>Somo 12: Soko la Tanzania linafanyaje kazi?</p>
       </div>
 
-      <p><a href="/somo10">&larr; Somo la 10</a></p>
+      <p><a href="/somo10" style={{ marginRight: "1.5rem" }}>&larr; Somo la 10</a><a href="/somo12" style={{ fontWeight: "bold" }}>Endelea na Somo la 12 &rarr;</a></p>
     </main>
   );
 }

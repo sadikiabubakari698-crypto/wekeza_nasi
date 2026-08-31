@@ -12,6 +12,7 @@ export default function Home() {
     { href: "/somo9", title: "Somo 9: Mwekezaji anapataje faida?", icon: "mti" },
     { href: "/somo10", title: "Somo 10: Hatari ya uwekezaji ni nini?", icon: "mti" },
     { href: "/somo11", title: "Somo 11: Diversification", icon: "mti-mkubwa" },
+    { href: "/somo12", title: "Somo 12: Gawio - Masharti na Taratibu", icon: "mti-mkubwa" },
   ];
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
