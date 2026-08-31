@@ -68,7 +68,7 @@ export default function Somo10() {
         <p>Somo 11: Diversification</p>
       </div>
 
-      <p><a href="/somo9">&larr; Somo la 9</a></p>
+      <p><a href="/somo9" style={{ marginRight: "1.5rem" }}>&larr; Somo la 9</a><a href="/somo11" style={{ fontWeight: "bold" }}>Endelea na Somo la 11 &rarr;</a></p>
     </main>
   );
 }
