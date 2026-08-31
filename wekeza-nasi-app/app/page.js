@@ -14,6 +14,7 @@ export default function Home() {
     { href: "/somo11", title: "Somo 11: Diversification", icon: "mti-mkubwa" },
     { href: "/somo12", title: "Somo 12: Gawio - Masharti na Taratibu", icon: "mti-mkubwa" },
     { href: "/somo13", title: "Somo 13: IPO ni nini?", icon: "mti-mkubwa" },
+    { href: "/somo14", title: "Somo 14: Stock Split ni nini?", icon: "mti-mkubwa" },
   ];
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>

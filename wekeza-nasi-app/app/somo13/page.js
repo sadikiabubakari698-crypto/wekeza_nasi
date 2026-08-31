@@ -67,7 +67,7 @@ export default function Somo13() {
         <p>Somo 14: Stock Split ni nini?</p>
       </div>
 
-      <p><a href="/somo12">&larr; Somo la 12</a></p>
+      <p><a href="/somo12" style={{ marginRight: "1.5rem" }}>&larr; Somo la 12</a><a href="/somo14" style={{ fontWeight: "bold" }}>Endelea na Somo la 14 &rarr;</a></p>
     </main>
   );
 }
