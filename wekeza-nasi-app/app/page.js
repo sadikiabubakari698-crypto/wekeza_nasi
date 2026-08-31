@@ -34,6 +34,7 @@ export default function Home() {
 
       <h2 style={{ marginTop: "2rem" }}>Rasilimali</h2>
       <a href="/madalali" style={link}>Jinsi ya Kuchagua Broker</a>
+      <a href="/tahadhari" style={link}>Tahadhari za Utapeli wa Uwekezaji</a>
     </main>
   );
 }
