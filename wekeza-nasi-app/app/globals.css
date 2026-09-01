@@ -54,3 +54,12 @@ body {
   font-weight: bold;
   margin-top: 0.5rem;
 }
+
+.risk-box {
+  padding: 1.25rem;
+  background: #fdecea;
+  border-left: 4px solid #c0392b;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
