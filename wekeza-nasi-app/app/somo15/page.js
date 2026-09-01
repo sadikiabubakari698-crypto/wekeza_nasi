@@ -69,7 +69,7 @@ export default function Somo15() {
         <p>Somo 16: Kuanza kuchambua kampuni</p>
       </div>
 
-      <p><a href="/somo14">&larr; Somo la 14</a></p>
+      <p><a href="/somo14" style={{ marginRight: "1.5rem" }}>&larr; Somo la 14</a><a href="/somo16" style={{ fontWeight: "bold" }}>Endelea na Somo la 16 &rarr;</a></p>
     </main>
   );
 }

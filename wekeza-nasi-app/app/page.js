@@ -16,6 +16,7 @@ export default function Home() {
     { href: "/somo13", title: "Somo 13: IPO ni nini?", icon: "mti-mkubwa" },
     { href: "/somo14", title: "Somo 14: Stock Split ni nini?", icon: "mti-mkubwa" },
     { href: "/somo15", title: "Somo 15: Soko la Tanzania linafanyaje kazi?", icon: "mti-mkubwa" },
+    { href: "/somo16", title: "Somo 16: Kuanza kuchambua kampuni", icon: "taji" },
   ];
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>

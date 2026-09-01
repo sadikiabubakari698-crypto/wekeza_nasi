@@ -588,3 +588,9 @@ RULE: This sequence supersedes any earlier lesson-order references (e.g. Somo la
 ## 17. NOTE ON PHASE 5 (Market Intelligence)
 
 Confirmed by real Academy content (Somo 8, price movements): learners will need a system for timely market and company information (news, price data, company reports) to apply what they learn in practice. This validates Phase 5 as planned. Do not build this now, this requires data source agreements and possibly a database, which is out of scope for the current Academy Foundation phase.
+
+---
+
+## 18. VALIDATED FOUNDING VISION (Somo 16 insight)
+
+Confirmed directly through writing Somo 16: real users cannot easily find or read annual reports, dividend history, or financial statements via DSE or company websites. This validates the ORIGINAL founding problem statement of WEKEZA NASI: translating financial statements into simple language, company by company. This is a strong signal that a "Company Analysis" feature (simplified per-company reports, inside the app) should be a priority within Phase 5, not a nice-to-have.
