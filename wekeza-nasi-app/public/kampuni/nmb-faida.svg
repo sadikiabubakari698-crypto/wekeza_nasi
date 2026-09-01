@@ -1,0 +1,13 @@
+<svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<text x="190" y="20" text-anchor="middle" font-weight="bold" font-size="14" fill="#1b5e30">Faida Baada ya Kodi (TZS Bilioni)</text>
+<rect x="60" y="129" width="60" height="91" fill="#2f8f4e"/>
+<text x="90" y="122" text-anchor="middle" font-size="12" fill="#3a3a3a">544</text>
+<text x="90" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2023</text>
+<rect x="160" y="97" width="60" height="123" fill="#2f8f4e"/>
+<text x="190" y="90" text-anchor="middle" font-size="12" fill="#3a3a3a">647</text>
+<text x="190" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2024</text>
+<rect x="260" y="40" width="60" height="180" fill="#2f8f4e"/>
+<text x="290" y="33" text-anchor="middle" font-size="12" fill="#3a3a3a">756</text>
+<text x="290" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2025</text>
+<line x1="50" y1="220" x2="330" y2="220" stroke="#999" stroke-width="1"/>
+</svg>

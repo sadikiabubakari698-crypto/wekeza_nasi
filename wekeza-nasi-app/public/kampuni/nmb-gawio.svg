@@ -1,0 +1,13 @@
+<svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<text x="190" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#7a5a10">Gawio kwa Hisa TZS (kabla ya split)</text>
+<rect x="60" y="114" width="60" height="106" fill="#c9962c"/>
+<text x="90" y="107" text-anchor="middle" font-size="12" fill="#3a3a3a">360</text>
+<text x="90" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2023</text>
+<rect x="160" y="94" width="60" height="126" fill="#c9962c"/>
+<text x="190" y="87" text-anchor="middle" font-size="12" fill="#3a3a3a">429</text>
+<text x="190" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2024</text>
+<rect x="260" y="40" width="60" height="180" fill="#c9962c"/>
+<text x="290" y="33" text-anchor="middle" font-size="12" fill="#3a3a3a">610</text>
+<text x="290" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2025</text>
+<line x1="50" y1="220" x2="330" y2="220" stroke="#999" stroke-width="1"/>
+</svg>

@@ -40,6 +40,7 @@ export default function Home() {
 
       <h2 style={{ marginTop: "2rem" }}>Uchambuzi wa Kampuni</h2>
       <a href="/kampuni/crdb" style={link}>CRDB Bank Plc</a>
+      <a href="/kampuni/nmb" style={link}>NMB Bank Plc</a>
     </main>
   );
 }
