@@ -594,3 +594,18 @@ Confirmed by real Academy content (Somo 8, price movements): learners will need 
 ## 18. VALIDATED FOUNDING VISION (Somo 16 insight)
 
 Confirmed directly through writing Somo 16: real users cannot easily find or read annual reports, dividend history, or financial statements via DSE or company websites. This validates the ORIGINAL founding problem statement of WEKEZA NASI: translating financial statements into simple language, company by company. This is a strong signal that a "Company Analysis" feature (simplified per-company reports, inside the app) should be a priority within Phase 5, not a nice-to-have.
+
+---
+
+## 19. COMPANY PROFILE TEMPLATE
+
+Every company analysis page follows this fixed structure. Sections 1,2,3,4,6 are durable (rarely change). Section 5 requires periodic manual updates (quarterly/annually) as new reports are published.
+
+01. Kampuni ni Nani? - jina, ilianzishwa lini, na nani, historia fupi
+02. Lengo la Kampuni - dhamira, vision, tatizo linalotatua, wateja
+03. Kampuni Inafanya Nini? - bidhaa/huduma, jinsi inavyopata mapato
+04. Nafasi yake Tanzania - umuhimu wa kiuchumi, nafasi katika sekta
+05. Kampuni Ilivyo Leo (DYNAMIC - update periodically) - mapato, faida, gawio, madeni, assets, bei ya hisa, ripoti za robo/mwaka
+06. Tunachoweza Kujifunza Kutoka Kwake - uchambuzi unaomsaidia mwekezaji kujiuliza maswali sahihi
+
+RULE: Sections 1,2,3,4,6 are written once and rarely revisited. Section 5 must be reviewed and updated whenever the company publishes new quarterly or annual results.
