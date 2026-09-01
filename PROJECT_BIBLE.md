@@ -609,3 +609,19 @@ Every company analysis page follows this fixed structure. Sections 1,2,3,4,6 are
 06. Tunachoweza Kujifunza Kutoka Kwake - uchambuzi unaomsaidia mwekezaji kujiuliza maswali sahihi
 
 RULE: Sections 1,2,3,4,6 are written once and rarely revisited. Section 5 must be reviewed and updated whenever the company publishes new quarterly or annual results.
+
+---
+
+## 20. COMPANY PROFILE ADDITION CHECKLIST
+
+Steps to follow every time a new company is added to Uchambuzi wa Kampuni:
+
+1. Research using verified sources: company official site, DSE, BOT/CMSA reports
+2. Confirm at least 3 years of profit and dividend history (for trend charts)
+3. Identify 2-3 concrete growth drivers grounded in actual reports, not speculation
+4. Follow exact 6-section Company Profile Template (Section 19)
+5. Create 2 SVG trend charts (profit, dividend) matching existing color style (green #2f8f4e for profit, amber #c9962c for dividend)
+6. Always include disclaimer that current share price changes daily, direct user to check broker or dse.co.tz
+7. Add new page under /kampuni/[name]
+8. Update home page navigation list under "Uchambuzi wa Kampuni"
+9. Commit with descriptive message referencing company name
