@@ -48,6 +48,7 @@ export default function CRDB() {
       <div className="lesson-box">
         <h3>05. Kampuni Ilivyo Leo</h3>
         <p><em>Ripoti ya mwaka 2025, iliyochapishwa 2026</em></p>
+        <p><small>Taarifa za mwisho zilisasishwa: Agosti 2026</small></p>
         <img src="/kampuni/crdb-faida.svg" alt="Mwenendo wa faida CRDB 2023-2025" style={{ width: "100%", height: "auto", marginBottom: "1rem" }} />
         <img src="/kampuni/crdb-gawio.svg" alt="Mwenendo wa gawio CRDB 2023-2025" style={{ width: "100%", height: "auto", marginBottom: "1rem" }} />
         <ul>
