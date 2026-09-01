@@ -81,8 +81,8 @@ export default function CRDB() {
         </p>
       </div>
 
-      <div className="lesson-box">
-        <h3>07. Hatari Maalum ya Kampuni Hii</h3>
+      <div className="risk-box">
+        <h3 style={{ color: "#c0392b" }}>&#9888; 07. Hatari Maalum ya Kampuni Hii</h3>
         <ul>
           <li>Ushindani mkali kutoka benki nyingine kubwa na huduma za pesa za simu zinazoweza kupunguza wateja wa huduma za jadi</li>
           <li>Utegemezi mkubwa wa mapato ya riba, mabadiliko ya sera za riba za Benki Kuu yanaweza kuathiri faida moja kwa moja</li>
