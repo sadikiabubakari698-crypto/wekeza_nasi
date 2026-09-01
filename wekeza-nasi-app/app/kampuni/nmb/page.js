@@ -62,7 +62,14 @@ export default function NMB() {
           Gawio la NMB limekua kwa kasi ya ajabu, kutoka TZS bilioni 48
           (2020) hadi TZS bilioni 305 (2025) kwa jumla. Hii inaonyesha
           jinsi benki inayokua kwa kasi inavyoweza kuwarudishia wanahisa
-          thamani kubwa kwa muda mfupi.
+          thamani kubwa kwa muda mfupi.</p>
+        <p><strong>Sababu za ukuaji:</strong></p>
+        <ul>
+          <li>Mpango wa kimkakati wa miaka mitano (2021-2025) ulioratibu ukuaji kwa nidhamu</li>
+          <li>Uwekezaji mkubwa kwenye huduma za kidijitali (asilimia 96 ya miamala sasa ni ya kidijitali)</li>
+          <li>Ubora wa mikopo umeongezeka (mikopo chechefu ilipungua kutoka 2.9% hadi 2.5%)</li>
+        </ul>
+        <p>
         </p>
       </div>
 
