@@ -68,6 +68,12 @@ export default function CRDB() {
           kubadilika kwa muda mrefu, uwekezaji wa hisa mara nyingi ni
           safari ya miaka, si ya haraka.
         </p>
+        <p><strong>Sababu za ukuaji:</strong></p>
+        <ul>
+          <li>Upanuzi mkubwa wa mtandao (matawi, ATM, mawakala) uliongeza wateja hadi milioni 7.2</li>
+          <li>Uwekezaji kwenye mfumo mpya wa kibenki (Temenos T24) uliboresha ufanisi wa huduma</li>
+          <li>Ongezeko la mikopo na akiba za wateja liliongeza mapato ya riba</li>
+        </ul>
       </div>
 
       <p><a href="/">&larr; Rudi Academy</a></p>
