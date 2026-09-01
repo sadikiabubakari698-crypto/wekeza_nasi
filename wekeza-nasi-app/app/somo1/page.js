@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Somo1() {
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
@@ -14,7 +16,9 @@ export default function Somo1() {
         <p>Je, umeshawahi kufikiria kumiliki sehemu ya biashara bila kuwa na fedha nyingi za kuianzisha peke yako?</p>
       </div>
 
-      <img src="/somo1-hisa.png" alt="Hisa ni nini - mfano wa shamba" style={{ width: "100%", height: "auto", borderRadius: "12px", marginBottom: "1.5rem" }} />
+      <div style={{ position: "relative", width: "100%", aspectRatio: "1536 / 1024", marginBottom: "1.5rem" }}>
+        <Image src="/somo1-hisa.png" alt="Hisa ni nini - mfano wa shamba" fill sizes="(max-width: 600px) 100vw, 600px" style={{ objectFit: "contain", borderRadius: "12px" }} priority />
+      </div>
 
       <div className="lesson-box">
         <h3>03. Maelezo Rahisi</h3>
