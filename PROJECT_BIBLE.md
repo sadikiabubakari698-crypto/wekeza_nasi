@@ -625,3 +625,13 @@ Steps to follow every time a new company is added to Uchambuzi wa Kampuni:
 7. Add new page under /kampuni/[name]
 8. Update home page navigation list under "Uchambuzi wa Kampuni"
 9. Commit with descriptive message referencing company name
+
+---
+
+## 21. COMPANY PROFILE TEMPLATE - UPDATE (Psychological Balance)
+
+Added two requirements to prevent confirmation bias and passive learning:
+
+07. Hatari Maalum ya Kampuni Hii - company-specific risks (competition, sector exposure, policy dependency), not just generic risk categories. This must always accompany growth data to avoid implying "this company is always safe."
+
+RULE: Section 06 (Tunachoweza Kujifunza) must end with a reflective QUESTION for the reader, not a closing statement, matching the Academy lesson pedagogy of active thinking over passive reading.
