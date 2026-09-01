@@ -37,6 +37,9 @@ export default function Home() {
       <h2 style={{ marginTop: "2rem" }}>Rasilimali</h2>
       <a href="/madalali" style={link}>Jinsi ya Kuchagua Broker</a>
       <a href="/tahadhari" style={link}>Tahadhari za Utapeli wa Uwekezaji</a>
+
+      <h2 style={{ marginTop: "2rem" }}>Uchambuzi wa Kampuni</h2>
+      <a href="/kampuni/crdb" style={link}>CRDB Bank Plc</a>
     </main>
   );
 }
