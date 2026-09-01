@@ -65,14 +65,27 @@ export default function CRDB() {
           CRDB imeonyesha ukuaji wa mfululizo wa faida na gawio kwa miaka
           kadhaa, ishara ya utulivu. Historia yake (kutoka hasara 1996
           hadi faida kubwa leo) inaonyesha jinsi kampuni inavyoweza
-          kubadilika kwa muda mrefu, uwekezaji wa hisa mara nyingi ni
-          safari ya miaka, si ya haraka.
+          kubadilika kwa muda mrefu.
         </p>
         <p><strong>Sababu za ukuaji:</strong></p>
         <ul>
           <li>Upanuzi mkubwa wa mtandao (matawi, ATM, mawakala) uliongeza wateja hadi milioni 7.2</li>
           <li>Uwekezaji kwenye mfumo mpya wa kibenki (Temenos T24) uliboresha ufanisi wa huduma</li>
           <li>Ongezeko la mikopo na akiba za wateja liliongeza mapato ya riba</li>
+        </ul>
+        <p>
+          <strong>Ukiona benki hii imekua kwa miaka mitatu mfululizo, unadhani
+          itaendelea hivyo miaka mitatu ijayo? Ni nini kinachoweza kubadilisha
+          hilo?</strong>
+        </p>
+      </div>
+
+      <div className="lesson-box">
+        <h3>07. Hatari Maalum ya Kampuni Hii</h3>
+        <ul>
+          <li>Ushindani mkali kutoka benki nyingine kubwa na huduma za pesa za simu zinazoweza kupunguza wateja wa huduma za jadi</li>
+          <li>Utegemezi mkubwa wa mapato ya riba, mabadiliko ya sera za riba za Benki Kuu yanaweza kuathiri faida moja kwa moja</li>
+          <li>Uwepo katika Burundi na DRC unaleta hatari za kisiasa au kiuchumi za nje ya Tanzania</li>
         </ul>
       </div>
 

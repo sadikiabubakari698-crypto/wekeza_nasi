@@ -635,3 +635,13 @@ Added two requirements to prevent confirmation bias and passive learning:
 07. Hatari Maalum ya Kampuni Hii - company-specific risks (competition, sector exposure, policy dependency), not just generic risk categories. This must always accompany growth data to avoid implying "this company is always safe."
 
 RULE: Section 06 (Tunachoweza Kujifunza) must end with a reflective QUESTION for the reader, not a closing statement, matching the Academy lesson pedagogy of active thinking over passive reading.
+
+---
+
+## 22. DATA FRESHNESS RULE (Company Analysis)
+
+Daily trading data (price, volume) will NEVER be shown on static company pages, it changes too fast to keep accurate. Always direct users to dse.co.tz or their broker for live prices.
+
+Quarterly/annual financial data (Section 05 of Company Profile) must display a "Taarifa za mwisho zilisasishwa" (Last updated) date at the top of that section.
+
+DISCIPLINE RULE: Review and refresh each company profile within 2 weeks of that company publishing new quarterly or annual results. This is a manual process for now (small number of companies); full automation is Phase 5 scope, not before.
