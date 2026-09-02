@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "WEKEZA NASI Academy - Jifunze Uwekezaji wa Hisa Tanzania",
   description: "Jifunze hisa, soko la Dar es Salaam Stock Exchange (DSE), na uwekezaji kwa lugha rahisi ya Kiswahili. Masomo ya bure, uchambuzi wa makampuni, na tahadhari za utapeli.",
+  verification: { google: "gihoAfK3IJnkiIhfgYLUVDaPj6VCpADAWxFRClqzM_8" },
 };
 
 export default function RootLayout({ children }) {
