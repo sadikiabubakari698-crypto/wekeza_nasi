@@ -645,3 +645,9 @@ Daily trading data (price, volume) will NEVER be shown on static company pages, 
 Quarterly/annual financial data (Section 05 of Company Profile) must display a "Taarifa za mwisho zilisasishwa" (Last updated) date at the top of that section.
 
 DISCIPLINE RULE: Review and refresh each company profile within 2 weeks of that company publishing new quarterly or annual results. This is a manual process for now (small number of companies); full automation is Phase 5 scope, not before.
+
+---
+
+## 23. COMPANY PROFILE HEADING STYLE
+
+Company profile pages (not Academy lessons) use Roman numerals (I, II, III...) for section headers, to visually distinguish them from the numbered/bulleted lists (1, 2, 3...) used within each section. Academy lessons keep their existing 01, 02, 03... numbering unchanged.

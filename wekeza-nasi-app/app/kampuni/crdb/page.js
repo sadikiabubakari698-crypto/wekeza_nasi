@@ -5,7 +5,7 @@ export default function CRDB() {
       <h2>CRDB Bank Plc</h2>
 
       <div className="lesson-box">
-        <h3>01. Kampuni ni Nani?</h3>
+        <h3>I. Kampuni ni Nani?</h3>
         <ol>
           <li>Jina: CRDB Bank Plc</li>
           <li>Ilianzishwa: 1984 (kama Cooperative and Rural Development Bank)</li>
@@ -16,7 +16,7 @@ export default function CRDB() {
       </div>
 
       <div className="lesson-box">
-        <h3>02. Lengo la Kampuni</h3>
+        <h3>II. Lengo la Kampuni</h3>
         <ol>
           <li>Dira: &quot;Kubadilisha maisha na kukuza uchumi kufikia uwezo wake kamili&quot;</li>
           <li>Dhamira: kutoa huduma za kifedha kwa kila Mtanzania</li>
@@ -25,7 +25,7 @@ export default function CRDB() {
       </div>
 
       <div className="lesson-box">
-        <h3>03. Kampuni Inafanya Nini?</h3>
+        <h3>III. Kampuni Inafanya Nini?</h3>
         <ol>
           <li>Huduma kuu: akiba, mikopo, huduma za biashara, uwekezaji</li>
           <li>Bidhaa nyingine: kadi za mikopo, mikopo ya nyumba, huduma za kidijitali, bima</li>
@@ -34,7 +34,7 @@ export default function CRDB() {
       </div>
 
       <div className="lesson-box">
-        <h3>04. Nafasi yake Tanzania</h3>
+        <h3>IV. Nafasi yake Tanzania</h3>
         <ol>
           <li>Benki kubwa zaidi nchini kwa mali</li>
           <li>Mtandao: matawi 261, ATM 732, mawakala 38,883</li>
@@ -43,7 +43,7 @@ export default function CRDB() {
       </div>
 
       <div className="lesson-box">
-        <h3>05. Kampuni Ilivyo Leo</h3>
+        <h3>V. Kampuni Ilivyo Leo</h3>
         <p><em>Ripoti ya mwaka 2025, iliyochapishwa 2026</em></p>
         <p><small>Taarifa za mwisho zilisasishwa: Agosti 2026</small></p>
         <img src="/kampuni/crdb-faida.svg" alt="Mwenendo wa faida CRDB 2023-2025" style={{ width: "100%", height: "auto", marginBottom: "1rem" }} />
@@ -58,7 +58,7 @@ export default function CRDB() {
       </div>
 
       <div className="lesson-box">
-        <h3>06. Tunachoweza Kujifunza Kutoka Kwake</h3>
+        <h3>VI. Tunachoweza Kujifunza Kutoka Kwake</h3>
         <p>Sababu za ukuaji:</p>
         <ol>
           <li>Upanuzi mkubwa wa mtandao (matawi, ATM, mawakala) uliongeza wateja hadi milioni 7.2</li>
@@ -73,7 +73,7 @@ export default function CRDB() {
       </div>
 
       <div className="risk-box">
-        <h3 style={{ color: "#c0392b" }}>&#9888; 07. Hatari Maalum ya Kampuni Hii</h3>
+        <h3 style={{ color: "#c0392b" }}>&#9888; VII. Hatari Maalum ya Kampuni Hii</h3>
         <ol>
           <li>Ushindani mkali kutoka benki nyingine kubwa na huduma za pesa za simu zinazoweza kupunguza wateja wa huduma za jadi</li>
           <li>Utegemezi mkubwa wa mapato ya riba, mabadiliko ya sera za riba za Benki Kuu yanaweza kuathiri faida moja kwa moja</li>
