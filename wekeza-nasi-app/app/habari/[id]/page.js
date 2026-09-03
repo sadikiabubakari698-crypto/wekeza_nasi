@@ -1,7 +1,8 @@
 import contentData from "../../../content/content.json";
 
-export default function Habari({ params }) {
-  const item = contentData.find((c) => c.id === params.id);
+export default async function Habari({ params }) {
+  const { id } = await params;
+  const item = contentData.find((c) => c.id === id);
 
   if (!item) {
     return (
