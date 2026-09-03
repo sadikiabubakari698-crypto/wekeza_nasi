@@ -6,37 +6,37 @@ export default function NMB() {
 
       <div className="lesson-box">
         <h3>1. Kampuni ni Nani?</h3>
-        <ol type="i">
+        <ul>
           <li>Jina: NMB Bank Plc</li>
           <li>Ilianzishwa: 1997, kutokana na mgawanyiko wa National Bank of Commerce (NBC)</li>
           <li>Makao makuu: Dar es Salaam</li>
-        </ol>
+        </ul>
       </div>
 
       <div className="lesson-box">
         <h3>2. Lengo la Kampuni</h3>
-        <ol type="i">
+        <ul>
           <li>Dhamira: kutoa huduma za kibenki zenye ubunifu, jumuishi, na zinazomlenga mteja</li>
           <li>Lengo maalum: kufikia watu binafsi na biashara, hasa maeneo yasiyofikiwa kirahisi na huduma za kifedha</li>
-        </ol>
+        </ul>
       </div>
 
       <div className="lesson-box">
         <h3>3. Kampuni Inafanya Nini?</h3>
-        <ol type="i">
+        <ul>
           <li>Huduma kuu: kibenki za rejareja, kibiashara, na kilimo (agri-banking)</li>
           <li>Bidhaa nyingine: huduma za kidijitali, hazina, mikopo, akiba, kadi za mikopo, mikopo ya nyumba</li>
-        </ol>
+        </ul>
       </div>
 
       <div className="lesson-box">
         <h3>4. Nafasi yake Tanzania</h3>
-        <ol type="i">
+        <ul>
           <li>Benki yenye faida kubwa zaidi Tanzania (asilimia 30 ya faida ya sekta nzima ya benki)</li>
           <li>Mtandao: matawi 240, mawakala zaidi ya 50,000</li>
           <li>Mojawapo ya makampuni mawili tu Tanzania yenye thamani ya soko zaidi ya dola bilioni 1</li>
           <li>Imetambuliwa na BOT kama Domestic Systemically Important Bank (D-SIB)</li>
-        </ol>
+        </ul>
       </div>
 
       <div className="lesson-box">
@@ -45,23 +45,23 @@ export default function NMB() {
         <p><small>Taarifa za mwisho zilisasishwa: Agosti 2026</small></p>
         <img src="/kampuni/nmb-faida.svg" alt="Mwenendo wa faida NMB 2023-2025" style={{ width: "100%", height: "auto", marginBottom: "1rem" }} />
         <img src="/kampuni/nmb-gawio.svg" alt="Mwenendo wa gawio NMB 2023-2025" style={{ width: "100%", height: "auto", marginBottom: "1rem" }} />
-        <ol type="i">
+        <ul>
           <li>Mapato jumla: TZS trilioni 1.82 (ongezeko la 13.3%)</li>
           <li>Faida baada ya kodi: takribani TZS bilioni 756-760 (ongezeko la 17.5%)</li>
           <li>Mali jumla: TZS trilioni 17.6</li>
           <li>Gawio: TZS 610.15 kwa hisa (ikijumuisha gawio maalum la kwanza kabisa)</li>
-        </ol>
+        </ul>
         <p><em>Muhimu: NMB ilifanya stock split ya 1:10 Julai 2026, takwimu hizi ni za KABLA ya mgawanyo huo. Bei ya hisa hubadilika kila siku, angalia bei ya sasa kupitia broker wako au dse.co.tz</em></p>
       </div>
 
       <div className="lesson-box">
         <h3>6. Tunachoweza Kujifunza Kutoka Kwake</h3>
         <p>Sababu za ukuaji:</p>
-        <ol type="i">
+        <ul>
           <li>Mpango wa kimkakati wa miaka mitano (2021-2025) ulioratibu ukuaji kwa nidhamu</li>
           <li>Uwekezaji mkubwa kwenye huduma za kidijitali (asilimia 96 ya miamala sasa ni ya kidijitali)</li>
           <li>Ubora wa mikopo umeongezeka (mikopo chechefu ilipungua kutoka 2.9% hadi 2.5%)</li>
-        </ol>
+        </ul>
         <p>
           <strong>NMB imefanya stock split kufanya hisa zake kuwa nafuu zaidi.
           Je, hii inabadilisha uamuzi wako wa kuwekeza kwenye kampuni hii?
@@ -71,12 +71,12 @@ export default function NMB() {
 
       <div className="risk-box">
         <h3 style={{ color: "#c0392b" }}>&#9888; 7. Hatari Maalum ya Kampuni Hii</h3>
-        <ol type="i">
+        <ul>
           <li>Ushindani mkali kutoka benki nyingine na huduma za fedha za kidijitali/mtandao wa simu</li>
           <li>Utegemezi wa sekta ya kilimo (agri-banking) unaweza kuathiriwa na hali ya hewa au bei za mazao duniani</li>
           <li>Kama D-SIB, inakabiliwa na masharti magumu zaidi ya mtaji kutoka BOT yanayoweza kubadilika</li>
           <li>Kwa kuwa stock split ni mpya (Julai 2026), tabia ya bei sokoni inaweza kuwa na mabadiliko ya ziada muda mfupi ujao</li>
-        </ol>
+        </ul>
       </div>
 
       <p><a href="/">&larr; Rudi Academy</a></p>
