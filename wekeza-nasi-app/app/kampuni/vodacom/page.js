@@ -45,7 +45,8 @@ export default function Vodacom() {
         <p><em>Mwaka ulioishia Machi 2025</em></p>
         <p><small>Taarifa za mwisho zilisasishwa: Agosti 2026</small></p>
         <img src="/kampuni/vodacom-faida.svg" alt="Mwenendo wa faida Vodacom 2023-2025" style={{ width: "100%", height: "auto", marginBottom: "1rem" }} />
-        <p><em>Kumbuka: takwimu za 2023 na 2024 ni makadirio yaliyokokotolewa kutokana na ukuaji uliothibitishwa, si namba rasmi za moja kwa moja</em></p>
+        <p><em>Kumbuka: takwimu za 2023 na 2024 za faida ni makadirio yaliyokokotolewa kutokana na ukuaji uliothibitishwa, si namba rasmi za moja kwa moja</em></p>
+        <img src="/kampuni/vodacom-gawio.svg" alt="Mwenendo wa gawio Vodacom 2024-2025" style={{ width: "100%", height: "auto", marginBottom: "1rem" }} />
         <ul>
           <li>Mapato: TZS trilioni 1.5 (ongezeko la 20.5%)</li>
           <li>Faida baada ya kodi: TZS bilioni 90.5 (ongezeko la 69.4%)</li>

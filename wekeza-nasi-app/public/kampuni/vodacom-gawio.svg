@@ -1,0 +1,10 @@
+<svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<text x="190" y="20" text-anchor="middle" font-weight="bold" font-size="13" fill="#7a5a10">Gawio Jumla Lililolipwa (TZS Bilioni)</text>
+<rect x="100" y="113" width="70" height="107" fill="#c9962c"/>
+<text x="135" y="106" text-anchor="middle" font-size="12" fill="#3a3a3a">26.7</text>
+<text x="135" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2024</text>
+<rect x="220" y="40" width="70" height="180" fill="#c9962c"/>
+<text x="255" y="33" text-anchor="middle" font-size="12" fill="#3a3a3a">45.2</text>
+<text x="255" y="240" text-anchor="middle" font-size="12" fill="#3a3a3a">2025</text>
+<line x1="50" y1="220" x2="330" y2="220" stroke="#999" stroke-width="1"/>
+</svg>
