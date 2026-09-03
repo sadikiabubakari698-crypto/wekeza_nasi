@@ -30,6 +30,16 @@ export default function Somo12() {
       </div>
 
       <div className="lesson-box">
+        <h3>10. Je, Nikichelewa Kukamilisha KYC?</h3>
+        <ul>
+          <li>Gawio lako halipotei, linabaki kwenye akaunti ya gawio lisilolipwa ya kampuni likisubiri wewe kukamilisha taarifa sahihi</li>
+          <li>Ukikamilisha KYC baadaye, unaweza kudai gawio hilo lililobaki</li>
+          <li>Hatari kubwa zaidi ni kwa watu waliopotea KABISA kimawasiliano (wamehama bila kujulisha broker, simu haipatikani kabisa) kwa miaka 12, ambapo Sheria ya Makampuni inaruhusu hisa zao kuuzwa na fedha kuhamishiwa Serikalini</li>
+          <li>Suluhisho: kamilisha KYC yako mapema na hakikisha taarifa za mawasiliano ni sahihi kila wakati</li>
+        </ul>
+      </div>
+
+      <div className="lesson-box">
         <h3>04. Mfano wa Tanzania</h3>
         <p>
           Kwa makampuni yaliyoorodheshwa DSE, kodi ya zuio kwenye gawio ni
