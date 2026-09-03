@@ -16,7 +16,7 @@ export default function Soko() {
             <div key={item.id} style={{ marginBottom: "1rem" }}>
               <p style={{ fontWeight: "bold", margin: 0 }}>{item.title}</p>
               <p style={{ margin: "0.25rem 0" }}>{item.excerpt}</p>
-              <a href={item.link}>Soma zaidi &rarr;</a>
+              <a href={`/habari/${item.id}`}>Soma zaidi &rarr;</a>
             </div>
           ))}
         </div>
