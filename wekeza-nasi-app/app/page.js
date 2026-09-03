@@ -42,6 +42,7 @@ export default function Home() {
       <a href="/kampuni/crdb" style={link}>CRDB Bank Plc</a>
       <a href="/kampuni/nmb" style={link}>NMB Bank Plc</a>
       <a href="/kampuni/tbl" style={link}>Tanzania Breweries Plc (TBL)</a>
+      <a href="/kampuni/vodacom" style={link}>Vodacom Tanzania Plc</a>
     </main>
   );
 }
