@@ -651,3 +651,9 @@ DISCIPLINE RULE: Review and refresh each company profile within 2 weeks of that 
 ## 23. COMPANY PROFILE HEADING STYLE
 
 Company profile pages (not Academy lessons) use Roman numerals (I, II, III...) for section headers, to visually distinguish them from the numbered/bulleted lists (1, 2, 3...) used within each section. Academy lessons keep their existing 01, 02, 03... numbering unchanged.
+
+---
+
+## 24. COMPANY PROFILE HEADING STYLE - CORRECTION
+
+Corrects Section 23. Company profile pages use Arabic numerals (1, 2, 3...) for section headers (hoja kuu), and lowercase Roman numerals (i, ii, iii...) for lists within each section (hoja ndogo). This is the final, correct numbering scheme.
