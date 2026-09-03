@@ -1,0 +1,35 @@
+[
+  {
+    "id": "timely-tbl-price-1",
+    "title": "Kwa nini bei ya TBL imepanda?",
+    "type": "analysis",
+    "category": "timely",
+    "excerpt": "Tukio la hivi karibuni linaloathiri bei ya hisa ya Tanzania Breweries.",
+    "link": "/kampuni/tbl",
+    "publishDate": "2026-09-03",
+    "frequency": "once",
+    "status": "published"
+  },
+  {
+    "id": "planned-academy-somo1",
+    "title": "Somo: Hisa ni nini?",
+    "type": "academy",
+    "category": "planned",
+    "excerpt": "Anza safari yako ya kujifunza kutoka mwanzo kabisa.",
+    "link": "/somo1",
+    "publishDate": "2026-09-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-company-crdb",
+    "title": "Uchambuzi: CRDB Bank",
+    "type": "company",
+    "category": "planned",
+    "excerpt": "Historia, biashara, na hatari za benki kubwa zaidi Tanzania.",
+    "link": "/kampuni/crdb",
+    "publishDate": "2026-09-01",
+    "frequency": "monthly",
+    "status": "published"
+  }
+]

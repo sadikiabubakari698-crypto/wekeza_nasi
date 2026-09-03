@@ -670,3 +670,18 @@ Five companies across five distinct sectors form the initial Company Analysis pr
 4. Consumer Manufacturing: TCC
 
 After these five, expansion candidates include TPCC, Tanga Cement, Swissport Tanzania, and others, but five is sufficient for the initial proof of concept.
+
+---
+
+## 26. CONTENT ENGINE V1
+
+A lightweight, database-free content scheduling system, driven by content/content.json (source of truth, no CMS/backend). lib/content-engine.js reads it and separates content into two categories:
+
+- TIMELY: urgent, market-moving content published manually as needed, always takes priority display position
+- PLANNED: pre-scheduled recurring content (currently monthly cadence only, per Section 22 discipline)
+
+RULE: Adding new content = manually edit content.json and git push, same workflow as all other site changes. The engine automates WHICH pre-written item displays WHEN, not automatic content creation.
+
+RULE: This engine must never be touched in a way that risks breaking Academy (16 lessons) or Company Analysis (5 profiles) - it is strictly additive, reading from its own separate content.json.
+
+Tested at /soko with 3 sample items (1 timely, 2 planned) before wider rollout. Home page integration ("Kinachoendelea Sasa" / "Mwezi Huu" sections) is a separate future step, not yet done.
