@@ -657,3 +657,16 @@ Company profile pages (not Academy lessons) use Roman numerals (I, II, III...) f
 ## 24. COMPANY PROFILE HEADING STYLE - CORRECTION
 
 Corrects Section 23. Company profile pages use Arabic numerals (1, 2, 3...) for section headers (hoja kuu), and lowercase Roman numerals (i, ii, iii...) for lists within each section (hoja ndogo). This is the final, correct numbering scheme.
+
+---
+
+## 25. COMPANY ANALYSIS PROOF-OF-CONCEPT PLAN
+
+Five companies across five distinct sectors form the initial Company Analysis proof of concept, deliberately chosen for sector diversity so learners see that different business models require different analysis lenses, not just memorize one company's story:
+
+1. Banking: CRDB (done), NMB (done)
+2. Manufacturing/Consumer (Beverages): TBL
+3. Telecommunication: Vodacom
+4. Consumer Manufacturing: TCC
+
+After these five, expansion candidates include TPCC, Tanga Cement, Swissport Tanzania, and others, but five is sufficient for the initial proof of concept.
