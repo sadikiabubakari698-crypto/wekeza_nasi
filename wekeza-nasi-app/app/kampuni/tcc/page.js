@@ -52,7 +52,7 @@ export default function TCC() {
           <li>EPS: TZS 1,354 (kutoka TZS 1,153 mwaka 2024)</li>
           <li>Gawio: TZS 1,050 kwa hisa (kutoka TZS 850 mwaka 2024, ongezeko la takribani 24%)</li>
         </ul>
-        <p><em>Data ya gawio la 2023 haikupatikana kwa uhakika, kwa hiyo haijaonyeshwa. Bei ya hisa hubadilika kila siku, angalia bei ya sasa kupitia broker wako au dse.co.tz</em></p>
+        <p><em>Bei ya hisa hubadilika kila siku, angalia bei ya sasa kupitia broker wako au dse.co.tz</em></p>
       </div>
 
       <div className="lesson-box">
