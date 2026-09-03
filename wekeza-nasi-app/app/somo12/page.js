@@ -30,7 +30,7 @@ export default function Somo12() {
       </div>
 
       <div className="lesson-box">
-        <h3>10. Je, Nikichelewa Kukamilisha KYC?</h3>
+        <h3>Cha Kuzingatia: Je, Nikichelewa Kukamilisha KYC?</h3>
         <ul>
           <li>Gawio lako halipotei, linabaki kwenye akaunti ya gawio lisilolipwa ya kampuni likisubiri wewe kukamilisha taarifa sahihi</li>
           <li>Ukikamilisha KYC baadaye, unaweza kudai gawio hilo lililobaki</li>
