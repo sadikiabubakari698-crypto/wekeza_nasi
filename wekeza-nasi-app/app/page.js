@@ -76,6 +76,7 @@ export default function Home() {
       <a href="/madalali" style={link}>Jinsi ya Kuchagua Broker</a>
       <a href="/tahadhari" style={link}>Tahadhari za Utapeli wa Uwekezaji</a>
       <a href="/soko" style={link}>Soko - Uchambuzi wa Matukio</a>
+      <a href="/kuhusu" style={link}>Kuhusu Sisi</a>
     </main>
   );
 }
