@@ -1,12 +1,19 @@
 [
   {
-    "id": "timely-tbl-price-1",
-    "title": "Kwa nini bei ya TBL imepanda?",
-    "type": "analysis",
+    "id": "uchambuzi-nmb-split-1",
+    "title": "Kwa nini NMB ilifanya Stock Split?",
+    "type": "uchambuzi",
     "category": "timely",
-    "excerpt": "Tukio la hivi karibuni linaloathiri bei ya hisa ya Tanzania Breweries.",
-    "body": "Hiki ni kielelezo cha jinsi habari ya wakati (timely) itakavyoonekana. Bei ya hisa inapopanda ghafla, uliza maswali haya: Je kuna tangazo jipya la faida au gawio kutoka kampuni? Je kuna habari za sekta nzima zinazoathiri makampuni yote? Au ni mabadiliko ya kawaida ya mahitaji na upatikanaji (kama tulivyojifunza Somo 8)? Kabla ya kuamua chochote, thibitisha taarifa kupitia chanzo rasmi (DSE, tovuti ya kampuni, au broker wako) kabla ya kutenda.",
-    "link": "/kampuni/tbl",
+    "excerpt": "Uchambuzi wa tukio la mgawanyo wa hisa la NMB Bank, Julai 2026.",
+    "sections": {
+      "tukio": "NMB Bank ilifanya mgawanyo wa hisa (stock split) wa uwiano wa 1:10, ulioidhinishwa na CMSA Julai 24, 2026, ukatangazwa rasmi Julai 27, 2026.",
+      "ushahidi": "Tangazo rasmi kutoka NMB na CMSA, lililochapishwa Julai 2026.",
+      "sababu": "Kampuni ilieleza lengo la kuboresha upatikanaji na ukwasi wa hisa zake kwa wawekezaji wengi zaidi.",
+      "data": ["Hisa zilizoidhinishwa: kutoka milioni 625 hadi bilioni 6.25", "Kila hisa 1 ya zamani ikawa hisa 10 mpya", "Bei ya kila hisa mpya: sehemu ya kumi ya bei ya zamani"],
+      "maana": "Ukiwa na hisa za NMB kabla ya split, sasa una hisa mara 10 zaidi, lakini kila moja ina bei ya sehemu ya kumi, thamani yako jumla haijabadilika. Kwa mwekezaji mpya, sasa inahitaji fedha kidogo zaidi kuanza kununua.",
+      "masasisho": []
+    },
+    "link": "/kampuni/nmb",
     "publishDate": "2026-09-03",
     "frequency": "once",
     "status": "published"
