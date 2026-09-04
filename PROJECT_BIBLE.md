@@ -685,3 +685,18 @@ RULE: Adding new content = manually edit content.json and git push, same workflo
 RULE: This engine must never be touched in a way that risks breaking Academy (16 lessons) or Company Analysis (5 profiles) - it is strictly additive, reading from its own separate content.json.
 
 Tested at /soko with 3 sample items (1 timely, 2 planned) before wider rollout. Home page integration ("Kinachoendelea Sasa" / "Mwezi Huu" sections) is a separate future step, not yet done.
+
+---
+
+## 27. MARKET INTELLIGENCE AUTOMATION ROADMAP (Future Vision)
+
+Long-term vision for Market Analysis content, in 6 levels of increasing automation:
+
+Level 1 (CURRENT): Founder and Chief Architect manually notice events, gather evidence, write analysis, publish. No infrastructure beyond what already exists.
+Level 2: Automated data collection from official sources (requires backend + scheduled jobs)
+Level 3: Automated event detection (requires above + logic/rules)
+Level 4: AI-drafted analysis with attached sources (requires AI API integration)
+Level 5: Verification workflow before publishing (requires admin/login system)
+Level 6: Full Content Engine + Market Intelligence integration
+
+RULE: Do not attempt Level 2+ until Level 1 has been sustained manually for a meaningful period and clearly proves the content format has value. Levels 2-6 require a database, a persistent backend, and AI API cost management, none of which exist in the current architecture. This is Phase 5+ scope, not current-phase work.
