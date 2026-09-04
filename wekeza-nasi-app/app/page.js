@@ -1,3 +1,5 @@
+import { getTimelyContent, getPlannedContent } from "../lib/content-engine";
+
 export default function Home() {
   const link = { display: "flex", alignItems: "center", gap: "0.75rem", padding: "1rem", background: "#f7f7f7", borderRadius: "10px", marginBottom: "1rem", color: "#1a1a1a", textDecoration: "none", fontWeight: "bold" };
   const lessons = [
@@ -18,15 +20,44 @@ export default function Home() {
     { href: "/somo15", title: "Somo 15: Soko la Tanzania linafanyaje kazi?", icon: "mti-mkubwa" },
     { href: "/somo16", title: "Somo 16: Kuanza kuchambua kampuni", icon: "taji" },
   ];
+
+  const timely = getTimelyContent();
+  const planned = getPlannedContent();
+
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
       <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.5rem" }}>
         <img src="/icons/chipukizi.svg" alt="" width="36" height="36" />
         <h1 style={{ margin: 0 }}>WEKEZA NASI</h1>
       </div>
-      <h2>Academy</h2>
-      <p>Chagua somo la kuanza:</p>
+      <p>Jenga maarifa. Jenga uwezo.</p>
 
+      {timely.length > 0 && (
+        <div className="risk-box">
+          <h3>Kinachoendelea Sasa</h3>
+          {timely.map((item) => (
+            <div key={item.id} style={{ marginBottom: "0.5rem" }}>
+              <p style={{ fontWeight: "bold", margin: 0 }}>{item.title}</p>
+              <a href={`/habari/${item.id}`}>Soma uchambuzi &rarr;</a>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {planned.length > 0 && (
+        <div className="lesson-box">
+          <h3>Mwezi Huu</h3>
+          {planned.map((item) => (
+            <div key={item.id} style={{ marginBottom: "0.5rem" }}>
+              <p style={{ fontWeight: "bold", margin: 0 }}>{item.title}</p>
+              <a href={item.link}>Fungua &rarr;</a>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <h2 style={{ marginTop: "2rem" }}>Academy</h2>
+      <p>Chagua somo la kuanza:</p>
       {lessons.map((l) => (
         <a key={l.href} href={l.href} style={link}>
           <img src={`/icons/${l.icon}.svg`} alt="" width="28" height="28" />
@@ -34,16 +65,17 @@ export default function Home() {
         </a>
       ))}
 
-      <h2 style={{ marginTop: "2rem" }}>Rasilimali</h2>
-      <a href="/madalali" style={link}>Jinsi ya Kuchagua Broker</a>
-      <a href="/tahadhari" style={link}>Tahadhari za Utapeli wa Uwekezaji</a>
-
       <h2 style={{ marginTop: "2rem" }}>Uchambuzi wa Kampuni</h2>
       <a href="/kampuni/crdb" style={link}>CRDB Bank Plc</a>
       <a href="/kampuni/nmb" style={link}>NMB Bank Plc</a>
       <a href="/kampuni/tbl" style={link}>Tanzania Breweries Plc (TBL)</a>
       <a href="/kampuni/vodacom" style={link}>Vodacom Tanzania Plc</a>
       <a href="/kampuni/tcc" style={link}>Tanzania Cigarette Company (TCC)</a>
+
+      <h2 style={{ marginTop: "2rem" }}>Rasilimali</h2>
+      <a href="/madalali" style={link}>Jinsi ya Kuchagua Broker</a>
+      <a href="/tahadhari" style={link}>Tahadhari za Utapeli wa Uwekezaji</a>
+      <a href="/soko" style={link}>Soko - Uchambuzi wa Matukio</a>
     </main>
   );
 }
