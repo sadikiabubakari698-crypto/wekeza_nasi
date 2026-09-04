@@ -6,33 +6,38 @@ export default function Kuhusu() {
 
       <div className="lesson-box">
         <h3>Kwa Nini Tulianzishwa</h3>
+        <p><strong>1. Kukosekana kwa jukwaa moja la uwekezaji</strong></p>
         <p>
-          Maarifa muhimu ya kifedha na uwekezaji yamegawanyika sehemu nyingi,
-          mitandao ya kijamii, video, makala, watu mbalimbali. Mtu anayeanza
-          kutoka sifuri analazimika kutafuta huku na kule, mara nyingi bila
-          kujua aanzie wapi au taarifa ipi aiamini.
+          Taarifa, elimu, uzoefu, mawazo, na fursa za uwekezaji zimetawanyika
+          sehemu mbalimbali, mitandao ya kijamii, video, watu binafsi,
+          tovuti. WEKEZA NASI inalenga kuwa eneo moja ambalo Watanzania
+          wanaweza kukutana, kujifunza, kushirikishana, na kukua katika
+          uwekezaji.
+        </p>
+        <p><strong>2. Kukosekana kwa sehemu ya kujifunza kwa mpangilio</strong></p>
+        <p>
+          Mtu anayeanza kutoka sifuri awe na njia ya kueleweka ya kujifunza,
+          hapa ndipo Academy inaingia.
+        </p>
+        <p><strong>3. Kukosekana kwa uelewa wa yanayotokea sokoni</strong></p>
+        <p>
+          Si kumwambia mtu tu &quot;nunua&quot; au &quot;uza,&quot; bali
+          kumsaidia kuelewa nini kimetokea, kwa nini, ushahidi ni upi, na
+          jambo hilo lina maana gani, hapa ndipo Uchambuzi wa Soko na AI
+          zinaingia.
+        </p>
+        <p><strong>4. Kukosekana kwa jamii ya wawekezaji</strong></p>
+        <p>
+          Uwekezaji haupaswi kuwa safari ya mtu mmoja. Community inaruhusu
+          mtu kushirikisha wazo, kusoma uzoefu wa mwingine, kupata hamasa,
+          kujifunza kutoka kwa aliye mbele yake, na kujenga fursa pamoja.
         </p>
         <p>
-          WEKEZA NASI ilianzishwa kumsaidia Mtanzania yeyote, mwanafunzi,
-          mwalimu, mfanyakazi, au mtu mwingine yeyote, kuanzia sifuri,
-          kujenga maarifa na uwezo hatua kwa hatua, mpaka kufikia uhuru wa
-          kifedha.
+          <strong>WEKEZA NASI ilianzishwa kwa sababu kulikuwa na pengo la
+          jukwaa moja linalowaunganisha Watanzania katika safari nzima ya
+          uwekezaji, kutoka kupata elimu, kuelewa kinachoendelea sokoni,
+          kupata msaada wa AI, hadi kushirikiana na jamii ya wawekezaji.</strong>
         </p>
-      </div>
-
-      <div className="lesson-box">
-        <h3>Tunachotaka Kufanya</h3>
-        <p>
-          Hatutaki kukwambia tu &quot;nunua hisa hii.&quot; Tunataka
-          kukujengea uwezo wa kuelewa, kufikiri, kuuliza, kuchambua, na
-          kufanya maamuzi yako mwenyewe.
-        </p>
-        <p>Ndiyo maana tumejenga nguzo tatu:</p>
-        <ol>
-          <li>Academy, maarifa yaliyopangwa kutoka msingi</li>
-          <li>AI, msaada wa kujifunza na kuelewa</li>
-          <li>Community, moyo mkubwa zaidi, watu kushirikishana mawazo, uzoefu, fursa, changamoto, na kutiana moyo pamoja</li>
-        </ol>
       </div>
 
       <div className="lesson-box">

@@ -700,3 +700,17 @@ Level 5: Verification workflow before publishing (requires admin/login system)
 Level 6: Full Content Engine + Market Intelligence integration
 
 RULE: Do not attempt Level 2+ until Level 1 has been sustained manually for a meaningful period and clearly proves the content format has value. Levels 2-6 require a database, a persistent backend, and AI API cost management, none of which exist in the current architecture. This is Phase 5+ scope, not current-phase work.
+
+---
+
+## 28. IDENTITY CORRECTION - FOUNDING REASON
+
+Corrects Section 1. WEKEZA NASI's founding reason is broader than Academy. It is: "a gap in having ONE platform uniting Tanzanians through the whole investment journey - from education, to understanding the market, to AI help, to a community of investors."
+
+Four founding gaps (in order):
+1. No single investment platform (info/education/experience/opportunities scattered across social media, videos, individuals, sites)
+2. No structured place to learn investing from zero (Academy addresses this)
+3. No place to understand market events (Market Analysis / AI addresses this)
+4. No community of investors growing together (Community addresses this)
+
+RULE: Academy is ONE PILLAR of WEKEZA NASI, not the reason WEKEZA NASI exists. Community is not a later add-on feature - it is one of the founding gaps WEKEZA NASI was built to close. This corrects any earlier documentation that framed Academy as primary.
