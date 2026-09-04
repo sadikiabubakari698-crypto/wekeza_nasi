@@ -11,7 +11,7 @@ export default function Soko() {
 
       {timely.length > 0 && (
         <div className="risk-box">
-          <h3>🚨 Kinachoendelea Sasa</h3>
+          <h3>Kinachoendelea Sasa</h3>
           {timely.map((item) => (
             <div key={item.id} style={{ marginBottom: "1rem" }}>
               <p style={{ fontWeight: "bold", margin: 0 }}>{item.title}</p>
@@ -24,7 +24,7 @@ export default function Soko() {
 
       {planned.length > 0 && (
         <div className="lesson-box">
-          <h3>⭐ Mwezi Huu</h3>
+          <h3>Mwezi Huu</h3>
           {planned.map((item) => (
             <div key={item.id} style={{ marginBottom: "1rem" }}>
               <p style={{ fontWeight: "bold", margin: 0 }}>{item.title}</p>
