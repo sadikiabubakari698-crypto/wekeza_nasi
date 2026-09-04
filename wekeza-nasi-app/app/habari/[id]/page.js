@@ -18,38 +18,38 @@ export default async function Habari({ params }) {
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
       <h1>WEKEZA NASI</h1>
-      <h2>&#128269; Uchambuzi wa Soko</h2>
+      <h2>Uchambuzi wa Soko</h2>
       <h3>{item.title}</h3>
 
       <div className="lesson-box">
-        <h3>&#128308; 1. Tukio</h3>
+        <h3>1. Tukio</h3>
         <p>{s.tukio}</p>
       </div>
 
       <div className="lesson-box">
-        <h3>&#128196; 2. Ushahidi</h3>
+        <h3>2. Ushahidi</h3>
         <p>{s.ushahidi}</p>
       </div>
 
       <div className="lesson-box">
-        <h3>&#10067; 3. Sababu</h3>
+        <h3>3. Sababu</h3>
         <p>{s.sababu}</p>
       </div>
 
       <div className="lesson-box">
-        <h3>&#128202; 4. Data</h3>
+        <h3>4. Data</h3>
         <ul>
           {s.data.map((d, i) => <li key={i}>{d}</li>)}
         </ul>
       </div>
 
       <div className="lesson-box">
-        <h3>&#129504; 5. Maana</h3>
+        <h3>5. Maana</h3>
         <p>{s.maana}</p>
       </div>
 
       <div className="lesson-box">
-        <h3>&#128337; 6. Masasisho</h3>
+        <h3>6. Masasisho</h3>
         {s.masasisho && s.masasisho.length > 0 ? (
           <ul>
             {s.masasisho.map((m, i) => <li key={i}><strong>{m.tarehe}:</strong> {m.taarifa}</li>)}
@@ -60,7 +60,7 @@ export default async function Habari({ params }) {
       </div>
 
       <div className="risk-box">
-        <h3>&#127793; Funzo la WEKEZA NASI</h3>
+        <h3>Funzo la WEKEZA NASI</h3>
         <p>
           Usichukulie tukio la soko kama sababu ya kununua au kuuza. WEKEZA
           NASI inakuletea tukio, ushahidi, sababu, na data, wewe unatengeneza
