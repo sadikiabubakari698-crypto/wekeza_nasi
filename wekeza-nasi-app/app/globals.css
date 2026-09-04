@@ -73,3 +73,23 @@ main ul {
   list-style: disc;
   padding-left: 1.5rem;
 }
+
+.anza-hapa {
+  padding: 1.5rem;
+  background: #2f8f4e;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.anza-hapa a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #2f8f4e;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}

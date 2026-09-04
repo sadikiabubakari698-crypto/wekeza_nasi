@@ -32,6 +32,12 @@ export default function Home() {
       </div>
       <p>Jenga maarifa. Jenga uwezo.</p>
 
+      <div className="anza-hapa">
+        <h2 style={{ marginTop: 0 }}>Mpya WEKEZA NASI?</h2>
+        <p>Anza safari yako ya uwekezaji hapa, bure, dakika 5 tu.</p>
+        <a href="/somo1">Anza na Somo la 1: Hisa ni nini? <p>Jenga maarifa. Jenga uwezo.</p>rarr;</a>
+      </div>
+
       {timely.length > 0 && (
         <div className="risk-box">
           <h3>Kinachoendelea Sasa</h3>
