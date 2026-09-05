@@ -35,7 +35,7 @@ export default function Home() {
       <div className="anza-hapa">
         <h2 style={{ marginTop: 0 }}>Mpya WEKEZA NASI?</h2>
         <p>Tuanze safari yetu hapa, hatua kwa hatua.</p>
-        <a href="/somo1">Anza na Somo la 1: Hisa ni nini? <p>Jenga maarifa. Jenga uwezo.</p>rarr;</a>
+        <a href="/somo1">Anza na Somo la 1: Hisa ni nini? &rarr;</a>
       </div>
 
       {timely.length > 0 && (
@@ -61,6 +61,23 @@ export default function Home() {
           ))}
         </div>
       )}
+
+      <div className="lesson-box" style={{ fontStyle: "italic" }}>
+        <h3>Fikiria Miaka Mitano Kutoka Sasa</h3>
+        <p>
+          Leo, huenda hujui hisa ni nini, au unaogopa kuuliza kwa hofu ya
+          kuonekana &quot;hujui.&quot; Hilo ni sawa kabisa, kila mwekezaji
+          mkubwa aliwahi kuwa hapo ulipo.
+        </p>
+        <p>
+          Fikiria: baada ya kujifunza hatua kwa hatua, kuelewa jinsi soko
+          linavyofanya kazi, na kuanza kuwekeza kidogo kidogo kwa uelewa,
+          si kwa bahati, unajikuta na uwezo wa kufanya maamuzi ya kifedha
+          kwa kujiamini. Si kwa sababu ulikuwa na fedha nyingi za kuanzia,
+          bali kwa sababu ulianza.
+        </p>
+        <p><strong>Safari haianzi na fedha nyingi. Inaanza na hatua moja.</strong></p>
+      </div>
 
       <h2 style={{ marginTop: "2rem" }}>Academy</h2>
       <p>Chagua somo la kuanza:</p>
