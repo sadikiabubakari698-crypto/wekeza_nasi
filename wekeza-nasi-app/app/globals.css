@@ -93,3 +93,32 @@ main ul {
   font-weight: bold;
   text-decoration: none;
 }
+
+.area-card {
+  display: block;
+  padding: 1.25rem;
+  background: #eef7ee;
+  border: 2px solid #2f8f4e;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.area-card h3 {
+  margin: 0 0 0.25rem 0;
+  color: #1b5e30;
+}
+
+.area-card-soon {
+  padding: 1.25rem;
+  background: #f0f0f0;
+  border: 2px dashed #999;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.area-card-soon h3 {
+  margin: 0 0 0.25rem 0;
+}
