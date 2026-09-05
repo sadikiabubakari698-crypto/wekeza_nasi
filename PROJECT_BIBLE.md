@@ -714,3 +714,19 @@ Four founding gaps (in order):
 4. No community of investors growing together (Community addresses this)
 
 RULE: Academy is ONE PILLAR of WEKEZA NASI, not the reason WEKEZA NASI exists. Community is not a later add-on feature - it is one of the founding gaps WEKEZA NASI was built to close. This corrects any earlier documentation that framed Academy as primary.
+
+---
+
+## 29. HOME PAGE & NAVIGATION REDESIGN VISION
+
+WEKEZA NASI is a learning journey, not a content dump. Home page must become a MAP with clear hierarchy:
+
+LEVEL 1: Anza Hapa (single dominant entry point)
+LEVEL 2: Main areas (Academy, Market Analysis, Company Analysis, AI, Community) - each an entry-point card
+LEVEL 3: Content within each area (lessons, companies, articles)
+
+RULE: AI and Community sections must be labeled "Inakuja Hivi Karibuni" (Coming Soon) until actually built - never link a card to something that does not exist yet.
+
+RULE: Never break or delete existing Academy lessons, Company Analysis pages, or navigation links while doing this redesign. Add new hub pages (/academy, /kampuni) alongside existing content; only remove the long flat lists from Home after the new card-based navigation is validated as working well.
+
+Principle: Reduce cognitive load. A new visitor should understand within seconds: what WEKEZA NASI is, where to start, and where the main areas are - without scrolling through everything at once.
