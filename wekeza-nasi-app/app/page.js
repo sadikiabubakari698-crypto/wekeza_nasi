@@ -38,6 +38,28 @@ export default function Home() {
         <a href="/somo1">Anza na Somo la 1: Hisa ni nini? &rarr;</a>
       </div>
 
+      <h2 style={{ marginTop: "2rem" }}>Safari Yangu</h2>
+      <a href="/academy" className="area-card">
+        <h3>Academy</h3>
+        <p style={{ margin: 0 }}>Jifunze uwekezaji hatua kwa hatua.</p>
+      </a>
+      <a href="/soko" className="area-card">
+        <h3>Uchambuzi wa Soko</h3>
+        <p style={{ margin: 0 }}>Nini kimetokea? Kwa nini? Ushahidi unasemaje?</p>
+      </a>
+      <a href="/kampuni" className="area-card">
+        <h3>Uchambuzi wa Kampuni</h3>
+        <p style={{ margin: 0 }}>Jifunze kampuni zinavyofanya kazi na kutengeneza fedha.</p>
+      </a>
+      <div className="area-card-soon">
+        <h3>AI</h3>
+        <p style={{ margin: 0 }}>Inakuja hivi karibuni.</p>
+      </div>
+      <div className="area-card-soon">
+        <h3>Community</h3>
+        <p style={{ margin: 0 }}>Inakuja hivi karibuni.</p>
+      </div>
+
       {timely.length > 0 && (
         <div className="risk-box">
           <h3>Kinachoendelea Sasa</h3>
@@ -79,26 +101,9 @@ export default function Home() {
         <p><strong>Safari haianzi na fedha nyingi. Inaanza na hatua moja.</strong></p>
       </div>
 
-      <h2 style={{ marginTop: "2rem" }}>Academy</h2>
-      <p>Chagua somo la kuanza:</p>
-      {lessons.map((l) => (
-        <a key={l.href} href={l.href} style={link}>
-          <img src={`/icons/${l.icon}.svg`} alt="" width="28" height="28" />
-          <span>{l.title}</span>
-        </a>
-      ))}
-
-      <h2 style={{ marginTop: "2rem" }}>Uchambuzi wa Kampuni</h2>
-      <a href="/kampuni/crdb" style={link}>CRDB Bank Plc</a>
-      <a href="/kampuni/nmb" style={link}>NMB Bank Plc</a>
-      <a href="/kampuni/tbl" style={link}>Tanzania Breweries Plc (TBL)</a>
-      <a href="/kampuni/vodacom" style={link}>Vodacom Tanzania Plc</a>
-      <a href="/kampuni/tcc" style={link}>Tanzania Cigarette Company (TCC)</a>
-
       <h2 style={{ marginTop: "2rem" }}>Rasilimali</h2>
       <a href="/madalali" style={link}>Jinsi ya Kuchagua Broker</a>
       <a href="/tahadhari" style={link}>Tahadhari za Utapeli wa Uwekezaji</a>
-      <a href="/soko" style={link}>Soko - Uchambuzi wa Matukio</a>
       <a href="/kuhusu" style={link}>Kuhusu Sisi</a>
     </main>
   );
