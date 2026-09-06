@@ -10,7 +10,7 @@
       "ushahidi": "Tangazo rasmi kutoka NMB na CMSA, lililochapishwa Julai 2026.",
       "sababu": "Kampuni ilieleza lengo la kuboresha upatikanaji na ukwasi wa hisa zake kwa wawekezaji wengi zaidi.",
       "data": ["Hisa zilizoidhinishwa: kutoka milioni 625 hadi bilioni 6.25", "Kila hisa 1 ya zamani ikawa hisa 10 mpya", "Bei ya kila hisa mpya: sehemu ya kumi ya bei ya zamani"],
-      "maana": "Ukiwa na hisa za NMB kabla ya split, sasa una hisa mara 10 zaidi, lakini kila moja ina bei ya sehemu ya kumi, thamani yako jumla haijabadilika. Kwa mwekezaji mpya, sasa inahitaji fedha kidogo zaidi kuanza kununua.",
+      "maana": "Ukiwa na hisa za NMB kabla ya split, sasa una hisa mara 10 zaidi, lakini kila moja ina bei ya sehemu ya kumi, thamani yako jumla haijabadilika.",
       "masasisho": []
     },
     "link": "/kampuni/nmb",
@@ -19,7 +19,7 @@
     "status": "published"
   },
   {
-    "id": "planned-academy-somo1",
+    "id": "planned-2026-09-academy",
     "title": "Somo: Hisa ni nini?",
     "type": "academy",
     "category": "planned",
@@ -30,13 +30,123 @@
     "status": "published"
   },
   {
-    "id": "planned-company-crdb",
+    "id": "planned-2026-09-company",
     "title": "Uchambuzi: CRDB Bank",
     "type": "company",
     "category": "planned",
     "excerpt": "Historia, biashara, na hatari za benki kubwa zaidi Tanzania.",
     "link": "/kampuni/crdb",
     "publishDate": "2026-09-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2026-10-academy",
+    "title": "Somo: Soko la hisa ni nini?",
+    "type": "academy",
+    "category": "planned",
+    "excerpt": "Elewa mahali ambapo hisa zinauzwa na kununuliwa.",
+    "link": "/somo4",
+    "publishDate": "2026-10-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2026-10-company",
+    "title": "Uchambuzi: NMB Bank",
+    "type": "company",
+    "category": "planned",
+    "excerpt": "Benki yenye faida kubwa zaidi Tanzania.",
+    "link": "/kampuni/nmb",
+    "publishDate": "2026-10-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2026-11-academy",
+    "title": "Somo: DSE ni nini?",
+    "type": "academy",
+    "category": "planned",
+    "excerpt": "Historia na muundo wa Soko la Hisa la Dar es Salaam.",
+    "link": "/somo6",
+    "publishDate": "2026-11-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2026-11-company",
+    "title": "Uchambuzi: Tanzania Breweries (TBL)",
+    "type": "company",
+    "category": "planned",
+    "excerpt": "Kampuni ya zamani zaidi ya viwanda Tanzania.",
+    "link": "/kampuni/tbl",
+    "publishDate": "2026-11-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2026-12-academy",
+    "title": "Somo: Hatari ya uwekezaji ni nini?",
+    "type": "academy",
+    "category": "planned",
+    "excerpt": "Elewa aina za hatari kabla ya kuwekeza.",
+    "link": "/somo10",
+    "publishDate": "2026-12-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2026-12-company",
+    "title": "Uchambuzi: Vodacom Tanzania",
+    "type": "company",
+    "category": "planned",
+    "excerpt": "Kampuni kubwa zaidi ya mawasiliano Tanzania.",
+    "link": "/kampuni/vodacom",
+    "publishDate": "2026-12-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2027-01-academy",
+    "title": "Somo: Diversification",
+    "type": "academy",
+    "category": "planned",
+    "excerpt": "Kwa nini usiweke fedha zote kwenye kampuni moja.",
+    "link": "/somo11",
+    "publishDate": "2027-01-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2027-01-company",
+    "title": "Uchambuzi: Tanzania Cigarette Company (TCC)",
+    "type": "company",
+    "category": "planned",
+    "excerpt": "Kampuni ya zamani zaidi iliyoorodheshwa DSE.",
+    "link": "/kampuni/tcc",
+    "publishDate": "2027-01-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2027-02-academy",
+    "title": "Somo: Kuanza kuchambua kampuni",
+    "type": "academy",
+    "category": "planned",
+    "excerpt": "Vitu vya msingi vya kuangalia kabla ya kuwekeza.",
+    "link": "/somo16",
+    "publishDate": "2027-02-01",
+    "frequency": "monthly",
+    "status": "published"
+  },
+  {
+    "id": "planned-2027-02-company",
+    "title": "Uchambuzi: CRDB Bank (mzunguko mpya)",
+    "type": "company",
+    "category": "planned",
+    "excerpt": "Rudia uchambuzi wa benki kubwa zaidi Tanzania.",
+    "link": "/kampuni/crdb",
+    "publishDate": "2027-02-01",
     "frequency": "monthly",
     "status": "published"
   }
