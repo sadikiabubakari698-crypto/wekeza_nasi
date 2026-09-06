@@ -730,3 +730,18 @@ RULE: AI and Community sections must be labeled "Inakuja Hivi Karibuni" (Coming 
 RULE: Never break or delete existing Academy lessons, Company Analysis pages, or navigation links while doing this redesign. Add new hub pages (/academy, /kampuni) alongside existing content; only remove the long flat lists from Home after the new card-based navigation is validated as working well.
 
 Principle: Reduce cognitive load. A new visitor should understand within seconds: what WEKEZA NASI is, where to start, and where the main areas are - without scrolling through everything at once.
+
+---
+
+## 30. URGENT: BRAND/NAME LEGAL CHECK REQUIRED
+
+Before further investment in "WEKEZA NASI" branding (logo production, marketing, formal company registration), Founder must complete:
+
+1. BRELA business name search: ors.brela.go.tz/orsreg/searchbusinesspublic (free, no login)
+2. BRELA trademark (Mark Registration) search via ORS account (requires NIDA to register account)
+3. .tz domain availability check via TCRA/registrar for wekezanasi.co.tz and wekeza-nasi.co.tz
+4. Consult a Tanzanian IP/trademark lawyer before formal registration
+
+KNOWN RISK: "Wekeza Holdings, Inc." (US, Techstars-backed) operates a "Wekeza" branded investing app with an existing "Wekeza Tanzania" page (wekeza.com/wekeza-tanzania) and "Wekeza Kenya" page. This is not identical to "Wekeza Nasi" but the shared "Wekeza" root creates real trademark confusion risk in Tanzania.
+
+STATUS: Unresolved as of Sept 2026. Do not proceed with formal BRELA company/trademark registration under "WEKEZA NASI" until this is cleared. This does not block current app development or content work, only formal legal/brand registration steps.
