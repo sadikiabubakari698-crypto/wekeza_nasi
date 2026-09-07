@@ -21,9 +21,9 @@ export default function Somo12() {
         <p>Kabla ya kupokea gawio, kuna tarehe tano muhimu za kufahamu:</p>
         <ol>
           <li><strong>Tangazo</strong> &mdash; kampuni yatangaza itatoa gawio na kiasi</li>
-          <li><strong>Cum-Dividend</strong> &mdash; siku ya mwisho ya kununua hisa ili bado ustahili gawio hilo</li>
-          <li><strong>Ex-Dividend</strong> &mdash; ukinunua kuanzia siku hii, hutapata gawio hilo</li>
-          <li><strong>Record Date</strong> &mdash; kampuni yafunga orodha rasmi ya watu watakaolipwa</li>
+          <li><strong>Cum-Dividend</strong> (siku ya mwisho ya kununua)</li>
+          <li><strong>Ex-Dividend</strong> (baada ya hapa, hupati gawio hilo)</li>
+          <li><strong>Record Date</strong> (orodha ya wanaostahili inafungwa)</li>
           <li><strong>Tarehe ya Malipo</strong> &mdash; pesa halisi zaingia akaunti yako au hundi</li>
         </ol>
         <p><strong>Kanuni rahisi:</strong> ukinunua KABLA ya Ex-Dividend, unapata; ukinunua SIKU ya Ex-Dividend au baadaye, hupati.</p>

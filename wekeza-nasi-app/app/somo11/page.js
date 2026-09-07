@@ -2,7 +2,7 @@ export default function Somo11() {
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
       <h1>WEKEZA NASI</h1>
-      <h2>Somo la 11: Diversification</h2>
+      <h2>Somo la 11: Diversification (Kugawanya Uwekezaji)</h2>
 
       <div className="lesson-box">
         <h3>01. Lengo la Somo</h3>
