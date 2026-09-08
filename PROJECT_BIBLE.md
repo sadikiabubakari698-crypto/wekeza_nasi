@@ -745,3 +745,21 @@ Before further investment in "WEKEZA NASI" branding (logo production, marketing,
 KNOWN RISK: "Wekeza Holdings, Inc." (US, Techstars-backed) operates a "Wekeza" branded investing app with an existing "Wekeza Tanzania" page (wekeza.com/wekeza-tanzania) and "Wekeza Kenya" page. This is not identical to "Wekeza Nasi" but the shared "Wekeza" root creates real trademark confusion risk in Tanzania.
 
 STATUS: Unresolved as of Sept 2026. Do not proceed with formal BRELA company/trademark registration under "WEKEZA NASI" until this is cleared. This does not block current app development or content work, only formal legal/brand registration steps.
+
+---
+
+## 31. ADVANCED MARKET ANALYSIS FRAMEWORK (Future Vision)
+
+Detailed future framework for deep market analysis, requiring real DSE daily trading data (currently NOT available, Level 2+ of Section 27 Automation Roadmap):
+
+1. Price movement analysis (open/close/high/low over single day, then multi-day trend)
+2. Liquidity analysis (volume, deals, turnover)
+3. Best Bid/Best Offer and spread (requires live order-book data source, not currently available)
+4. Outstanding Bids vs Offers interpretation (with explicit caution: quantity alone does not predict price direction)
+5. Combined volume+deals+price comparison across dates
+6. Connection back to Company Analysis fundamentals (revenue, profit, cash flow, debt, dividends)
+7. Market Price vs Intrinsic Value and Margin of Safety framework
+
+RULE: Never present "Bei iko chini, hivyo NUNUA" style conclusions. Always frame as "bei iko chini ya makadirio yetu, sasa tunahitaji kuangalia assumptions na hatari kabla ya hitimisho" - protects against being an investment-advice platform.
+
+RULE: This entire framework requires a real DSE data source (API or reliable scraping) before any of it can be built with real numbers. Do not fabricate or manually approximate daily trading data to fill this template. This is explicitly Level 2+ scope per Section 27, not current-phase work.
