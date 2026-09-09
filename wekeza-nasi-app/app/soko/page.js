@@ -1,41 +1,34 @@
-import { getTimelyContent, getPlannedContent } from "../../lib/content-engine";
+import { getTimelyContent } from "../../lib/content-engine";
 
 export default function Soko() {
   const timely = getTimelyContent();
-  const planned = getPlannedContent();
 
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
       <h1>WEKEZA NASI</h1>
-      <h2>Soko</h2>
+      <h2>Uchambuzi wa Soko</h2>
+      <p>
+        Hapa hatufundishi misingi (hiyo ipo Academy). Hapa tunachukua
+        matukio halisi ya soko, tunayachambua kwa ushahidi, na kukusaidia
+        kuelewa yanamaanisha nini.
+      </p>
 
-      {timely.length > 0 && (
+      {timely.length > 0 ? (
         <div className="risk-box">
           <h3>Kinachoendelea Sasa</h3>
           {timely.map((item) => (
             <div key={item.id} style={{ marginBottom: "1rem" }}>
               <p style={{ fontWeight: "bold", margin: 0 }}>{item.title}</p>
               <p style={{ margin: "0.25rem 0" }}>{item.excerpt}</p>
-              <a href={`/habari/${item.id}`}>Soma zaidi &rarr;</a>
+              <a href={`/habari/${item.id}`}>Soma uchambuzi &rarr;</a>
             </div>
           ))}
         </div>
+      ) : (
+        <p><em>Hakuna tukio la kuchambuliwa kwa sasa. Rudi tena hivi karibuni.</em></p>
       )}
 
-      {planned.length > 0 && (
-        <div className="lesson-box">
-          <h3>Mwezi Huu</h3>
-          {planned.map((item) => (
-            <div key={item.id} style={{ marginBottom: "1rem" }}>
-              <p style={{ fontWeight: "bold", margin: 0 }}>{item.title}</p>
-              <p style={{ margin: "0.25rem 0" }}>{item.excerpt}</p>
-              <a href={item.link}>Fungua &rarr;</a>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <p><a href="/">&larr; Rudi Academy</a></p>
+      <p><a href="/">&larr; Rudi Nyumbani</a></p>
     </main>
   );
 }
