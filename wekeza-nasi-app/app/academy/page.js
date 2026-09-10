@@ -18,6 +18,7 @@ export default function Academy() {
     { href: "/somo15", title: "Somo 15: Soko la Tanzania linafanyaje kazi?", icon: "mti-mkubwa" },
     { href: "/somo16", title: "Somo 16: Kuanza kuchambua kampuni", icon: "taji" },
     { href: "/somo17", title: "Somo 17: Jinsi ya Kusoma Data za DSE", icon: "mti-mkubwa" },
+    { href: "/somo18", title: "Somo 18: Jinsi ya Kusoma Data za DSE — Sehemu ya 2", icon: "mti-mkubwa" },
   ];
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
