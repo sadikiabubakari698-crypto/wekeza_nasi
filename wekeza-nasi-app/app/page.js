@@ -19,8 +19,8 @@ export default function Home() {
     { href: "/somo14", title: "Somo 14: Stock Split ni nini?", icon: "mti-mkubwa" },
     { href: "/somo15", title: "Somo 15: Soko la Tanzania linafanyaje kazi?", icon: "mti-mkubwa" },
     { href: "/somo16", title: "Somo 16: Kuanza kuchambua kampuni", icon: "taji" },
+    { href: "/somo17", title: "Somo 17: Jinsi ya Kusoma Data za DSE" },
   ];
-
   const timely = getTimelyContent();
   const planned = getPlannedContent();
 
