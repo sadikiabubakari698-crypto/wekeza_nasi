@@ -19,6 +19,7 @@ export default function Academy() {
     { href: "/somo17", title: "Somo 17: Jinsi ya Kusoma Data za DSE" },
     { href: "/somo18", title: "Somo 18: Jinsi ya Kusoma Data za DSE — Sehemu ya 2" },
     { href: "/somo19", title: "Somo 19: Kusoma Mwenendo wa Bei kwa Siku Nyingi" },
+    { href: "/somo20", title: "Somo 20: Kusoma Ripoti za Fedha (Financial Statements)" },
   ];
 
   return (
