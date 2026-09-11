@@ -3,47 +3,64 @@ import LessonStepper from "../../components/LessonStepper";
 const steps = [
   {
     title: "01. Lengo la Somo",
-    body: "Katika Somo 17 tumejifunza kusoma data ya siku moja. Katika Somo 18 tumejifunza order book, bid, offer, spread, na liquidity. Sasa tunaingia hatua muhimu zaidi: kusoma MWENENDO wa bei kwa siku nyingi."
+    body: "Katika Somo 17 na 18 tumejifunza kusoma data ya siku moja na order book. Sasa tunaingia hatua muhimu zaidi: kusoma MWENENDO wa bei kwa siku nyingi. Utajifunza jinsi ya kuunganisha data za siku tofauti, kuona mwelekeo, na kujiuliza maswali sahihi kabla ya kufikiri kuhusu uwekezaji."
   },
   {
     title: "02. Swali la Kuanza",
-    body: "Kama mtu anakwambia 'CRDB imepanda jana' — hiyo inatosha kukuambia kampuni inafanya vizuri? Kwa nini hapana? Kwa sababu siku moja haitoshi. Tunaangalia mwenendo wa siku 5, siku 10, mwezi mmoja, miezi 6, mwaka mmoja."
+    body: "Kama mtu anakwambia 'CRDB imepanda jana' — hiyo inatosha kukuambia kampuni inafanya vizuri?\n\nKwa nini hapana?\n\nKwa sababu siku moja haitoshi. Tunaangalia mwenendo wa siku 5, siku 10, mwezi mmoja, miezi 6, mwaka mmoja. Safari hii inaanza kwa kuunganisha data."
   },
   {
-    title: "03. Data ya Siku Moja vs Siku Nyingi",
-    body: "Somo 17 lilikuwa siku moja. Lakini mwekezaji wa kweli anatazama mfululizo. Mfano wa CRDB kwa siku 5: Siku 1 = 2,620; Siku 2 = 2,610; Siku 3 = 2,600; Siku 4 = 2,630; Siku 5 = 2,650. Kwa kuunganisha, tunaona mwelekeo: CRDB ilishuka kwa siku 3 za kwanza, kisha ikaanza kupanda."
+    title: "03. Mchoro Mkuu",
+    body: "Somo 17 lilikuwa siku moja (31 July 2026). Lakini mwekezaji wa kweli anatazama mfululizo.\n\nMfano wa CRDB kwa siku 5:\n\nSiku 1 = 2,620\nSiku 2 = 2,610\nSiku 3 = 2,600\nSiku 4 = 2,630\nSiku 5 = 2,650\n\nKwa kuunganisha, tunaona mwelekeo: CRDB ilishuka kwa siku 3 za kwanza, kisha ikaanza kupanda.\n\nHii ni picha tofauti kabisa na kuangalia siku moja tu."
   },
   {
-    title: "04. Multi-Day Trend",
-    body: "Tunapochora bei kwa siku nyingi, tunaona moja ya mwelekeo mitatu: 1) Upward Trend — bei inapanda. 2) Downward Trend — bei inashuka. 3) Sideways Trend — bei inabaki karibu sawa. Hii haituambii kesho itatokea nini, lakini inatuonyesha mwelekeo wa sasa."
+    title: "04. Maelezo Rahisi",
+    body: "Tunapochora bei kwa siku nyingi, tunaona moja ya mwelekeo mitatu:\n\n1. UPWARD TREND (kupanda) — bei inapanda kwa siku nyingi mfululizo.\n\n2. DOWNWARD TREND (kushuka) — bei inashuka kwa siku nyingi mfululizo.\n\n3. SIDEWAYS TREND (kutulia) — bei inabaki karibu sawa, ikipanda na kushuka kidogo.\n\nHii haituambii kesho itatokea nini, lakini inatuonyesha mwelekeo wa sasa.\n\nKuunganisha Volume na Deals:\n• Volume kubwa + Deals chache = mtu mmoja mkubwa ananunua\n• Volume kubwa + Deals nyingi = watu wengi wananunua\n\nHii ni taswira tofauti kabisa."
   },
   {
-    title: "05. Kuunganisha Volume na Deals",
-    body: "Volume kubwa siku moja inaweza kuwa bahati. Lakini Volume kubwa kwa siku nyingi mfululizo inaonyesha kitu. Volume kubwa + Deals chache = mtu mmoja mkubwa ananunua. Volume kubwa + Deals nyingi = watu wengi wananunua. Hii ni taswira tofauti kabisa."
+    title: "05. Mfano wa Tanzania",
+    body: "Hebu tuangalie CRDB kwa miezi 6:\n\n• Januari: TSh 2,500\n• Machi: TSh 2,550\n• Mei: TSh 2,600\n• Julai: TSh 2,620\n• Septemba: TSh 2,650\n\nMwelekeo: Upward trend ya taratibu kwa miezi 6.\n\nLakini angalia NMB:\n• Januari: TSh 3,200\n• Machi: TSh 3,100\n• Mei: TSh 3,000\n• Julai: TSh 3,150\n• Septemba: TSh 3,250\n\nMwelekeo: Sideways trend — ilishuka kwa miezi 3, kisha ikapanda.\n\nKila kampuni ina mwelekeo wake. Kuzingatia mwelekeo wa siku 5-10 kunasaidia kuona mwelekeo wa wiki 2-4."
   },
   {
-    title: "06. Fair Value vs Market Price",
-    body: "Fair Value ni thamani halisi ya kampuni — inategemea mapato, faida, madeni, na ukuaji. Market Price ni bei inayotrade sokoni sasa. Mara nyingi hazilingani. Bei inaweza kuwa juu (overvalued) au chini (undervalued). Kujua Fair Value kunahitaji uchambuzi wa kampuni."
+    title: "06. Jambo la Muhimu",
+    body: "Tunapoona bei imeshuka kwa siku nyingi, ni rahisi kufikiri 'bei ni nafuu, nunua.' Hii ni MTEGO.\n\nBei inaweza kuwa chini kwa sababu:\n• Kampuni ina matatizo\n• Sekta ina shida\n• Soko lina hofu kwa ujumla\n\nHATUWEZI kusema bei ni 'nafuu' au 'ghali' bila kuangalia:\n• Mapato ya kampuni\n• Faida\n• Madeni\n• Gawio\n• Mwenendo wa sekta\n\nData ya bei peke yake haitoshi. Ndio maana Somo 20 linaingia.\n\nFair Value = thamani halisi ya kampuni (inategemea mapato, faida, madeni, ukuaji).\nMarket Price = bei inayotrade sokoni sasa (inategemea nia ya wanunuzi na wauzaji).\n\nMara nyingi HAZILINGANI."
   },
   {
-    title: "07. Usiite 'Cheap' au 'Ghali' Bila Uchambuzi",
-    body: "Tunapoona bei imeshuka, ni rahisi kufikiri 'bei ni nafuu, nunua.' Hii ni mtego. Bei inaweza kuwa chini kwa sababu: kampuni ina matatizo, sekta ina shida, au soko lina hofu. Hatuwezi kusema bei ni nafuu au ghali bila kuangalia: Mapato, faida, madeni, gawio, na mwenendo wa sekta."
+    title: "07. Jaribu Kufikiri",
+    body: "Angalia data hii:\n\nKampuni A kwa miezi 6:\nJan: 2,500 | Feb: 2,600 | Mar: 2,700 | Apr: 2,800 | May: 2,900 | Jun: 3,000\n\nKampuni B kwa miezi 6:\nJan: 3,000 | Feb: 2,900 | Mar: 2,800 | Apr: 2,700 | May: 2,600 | Jun: 2,500\n\nMaswali:\n\n1. Kampuni A ina mwelekeo gani? Kampuni B ina mwelekeo gani?\n2. Kama ungekuwa na fedha za kuwekeza, ungejiuliza maswali gani kuhusu kila kampuni?\n3. Je, mwelekeo wa bei peke yake unatosha kuamua? Kwa nini?"
   },
   {
-    title: "08. Uchambuzi wa Msingi — Utangulizi",
-    body: "Uchambuzi wa msingi (fundamental analysis) ni kuangalia: 1) Mapato (Revenue). 2) Faida (Profit). 3) Madeni (Debt). 4) Gawio (Dividend). 5) Ukuaji (Growth). Hivi vinaitwa financial statements — ripoti za fedha za kampuni. Zinapatikana kwenye tovuti za kampuni au DSE."
+    title: "08. Kipimo Kidogo",
+    quiz: [
+      {
+        q: "Multi-day trend inamaanisha nini?",
+        options: "(a) Bei ya siku moja   (b) Mwelekeo wa bei kwa siku nyingi   (c) Idadi ya wanahisa",
+        answer: "Jibu: (b) Mwelekeo wa bei kwa siku nyingi."
+      },
+      {
+        q: "Volume kubwa + Deals nyingi inaonyesha nini?",
+        options: "(a) Mtu mmoja ananunua   (b) Watu wengi wananunua   (c) Hakuna anayenunua",
+        answer: "Jibu: (b) Watu wengi wananunua."
+      },
+      {
+        q: "Fair Value ni nini?",
+        options: "(a) Bei ya soko sasa   (b) Thamani halisi ya kampuni   (c) Faida ya mwaka",
+        answer: "Jibu: (b) Thamani halisi ya kampuni inayotegemea mapato, faida, madeni, na ukuaji."
+      },
+      {
+        q: "Kwa nini tusiseme bei ni 'nafuu' au 'ghali' bila uchambuzi?",
+        options: "(a) Kwa sababu bei inabadilika kila siku   (b) Kwa sababu bei peke yake haitoshi — tunahitaji kuangalia mapato, faida, madeni, gawio   (c) Kwa sababu hatuna data",
+        answer: "Jibu: (b) Bei peke yake haitoshi — tunahitaji uchambuzi kamili."
+      }
+    ]
   },
   {
-    title: "09. Kujiuliza Maswali Sahihi",
-    body: "Badala ya kuuliza 'Nunua au usinunue?', jiulize: 1) Bei imekuwa wapi kwa miezi 6? 2) Volume na Deals zinaonyesha nini? 3) Kampuni ilipata faida mwaka jana? 4) Inatoa gawio? 5) Sekta yake inaenda wapi? 6) Kuna habari gani mpya? Maswali haya yanakufanya mchambuzi."
+    title: "09. Muhtasari wa Dakika 1",
+    body: "Siku moja haitoshi. Angalia mwenendo wa siku 5, 10, mwezi, miezi 6.\n\n• Volume kubwa + Deals nyingi = watu wengi\n• Volume kubwa + Deals chache = mtu mmoja mkubwa\n• Fair Value ni thamani halisi; Market Price ni bei ya soko — mara nyingi hazilingani\n• Usiite 'cheap' au 'ghali' bila kuangalia mapato, faida, madeni, gawio\n\nKuuliza maswali sahihi ni hatua ya kwanza ya kuwa mchambuzi."
   },
   {
-    title: "10. Muhtasari wa Dakika 1",
-    body: "Siku moja haitoshi. Angalia mwenendo wa siku 5, 10, mwezi, miezi 6. Volume kubwa + Deals nyingi = watu wengi. Volume kubwa + Deals chache = mtu mmoja mkubwa. Fair Value ni thamani halisi; Market Price ni bei ya soko. Usiite 'cheap' au 'ghali' bila kuangalia mapato, faida, madeni, gawio."
-  },
-  {
-    title: "11. Hatua Inayofuata",
-    body: "SOMO 20: Tutaanza kujifunza kusoma ripoti za fedha (financial statements) kwa lugha rahisi. Tutajifunza Balance Sheet, Income Statement, na Cash Flow. Pia, tayari unaweza kuanza Uchambuzi wa Kampuni — CRDB, NMB, TBL, Vodacom, TCC."
+    title: "10. Hatua Inayofuata",
+    body: "SOMO 20: Kusoma Ripoti za Fedha (Financial Statements).\n\nTutajifunza: Income Statement, Balance Sheet, na Cash Flow — kwa Kiswahili na mifano ya makampuni ya Tanzania.\n\nPia, tayari unaweza kuanza Uchambuzi wa Kampuni — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE Plc."
   }
 ];
 

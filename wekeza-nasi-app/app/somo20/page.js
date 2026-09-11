@@ -7,38 +7,30 @@ const steps = [
   },
   {
     title: "02. Swali la Kuanza",
-    body: "Kampuni inasema 'imepata faida mwaka huu.' Unawezaje kuthibitisha hilo? Unaangalia wapi? Kuna taarifa tatu ambazo kila mwekezaji wa kweli anaziangalia: 1) Kampuni ilipata mapato kiasi gani? 2) Ina mali na madeni kiasi gani? 3) Fedha zinaingia na kutoka vipi?"
+    body: "Kampuni inasema 'imepata faida mwaka huu.' Unawezaje kuthibitisha hilo? Unaangalia wapi?\n\nKuna taarifa tatu ambazo kila mwekezaji wa kweli anaziangalia:\n\n1) Kampuni ilipata mapato kiasi gani?\n2) Ina mali na madeni kiasi gani?\n3) Fedha zinaingia na kutoka vipi?\n\nHizi zote zipo kwenye ripoti za fedha — na tunajifunza kuzisoma leo."
   },
   {
-    title: "03. Ripoti Tatu Muhimu",
-    body: "Kila kampuni iliyoorodheshwa DSE inachapisha ripoti tatu kuu kila mwaka:\n\n1. INCOME STATEMENT — Inaonyesha mapato, gharama, na faida kwa kipindi fulani.\n\n2. BALANCE SHEET — Inaonyesha mali, madeni, na mtaji wa wanahisa kwa tarehe fulani.\n\n3. CASH FLOW STATEMENT — Inaonyesha jinsi fedha zinaingia na kutoka kwenye kampuni.\n\nZote tatu zinaunganishwa."
+    title: "03. Mchoro Mkuu",
+    body: "Kila kampuni iliyoorodheshwa DSE inachapisha ripoti tatu kuu kila mwaka:\n\n1. INCOME STATEMENT — Inaonyesha mapato, gharama, na faida kwa kipindi fulani (robo mwaka au mwaka).\n\n2. BALANCE SHEET — Inaonyesha mali, madeni, na mtaji wa wanahisa kwa tarehe fulani.\n\n3. CASH FLOW STATEMENT — Inaonyesha jinsi fedha zinaingia na kutoka kwenye kampuni.\n\nZote tatu zinaunganishwa. Ukisoma moja tu, hupati picha kamili."
   },
   {
-    title: "04. Income Statement",
-    body: "Income Statement inaonyesha:\n\nMAPATO (Revenue) — fedha zote zilizoingia kutokana na mauzo.\n\nGHARAMA (Expenses) — gharama za uendeshaji, mishahara, kodi, riba.\n\nFAIDA (Profit) — kinachobaki baada ya gharama zote.\n\nMfano rahisi:\nMapato: TSh bilioni 100\nGharama: TSh bilioni 70\nFaida: TSh bilioni 30\n\nKama faida ni kubwa, kampuni inafanya vizuri."
+    title: "04. Maelezo Rahisi",
+    body: "INCOME STATEMENT — Kampuni inapata faida?\n\nMAPATO (Revenue) — fedha zote zilizoingia kutoka mauzo.\nGHARAMA (Expenses) — gharama za uendeshaji, mishahara, kodi, riba.\nFAIDA (Profit) — kinachobaki baada ya gharama zote.\n\nMfano: Mapato 100B − Gharama 70B = Faida 30B\n\nBALANCE SHEET — Mali na madeni?\n\nMALI (Assets) — fedha, mikopo kwa wateja, majengo, mashine.\nMADENI (Liabilities) — mikopo ya benki, kodi, malipo kwa wafanyakazi.\nMTAJI (Equity) — kinachobaki kwa wanahisa baada ya madeni yote kulipwa.\n\nFomula: MALI = MADENI + MTAJI\n\nCASH FLOW — Fedha zinaingia na kutoka vipi?\n\n1. Operating — kutokana na mauzo.\n2. Investing — kununua/kukuza mali.\n3. Financing — mikopo, gawio.\n\nKwa nini Cash Flow ni muhimu? Kwa sababu kampuni inaweza kuonyesha 'faida' kwenye Income Statement lakini haina fedha halisi mkononi."
   },
   {
-    title: "05. Balance Sheet",
-    body: "Balance Sheet inaonyesha:\n\nMALI (Assets) — kila kitu kampuni inamiliki: fedha, mikopo kwa wateja, majengo, mashine.\n\nMADENI (Liabilities) — kila kitu kampuni inadaiwa: mikopo ya benki, kodi, malipo kwa wafanyakazi.\n\nMTAJI (Equity) — kinachobaki kwa wanahisa baada ya madeni yote kulipwa.\n\nFomula: MALI = MADENI + MTAJI"
+    title: "05. Mfano wa Tanzania",
+    body: "Hebu tuangalie CRDB Bank:\n\nINCOME STATEMENT (2025):\n• Mapato: TSh trilioni 2+\n• Gharama: TSh trilioni 1.5\n• Faida: TSh bilioni 500+\n\nBALANCE SHEET (2025):\n• Mali: TSh trilioni 10+\n• Madeni: TSh trilioni 9\n• Mtaji: TSh trilioni 1+\n\nCASH FLOW (2025):\n• Kutoka uendeshaji: Chanya (fedha zinaingia)\n• Kutoka uwekezaji: Hasi (fedha zinatoka kwa ukuaji)\n• Kutoka ufadhili: Chanya (mikopo na gawio)\n\nNambari hizi zinaonyesha CRDB ni benki yenye afya nzuri ya kifedha."
   },
   {
-    title: "06. Cash Flow Statement",
-    body: "Cash Flow Statement inaonyesha fedha halisi zinazotembea:\n\n1. Kutoka shughuli za uendeshaji (Operating) — kutokana na mauzo.\n2. Kutoka uwekezaji (Investing) — kununua/kukuza mali.\n3. Kutoka ufadhili (Financing) — mikopo, gawio.\n\nKwa nini ni muhimu? Kwa sababu kampuni inaweza kuonyesha 'faida' kwenye Income Statement lakini haina fedha halisi mkononi."
+    title: "06. Jambo la Muhimu",
+    body: "Ripoti za fedha zinaonyesha yaliyopita — sio ya baadaye.\n\nKampuni iliyokuwa na faida mwaka jana inaweza kupata hasara mwaka huu. Ripoti ni zana ya kuanzia, sio hitimisho.\n\nLazima uangalie pia:\n• Ushindani wa sekta\n• Hali ya uchumi\n• Mabadiliko ya sera\n• Mwenendo wa soko\n\nData ya kifedha + muktadha wa soko = uchambuzi kamili.\n\nHatua kwa hatua:\n1. Angalia MAPATO — yamekua au yamepungua?\n2. Angalia FAIDA — faida au hasara?\n3. Angalia MADENI — yameongezeka au yamepungua?\n4. Angalia CASH FLOW — fedha zinaingia au zinatoka?\n5. Linganisha na makampuni mengine kwenye sekta.\n6. Jiulize: Kwa nini nambari zimebadilika?"
   },
   {
-    title: "07. Mfano wa Tanzania",
-    body: "Hebu tuangalie CRDB Bank:\n\nIncome Statement (2025):\n- Mapato: TSh trilioni 2+\n- Gharama: TSh trilioni 1.5\n- Faida: TSh bilioni 500+\n\nBalance Sheet (2025):\n- Mali: TSh trilioni 10+\n- Madeni: TSh trilioni 9\n- Mtaji: TSh trilioni 1+\n\nCash Flow (2025):\n- Kutoka uendeshaji: Chanya\n- Kutoka uwekezaji: Hasi (ukuaji)\n- Kutoka ufadhili: Chanya"
+    title: "07. Jaribu Kufikiri",
+    body: "Fikiria hali hii:\n\nKampuni X:\n• Income Statement inaonyesha faida ya TSh bilioni 50\n• Cash Flow inaonyesha fedha zinatoka TSh bilioni 30\n\nMaswali:\n\n1. Inawezekana vipi kampuni iwe na faida kwenye karatasi lakini haina fedha? Kwa nini?\n2. Kama wewe ni mwekezaji, ungependa kuangalia ripoti ipi kwanza? Kwa nini?\n3. Kwa nini ni muhimu kuangalia ripoti zote tatu pamoja?"
   },
   {
-    title: "08. Jinsi ya Kusoma",
-    body: "Hatua kwa hatua:\n\n1. Angalia MAPATO — yamekua au yamepungua?\n2. Angalia FAIDA — faida au hasara?\n3. Angalia MADENI — yameongezeka au yamepungua?\n4. Angalia CASH FLOW — fedha zinaingia au zinatoka?\n5. Linganisha na makampuni mengine kwenye sekta.\n6. Jiulize: Kwa nini nambari zimebadilika?"
-  },
-  {
-    title: "09. Jambo la Muhimu",
-    body: "Ripoti za fedha zinaonyesha yaliyopita — sio ya baadaye. Kampuni iliyokuwa na faida mwaka jana inaweza kupata hasara mwaka huu. Ripoti ni zana ya kuanzia, sio hitimisho. Lazima uangalie pia: ushindani wa sekta, hali ya uchumi, mabadiliko ya sera, na mwenendo wa soko."
-  },
-  {
-    title: "10. Kipimo Kidogo",
+    title: "08. Kipimo Kidogo",
     quiz: [
       {
         q: "Income Statement inaonyesha nini?",
@@ -54,16 +46,21 @@ const steps = [
         q: "Kwa nini Cash Flow ni muhimu?",
         options: "(a) Inaonyesha faida   (b) Inaonyesha fedha halisi   (c) Inaonyesha wafanyakazi",
         answer: "Jibu: (b) Inaonyesha fedha halisi zinazotembea."
+      },
+      {
+        q: "Ripoti za fedha zinaonyesha nini?",
+        options: "(a) Ya baadaye   (b) Yaliyopita   (c) Ya sasa tu",
+        answer: "Jibu: (b) Yaliyopita. Ni zana ya kuanzia, sio hitimisho."
       }
     ]
   },
   {
-    title: "11. Muhtasari wa Dakika 1",
-    body: "Ripoti tatu muhimu za fedha:\n\n1. INCOME STATEMENT — Mapato, gharama, faida.\n2. BALANCE SHEET — Mali = Madeni + Mtaji.\n3. CASH FLOW — Fedha halisi zinazoingia na kutoka.\n\nKusoma ripoti hizi ni hatua ya kwanza ya uchambuzi wa kampuni."
+    title: "09. Muhtasari wa Dakika 1",
+    body: "Ripoti tatu muhimu za fedha:\n\n1. INCOME STATEMENT — Mapato, gharama, faida.\n2. BALANCE SHEET — Mali = Madeni + Mtaji.\n3. CASH FLOW — Fedha halisi zinazoingia na kutoka.\n\nKusoma ripoti hizi ni hatua ya kwanza ya uchambuzi wa kampuni.\n\nKumbuka: ripoti zinaonyesha yaliyopita, sio ya baadaye. Unganisha na muktadha wa soko na sekta."
   },
   {
-    title: "12. Hatua Inayofuata",
-    body: "SOMO 21: Tutaanza kuchambua sekta moja kwa moja — tutachagua sekta ya benki na kuilinganisha CRDB, NMB, na benki nyingine. Pia, tayari unaweza kuanza Uchambuzi wa Kampuni — CRDB, NMB, TBL, Vodacom, TCC."
+    title: "10. Hatua Inayofuata",
+    body: "SOMO 21: Tutaanza kuchambua sekta moja kwa moja — tutachagua sekta ya benki na kuilinganisha CRDB, NMB, na benki nyingine.\n\nTutajifunza jinsi ya kuweka makampuni katika muktadha wa sekta yake, na jinsi ya kuchagua kampuni bora kwenye sekta moja.\n\nPia, tayari unaweza kuanza Uchambuzi wa Kampuni — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE Plc."
   }
 ];
 
