@@ -7,6 +7,7 @@ export default function Kampuni() {
     { href: "/kampuni/tcc", name: "Tanzania Cigarette Company (TCC)", sector: "Bidhaa za Matumizi" },
     { href: "/kampuni/tpcc", name: "TPCC — Twiga Cement", sector: "Ujenzi / Saruji" },
     { href: "/kampuni/swissport", name: "Swissport Tanzania Plc", sector: "Huduma za Anga" },
+    { href: "/kampuni/dse", name: "DSE Plc — Dar es Salaam Stock Exchange", sector: "Soko la Hisa" },
   ];
 
   return (
