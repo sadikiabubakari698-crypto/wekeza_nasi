@@ -55,32 +55,32 @@ export default function Home() {
       <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>Safari Yangu</h2>
 
       <a href="/academy" style={cardStyle}>
-        <h3 style={{ margin: 0, color: "#1a1a1a" }}>📚 Academy</h3>
+        <h3 style={{ margin: 0, color: "#1a1a1a" }}>Academy</h3>
         <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>Masomo 20 — kujifunza uwekezaji hatua kwa hatua.</p>
       </a>
 
       <a href="/somo-la-mwezi/crdb-2026-09" style={cardStyle}>
-        <h3 style={{ margin: 0, color: "#1a1a1a" }}>🎯 Somo la Mwezi</h3>
+        <h3 style={{ margin: 0, color: "#1a1a1a" }}>Somo la Mwezi</h3>
         <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>Uchambuzi wa kina wa kampuni moja kila mwezi.</p>
       </a>
 
       <a href="/kampuni" style={cardStyle}>
-        <h3 style={{ margin: 0, color: "#1a1a1a" }}>🏢 Uchambuzi wa Kampuni</h3>
+        <h3 style={{ margin: 0, color: "#1a1a1a" }}>Uchambuzi wa Kampuni</h3>
         <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>Kampuni 8 — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE.</p>
       </a>
 
       <a href="/soko" style={cardStyle}>
-        <h3 style={{ margin: 0, color: "#1a1a1a" }}>📊 Uchambuzi wa Soko</h3>
+        <h3 style={{ margin: 0, color: "#1a1a1a" }}>Uchambuzi wa Soko</h3>
         <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>Nini kimetokea? Kwa nini? Ushahidi unasemaje?</p>
       </a>
 
       <div style={{ ...cardStyle, background: "#f0f0f0", opacity: 0.7 }}>
-        <h3 style={{ margin: 0, color: "#1a1a1a" }}>🤖 AI</h3>
+        <h3 style={{ margin: 0, color: "#1a1a1a" }}>AI</h3>
         <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>Inakuja hivi karibuni.</p>
       </div>
 
       <div style={{ ...cardStyle, background: "#f0f0f0", opacity: 0.7 }}>
-        <h3 style={{ margin: 0, color: "#1a1a1a" }}>👥 Community</h3>
+        <h3 style={{ margin: 0, color: "#1a1a1a" }}>Community</h3>
         <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>Inakuja hivi karibuni.</p>
       </div>
 
