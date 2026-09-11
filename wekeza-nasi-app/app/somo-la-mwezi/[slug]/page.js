@@ -8,47 +8,12 @@ export default async function SomoLaMwezi({ params }) {
 
   if (!article) return notFound();
 
-  const pageStyle = {
-    padding: "2rem",
-    maxWidth: "750px",
-    margin: "0 auto",
-    fontFamily: "sans-serif",
-    lineHeight: 1.7,
-    color: "#1a1a1a",
-    background: "#ffffff",
-    minHeight: "100vh"
-  };
-
-  const infoBoxStyle = {
-    background: "#f3f7fb",
-    borderRadius: "10px",
-    padding: "1rem 1.25rem",
-    margin: "1.5rem 0",
-    color: "#1a1a1a"
-  };
-
-  const tableHeaderStyle = {
-    padding: "0.6rem",
-    textAlign: "left",
-    borderBottom: "1px solid #ddd",
-    color: "#1a1a1a"
-  };
-
-  const tableCellStyle = {
-    padding: "0.6rem",
-    borderBottom: "1px solid #eee",
-    color: "#1a1a1a"
-  };
-
-  const disclaimerStyle = {
-    background: "#fef8ee",
-    borderLeft: "5px solid #d48d3b",
-    padding: "1rem 1.25rem",
-    borderRadius: "8px",
-    marginTop: "2.5rem",
-    fontSize: "0.9rem",
-    color: "#1a1a1a"
-  };
+  const pageStyle = { padding: "2rem", maxWidth: "750px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.7, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" };
+  const h2Style = { fontSize: "1.4rem", marginTop: "2rem", marginBottom: "0.75rem", color: "#1a1a1a", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
+  const infoBoxStyle = { background: "#f3f7fb", borderRadius: "10px", padding: "1rem 1.25rem", margin: "1.5rem 0", color: "#1a1a1a" };
+  const tableHeaderStyle = { padding: "0.6rem", textAlign: "left", borderBottom: "1px solid #ddd", color: "#1a1a1a", background: "#f3f7fb" };
+  const tableCellStyle = { padding: "0.6rem", borderBottom: "1px solid #eee", color: "#1a1a1a" };
+  const disclaimerStyle = { background: "#fef8ee", borderLeft: "5px solid #d48d3b", padding: "1rem 1.25rem", borderRadius: "8px", marginTop: "2.5rem", fontSize: "0.9rem", color: "#1a1a1a" };
 
   return (
     <main style={pageStyle}>
@@ -63,18 +28,18 @@ export default async function SomoLaMwezi({ params }) {
 
       {article.company && (
         <div style={infoBoxStyle}>
-          <div><strong style={{ color: "#1a1a1a" }}>Sekta:</strong> <span style={{ color: "#1a1a1a" }}>{article.company.sector}</span></div>
-          <div><strong style={{ color: "#1a1a1a" }}>Ticker:</strong> <span style={{ color: "#1a1a1a" }}>{article.company.ticker}</span></div>
-          <div><strong style={{ color: "#1a1a1a" }}>Iliorodheshwa:</strong> <span style={{ color: "#1a1a1a" }}>{article.company.listed}</span></div>
+          <div><strong>Sekta:</strong> {article.company.sector}</div>
+          <div><strong>Ticker:</strong> {article.company.ticker}</div>
+          <div><strong>Iliorodheshwa:</strong> {article.company.listed}</div>
         </div>
       )}
 
-      <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>Muhtasari wa Mtendaji</h2>
+      <h2 style={h2Style}>Muhtasari wa Mtendaji</h2>
       <p style={{ color: "#1a1a1a" }}>{article.executiveSummary}</p>
 
       {article.sections?.map((section, i) => (
         <div key={i}>
-          <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>{i + 1}. {section.title}</h2>
+          <h2 style={h2Style}>{i + 1}. {section.title}</h2>
           {section.content && (
             <div style={{ whiteSpace: "pre-line", color: "#1a1a1a" }}>{section.content}</div>
           )}
@@ -82,7 +47,7 @@ export default async function SomoLaMwezi({ params }) {
           {section.ratios && (
             <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "1rem", color: "#1a1a1a" }}>
               <thead>
-                <tr style={{ background: "#f3f7fb" }}>
+                <tr>
                   <th style={tableHeaderStyle}>Uwiano</th>
                   <th style={tableHeaderStyle}>Kiwango</th>
                   <th style={tableHeaderStyle}>Maana</th>
@@ -101,9 +66,9 @@ export default async function SomoLaMwezi({ params }) {
           )}
 
           {section.risks && (
-            <ul style={{ marginTop: "0.5rem", color: "#1a1a1a" }}>
+            <ul style={{ marginTop: "0.5rem", color: "#1a1a1a", paddingLeft: "1.5rem" }}>
               {section.risks.map((r, j) => (
-                <li key={j} style={{ marginBottom: "0.5rem", color: "#1a1a1a" }}>
+                <li key={j} style={{ marginBottom: "0.5rem" }}>
                   <strong>{r.type}:</strong> {r.detail}
                 </li>
               ))}
@@ -111,25 +76,25 @@ export default async function SomoLaMwezi({ params }) {
           )}
 
           {section.drivers && (
-            <ul style={{ marginTop: "0.5rem", color: "#1a1a1a" }}>
+            <ul style={{ marginTop: "0.5rem", color: "#1a1a1a", paddingLeft: "1.5rem" }}>
               {section.drivers.map((d, j) => (
-                <li key={j} style={{ marginBottom: "0.4rem", color: "#1a1a1a" }}>{d}</li>
+                <li key={j} style={{ marginBottom: "0.4rem" }}>{d}</li>
               ))}
             </ul>
           )}
 
           {section.questions && (
-            <ol style={{ marginTop: "0.5rem", color: "#1a1a1a" }}>
+            <ol style={{ marginTop: "0.5rem", color: "#1a1a1a", paddingLeft: "1.5rem" }}>
               {section.questions.map((q, j) => (
-                <li key={j} style={{ marginBottom: "0.5rem", color: "#1a1a1a" }}>{q}</li>
+                <li key={j} style={{ marginBottom: "0.5rem" }}>{q}</li>
               ))}
             </ol>
           )}
 
           {section.sources && (
-            <ul style={{ marginTop: "0.5rem", color: "#1a1a1a" }}>
+            <ul style={{ marginTop: "0.5rem", color: "#1a1a1a", paddingLeft: "1.5rem" }}>
               {section.sources.map((s, j) => (
-                <li key={j} style={{ marginBottom: "0.4rem", color: "#1a1a1a" }}>{s}</li>
+                <li key={j} style={{ marginBottom: "0.4rem" }}>{s}</li>
               ))}
             </ul>
           )}
