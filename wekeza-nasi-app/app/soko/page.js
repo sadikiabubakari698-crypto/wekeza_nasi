@@ -1,4 +1,5 @@
 import { getTimelyContent } from "../../lib/content-engine";
+import Footer from "../../components/Footer";
 
 export const metadata = {
   title: "Uchambuzi wa Soko",
@@ -32,9 +33,7 @@ export default function Soko() {
         <p style={{ color: "#555" }}><em>Hakuna tukio la kuchambuliwa kwa sasa. Rudi tena hivi karibuni.</em></p>
       )}
 
-      <p style={{ marginTop: "2rem" }}>
-        <a href="/" style={{ color: "#1a1a1a" }}>← Rudi Nyumbani</a>
-      </p>
+      <Footer />
     </main>
   );
 }

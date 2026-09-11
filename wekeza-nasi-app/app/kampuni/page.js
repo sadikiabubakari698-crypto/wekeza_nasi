@@ -1,7 +1,9 @@
+import Footer from "../../components/Footer";
+
 export const metadata = {
   title: "Uchambuzi wa Kampuni 8 za DSE",
   description:
-    "Uchambuzi wa kina wa kampuni 8 za DSE: CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE Plc. Historia, biashara, hatari, na maswali ya kujitafakari.",
+    "Uchambuzi wa kina wa kampuni 8 za DSE: CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE Plc.",
 };
 
 export default function Kampuni() {
@@ -45,9 +47,7 @@ export default function Kampuni() {
         ))}
       </div>
 
-      <p style={{ marginTop: "2rem" }}>
-        <a href="/" style={{ color: "#1a1a1a" }}>← Rudi Nyumbani</a>
-      </p>
+      <Footer />
     </main>
   );
 }

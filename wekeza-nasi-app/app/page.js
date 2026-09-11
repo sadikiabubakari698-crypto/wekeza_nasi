@@ -1,5 +1,6 @@
 import { getAllPlannedItems } from "../lib/content-engine";
 import MonthlyContent from "../components/MonthlyContent";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const allPlanned = getAllPlannedItems();
@@ -44,14 +45,12 @@ export default function Home() {
       <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>WEKEZA NASI</h1>
       <p style={{ color: "#555", marginTop: 0 }}>Jenga maarifa. Jenga uwezo.</p>
 
-      {/* ANZA HAPA */}
       <a href="/somo1" style={mainCardStyle}>
         <p style={{ margin: 0, fontSize: "0.85rem", opacity: 0.9, fontWeight: 600 }}>MPYA WEKEZA NASI?</p>
         <h3 style={{ margin: "0.25rem 0", color: "#ffffff" }}>Anza na Somo la 1: Hisa ni nini?</h3>
         <p style={{ margin: 0, fontSize: "0.9rem", opacity: 0.9 }}>Tuanze safari yetu hapa, hatua kwa hatua →</p>
       </a>
 
-      {/* SAFARI YANGU */}
       <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>Safari Yangu</h2>
 
       <a href="/academy" style={cardStyle}>
@@ -84,7 +83,6 @@ export default function Home() {
         <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>Inakuja hivi karibuni.</p>
       </div>
 
-      {/* MAENDELEO */}
       <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>Maendeleo Yetu</h2>
       <div style={gridStyle}>
         <div style={statBoxStyle}>
@@ -97,14 +95,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SOMO LA MWEZI (FEATURED) */}
       <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>Somo la Mwezi</h2>
       <MonthlyContent items={allPlanned} />
 
-      {/* FOOTER */}
-      <p style={{ marginTop: "2.5rem", fontSize: "0.8rem", color: "#888", textAlign: "center", borderTop: "1px solid #eee", paddingTop: "1.5rem" }}>
-        WEKEZA NASI — Mshirika wa safari yako ya uwekezaji.
-      </p>
+      <Footer />
     </main>
   );
 }

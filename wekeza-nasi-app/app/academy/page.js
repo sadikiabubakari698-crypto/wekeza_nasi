@@ -1,3 +1,5 @@
+import Footer from "../../components/Footer";
+
 export const metadata = {
   title: "Academy — Masomo 20 ya Uwekezaji",
   description:
@@ -55,9 +57,7 @@ export default function Academy() {
         ))}
       </div>
 
-      <p style={{ marginTop: "2rem" }}>
-        <a href="/" style={{ color: "#1a1a1a" }}>← Rudi Nyumbani</a>
-      </p>
+      <Footer />
     </main>
   );
 }
