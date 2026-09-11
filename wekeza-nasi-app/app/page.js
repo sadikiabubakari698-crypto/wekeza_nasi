@@ -28,14 +28,6 @@ export default function Home() {
         <h3>Uchambuzi wa Kampuni</h3>
         <p style={{ margin: 0 }}>Jifunze kampuni zinavyofanya kazi na kutengeneza fedha.</p>
       </a>
-      <div className="area-card-soon">
-        <h3>AI</h3>
-        <p style={{ margin: 0 }}>Inakuja hivi karibuni.</p>
-      </div>
-      <div className="area-card-soon">
-        <h3>Community</h3>
-        <p style={{ margin: 0 }}>Inakuja hivi karibuni.</p>
-      </div>
 
       <h2 style={{ marginTop: "2rem" }}>Somo la Mwezi</h2>
       <MonthlyContent items={allPlanned} />

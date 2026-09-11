@@ -18,8 +18,6 @@ export function getPlannedContent() {
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 }
 
-// MPYA: Chukua items zote za "planned" (bila filter ya muda)
-// Tutatumia hii kwenye client component
 export function getAllPlannedItems() {
   return contentData
     .filter((item) => item.category === "planned" && item.status === "published")

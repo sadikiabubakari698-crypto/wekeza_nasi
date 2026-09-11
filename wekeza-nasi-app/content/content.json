@@ -1,24 +1,32 @@
 [
   {
-    "id": "test-a",
-    "title": "TEST A: Content ya Sasa",
-    "type": "test",
+    "id": "test-1",
+    "title": "TEST 1: Somo la Mwezi",
     "category": "planned",
-    "excerpt": "Hii ni content ya kwanza. Inaonekana sasa.",
+    "status": "published",
+    "excerpt": "Hii ni content ya kwanza. Inabadilika kila dakika 10.",
     "link": "/somo1",
-    "publishDate": "2026-09-11T10:00:00",
-    "frequency": "monthly",
-    "status": "published"
+    "publishDate": "2026-09-01",
+    "testMode": true
   },
   {
-    "id": "test-b",
-    "title": "TEST B: Content ya Baadaye",
-    "type": "test",
+    "id": "test-2",
+    "title": "TEST 2: Somo la Mwezi",
     "category": "planned",
-    "excerpt": "Hii ni content ya pili. Inaonekana baada ya dakika 5.",
+    "status": "published",
+    "excerpt": "Hii ni content ya pili. Inabadilika kila dakika 10.",
     "link": "/somo2",
-    "publishDate": "2026-09-11T10:35:00",
-    "frequency": "monthly",
-    "status": "published"
+    "publishDate": "2026-09-02",
+    "testMode": true
+  },
+  {
+    "id": "test-3",
+    "title": "TEST 3: Somo la Mwezi",
+    "category": "planned",
+    "status": "published",
+    "excerpt": "Hii ni content ya tatu. Inabadilika kila dakika 10.",
+    "link": "/somo3",
+    "publishDate": "2026-09-03",
+    "testMode": true
   }
 ]
