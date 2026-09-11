@@ -9,6 +9,7 @@
     "status": "published",
     "month": "Septemba 2026",
     "publishDate": "2026-09-01",
+    "testMode": true,
     "company": {
       "name": "CRDB Bank Plc",
       "ticker": "CRDB",
@@ -93,5 +94,197 @@
       }
     ],
     "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji. Bei ya hisa inabadilika kila siku — angalia DSE au broker wako kwa bei ya sasa. Kabla ya kuwekeza, fanya utafiti wako mwenyewe na uzingatie hali yako ya kifedha."
+  },
+  {
+    "id": "nmb-2026-10",
+    "slug": "nmb-2026-10",
+    "title": "NMB Bank Plc",
+    "subtitle": "Benki yenye faida kubwa zaidi Tanzania",
+    "type": "monthly-deep-dive",
+    "category": "planned",
+    "status": "published",
+    "month": "Oktoba 2026",
+    "publishDate": "2026-10-01",
+    "testMode": true,
+    "company": {
+      "name": "NMB Bank Plc",
+      "ticker": "NMB",
+      "sector": "Benki",
+      "listed": "2008 (DSE)",
+      "employees": "3,500+",
+      "branches": "230+"
+    },
+    "executiveSummary": "NMB Bank Plc ni benki ya pili kwa ukubwa Tanzania kwa mtaji wa soko, lakini mara nyingi inaongoza kwa faida halisi. Ilifanya stock split ya 1:10 Julai 2026, hatua iliyoongeza ukwasi wa hisa zake na kuvutia wawekezaji wengi zaidi. Uchambuzi huu unachunguza mfano wa biashara wa NMB, uwiano wake wa kifedha, hatari za kipekee, na sababu za ukuaji wake wa kipekee.",
+    "sections": [
+      {
+        "title": "Historia na Msingi",
+        "content": "NMB Bank Plc ilianzishwa mwaka 1997 kutokana na muungano wa benki za serikali. Iliorodheshwa DSE mwaka 2008. Kwa miaka 20+, imekua kuwa benki ya pili kwa ukubwa Tanzania, ikiwa na zaidi ya matawi 230.\n\nUmiliki wake: Serikali ya Tanzania kupitia Treasury Registrar, na umma kupitia DSE. Makao makuu yapo Dar es Salaam."
+      },
+      {
+        "title": "Mfano wa Biashara — Inapataje Fedha?",
+        "content": "NMB inapata mapato kwa njia kuu nne:\n\n1. Riba kutoka mikopo kwa biashara ndogo na za kati (SMEs), wakulima, na watu binafsi.\n2. Ada za huduma — uhamisho, akaunti, kadi.\n3. Uwekezaji wa fedha kwenye dhamana za serikali.\n4. Huduma za kidijitali — NMB Mkononi, Wakala.\n\nNMB inajulikana kwa uwekezaji mkubwa kwenye teknolojia na huduma za kidijitali."
+      },
+      {
+        "title": "Sekta na Ushindani",
+        "content": "Sekta ya benki Tanzania ina benki 40+, lakini benki 5 kubwa zinamiliki zaidi ya asilimia 60 ya soko.\n\nWashindani wakuu wa NMB: CRDB (benki kubwa zaidi kwa mtaji), Exim Bank, NBC, Stanbic, na Absa.\n\nNMB ina nguvu kwenye mikopo ya kilimo na huduma za kidijitali. Mfumo wake wa NMB Mkononi una watumiaji milioni 5+."
+      },
+      {
+        "title": "Uchambuzi wa Fedha",
+        "content": "Mapato ya jumla yalikua kwa wastani wa asilimia 15 kwa mwaka kati ya 2022-2025.\n\nFaida halisi iliongezeka kutoka TSh bilioni 450 (2023) hadi TSh bilioni 600+ (2025).\n\nJumla ya mali: TSh trilioni 11+. Mikopo: TSh trilioni 7+. Amana: TSh trilioni 9+.\n\nNMB ina moja ya uwiano bora wa ufanisi (cost-to-income ratio) chini ya asilimia 45."
+      },
+      {
+        "title": "Uwiano Muhimu wa Kifedha",
+        "ratios": [
+          { "name": "ROE (Return on Equity)", "value": "~22%", "meaning": "Moja ya juu zaidi kwenye sekta ya benki Tanzania" },
+          { "name": "ROA (Return on Assets)", "value": "~3%", "meaning": "Ufanisi mzuri wa matumizi ya mali" },
+          { "name": "NPL Ratio", "value": "~4%", "meaning": "Mikopo isiyolipwa iko chini ya wastani wa sekta" },
+          { "name": "Capital Adequacy", "value": "~19%", "meaning": "Mtaji thabiti kulingana na mahitaji ya BOT" },
+          { "name": "Dividend Yield", "value": "~7%", "meaning": "Gawio la kila mwaka kwa bei ya sasa" }
+        ]
+      },
+      {
+        "title": "Gawio na Sera ya Ugawaji",
+        "content": "NMB imekuwa ikitoa gawio kila mwaka tangu 2010. Sera ya kampuni ni kugawa asilimia 35-45 ya faida kama gawio.\n\nBaada ya stock split ya 1:10 Julai 2026, gawio kwa kila hisa mpya lilibadilika. Hii ni hatua ya makusudi ili kuvutia wawekezaji wadogo."
+      },
+      {
+        "title": "Hatari za Kina",
+        "risks": [
+          { "type": "Hatari ya Mikopo", "detail": "Mikopo mikubwa kwa biashara ndogo ina hatari kubwa ya kushindwa kulipwa." },
+          { "type": "Hatari ya Udhibiti", "detail": "Mabadiliko ya sera za BOT yanaweza kuathiri faida." },
+          { "type": "Hatari ya Ushindani wa Kidijitali", "detail": "Benki mpya za kidijitali (kama M-Koba, mobile money) zinaweza kuchukua sehemu ya soko." },
+          { "type": "Hatari ya Fedha za Kigeni", "detail": "Kushuka kwa shilingi kunaathiri mikopo ya fedha za kigeni." },
+          { "type": "Hatari ya Mkusanyiko", "detail": "Umiliki mkubwa wa Serikali unaweza kuathiri maamuzi ya kimkakati." }
+        ]
+      },
+      {
+        "title": "Vichocheo vya Ukuaji",
+        "drivers": [
+          "Ukuaji wa huduma za kidijitali (NMB Mkononi, Wakala)",
+          "Ukuaji wa uchumi wa Tanzania (wastani 5-6% kwa mwaka)",
+          "Upanuzi wa mikopo kwa wakulima na SMEs",
+          "Uwekezaji wa teknolojia (fintech, AI, data analytics)"
+        ]
+      },
+      {
+        "title": "Utawala na Uongozi",
+        "content": "NMB ina bodi ya wakurugenzi yenye wajumbe 9, wakiwemo 3 wa kujitegemea.\n\nMkurugenzi Mtendaji: Ruth Zaipuna.\n\nKampuni inafuata kanuni za CMSA na BOT. Inachapisha ripoti za robo na mwaka kwenye tovuti yake."
+      },
+      {
+        "title": "Maswali ya Kujitafakari",
+        "questions": [
+          "Je, NMB inaweza kudumisha ROE ya 22% wakati CRDB inaongeza ushindani?",
+          "Je, stock split ya 1:10 iliongeza ukwasi kwa kiasi gani?",
+          "Je, upanuzi wa kidijitali unaleta faida au gharama zaidi?",
+          "Nini kitatokea kama NPL ratio ikipanda kutoka 4% hadi 8%?",
+          "Je, umiliki wa Serikali unasaidia au unazuia ukuaji wa NMB?"
+        ]
+      },
+      {
+        "title": "Vyanzo na Marejeleo",
+        "sources": [
+          "Ripoti ya Mwaka ya NMB 2025",
+          "Tangazo la Stock Split la Julai 2026 (CMSA)",
+          "Ripoti ya BOT ya Sekta ya Benki 2025",
+          "DSE Equity Report"
+        ]
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji. Bei ya hisa inabadilika kila siku — angalia DSE au broker wako kwa bei ya sasa."
+  },
+  {
+    "id": "tbl-2026-11",
+    "slug": "tbl-2026-11",
+    "title": "Tanzania Breweries Plc (TBL)",
+    "subtitle": "Kampuni ya zamani zaidi ya viwanda Tanzania",
+    "type": "monthly-deep-dive",
+    "category": "planned",
+    "status": "published",
+    "month": "Novemba 2026",
+    "publishDate": "2026-11-01",
+    "testMode": true,
+    "company": {
+      "name": "Tanzania Breweries Plc",
+      "ticker": "TBL",
+      "sector": "Vinywaji",
+      "listed": "1998 (DSE)",
+      "employees": "2,000+",
+      "brands": "Safari, Kilimanjaro, Tusker, Castle Lite"
+    },
+    "executiveSummary": "Tanzania Breweries Plc (TBL) ni moja ya makampuni ya zamani zaidi ya viwanda Tanzania, na moja ya makampuni makubwa kwenye DSE. Inatengeneza bia maarufu kama Safari, Kilimanjaro, na Tusker. Uchambuzi huu unachunguza mfano wa biashara wa TBL, nafasi yake katika sekta ya vinywaji, uwiano wake wa kifedha, hatari za kipekee, na mwelekeo wa ukuaji.",
+    "sections": [
+      {
+        "title": "Historia na Msingi",
+        "content": "Tanzania Breweries Plc ilianzishwa mwaka 1933 kama Tanganyika Breweries. Iliorodheshwa DSE mwaka 1998. Ni kampuni ya pili kuorodheshwa DSE baada ya TOL Gas.\n\nKwa miaka 90+, TBL imekua kuwa moja ya makampuni makubwa ya viwanda Tanzania, ikiwa na viwanda zaidi ya 5 nchi nzima.\n\nUmiliki wake: kampuni mama ni AB InBev (moja ya makampuni makubwa ya bia duniani), pamoja na wawekezaji binafsi na wa kitaasisi."
+      },
+      {
+        "title": "Mfano wa Biashara — Inapataje Fedha?",
+        "content": "TBL inapata mapato kwa njia kuu tatu:\n\n1. Uuzaji wa bia — ndiyo mapato makuu. Bidhaa maarufu: Safari, Kilimanjaro, Tusker, Castle Lite, Redd's.\n2. Uuzaji wa vinywaji visivyo na kilevi — ndiyo inakua kwa kasi (juisi, maji).\n3. Usafirishaji na uuzaji wa bidhaa nyingine.\n\nSoko kuu ni Tanzania, lakini pia inasafirisha kwa nchi jirani (Kenya, Uganda, Rwanda, DRC)."
+      },
+      {
+        "title": "Sekta na Ushindani",
+        "content": "Sekta ya vinywaji Tanzania ina washindani wakuu:\n\n- Serengeti Breweries (kampuni ya pili kwa ukubwa, inamilikiwa na Diageo)\n- Bia za kienyeji (zisizo rasmi)\n- Vinywaji visivyo na kilevi (soda, juisi, maji)\n\nTBL ina nguvu kwenye: brand recognition, mtandao wa usambazaji, na uwezo wa uzalishaji.\n\nHatari kuu: ushindani wa bei, mabadiliko ya kodi, na kupungua kwa matumizi ya bia kwa vijana."
+      },
+      {
+        "title": "Uchambuzi wa Fedha",
+        "content": "Mapato ya jumla yamekuwa thabiti kwa miaka 5, yakikua kwa wastani wa asilimia 6-8 kwa mwaka.\n\nFaida halisi iliongezeka kutoka TSh bilioni 150 (2022) hadi TSh bilioni 200+ (2025).\n\nJumla ya mali: TSh trilioni 1.5+. Deni: TSh bilioni 300-400 (deni la wastani kwa kampuni ya viwanda).\n\nMtiririko wa fedha kutoka shughuli za uendeshaji umekuwa chanya kwa miaka 10+ mfululizo."
+      },
+      {
+        "title": "Uwiano Muhimu wa Kifedha",
+        "ratios": [
+          { "name": "ROE (Return on Equity)", "value": "~25%", "meaning": "Moja ya juu zaidi kwenye DSE — ishara ya ufanisi mkubwa" },
+          { "name": "ROA (Return on Assets)", "value": "~10%", "meaning": "Ufanisi mzuri sana kwa kampuni ya viwanda" },
+          { "name": "Debt/Equity", "value": "~0.3", "meaning": "Deni dogo kwa uwezo wa kampuni" },
+          { "name": "Gross Margin", "value": "~45%", "meaning": "Faida ya jumla nzuri kwa sekta ya vinywaji" },
+          { "name": "Dividend Yield", "value": "~6%", "meaning": "Gawio la kila mwaka kwa bei ya sasa" }
+        ]
+      },
+      {
+        "title": "Gawio na Sera ya Ugawaji",
+        "content": "TBL imekuwa ikitoa gawio kila mwaka tangu kuorodheshwa. Sera ya kampuni ni kugawa asilimia 60-80 ya faida kama gawio — moja ya juu zaidi kwenye DSE.\n\nHii inafanya TBL kuwa maarufu kwa wawekezaji wanaotafuta mapato ya mara kwa mara (income investors)."
+      },
+      {
+        "title": "Hatari za Kina",
+        "risks": [
+          { "type": "Hatari ya Kodi", "detail": "Ongezeko la kodi ya bia (excise duty) linaweza kupunguza faida." },
+          { "type": "Hatari ya Ushindani", "detail": "Serengeti Breweries na bia za kienyeji zinachukua sehemu ya soko." },
+          { "type": "Hatari ya Fedha za Kigeni", "detail": "Malighafi nyingi zinanunuliwa kwa fedha za kigeni — kushuka kwa shilingi kunaongeza gharama." },
+          { "type": "Hatari ya Mabadiliko ya Tabia", "detail": "Vijana wanaacha kunywa bia kwa sababu za afya — hii inaweza kupunguza mahitaji." },
+          { "type": "Hatari ya Udhibiti", "detail": "Sheria kali za matangazo ya bia zinaweza kupunguza mauzo." }
+        ]
+      },
+      {
+        "title": "Vichocheo vya Ukuaji",
+        "drivers": [
+          "Ukuaji wa idadi ya watu Tanzania (wastani 3% kwa mwaka)",
+          "Ukuaji wa uchumi (wastani 5-6% kwa mwaka)",
+          "Upanuzi wa soko la nje (Kenya, Uganda, DRC)",
+          "Ukuaji wa vinywaji visivyo na kilevi (low-alcohol, no-alcohol)"
+        ]
+      },
+      {
+        "title": "Utawala na Uongozi",
+        "content": "TBL ina bodi ya wakurugenzi yenye wajumbe 8.\n\nMkurugenzi Mtendaji: Jose Moran.\n\nKampuni inafuata kanuni za CMSA, TRA, na TBS. Inachapisha ripoti za robo na mwaka kwenye tovuti yake."
+      },
+      {
+        "title": "Maswali ya Kujitafakari",
+        "questions": [
+          "Je, ukuaji wa TBL unatokana na kuongeza bei au kuongeza kiasi cha mauzo?",
+          "Je, TBL inaweza kudumisha gawio la 60-80% kama faida ikishuka?",
+          "Je, upanuzi wa soko la nje unaleta faida au gharama zaidi?",
+          "Nini kitatokea kama kodi ya bia ikiongezeka kwa asilimia 10?",
+          "Je, vinywaji visivyo na kilevi vinaweza kuwa sehemu kubwa ya mapato?"
+        ]
+      },
+      {
+        "title": "Vyanzo na Marejeleo",
+        "sources": [
+          "Ripoti ya Mwaka ya TBL 2025",
+          "Ripoti ya TRA ya Ushuru wa Bidhaa 2025",
+          "DSE Equity Report — data ya kila siku",
+          "TBS Standards"
+        ]
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji. Bei ya hisa inabadilika kila siku — angalia DSE au broker wako kwa bei ya sasa."
   }
 ]

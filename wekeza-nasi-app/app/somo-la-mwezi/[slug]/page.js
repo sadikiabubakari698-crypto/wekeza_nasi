@@ -24,7 +24,7 @@ export default function SomoLaMwezi({ params }) {
           <div><strong>Sekta:</strong> {article.company.sector}</div>
           <div><strong>Ticker:</strong> {article.company.ticker}</div>
           <div><strong>Iliorodheshwa:</strong> {article.company.listed}</div>
-          <div><strong>Matawi:</strong> {article.company.branches}</div>
+          <div><strong>Matawi:</strong> {article.company.branches || article.company.brands || "—"}</div>
         </div>
       )}
 
