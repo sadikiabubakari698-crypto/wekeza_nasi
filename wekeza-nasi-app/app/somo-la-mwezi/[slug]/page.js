@@ -1,9 +1,10 @@
 import { getAllPlannedItems } from "../../../lib/content-engine";
 import { notFound } from "next/navigation";
 
-export default function SomoLaMwezi({ params }) {
+export default async function SomoLaMwezi({ params }) {
+  const { slug } = await params;
   const items = getAllPlannedItems();
-  const article = items.find((item) => item.slug === params.slug);
+  const article = items.find((item) => item.slug === slug);
 
   if (!article) return notFound();
 
