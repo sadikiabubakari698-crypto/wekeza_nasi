@@ -1,32 +1,97 @@
 [
   {
-    "id": "test-1",
-    "title": "TEST 1: Somo la Mwezi",
+    "id": "crdb-2026-09",
+    "slug": "crdb-2026-09",
+    "title": "CRDB Bank Plc",
+    "subtitle": "Benki kubwa zaidi Tanzania kwa mtazamo wa kitaalamu",
+    "type": "monthly-deep-dive",
     "category": "planned",
     "status": "published",
-    "excerpt": "Hii ni content ya kwanza. Inabadilika kila dakika 10.",
-    "link": "/somo1",
+    "month": "Septemba 2026",
     "publishDate": "2026-09-01",
-    "testMode": true
-  },
-  {
-    "id": "test-2",
-    "title": "TEST 2: Somo la Mwezi",
-    "category": "planned",
-    "status": "published",
-    "excerpt": "Hii ni content ya pili. Inabadilika kila dakika 10.",
-    "link": "/somo2",
-    "publishDate": "2026-09-02",
-    "testMode": true
-  },
-  {
-    "id": "test-3",
-    "title": "TEST 3: Somo la Mwezi",
-    "category": "planned",
-    "status": "published",
-    "excerpt": "Hii ni content ya tatu. Inabadilika kila dakika 10.",
-    "link": "/somo3",
-    "publishDate": "2026-09-03",
-    "testMode": true
+    "company": {
+      "name": "CRDB Bank Plc",
+      "ticker": "CRDB",
+      "sector": "Benki",
+      "listed": "2009 (DSE)",
+      "employees": "3,000+",
+      "branches": "260+"
+    },
+    "executiveSummary": "CRDB Bank Plc ni benki kubwa zaidi Tanzania kwa mtaji wa soko na mtandao wa matawi. Kwa mwaka wa fedha 2025, benki ilirekodi faida ya baada ya kodi ya TSh bilioni 500+, ikiendelea kuonyesha ukuaji thabiti katika mapato ya riba na ada. Uchambuzi huu unachunguza mfano wa biashara wa CRDB, nafasi yake katika sekta ya benki ya Tanzania, uwiano muhimu wa kifedha, hatari za kipekee, na vichocheo vya ukuaji.",
+    "sections": [
+      {
+        "title": "Historia na Msingi",
+        "content": "CRDB Bank Plc ilianzishwa mwaka 1996 kama benki ya maendeleo ya vijijini. Iliorodheshwa DSE mwaka 2009. Kwa miaka 30, imekua kutoka benki ndogo hadi kuwa benki kubwa zaidi Tanzania kwa mtaji wa soko, ikiwa na zaidi ya matawi 260 nchi nzima.\n\nUmiliki wake: Serikali ya Tanzania (asilimia 21), taasisi mbalimbali, na umma kupitia DSE. Makao makuu yapo Dar es Salaam."
+      },
+      {
+        "title": "Mfano wa Biashara — Inapataje Fedha?",
+        "content": "CRDB inapata mapato kwa njia kuu nne:\n\n1. Riba kutoka mikopo kwa watu binafsi, biashara ndogo, na makampuni makubwa.\n2. Ada za huduma — uhamisho, akaunti, kadi, bima.\n3. Uwekezaji wa fedha kwenye dhamana za serikali.\n4. Biashara za kimataifa — Letters of Credit, foreign exchange.\n\nMfano huu unategemea sana ukuaji wa mikopo na ubora wa wakopaji."
+      },
+      {
+        "title": "Sekta na Ushindani",
+        "content": "Sekta ya benki Tanzania ina benki 40+, lakini benki 5 kubwa zinamiliki zaidi ya asilimia 60 ya soko.\n\nWashindani wakuu wa CRDB: NMB (benki ya pili kwa ukubwa), Exim Bank, NBC, Stanbic, na Absa.\n\nUshindani upo kwenye: bei ya riba, ubora wa huduma za kidijitali, na upanuzi wa matawi.\n\nCRDB ina nguvu kwenye mikopo ya kilimo na biashara ndogo — sehemu ambazo benki nyingine hazizingatii sana."
+      },
+      {
+        "title": "Uchambuzi wa Fedha",
+        "content": "Mapato ya jumla yalikua kwa wastani wa asilimia 12 kwa mwaka kati ya 2022-2025.\n\nFaida halisi iliongezeka kutoka TSh bilioni 380 (2023) hadi TSh bilioni 500+ (2025).\n\nJumla ya mali: TSh trilioni 10+. Mikopo: TSh trilioni 6+. Amana: TSh trilioni 8+.\n\nMtiririko wa fedha kutoka shughuli za uendeshaji umekuwa chanya kwa miaka 5 mfululizo."
+      },
+      {
+        "title": "Uwiano Muhimu wa Kifedha",
+        "ratios": [
+          { "name": "ROE (Return on Equity)", "value": "~20%", "meaning": "Kampuni inazalisha faida nzuri kwa wanahisa" },
+          { "name": "ROA (Return on Assets)", "value": "~2.5%", "meaning": "Ufanisi wa matumizi ya mali ni wa kawaida kwa benki" },
+          { "name": "NPL Ratio", "value": "~5%", "meaning": "Mikopo isiyolipwa iko chini ya wastani wa sekta" },
+          { "name": "Capital Adequacy", "value": "~18%", "meaning": "Benki ina mtaji wa kutosha kulingana na BOT" },
+          { "name": "Dividend Yield", "value": "~8%", "meaning": "Gawio la kila mwaka kwa bei ya sasa" }
+        ]
+      },
+      {
+        "title": "Gawio na Sera ya Ugawaji",
+        "content": "CRDB imekuwa ikitoa gawio kila mwaka tangu 2015. Sera ya kampuni ni kugawa asilimia 30-40 ya faida kama gawio.\n\nMwaka 2025, gawio lilikuwa TSh 42 kwa hisa. Hii ni muhimu kwa wawekezaji wanaotafuta mapato ya mara kwa mara."
+      },
+      {
+        "title": "Hatari za Kina",
+        "risks": [
+          { "type": "Hatari ya Mikopo", "detail": "Kushuka kwa uchumi kunaweza kuongeza mikopo isiyolipwa." },
+          { "type": "Hatari ya Riba", "detail": "Kupanda kwa riba kunapunguza thamani ya dhamana za serikali." },
+          { "type": "Hatari ya Udhibiti", "detail": "Mabadiliko ya sheria za BOT yanaweza kuathiri faida." },
+          { "type": "Hatari ya Ushindani", "detail": "Benki za kidijitali zinaweza kupunguza sehemu ya soko." },
+          { "type": "Hatari ya Fedha za Kigeni", "detail": "Kushuka kwa shilingi kunaathiri mikopo ya fedha za kigeni." }
+        ]
+      },
+      {
+        "title": "Vichocheo vya Ukuaji",
+        "drivers": [
+          "Ukuaji wa uchumi wa Tanzania (wastani 5-6% kwa mwaka)",
+          "Upanuzi wa huduma za kidijitali (CRDB Wakala, SimBanking)",
+          "Kuongezeka kwa watu wanaotumia benki (financial inclusion)",
+          "Mikopo ya kilimo na biashara ndogo (sehemu isiyotumiwa vizuri)"
+        ]
+      },
+      {
+        "title": "Utawala na Uongozi",
+        "content": "CRDB ina bodi ya wakurugenzi yenye wajumbe 9, wakiwemo wawili wa kujitegemea.\n\nMkurugenzi Mtendaji: Abdulmajid Nsekela.\n\nKampuni inafuata kanuni za CMSA na BOT. Inachapisha ripoti za robo na mwaka kwenye tovuti yake."
+      },
+      {
+        "title": "Maswali ya Kujitafakari",
+        "questions": [
+          "Je, ukuaji wa faida wa CRDB unatokana na ukuaji wa mikopo au kupunguza gharama?",
+          "Je, benki inaweza kudumisha ROE ya 20% kama ushindani ukiendelea?",
+          "Je, upanuzi wa kidijitali unasaidia kupunguza gharama au kuongeza?",
+          "Nini kitatokea kama NPL ratio ikipanda kutoka 5% hadi 10%?",
+          "Je, gawio la 8% linaweza kudumishwa kama faida ikishuka?"
+        ]
+      },
+      {
+        "title": "Vyanzo na Marejeleo",
+        "sources": [
+          "Ripoti ya Mwaka ya CRDB 2025",
+          "Ripoti ya BOT ya Sekta ya Benki 2025",
+          "DSE Equity Report — data ya kila siku",
+          "CMSA Guidelines"
+        ]
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji. Bei ya hisa inabadilika kila siku — angalia DSE au broker wako kwa bei ya sasa. Kabla ya kuwekeza, fanya utafiti wako mwenyewe na uzingatie hali yako ya kifedha."
   }
 ]
