@@ -12,18 +12,67 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "WEKEZA NASI Academy - Jifunze Uwekezaji wa Hisa Tanzania",
-  description: "Jifunze hisa, soko la Dar es Salaam Stock Exchange (DSE), na uwekezaji kwa lugha rahisi ya Kiswahili. Masomo ya bure, uchambuzi wa makampuni, na tahadhari za utapeli.",
-  verification: { google: "gihoAfK3IJnkiIhfgYLUVDaPj6VCpADAWxFRClqzM_8" },
+  metadataBase: new URL("https://wekeza-nasi.vercel.app"),
+  title: {
+    default: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
+    template: "%s — WEKEZA NASI",
+  },
+  description:
+    "Jifunze uwekezaji Tanzania kwa Kiswahili rahisi. Academy (masomo 20), Uchambuzi wa Kampuni 8 za DSE, na Somo la Mwezi — bure.",
+  keywords: [
+    "uwekezaji",
+    "hisa",
+    "DSE",
+    "Dar es Salaam Stock Exchange",
+    "soko la hisa",
+    "Tanzania",
+    "academy",
+    "kujifunza uwekezaji",
+    "uchambuzi wa kampuni",
+    "CRDB",
+    "NMB",
+    "TBL",
+    "Vodacom",
+    "TCC",
+  ],
+  authors: [{ name: "WEKEZA NASI" }],
+  creator: "WEKEZA NASI",
+  publisher: "WEKEZA NASI",
+  openGraph: {
+    type: "website",
+    locale: "sw_TZ",
+    url: "https://wekeza-nasi.vercel.app",
+    siteName: "WEKEZA NASI",
+    title: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
+    description:
+      "Jifunze uwekezaji Tanzania kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
+    description:
+      "Jifunze uwekezaji Tanzania kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "giho2hyCkM9aGq3Z5YQXfQwYz8ZK4hJ8Z1N6qB4lM0o",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="sw" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

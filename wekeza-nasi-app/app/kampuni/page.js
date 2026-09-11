@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Uchambuzi wa Kampuni 8 za DSE",
+  description:
+    "Uchambuzi wa kina wa kampuni 8 za DSE: CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE Plc. Historia, biashara, hatari, na maswali ya kujitafakari.",
+};
+
 export default function Kampuni() {
   const companies = [
     { href: "/kampuni/crdb", name: "CRDB Bank Plc", sector: "Benki" },
@@ -13,7 +19,7 @@ export default function Kampuni() {
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
       <h1 style={{ color: "#1a1a1a" }}>Uchambuzi wa Kampuni</h1>
-      <p style={{ color: "#1a1a1a" }}>Jifunze kampuni, historia yake, inavyofanya kazi, na inavyotengeneza fedha.</p>
+      <p style={{ color: "#555" }}>Jifunze kampuni, historia yake, inavyofanya kazi, na inavyotengeneza fedha.</p>
 
       <div style={{ marginTop: "1.5rem" }}>
         {companies.map((c) => (

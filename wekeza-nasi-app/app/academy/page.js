@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Academy — Masomo 20 ya Uwekezaji",
+  description:
+    "Masomo 20 ya uwekezaji kwa Kiswahili — kuanzia Hisa ni nini hadi Kusoma Ripoti za Fedha. Jifunze hatua kwa hatua, bure.",
+};
+
 export default function Academy() {
   const lessons = [
     { href: "/somo1", title: "Somo 1: Hisa ni nini?" },
@@ -23,10 +29,10 @@ export default function Academy() {
   ];
 
   return (
-    <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
-      <h1 style={{ marginBottom: "0.25rem" }}>WEKEZA NASI</h1>
-      <h2 style={{ marginTop: 0 }}>Academy</h2>
-      <p>Jifunze uwekezaji hatua kwa hatua.</p>
+    <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
+      <h1 style={{ marginBottom: "0.25rem", color: "#1a1a1a" }}>WEKEZA NASI</h1>
+      <h2 style={{ marginTop: 0, color: "#1a1a1a" }}>Academy</h2>
+      <p style={{ color: "#555" }}>Jifunze uwekezaji hatua kwa hatua — masomo 20.</p>
 
       <div style={{ marginTop: "1.5rem" }}>
         {lessons.map((l) => (
