@@ -1,19 +1,27 @@
 import contentData from "../content/content.json";
 
-function isPublishedByToday(item) {
-  const today = new Date();
+function isPublishedByNow(item) {
+  const now = new Date();
   const publishDate = new Date(item.publishDate);
-  return item.status === "published" && publishDate <= today;
+  return item.status === "published" && publishDate <= now;
 }
 
 export function getTimelyContent() {
   return contentData
-    .filter((item) => item.category === "timely" && isPublishedByToday(item))
+    .filter((item) => item.category === "timely" && isPublishedByNow(item))
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 }
 
 export function getPlannedContent() {
   return contentData
-    .filter((item) => item.category === "planned" && isPublishedByToday(item))
+    .filter((item) => item.category === "planned" && isPublishedByNow(item))
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+}
+
+// MPYA: Chukua items zote za "planned" (bila filter ya muda)
+// Tutatumia hii kwenye client component
+export function getAllPlannedItems() {
+  return contentData
+    .filter((item) => item.category === "planned" && item.status === "published")
+    .sort((a, b) => new Date(a.publishDate) - new Date(b.publishDate));
 }
