@@ -502,5 +502,155 @@
       }
     ],
     "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
+  },
+  {
+    "id": "case-crdb-2022-1",
+    "slug": "kwa-nini-crdb-ilipanda-60-2022-2023",
+    "seriesId": "case-crdb-2022",
+    "partNumber": 1,
+    "totalParts": 3,
+    "nextSlug": "kwa-nini-crdb-ilipanda-60-2022-2023-2",
+    "type": "case-study",
+    "category": "planned",
+    "title": "Kwa Nini CRDB Ilipanda 60% Mwaka 2022-2023?",
+    "subtitle": "Sehemu 1: Tukio na Muktadha",
+    "excerpt": "Uchambuzi wa kina wa kupanda kwa hisa za CRDB mwaka 2022-2023 — nini kilitokea na kwa nini.",
+    "publishDate": "2026-09-22",
+    "unlockDate": "2026-09-22",
+    "status": "published",
+    "sections": [
+      {
+        "title": "Karibu Kwenye Case Study Hii",
+        "content": "Kati ya 2022 na 2023, hisa za CRDB Bank zilipanda kwa zaidi ya asilimia 60. Hii ilikuwa moja ya matukio makubwa kwenye soko la hisa la Tanzania katika kipindi hicho.\n\nKatika Case Study hii ya sehemu tatu, tutachunguza:\n\n• Nini kilitokea kwenye soko\n• Kwa nini hisa zilipanda\n• Masomo kwa mwekezaji\n\nTunatumia mfumo wetu wa maswali 6 — NINI, LINI, NANI, KWA NINI, USHAHIDI, NINI KINAFUATA."
+      },
+      {
+        "title": "Tukio",
+        "content": "CRDB Bank Plc iliona hisa zake zikipanda kutoka takribani TSh 350 mwanzoni mwa 2022 hadi zaidi ya TSh 600 kufikia 2023.\n\nHii ni kupanda kwa zaidi ya asilimia 60 katika kipindi cha miezi 18-24.\n\nKupanda huku kulikuja wakati ambapo uchumi wa Tanzania ulikuwa ukiongezeka baada ya janga la COVID-19."
+      },
+      {
+        "title": "Muktadha wa Soko",
+        "content": "Ili kuelewa kupanda kwa CRDB, tunahitaji kuangalia muktadha:\n\n1. Uchumi wa Tanzania ulikua kwa kasi ya 5%+ kila mwaka.\n2. Sekta ya benki ilipona baada ya COVID-19.\n3. Benki Kuu (BOT) iliendelea kusimamia sekta kwa nidhamu.\n4. Wawekezaji wa ndani waliongezeka kwenye soko la hisa.\n5. Mapato ya serikali yaliongezeka, yakisaidia ukuaji wa uchumi.\n\nMuktadha huu ulisaidia kupanda kwa hisa za CRDB."
+      },
+      {
+        "title": "Ushahidi wa Kupanda",
+        "content": "Ushahidi wa tukio hili unatoka kwenye:\n\n• Ripoti za DSE za 2022 na 2023 — data ya kila mwezi.\n• Ripoti za Mwaka za CRDB 2022 na 2023 — mapato na faida.\n• Taarifa za BOT kuhusu sekta ya benki Tanzania.\n\nKwa kuwa hii ni Case Study, tunaweza kuchambua kwa utulivu — data ipo."
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
+  },
+  {
+    "id": "case-crdb-2022-2",
+    "slug": "kwa-nini-crdb-ilipanda-60-2022-2023-2",
+    "seriesId": "case-crdb-2022",
+    "partNumber": 2,
+    "totalParts": 3,
+    "prevSlug": "kwa-nini-crdb-ilipanda-60-2022-2023",
+    "nextSlug": "kwa-nini-crdb-ilipanda-60-2022-2023-3",
+    "type": "case-study",
+    "category": "planned",
+    "title": "Kwa Nini CRDB Ilipanda 60% Mwaka 2022-2023?",
+    "subtitle": "Sehemu 2: Sababu Nne Kuu",
+    "excerpt": "Sababu nne zilizochangia kupanda kwa hisa za CRDB kwa 60% katika miaka ya 2022-2023.",
+    "publishDate": "2026-09-22",
+    "unlockDate": "2026-09-22",
+    "status": "published",
+    "sections": [
+      {
+        "title": "Sababu Nne Kuu",
+        "content": "Kupanda kwa CRDB mwaka 2022-2023 kunaweza kuhusishwa na sababu nne kuu:\n\n1. Ukuaji wa Faida\n2. Kupungua kwa Mikopo Isiyolipwa\n3. Ukuaji wa Sekta ya Benki\n4. Imani ya Wawekezaji\n\nTutaangalia kila sababu kwa makini."
+      },
+      {
+        "title": "Sababu 1: Ukuaji wa Faida",
+        "content": "CRDB iliripoti ukuaji mzuri wa faida mwaka 2022 na 2023. Faida halisi iliongezeka kwa takribani asilimia 15-20 kila mwaka.\n\nSababu za ukuaji huu:\n\n• Kuongezeka kwa mikopo kwa wateja\n• Kuongezeka kwa mapato ya riba\n• Ukuaji wa mapato ya ada (fees)\n• Ufanisi bora wa uendeshaji\n\nFaida inayokua ni ishara ya kampuni yenye afya — inavutia wawekezaji."
+      },
+      {
+        "title": "Sababu 2: Kupungua kwa Mikopo Isiyolipwa",
+        "content": "Kipimo cha NPL (Non-Performing Loans — mikopo isiyolipwa) kilipungua kwa CRDB katika kipindi hiki.\n\nNPL ilipungua kutoka zaidi ya asilimia 7 hadi chini ya asilimia 5. Hii ilimaanisha:\n\n• Benki ilikuwa na mikopo bora\n• Hasara ndogo kutokana na mikopo isiyolipwa\n• Faida kubwa kwa wanahisa\n\nNPL ndogo ni ishara ya benki imara. Wawekezaji wanavutiwa."
+      },
+      {
+        "title": "Sababu 3: Ukuaji wa Sekta ya Benki",
+        "content": "Sekta ya benki Tanzania ilikua kwa kasi mwaka 2022-2023:\n\n• Watu wengi wanaotumia benki (financial inclusion)\n• Ukuaji wa huduma za kidijitali (SimBanking, CRDB Wakala)\n• Kuongezeka kwa mikopo kwa biashara ndogo\n• Uimarishaji wa udhibiti wa BOT\n\nCRDB, ikiwa benki kubwa zaidi, ilifaidika zaidi na ukuaji huu."
+      },
+      {
+        "title": "Sababu 4: Imani ya Wawekezaji",
+        "content": "Kupanda kwa CRDB hakuwa tu kuhusu nambari — pia kulihusu imani ya wawekezaji.\n\nCRDB ilikuwa:\n• Benki kubwa zaidi Tanzania\n• Na usimamizi mzuri wa BOT\n• Na utawala thabiti\n• Na mchango kwenye uchumi wa nchi\n\nImani hii iliongeza mahitaji ya hisa, na hivyo kupandisha bei.\n\nWakati wawekezaji wana imani, wanataka kuwekeza. Mahitaji yanaongezeka. Bei inapanda."
+      },
+      {
+        "title": "Kwa Nini Sababu Zinajenga Picha Kamili",
+        "content": "Kila sababu peke yake haitoshi. Lakini pamoja:\n\n• Faida ilikua → kampuni ilikuwa imara\n• NPL ilipungua → mikopo ilikuwa bora\n• Sekta ilikua → mazingira yalikuwa mazuri\n• Imani ilipanda → mahitaji yaliongezeka\n\nKwa pamoja, sababu hizi nne zilisababisha kupanda kwa 60%.\n\nHii inatuonyesha kitu: kupanda kwa hisa mara nyingi kunatokana na mchanganyiko wa mambo."
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
+  },
+  {
+    "id": "case-crdb-2022-3",
+    "slug": "kwa-nini-crdb-ilipanda-60-2022-2023-3",
+    "seriesId": "case-crdb-2022",
+    "partNumber": 3,
+    "totalParts": 3,
+    "prevSlug": "kwa-nini-crdb-ilipanda-60-2022-2023-2",
+    "type": "case-study",
+    "category": "planned",
+    "title": "Kwa Nini CRDB Ilipanda 60% Mwaka 2022-2023?",
+    "subtitle": "Sehemu 3: Masomo na Kipimo",
+    "excerpt": "Masomo matano kutoka tukio la CRDB 2022-2023, na kipimo kwa mwanafunzi.",
+    "publishDate": "2026-09-22",
+    "unlockDate": "2026-09-22",
+    "status": "published",
+    "sections": [
+      {
+        "title": "Tumefika Mwisho",
+        "content": "Hongera! Umemaliza safari hii ya sehemu tatu.\n\nTumechunguza tukio halisi: kupanda kwa CRDB kwa asilimia 60 mwaka 2022-2023.\n\nTumelijadili NINI kilitokea, LINI, NANI, KWA NINI, na USHAHIDI.\n\nSasa, hebu tuangalie masomo tunayoweza kujifunza."
+      },
+      {
+        "title": "Somo 1: Kupanda Kunatokana na Msingi Imara",
+        "content": "Kupanda kwa CRDB hakukuwa bahati. Kulikuwa na msingi:\n\n• Faida ilikua kwa miaka\n• NPL ilipungua\n• Sekta ilikua\n• Imani ya wawekezaji iliongezeka\n\nHii ni muhimu kwa mwekezaji. Kupanda kunatokana na sababu, sio kubahatisha.\n\nTunapoona hisa imepanda, tunaangalia msingi — kwa nini imepanda?"
+      },
+      {
+        "title": "Somo 2: Kipimo cha NPL ni Muhimu kwa Benki",
+        "content": "Kwa benki, NPL (mikopo isiyolipwa) ni kipimo muhimu. NPL ndogo inamaanisha:\n\n• Mikopo inalipwa\n• Benki imara\n• Faida kubwa kwa wanahisa\n\nMwekezaji anayechunguza benki anapaswa kuangalia NPL ratio. Ni kipimo cha afya ya benki."
+      },
+      {
+        "title": "Somo 3: Sekta Nzima Inaathiri",
+        "content": "CRDB ilipanda, lakini pia benki nyingine zilipanda katika kipindi hicho. Kwa nini?\n\nSekta nzima ya benki ilikua. Uchumi ulikua. Wawekezaji waliona fursa.\n\nSomo: Kuchambua kampuni kunahitaji kuangalia sekta pia. Kampuni moja inaweza kuwa nzuri, lakini sekta nzima ina nguvu zaidi."
+      },
+      {
+        "title": "Somo 4: Ukuaji wa Kidijitali ni Fursa",
+        "content": "CRDB ilifaidi sana kutokana na ukuaji wa huduma za kidijitali — SimBanking, CRDB Wakala.\n\nHuduma hizi zilipunguza gharama za uendeshaji na kuongeza wateja. Hii ni moja ya sababu za faida kuongezeka.\n\nSomo: Teknolojia inaweza kubadilisha biashara kwa kasi. Makampuni yanayowekeza kwenye teknolojia yanaweza kufaidika zaidi."
+      },
+      {
+        "title": "Somo 5: Sababu ya Kurudi",
+        "content": "Wawekezaji walivutiwa na CRDB kwa sababu ya msingi wake imara.\n\nHii ni kanuni: Wawekezaji wanarudi kwenye kampuni zenye msingi imara.\n\nKama tunataka kujifunza uwekezaji, tunaangalia makampuni yenye msingi imara — sio tu bei."
+      },
+      {
+        "title": "Kipimo Kidogo",
+        "quiz": [
+          {
+            "q": "Kwa nini CRDB ilipanda 60% mwaka 2022-2023?",
+            "options": "(a) Kwa bahati   (b) Kwa mchanganyiko wa faida, NPL, sekta, na imani   (c) Kwa sababu moja tu",
+            "answer": "Jibu: (b) — Ilikuwa mchanganyiko wa sababu. Kupanda kunatokana na msingi imara."
+          },
+          {
+            "q": "NPL ndogo inamaanisha nini kwa benki?",
+            "options": "(a) Mikopo inalipwa vizuri   (b) Mikopo mingi haipo   (c) Benki inakopesha kidogo",
+            "answer": "Jibu: (a) — Mikopo inalipwa vizuri. NPL ndogo ni ishara ya benki imara."
+          },
+          {
+            "q": "Kwa nini mwekezaji anapaswa kuangalia sekta pia?",
+            "options": "(a) Kwa sababu sekta inaathiri kampuni zote   (b) Kwa sababu sekta ni rahisi   (c) Kwa sababu sekta inaongea",
+            "answer": "Jibu: (a) — Sekta inaathiri kampuni zote ndani yake. Kampuni moja inaweza kuwa nzuri, lakini sekta nzima ina nguvu zaidi."
+          }
+        ]
+      },
+      {
+        "title": "Muhtasari wa Safari",
+        "content": "Kupanda kwa CRDB 2022-2023 kunatufundisha:\n\n1. Kupanda kunatokana na msingi imara\n2. NPL ni kipimo muhimu kwa benki\n3. Sekta nzima inaathiri\n4. Teknolojia ni fursa\n5. Wawekezaji wanarudi kwenye kampuni zenye msingi\n\nHizi ni zana za kufikiri tunapochambua hisa yoyote."
+      },
+      {
+        "title": "Umekamilisha Case Study Hii",
+        "content": "Umemaliza sehemu zote tatu za Case Study ya CRDB.\n\nSasa unajua jinsi ya kuchambua tukio halisi la soko kwa mfumo wa maswali 6 na masomo ya kina.\n\nEndelea na Case Studies nyingine, au rudi kwenye Framework ili kujifunza zana zaidi za uchambuzi.\n\nSafari ya uwekezaji ni ndefu — kila somo linakuimarisha zaidi."
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
   }
 ]
