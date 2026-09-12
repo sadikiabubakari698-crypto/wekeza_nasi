@@ -410,3 +410,83 @@ Detailed future framework for deep market analysis, requiring real DSE daily tra
 
 **Last Updated:** Novemba 2026
 **Maintained by:** Founder + Chief Architect
+
+## 33. SOKO ENGINE V1 — Timely + Planned Split
+
+**Position:** Uchambuzi wa Soko page (`/soko`) uses a dedicated content engine, separate from Academy (Section 13), Company Analysis (Section 16), and Somo la Mwezi (Section 29).
+
+**Problem solved:** Real-time DSE data is not yet available (Section 26, Level 2+). Writing "today's price" content would be stale the next day. Solution: split Soko into two streams — one permanent, one short-lived.
+
+**Two Streams:**
+
+### A. TIMELY (Breaking)
+- **Purpose:** Handle important market events as they happen
+- **Priority:** ALWAYS appears at TOP of `/soko` page
+- **Lifespan:** Short — auto-removed after `expiryDate` (typically 1-2 weeks)
+- **Examples:** "CRDB Yatangaza Gawio", "BOT Yapandisha Riba", "CMSA Yatoa Tangazo"
+- **Rule:** When timely content expires, planned content simply continues — no disruption
+- **Data source:** Founder manually collects evidence (news, announcements, DSE reports) and writes
+
+### B. PLANNED (Framework + Case Studies)
+- **Purpose:** Permanent educational content that does not expire
+- **Priority:** Appears below timely content, in chronological order
+- **Lifespan:** Permanent — written once, rarely updated
+- **Two subtypes:**
+  - **FRAMEWORK** — teaches how to think about market events (no live data needed)
+  - **CASE STUDY** — analyzes historical events that already happened (data never changes)
+- **Examples:**
+  - Framework: "Jinsi ya Kuuliza Maswali Sahihi Kuhusu Tukio la Soko"
+  - Case Study: "Kwa Nini NMB Ilifanya Stock Split Julai 2026?"
+
+**Content file:** `content/soko.json` (separate from `content/content.json` which drives Somo la Mwezi — Section 25)
+
+**Engine file:** `lib/soko-engine.js`
+
+**Three functions:**
+- `getTimelySoko()` — returns active timely items (published, not expired)
+- `getPlannedSoko()` — returns active planned items (published, chronological)
+- `getSokoBySlug(slug)` — returns one article for `/soko/[slug]` page
+
+**Route structure:**
+- `/soko` — list page with both sections
+- `/soko/[slug]` — full article (same for both types)
+
+**Required fields for content items:**
+- `id`, `slug`, `type` ("framework" | "case-study" | "timely"), `category` ("planned" | "timely")
+- `title`, `excerpt`, `publishDate`, `status` ("published")
+- `sections` (array of { title, content, quiz?, questions? })
+- `expiryDate` (REQUIRED for timely only)
+- `disclaimer` (REQUIRED for all)
+
+**RULE:** Timely items MUST have `expiryDate`. Planned items MUST NOT (they are permanent).
+
+**RULE:** Soko engine must never touch Academy, Company Analysis, or Somo la Mwezi content. It reads from its own `soko.json`.
+
+**RULE:** Timely content requires the Founder to manually monitor events (Section 26, Level 1). Do not auto-generate timely content until Level 2+.
+
+**RULE:** Never say "bei ya sasa" in any Soko content. Always cite historical dates ("bei ilikuwa TSh X tarehe Y"). If the article references an event, cite the event date, not today's date.
+
+**Workflow when a market event happens:**
+1. Founder notices event (Section 26, Level 1)
+2. Founder gathers evidence (DSE, CMSA, company announcements, news)
+3. Founder adds new entry to `content/soko.json` with:
+   - `category: "timely"`
+   - `expiryDate` set to ~2 weeks from now
+   - Full analysis in `sections`
+4. Commit + push
+5. Vercel deploys — timely content appears at top of `/soko`
+6. After expiry date passes, content is auto-removed by engine (no manual cleanup needed)
+
+**Expansion candidates (Framework topics):**
+- Jinsi ya Kusoma Tangazo la DSE
+- Kwa Nini Bid Kubwa Haipandishi Bei Yenyewe
+- Ushahidi vs Maoni: Jinsi ya Kutofautisha
+
+**Expansion candidates (Case Studies):**
+- TBL Ilipanda 40% Mwaka 2023 — Nini Kilitokea?
+- Kwa Nini CRDB Ilipata Faida Kubwa 2020?
+- Jinsi Vodacom Ilipoteza Soko kwa Airtel 2018-2022
+
+---
+
+**Last Updated:** Novemba 2026
