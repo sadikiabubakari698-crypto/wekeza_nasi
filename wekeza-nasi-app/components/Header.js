@@ -16,10 +16,9 @@ export default function Header() {
     position: "sticky",
     top: 0,
     zIndex: 100,
-    background: "rgba(255,255,255,0.95)",
-    backdropFilter: "blur(8px)",
-    borderBottom: "1px solid var(--color-border)",
-    padding: "0.75rem 1.75rem",
+    background: "#ffffff",
+    borderBottom: "1px solid #e9edf2",
+    padding: "0.75rem 1.5rem",
   };
 
   const innerStyle = {
@@ -32,8 +31,8 @@ export default function Header() {
 
   const logoStyle = {
     fontWeight: 800,
-    fontSize: "1.05rem",
-    color: "var(--color-primary)",
+    fontSize: "1rem",
+    color: "#1e7b4c",
     textDecoration: "none",
     letterSpacing: "-0.01em",
   };
@@ -45,7 +44,7 @@ export default function Header() {
   };
 
   const navLinkStyle = {
-    color: "var(--color-text)",
+    color: "#1a1a1a",
     textDecoration: "none",
     fontSize: "0.9rem",
     fontWeight: 500,
@@ -56,7 +55,7 @@ export default function Header() {
     border: "none",
     fontSize: "1.5rem",
     lineHeight: 1,
-    color: "var(--color-text)",
+    color: "#1a1a1a",
     padding: "0.25rem 0.5rem",
   };
 
@@ -67,7 +66,7 @@ export default function Header() {
     flexDirection: "column",
     gap: "0.75rem",
     paddingTop: "0.75rem",
-    borderTop: "1px solid var(--color-border)",
+    borderTop: "1px solid #e9edf2",
   };
 
   return (
@@ -75,14 +74,12 @@ export default function Header() {
       <div style={innerStyle}>
         <Link href="/" style={logoStyle}>WEKEZA NASI</Link>
 
-        {/* Desktop nav (hidden on small screens via CSS-in-JS trick) */}
         <nav style={desktopNavStyle} className="desktop-nav">
           {links.map((l) => (
             <Link key={l.href} href={l.href} style={navLinkStyle}>{l.label}</Link>
           ))}
         </nav>
 
-        {/* Mobile menu button */}
         <button
           style={menuBtnStyle}
           className="mobile-menu-btn"

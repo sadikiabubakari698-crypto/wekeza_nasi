@@ -8,34 +8,35 @@ export default function Home() {
   const heroStyle = {
     background: "linear-gradient(135deg, #1e7b4c 0%, #16633d 100%)",
     borderRadius: "var(--radius-lg)",
-    padding: "2.5rem 1.75rem",
+    padding: "1.75rem 1.5rem",
     color: "#ffffff",
     marginBottom: "2rem",
   };
 
   const heroTitleStyle = {
-    fontSize: "2.25rem",
+    fontSize: "1.75rem",
     fontWeight: 800,
-    lineHeight: 1.15,
+    lineHeight: 1.2,
     letterSpacing: "-0.02em",
-    margin: "0 0 0.75rem 0",
+    margin: "0 0 0.5rem 0",
     color: "#ffffff",
   };
 
   const heroSubStyle = {
-    fontSize: "1.05rem",
+    fontSize: "0.98rem",
     lineHeight: 1.5,
-    opacity: 0.92,
-    margin: "0 0 1.5rem 0",
+    opacity: 0.95,
+    margin: "0 0 1.25rem 0",
     color: "#ffffff",
   };
 
   const ctaPrimaryStyle = {
     display: "inline-block",
-    padding: "0.85rem 1.5rem",
+    padding: "0.7rem 1.35rem",
     background: "#ffffff",
     color: "#1e7b4c",
     fontWeight: 700,
+    fontSize: "0.95rem",
     borderRadius: "var(--radius-pill)",
     textDecoration: "none",
     marginRight: "0.5rem",
@@ -44,13 +45,14 @@ export default function Home() {
 
   const ctaSecondaryStyle = {
     display: "inline-block",
-    padding: "0.85rem 1.5rem",
+    padding: "0.7rem 1.35rem",
     background: "transparent",
     color: "#ffffff",
     fontWeight: 600,
+    fontSize: "0.95rem",
     borderRadius: "var(--radius-pill)",
     textDecoration: "none",
-    border: "1.5px solid rgba(255,255,255,0.5)",
+    border: "1.5px solid rgba(255,255,255,0.6)",
     marginBottom: "0.5rem",
   };
 
@@ -118,7 +120,7 @@ export default function Home() {
       <section style={heroStyle}>
         <h1 style={heroTitleStyle}>Jifunze Uwekezaji. Anza Safari.</h1>
         <p style={heroSubStyle}>
-          Elimu ya uwekezaji kwa Kiswahili rahisi. Kuanzia Tanzania, kwa Afrika.
+          Elimu ya uwekezaji kwa Kiswahili rahisi. Afrika (Tanzania).
         </p>
         <a href="/somo1" style={ctaPrimaryStyle}>Anza Somo la 1 →</a>
         <a href="/kampuni" style={ctaSecondaryStyle}>Chunguza Kampuni</a>
