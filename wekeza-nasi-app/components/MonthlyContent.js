@@ -11,8 +11,6 @@ export default function MonthlyContent({ items }) {
     }
 
     const now = new Date();
-
-    // Chagua content ya mwisho iliyopublish (kwa mwezi wa sasa au nyuma)
     const eligible = items
       .filter((item) => new Date(item.publishDate) <= now)
       .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
@@ -31,7 +29,7 @@ export default function MonthlyContent({ items }) {
   return (
     <div className="area-card">
       <p style={{ fontSize: "0.8rem", color: "#1e7b4c", fontWeight: 600, margin: 0 }}>
-        SOMO LA MWEZI — {current.month?.toUpperCase()}
+        SOMO (MWEZI) — {current.month?.toUpperCase()}
       </p>
       <h3 style={{ marginTop: "0.25rem" }}>{current.title}</h3>
       {current.subtitle && (

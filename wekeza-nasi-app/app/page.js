@@ -108,7 +108,7 @@ export default function Home() {
 
   const slides = [
     { href: "/academy", title: "Academy", subtitle: "Masomo 20 — kujifunza uwekezaji hatua kwa hatua." },
-    { href: "/somo-la-mwezi/crdb-2026-09", title: "Somo la Mwezi", subtitle: "Uchambuzi wa kina wa kampuni moja kila mwezi." },
+    { href: "/somo-la-mwezi/crdb-2026-09", title: "Somo (Mwezi)", subtitle: "Uchambuzi wa kina wa kampuni moja kila mwezi." },
     { href: "/kampuni", title: "Uchambuzi wa Kampuni", subtitle: "Kampuni 8 — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE." },
     { href: "/soko", title: "Uchambuzi wa Soko", subtitle: "Nini kimetokea? Kwa nini? Ushahidi unasemaje?" },
     { href: null, title: "AI", subtitle: "Inakuja hivi karibuni.", comingSoon: true },
@@ -158,7 +158,7 @@ export default function Home() {
         </div>
       </div>
 
-      <h2 style={sectionTitleStyle}>Somo la Mwezi</h2>
+      <h2 style={sectionTitleStyle}>Somo (Mwezi)</h2>
       <MonthlyContent items={allPlanned} />
 
       <Footer />

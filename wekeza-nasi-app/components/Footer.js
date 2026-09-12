@@ -14,7 +14,7 @@ export default function Footer() {
       <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "1rem" }}>
         <Link href="/" style={linkStyle}>Nyumbani</Link>
         <Link href="/academy" style={linkStyle}>Academy</Link>
-        <Link href="/somo-la-mwezi/crdb-2026-09" style={linkStyle}>Somo la Mwezi</Link>
+        <Link href="/somo-la-mwezi/crdb-2026-09" style={linkStyle}>Somo (Mwezi)</Link>
         <Link href="/kampuni" style={linkStyle}>Kampuni</Link>
         <Link href="/soko" style={linkStyle}>Soko</Link>
       </div>

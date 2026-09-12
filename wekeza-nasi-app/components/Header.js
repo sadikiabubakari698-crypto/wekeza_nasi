@@ -7,7 +7,7 @@ export default function Header() {
 
   const links = [
     { href: "/academy", label: "Academy" },
-    { href: "/somo-la-mwezi/crdb-2026-09", label: "Somo la Mwezi" },
+    { href: "/somo-la-mwezi/crdb-2026-09", label: "Somo (Mwezi)" },
     { href: "/kampuni", label: "Kampuni" },
     { href: "/soko", label: "Soko" },
   ];
@@ -35,11 +35,12 @@ export default function Header() {
     color: "#1e7b4c",
     textDecoration: "none",
     letterSpacing: "-0.01em",
+    whiteSpace: "nowrap",
   };
 
   const desktopNavStyle = {
     display: "flex",
-    gap: "1.25rem",
+    gap: "1rem",
     alignItems: "center",
   };
 
@@ -48,6 +49,7 @@ export default function Header() {
     textDecoration: "none",
     fontSize: "0.9rem",
     fontWeight: 500,
+    whiteSpace: "nowrap",
   };
 
   const menuBtnStyle = {
