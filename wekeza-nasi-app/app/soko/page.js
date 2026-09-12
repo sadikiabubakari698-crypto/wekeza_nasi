@@ -36,7 +36,6 @@ export default function Soko() {
     fontWeight: 700,
     padding: "0.15rem 0.6rem",
     borderRadius: "999px",
-    marginBottom: "0.5rem",
     letterSpacing: "0.05em",
   };
 
@@ -52,7 +51,7 @@ export default function Soko() {
         Tukio la sasa, uchambuzi wa kina, na masomo ya kudumu kuhusu soko la hisa Tanzania.
       </p>
 
-      {/* TIMELY (JUU) */}
+      {/* TIMELY */}
       {timely.length > 0 && (
         <>
           <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
@@ -60,32 +59,46 @@ export default function Soko() {
           </h2>
           {timely.map((item) => (
             <a key={item.id} href={`/soko/${item.slug}`} style={timelyCardStyle}>
-              <span style={{ ...badgeStyle, background: "#d48d3b", color: "#ffffff" }}>
-                TIMELY
-              </span>
-              <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>{item.title}</h3>
+              <span style={{ ...badgeStyle, background: "#d48d3b", color: "#ffffff" }}>TIMELY</span>
+              <h3 style={{ margin: "0.5rem 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>{item.title}</h3>
               <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>{item.excerpt}</p>
             </a>
           ))}
         </>
       )}
 
-      {/* PLANNED (CHINI) */}
+      {/* PLANNED */}
       <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
         Masomo ya Kudumu
       </h2>
       {planned.length === 0 ? (
         <p style={{ color: "#555555" }}><em>Hakuna masomo kwa sasa. Rudi tena hivi karibuni.</em></p>
       ) : (
-        planned.map((item) => (
-          <a key={item.id} href={`/soko/${item.slug}`} style={cardStyle}>
-            <span style={{ ...badgeStyle, background: item.type === "case-study" ? "#1e7b4c" : "#e3f0ea", color: item.type === "case-study" ? "#ffffff" : "#1e7b4c" }}>
-              {item.type === "case-study" ? "CASE STUDY" : "FRAMEWORK"}
-            </span>
-            <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>{item.title}</h3>
-            <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>{item.excerpt}</p>
-          </a>
-        ))
+        planned.map((item) => {
+          const isCase = item.type === "case-study";
+          const hasParts = item.totalParts > 1;
+
+          return (
+            <a key={item.id} href={`/soko/${item.slug}`} style={cardStyle}>
+              <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+                <span style={{ ...badgeStyle, background: isCase ? "#1e7b4c" : "#e3f0ea", color: isCase ? "#ffffff" : "#1e7b4c" }}>
+                  {isCase ? "CASE STUDY" : "FRAMEWORK"}
+                </span>
+                {hasParts && (
+                  <span style={{ ...badgeStyle, background: "#f3f7fb", color: "#1a1a1a" }}>
+                    Sehemu 1 kati ya {item.totalParts}
+                  </span>
+                )}
+              </div>
+              <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>
+                {item.title}
+              </h3>
+              <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>
+                {item.subtitle || item.excerpt}
+              </p>
+            </a>
+          );
+        })
       )}
 
       <Footer />
