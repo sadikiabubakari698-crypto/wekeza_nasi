@@ -1,4 +1,4 @@
-import { getTimelySoko, getPlannedSoko } from "../../lib/soko-engine";
+import { getTimelySoko, getFrameworkSoko, getWeeklyCaseStudy } from "../../lib/soko-engine";
 import Footer from "../../components/Footer";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
@@ -10,7 +10,8 @@ export const metadata = {
 
 export default function Soko() {
   const timely = getTimelySoko();
-  const planned = getPlannedSoko();
+  const frameworks = getFrameworkSoko();
+  const weeklyCase = getWeeklyCaseStudy();
 
   const cardStyle = {
     display: "block",
@@ -30,6 +31,11 @@ export default function Soko() {
     background: "#fef8ee",
   };
 
+  const caseCardStyle = {
+    ...cardStyle,
+    borderLeft: "4px solid #1e7b4c",
+  };
+
   const badgeStyle = {
     display: "inline-block",
     fontSize: "0.7rem",
@@ -37,6 +43,15 @@ export default function Soko() {
     padding: "0.15rem 0.6rem",
     borderRadius: "999px",
     letterSpacing: "0.05em",
+  };
+
+  const archiveLinkStyle = {
+    display: "inline-block",
+    marginTop: "0.5rem",
+    color: "#1e7b4c",
+    fontWeight: 600,
+    fontSize: "0.9rem",
+    textDecoration: "none",
   };
 
   return (
@@ -51,7 +66,7 @@ export default function Soko() {
         Tukio la sasa, uchambuzi wa kina, na masomo ya kudumu kuhusu soko la hisa Tanzania.
       </p>
 
-      {/* TIMELY */}
+      {/* ============ 1. TIMELY ============ */}
       {timely.length > 0 && (
         <>
           <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
@@ -67,38 +82,67 @@ export default function Soko() {
         </>
       )}
 
-      {/* PLANNED */}
+      {/* ============ 2. FRAMEWORK ============ */}
       <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
-        Masomo ya Kudumu
+        Misingi ya Uchambuzi
       </h2>
-      {planned.length === 0 ? (
-        <p style={{ color: "#555555" }}><em>Hakuna masomo kwa sasa. Rudi tena hivi karibuni.</em></p>
+      <p style={{ color: "#555555", marginTop: 0, fontSize: "0.9rem", marginBottom: "1rem" }}>
+        Masomo ya kudumu — zana za kufikiri kuhusu soko.
+      </p>
+      {frameworks.length === 0 ? (
+        <p style={{ color: "#555555" }}><em>Hakuna masomo kwa sasa.</em></p>
       ) : (
-        planned.map((item) => {
-          const isCase = item.type === "case-study";
-          const hasParts = item.totalParts > 1;
-
-          return (
-            <a key={item.id} href={`/soko/${item.slug}`} style={cardStyle}>
-              <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
-                <span style={{ ...badgeStyle, background: isCase ? "#1e7b4c" : "#e3f0ea", color: isCase ? "#ffffff" : "#1e7b4c" }}>
-                  {isCase ? "CASE STUDY" : "FRAMEWORK"}
+        frameworks.map((item) => (
+          <a key={item.id} href={`/soko/${item.slug}`} style={cardStyle}>
+            <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+              <span style={{ ...badgeStyle, background: "#e3f0ea", color: "#1e7b4c" }}>FRAMEWORK</span>
+              {item.totalParts > 1 && (
+                <span style={{ ...badgeStyle, background: "#f3f7fb", color: "#1a1a1a" }}>
+                  Sehemu 1 kati ya {item.totalParts}
                 </span>
-                {hasParts && (
-                  <span style={{ ...badgeStyle, background: "#f3f7fb", color: "#1a1a1a" }}>
-                    Sehemu 1 kati ya {item.totalParts}
-                  </span>
-                )}
-              </div>
-              <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>
-                {item.title}
-              </h3>
-              <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>
-                {item.subtitle || item.excerpt}
-              </p>
-            </a>
-          );
-        })
+              )}
+            </div>
+            <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>
+              {item.title}
+            </h3>
+            <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>
+              {item.subtitle || item.excerpt}
+            </p>
+          </a>
+        ))
+      )}
+
+      {/* ============ 3. CASE STUDY YA WIKI ============ */}
+      <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
+        Case Study ya Wiki Hii
+      </h2>
+      <p style={{ color: "#555555", marginTop: 0, fontSize: "0.9rem", marginBottom: "1rem" }}>
+        Uchambuzi wa tukio halisi la soko — linabadilika kila wiki.
+      </p>
+      {weeklyCase ? (
+        <>
+          <a href={`/soko/${weeklyCase.slug}`} style={caseCardStyle}>
+            <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+              <span style={{ ...badgeStyle, background: "#1e7b4c", color: "#ffffff" }}>CASE STUDY</span>
+              {weeklyCase.totalParts > 1 && (
+                <span style={{ ...badgeStyle, background: "#f3f7fb", color: "#1a1a1a" }}>
+                  Sehemu 1 kati ya {weeklyCase.totalParts}
+                </span>
+              )}
+            </div>
+            <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>
+              {weeklyCase.title}
+            </h3>
+            <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>
+              {weeklyCase.subtitle || weeklyCase.excerpt}
+            </p>
+          </a>
+          <a href="/soko/archive" style={archiveLinkStyle}>
+            Ona Case Studies zote →
+          </a>
+        </>
+      ) : (
+        <p style={{ color: "#555555" }}><em>Hakuna case study kwa sasa.</em></p>
       )}
 
       <Footer />

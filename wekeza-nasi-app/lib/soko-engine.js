@@ -11,20 +11,48 @@ function isActive(item) {
   return true;
 }
 
+// 1. TIMELY — breaking news
 export function getTimelySoko() {
   return sokoData
     .filter((item) => item.category === "timely" && isActive(item))
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 }
 
-// Onyesha tu Sehemu 1 (au items zisizo na parts) — ili list isijae
-export function getPlannedSoko() {
+// 2. FRAMEWORK — zote, daima (Sehemu 1 TU kwenye list)
+export function getFrameworkSoko() {
   return sokoData
-    .filter((item) => item.category === "planned" && isActive(item))
+    .filter((item) => item.type === "framework" && isActive(item))
     .filter((item) => !item.partNumber || item.partNumber === 1)
     .sort((a, b) => new Date(a.publishDate) - new Date(b.publishDate));
 }
 
+// 3. CASE STUDY YA WIKI — moja tu, inabadilika kila wiki
+export function getWeeklyCaseStudy() {
+  // Case Studies zote (Sehemu 1 TU)
+  const all = sokoData
+    .filter((item) => item.type === "case-study" && isActive(item))
+    .filter((item) => !item.partNumber || item.partNumber === 1)
+    .sort((a, b) => new Date(a.publishDate) - new Date(b.publishDate));
+
+  if (all.length === 0) return null;
+
+  // Hesabu wiki tangu epoch
+  const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
+  const weekNumber = Math.floor(Date.now() / MS_PER_WEEK);
+  const index = weekNumber % all.length;
+
+  return all[index];
+}
+
+// Case Studies zote (kwa archive)
+export function getAllCaseStudies() {
+  return sokoData
+    .filter((item) => item.type === "case-study" && isActive(item))
+    .filter((item) => !item.partNumber || item.partNumber === 1)
+    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+}
+
+// Get by slug
 export function getSokoBySlug(slug) {
   return sokoData.find((item) => item.slug === slug);
 }
