@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "../components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,22 +19,11 @@ export const metadata = {
     template: "%s — WEKEZA NASI",
   },
   description:
-    "Jifunze uwekezaji Tanzania kwa Kiswahili rahisi. Academy (masomo 20), Uchambuzi wa Kampuni 8 za DSE, na Somo la Mwezi — bure.",
+    "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy (masomo 20), Uchambuzi wa Kampuni 8 za DSE, na Somo la Mwezi. Kuanzia Tanzania, kwa Afrika.",
   keywords: [
-    "uwekezaji",
-    "hisa",
-    "DSE",
-    "Dar es Salaam Stock Exchange",
-    "soko la hisa",
-    "Tanzania",
-    "academy",
-    "kujifunza uwekezaji",
-    "uchambuzi wa kampuni",
-    "CRDB",
-    "NMB",
-    "TBL",
-    "Vodacom",
-    "TCC",
+    "uwekezaji", "hisa", "DSE", "Dar es Salaam Stock Exchange",
+    "soko la hisa", "Tanzania", "academy", "kujifunza uwekezaji",
+    "uchambuzi wa kampuni", "CRDB", "NMB", "TBL", "Vodacom", "TCC",
   ],
   authors: [{ name: "WEKEZA NASI" }],
   creator: "WEKEZA NASI",
@@ -45,25 +35,15 @@ export const metadata = {
     siteName: "WEKEZA NASI",
     title: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
     description:
-      "Jifunze uwekezaji Tanzania kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
+      "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
   },
   twitter: {
     card: "summary_large_image",
     title: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
     description:
-      "Jifunze uwekezaji Tanzania kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
+      "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots: { index: true, follow: true },
   verification: {
     google: "giho2hyCkM9aGq3Z5YQXfQwYz8ZK4hJ8Z1N6qB4lM0o",
   },
@@ -72,7 +52,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="sw" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

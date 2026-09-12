@@ -5,27 +5,66 @@ import Footer from "../components/Footer";
 export default function Home() {
   const allPlanned = getAllPlannedItems();
 
-  const mainCardStyle = {
-    display: "block",
-    padding: "1.5rem",
-    background: "#1e7b4c",
-    borderRadius: "12px",
-    marginBottom: "1rem",
+  const heroStyle = {
+    background: "linear-gradient(135deg, #1e7b4c 0%, #16633d 100%)",
+    borderRadius: "var(--radius-lg)",
+    padding: "2.5rem 1.75rem",
     color: "#ffffff",
-    textDecoration: "none",
+    marginBottom: "2rem",
   };
 
-  // Slide cards (horizontal carousel)
+  const heroTitleStyle = {
+    fontSize: "2.25rem",
+    fontWeight: 800,
+    lineHeight: 1.15,
+    letterSpacing: "-0.02em",
+    margin: "0 0 0.75rem 0",
+    color: "#ffffff",
+  };
+
+  const heroSubStyle = {
+    fontSize: "1.05rem",
+    lineHeight: 1.5,
+    opacity: 0.92,
+    margin: "0 0 1.5rem 0",
+    color: "#ffffff",
+  };
+
+  const ctaPrimaryStyle = {
+    display: "inline-block",
+    padding: "0.85rem 1.5rem",
+    background: "#ffffff",
+    color: "#1e7b4c",
+    fontWeight: 700,
+    borderRadius: "var(--radius-pill)",
+    textDecoration: "none",
+    marginRight: "0.5rem",
+    marginBottom: "0.5rem",
+  };
+
+  const ctaSecondaryStyle = {
+    display: "inline-block",
+    padding: "0.85rem 1.5rem",
+    background: "transparent",
+    color: "#ffffff",
+    fontWeight: 600,
+    borderRadius: "var(--radius-pill)",
+    textDecoration: "none",
+    border: "1.5px solid rgba(255,255,255,0.5)",
+    marginBottom: "0.5rem",
+  };
+
   const slideCardStyle = {
     flex: "0 0 70%",
     scrollSnapAlign: "start",
     display: "block",
     padding: "1.25rem",
-    background: "#f7f7f7",
-    borderRadius: "12px",
-    color: "#1a1a1a",
+    background: "var(--color-bg-light)",
+    borderRadius: "var(--radius-md)",
+    color: "var(--color-text)",
     textDecoration: "none",
-    minHeight: "130px",
+    minHeight: "140px",
+    border: "1px solid var(--color-border)",
   };
 
   const carouselStyle = {
@@ -35,15 +74,15 @@ export default function Home() {
     scrollSnapType: "x mandatory",
     WebkitOverflowScrolling: "touch",
     paddingBottom: "0.75rem",
-    marginLeft: "-2rem",
-    marginRight: "-2rem",
-    paddingLeft: "2rem",
-    paddingRight: "2rem",
+    marginLeft: "-1.75rem",
+    marginRight: "-1.75rem",
+    paddingLeft: "1.75rem",
+    paddingRight: "1.75rem",
   };
 
   const statBoxStyle = {
-    background: "#f3f7fb",
-    borderRadius: "10px",
+    background: "var(--color-bg-blue)",
+    borderRadius: "var(--radius-md)",
     padding: "1rem",
     textAlign: "center",
     flex: 1,
@@ -56,89 +95,68 @@ export default function Home() {
     marginBottom: "1.5rem",
   };
 
+  const sectionTitleStyle = {
+    fontSize: "1.35rem",
+    fontWeight: 700,
+    color: "var(--color-text)",
+    marginTop: "2rem",
+    marginBottom: "0.75rem",
+    letterSpacing: "-0.01em",
+  };
+
   const slides = [
-    {
-      href: "/academy",
-      title: "Academy",
-      subtitle: "Masomo 20 — kujifunza uwekezaji hatua kwa hatua.",
-    },
-    {
-      href: "/somo-la-mwezi/crdb-2026-09",
-      title: "Somo la Mwezi",
-      subtitle: "Uchambuzi wa kina wa kampuni moja kila mwezi.",
-    },
-    {
-      href: "/kampuni",
-      title: "Uchambuzi wa Kampuni",
-      subtitle: "Kampuni 8 — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE.",
-    },
-    {
-      href: "/soko",
-      title: "Uchambuzi wa Soko",
-      subtitle: "Nini kimetokea? Kwa nini? Ushahidi unasemaje?",
-    },
-    {
-      href: null,
-      title: "AI",
-      subtitle: "Inakuja hivi karibuni.",
-      comingSoon: true,
-    },
-    {
-      href: null,
-      title: "Community",
-      subtitle: "Inakuja hivi karibuni.",
-      comingSoon: true,
-    },
+    { href: "/academy", title: "Academy", subtitle: "Masomo 20 — kujifunza uwekezaji hatua kwa hatua." },
+    { href: "/somo-la-mwezi/crdb-2026-09", title: "Somo la Mwezi", subtitle: "Uchambuzi wa kina wa kampuni moja kila mwezi." },
+    { href: "/kampuni", title: "Uchambuzi wa Kampuni", subtitle: "Kampuni 8 — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE." },
+    { href: "/soko", title: "Uchambuzi wa Soko", subtitle: "Nini kimetokea? Kwa nini? Ushahidi unasemaje?" },
+    { href: null, title: "AI", subtitle: "Inakuja hivi karibuni.", comingSoon: true },
+    { href: null, title: "Community", subtitle: "Inakuja hivi karibuni.", comingSoon: true },
   ];
 
   return (
-    <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
-      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>WEKEZA NASI</h1>
-      <p style={{ color: "#555", marginTop: 0 }}>Jenga maarifa. Jenga uwezo.</p>
+    <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "var(--color-text)", background: "var(--color-bg)", minHeight: "100vh" }}>
+      <section style={heroStyle}>
+        <h1 style={heroTitleStyle}>Jifunze Uwekezaji. Anza Safari.</h1>
+        <p style={heroSubStyle}>
+          Elimu ya uwekezaji kwa Kiswahili rahisi. Kuanzia Tanzania, kwa Afrika.
+        </p>
+        <a href="/somo1" style={ctaPrimaryStyle}>Anza Somo la 1 →</a>
+        <a href="/kampuni" style={ctaSecondaryStyle}>Chunguza Kampuni</a>
+      </section>
 
-      {/* ANZA HAPA */}
-      <a href="/somo1" style={mainCardStyle}>
-        <p style={{ margin: 0, fontSize: "0.85rem", opacity: 0.9, fontWeight: 600 }}>MPYA WEKEZA NASI?</p>
-        <h3 style={{ margin: "0.25rem 0", color: "#ffffff" }}>Anza na Somo la 1: Hisa ni nini?</h3>
-        <p style={{ margin: 0, fontSize: "0.9rem", opacity: 0.9 }}>Tuanze safari yetu hapa, hatua kwa hatua →</p>
-      </a>
-
-      {/* SAFARI YANGU — CAROUSEL */}
-      <h2 style={{ marginTop: "2rem", color: "#1a1a1a", marginBottom: "0.75rem" }}>Safari Yangu</h2>
-      <div style={carouselStyle}>
+      <h2 style={sectionTitleStyle}>Safari Yangu</h2>
+      <div style={carouselStyle} className="scroll-x">
         {slides.map((s, i) => {
           if (s.comingSoon) {
             return (
               <div key={i} style={{ ...slideCardStyle, background: "#f0f0f0", opacity: 0.7 }}>
-                <h3 style={{ margin: 0, color: "#1a1a1a" }}>{s.title}</h3>
-                <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>{s.subtitle}</p>
+                <h3 style={{ margin: 0, color: "var(--color-text)", fontSize: "1.1rem" }}>{s.title}</h3>
+                <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "var(--color-text-muted)" }}>{s.subtitle}</p>
               </div>
             );
           }
           return (
             <a key={i} href={s.href} style={slideCardStyle}>
-              <h3 style={{ margin: 0, color: "#1a1a1a" }}>{s.title}</h3>
-              <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "#555" }}>{s.subtitle}</p>
+              <h3 style={{ margin: 0, color: "var(--color-text)", fontSize: "1.1rem" }}>{s.title}</h3>
+              <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "var(--color-text-muted)" }}>{s.subtitle}</p>
             </a>
           );
         })}
       </div>
 
-      {/* MAENDELEO */}
-      <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>Maendeleo Yetu</h2>
+      <h2 style={sectionTitleStyle}>Maendeleo Yetu</h2>
       <div style={gridStyle}>
         <div style={statBoxStyle}>
-          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "#1e7b4c" }}>20</p>
-          <p style={{ margin: 0, fontSize: "0.85rem", color: "#555" }}>Masomo</p>
+          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "var(--color-primary)" }}>20</p>
+          <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Masomo</p>
         </div>
         <div style={statBoxStyle}>
-          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "#1e7b4c" }}>8</p>
-          <p style={{ margin: 0, fontSize: "0.85rem", color: "#555" }}>Kampuni</p>
+          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "var(--color-primary)" }}>8</p>
+          <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Kampuni</p>
         </div>
       </div>
 
-      {/* SOMO LA MWEZI */}
-      <h2 style={{ marginTop: "2rem", color: "#1a1a1a" }}>Somo la Mwezi</h2>
+      <h2 style={sectionTitleStyle}>Somo la Mwezi</h2>
       <MonthlyContent items={allPlanned} />
 
       <Footer />
