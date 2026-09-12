@@ -1,0 +1,60 @@
+[
+  {
+    "id": "framework-swali-sahihi",
+    "slug": "framework-swali-sahihi",
+    "type": "framework",
+    "category": "planned",
+    "title": "Jinsi ya Kuuliza Maswali Sahihi Kuhusu Tukio la Soko",
+    "excerpt": "Tukio linapotokea, maswali unayouliza yanaamua kama unaelewa au unachanganyikiwa.",
+    "publishDate": "2026-09-15",
+    "status": "published",
+    "sections": [
+      { "title": "Kwa Nini Maswali ni Muhimu", "content": "Tukio linapotokea sokoni — kama CRDB kutangaza gawio au NMB kufanya stock split — watu wengi wanaanza kubahatisha. Wengine wanasema 'bei itapanda,' wengine 'itashuka.' Lakini mwekezaji mwerevu anauliza maswali sahihi kwanza.\n\nMaswali sahihi yanakupa picha kamili. Maswali mabaya yanakupa maoni tu." },
+      { "title": "Maswali 6 ya Msingi", "content": "Kila tukio la soko, jiulize:\n\n1. Nini hasa kilitokea? (Ukweli, sio maoni)\n2. Ni lini kilitokea? (Tarehe, muda)\n3. Nani anahusika? (Kampuni, taasisi, watu)\n4. Kwa nini kilitokea? (Sababu zilizotajwa)\n5. Ushahidi ni upi? (Ripoti, tangazo, data)\n6. Nini kinachofuata? (Matokeo yanayotarajiwa)" },
+      { "title": "Mfano Halisi", "content": "Tukio: NMB ilifanya stock split ya 1:10 Julai 2026.\n\nMaswali mabaya:\n- 'Bei itapanda?'\n- 'Nunua au usinunue?'\n\nMaswali sahihi:\n1. Nini kilitokea? — Split ya 1:10\n2. Lini? — Julai 2026\n3. Nani? — NMB, CMSA\n4. Kwa nini? — Kuongeza ukwasi wa hisa\n5. Ushahidi? — Tangazo la CMSA\n6. Nini kinafuata? — Wawekezaji wengi wanaweza kuingia" },
+      { "title": "Kipimo Kidogo", "quiz": [
+        { "q": "Swali bora kwa tukio la soko ni lipi?", "options": "(a) Bei itapanda?   (b) Nini hasa kilitokea?   (c) Nunua au usinunue?", "answer": "Jibu: (b) Nini hasa kilitokea? — ukweli kwanza, maoni baadaye." }
+      ]}
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha."
+  },
+  {
+    "id": "case-nmb-split-2026",
+    "slug": "case-nmb-split-2026",
+    "type": "case-study",
+    "category": "planned",
+    "title": "Kwa Nini NMB Ilifanya Stock Split Julai 2026?",
+    "excerpt": "Uchambuzi wa kina wa tukio la stock split ya NMB — nini kilitokea, kwa nini, na athari zake.",
+    "publishDate": "2026-09-22",
+    "status": "published",
+    "sections": [
+      { "title": "Tukio", "content": "Julai 2026, NMB Bank Plc ilitangaza stock split ya 1:10 — kila hisa 1 ya zamani ilibadilika kuwa hisa 10 mpya. Tangazo liliidhinishwa na CMSA Julai 24, 2026, na kutangazwa rasmi Julai 27, 2026." },
+      { "title": "Ushahidi", "content": "Tangazo rasmi kutoka NMB, lililochapishwa kwenye tovuti ya CMSA na DSE. Pia, taarifa ya waandishi wa habari wa NMB." },
+      { "title": "Kwa Nini Ilifanyika", "content": "NMB ilieleza malengo mawili:\n\n1. Kupunguza bei ya kila hisa — kufanya iwe rahisi kwa wawekezaji wadogo kununua.\n2. Kuongeza ukwasi — hisa nyingi zaidi sokoni, biashara zaidi." },
+      { "title": "Data", "content": "Hisa zilizoidhinishwa: kutoka milioni 625 hadi bilioni 6.25.\nKila hisa 1 ya zamani ilibadilika kuwa hisa 10 mpya.\nBei ya kila hisa mpya: sehemu ya kumi ya bei ya zamani." },
+      { "title": "Masomo", "content": "Stock split HAIbadilishi thamani yako jumla. Ukiwa na hisa 100 kabla ya split, una hisa 1,000 baada ya split — lakini thamani jumla ni sawa.\n\nLengo si kukupa faida ya haraka — ni kuongeza ukwasi wa hisa." },
+      { "title": "Maswali ya Kujitafakari", "questions": [
+        "Je, stock split ya 1:10 iliongeza ukwasi wa hisa za NMB?",
+        "Je, wawekezaji wadogo walivutiwa zaidi baada ya split?",
+        "Nini kingetokea kama NMB isingefanya split?"
+      ]}
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha."
+  },
+  {
+    "id": "timely-mfano-crdb-gawio",
+    "slug": "timely-mfano-crdb-gawio",
+    "type": "timely",
+    "category": "timely",
+    "title": "MFANO: CRDB Yatangaza Gawio — Uchambuzi wa Awali",
+    "excerpt": "Hii ni mfano wa timely content. Inaonekana juu ya scheduled content.",
+    "publishDate": "2026-09-12",
+    "expiryDate": "2026-09-26",
+    "status": "published",
+    "sections": [
+      { "title": "Tukio", "content": "Hii ni mfano tu — timely content inaingia juu ya scheduled content pale tukio muhimu linapotokea." },
+      { "title": "Nini Kinafanyika", "content": "Timely content inaonekana kwa wiki 1-2, kisha inaondolewa. Scheduled content inaendelea kama ilivyopangwa." }
+    ],
+    "disclaimer": "Hii ni mfano wa kufundishia tu."
+  }
+]
