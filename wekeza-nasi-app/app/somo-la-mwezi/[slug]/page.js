@@ -1,5 +1,6 @@
 import { getAllPlannedItems } from "../../../lib/content-engine";
 import { notFound } from "next/navigation";
+import Breadcrumbs from "../../../components/Breadcrumbs";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -8,22 +9,27 @@ export default async function SomoLaMwezi({ params }) {
 
   if (!article) return notFound();
 
-  const pageStyle = { padding: "2rem", maxWidth: "750px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.7, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" };
+  const pageStyle = { padding: "1.75rem", maxWidth: "750px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.7, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" };
   const h2Style = { fontSize: "1.4rem", marginTop: "2rem", marginBottom: "0.75rem", color: "#1a1a1a", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
-  const infoBoxStyle = { background: "#f3f7fb", borderRadius: "10px", padding: "1rem 1.25rem", margin: "1.5rem 0", color: "#1a1a1a" };
+  const infoBoxStyle = { background: "#f3f7fb", borderRadius: "var(--radius-md)", padding: "1rem 1.25rem", margin: "1.5rem 0", color: "#1a1a1a" };
   const tableHeaderStyle = { padding: "0.6rem", textAlign: "left", borderBottom: "1px solid #ddd", color: "#1a1a1a", background: "#f3f7fb" };
   const tableCellStyle = { padding: "0.6rem", borderBottom: "1px solid #eee", color: "#1a1a1a" };
   const disclaimerStyle = { background: "#fef8ee", borderLeft: "5px solid #d48d3b", padding: "1rem 1.25rem", borderRadius: "8px", marginTop: "2.5rem", fontSize: "0.9rem", color: "#1a1a1a" };
 
   return (
     <main style={pageStyle}>
-      <a href="/" style={{ color: "#1e7b4c", fontWeight: 600 }}>← Rudi Nyumbani</a>
-      <p style={{ marginTop: "1.5rem", fontSize: "0.85rem", color: "#1e7b4c", fontWeight: 600 }}>
-        SOMO LA MWEZI — {article.month?.toUpperCase()}
+      <Breadcrumbs items={[
+        { label: "Nyumbani", href: "/" },
+        { label: "Somo (Mwezi)", href: "/somo-la-mwezi/crdb-2026-09" },
+        { label: article.title },
+      ]} />
+
+      <p style={{ marginTop: "0", fontSize: "0.85rem", color: "#1e7b4c", fontWeight: 600 }}>
+        SOMO (MWEZI) — {article.month?.toUpperCase()}
       </p>
       <h1 style={{ fontSize: "2rem", marginTop: "0.25rem", color: "#1a1a1a" }}>{article.title}</h1>
       {article.subtitle && (
-        <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555" }}>{article.subtitle}</p>
+        <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555555" }}>{article.subtitle}</p>
       )}
 
       {article.company && (
@@ -106,10 +112,6 @@ export default async function SomoLaMwezi({ params }) {
           <strong>Kumbuka:</strong> {article.disclaimer}
         </div>
       )}
-
-      <p style={{ marginTop: "2.5rem" }}>
-        <a href="/" style={{ color: "#1e7b4c", fontWeight: 600 }}>← Rudi Nyumbani</a>
-      </p>
     </main>
   );
 }

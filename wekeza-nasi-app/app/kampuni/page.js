@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata = {
   title: "Uchambuzi wa Kampuni 8 za DSE",
@@ -19,9 +20,14 @@ export default function Kampuni() {
   ];
 
   return (
-    <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
-      <h1 style={{ color: "#1a1a1a" }}>Uchambuzi wa Kampuni</h1>
-      <p style={{ color: "#555" }}>Jifunze kampuni, historia yake, inavyofanya kazi, na inavyotengeneza fedha.</p>
+    <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
+      <Breadcrumbs items={[
+        { label: "Nyumbani", href: "/" },
+        { label: "Kampuni" },
+      ]} />
+
+      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>Uchambuzi wa Kampuni</h1>
+      <p style={{ color: "#555555", marginTop: 0 }}>Jifunze kampuni, historia yake, inavyofanya kazi, na inavyotengeneza fedha.</p>
 
       <div style={{ marginTop: "1.5rem" }}>
         {companies.map((c) => (
@@ -31,16 +37,18 @@ export default function Kampuni() {
             style={{
               display: "block",
               padding: "1rem 1.25rem",
-              background: "#f7f7f7",
-              borderRadius: "10px",
-              marginBottom: "0.75rem",
+              background: "#ffffff",
+              border: "1px solid #e9edf2",
+              borderRadius: "var(--radius-md)",
+              marginBottom: "0.6rem",
               color: "#1a1a1a",
               textDecoration: "none",
-              fontWeight: "bold",
+              fontWeight: 600,
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
             }}
           >
             {c.name}
-            <div style={{ fontSize: "0.85rem", fontWeight: "normal", color: "#666", marginTop: "0.2rem" }}>
+            <div style={{ fontSize: "0.85rem", fontWeight: "normal", color: "#666666", marginTop: "0.2rem" }}>
               {c.sector}
             </div>
           </a>

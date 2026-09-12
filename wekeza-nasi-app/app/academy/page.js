@@ -1,9 +1,10 @@
 import Footer from "../../components/Footer";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata = {
   title: "Academy — Masomo 20 ya Uwekezaji",
   description:
-    "Masomo 20 ya uwekezaji kwa Kiswahili — kuanzia Hisa ni nini hadi Kusoma Ripoti za Fedha. Jifunze hatua kwa hatua, bure.",
+    "Masomo 20 ya uwekezaji kwa Kiswahili — kuanzia Hisa ni nini hadi Kusoma Ripoti za Fedha. Jifunze hatua kwa hatua.",
 };
 
 export default function Academy() {
@@ -31,10 +32,14 @@ export default function Academy() {
   ];
 
   return (
-    <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
-      <h1 style={{ marginBottom: "0.25rem", color: "#1a1a1a" }}>WEKEZA NASI</h1>
-      <h2 style={{ marginTop: 0, color: "#1a1a1a" }}>Academy</h2>
-      <p style={{ color: "#555" }}>Jifunze uwekezaji hatua kwa hatua — masomo 20.</p>
+    <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
+      <Breadcrumbs items={[
+        { label: "Nyumbani", href: "/" },
+        { label: "Academy" },
+      ]} />
+
+      <h1 style={{ marginBottom: "0.25rem", color: "#1a1a1a" }}>Academy</h1>
+      <p style={{ color: "#555555", marginTop: 0 }}>Jifunze uwekezaji hatua kwa hatua — masomo 20.</p>
 
       <div style={{ marginTop: "1.5rem" }}>
         {lessons.map((l) => (
@@ -44,12 +49,14 @@ export default function Academy() {
             style={{
               display: "block",
               padding: "1rem 1.25rem",
-              background: "#f7f7f7",
-              borderRadius: "10px",
-              marginBottom: "0.75rem",
+              background: "#ffffff",
+              border: "1px solid #e9edf2",
+              borderRadius: "var(--radius-md)",
+              marginBottom: "0.6rem",
               color: "#1a1a1a",
               textDecoration: "none",
-              fontWeight: "bold",
+              fontWeight: 600,
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
             }}
           >
             {l.title}
