@@ -11,6 +11,7 @@ export default function Home() {
     padding: "1.75rem 1.5rem",
     color: "#ffffff",
     marginBottom: "2rem",
+    boxShadow: "var(--shadow-md)",
   };
 
   const heroTitleStyle = {
@@ -57,16 +58,18 @@ export default function Home() {
   };
 
   const slideCardStyle = {
-    flex: "0 0 70%",
+    flex: "0 0 72%",
     scrollSnapAlign: "start",
     display: "block",
     padding: "1.25rem",
-    background: "var(--color-bg-light)",
+    background: "#ffffff",
     borderRadius: "var(--radius-md)",
     color: "var(--color-text)",
     textDecoration: "none",
-    minHeight: "140px",
+    minHeight: "150px",
     border: "1px solid var(--color-border)",
+    boxShadow: "var(--shadow-sm)",
+    transition: "box-shadow 0.2s ease, transform 0.2s ease",
   };
 
   const carouselStyle = {
@@ -83,11 +86,13 @@ export default function Home() {
   };
 
   const statBoxStyle = {
-    background: "var(--color-bg-blue)",
+    background: "#ffffff",
+    border: "1px solid var(--color-border)",
     borderRadius: "var(--radius-md)",
-    padding: "1rem",
+    padding: "1.25rem 1rem",
     textAlign: "center",
     flex: 1,
+    boxShadow: "var(--shadow-sm)",
   };
 
   const gridStyle = {
@@ -131,7 +136,7 @@ export default function Home() {
         {slides.map((s, i) => {
           if (s.comingSoon) {
             return (
-              <div key={i} style={{ ...slideCardStyle, background: "#f0f0f0", opacity: 0.7 }}>
+              <div key={i} style={{ ...slideCardStyle, background: "#f0f0f0", opacity: 0.7, boxShadow: "none" }}>
                 <h3 style={{ margin: 0, color: "var(--color-text)", fontSize: "1.1rem" }}>{s.title}</h3>
                 <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "var(--color-text-muted)" }}>{s.subtitle}</p>
               </div>
