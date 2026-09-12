@@ -11,14 +11,14 @@ function isActive(item) {
   return true;
 }
 
-// 1. TIMELY — breaking news
+// 1. TIMELY
 export function getTimelySoko() {
   return sokoData
     .filter((item) => item.category === "timely" && isActive(item))
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 }
 
-// 2. FRAMEWORK — zote, daima (Sehemu 1 TU kwenye list)
+// 2. FRAMEWORK — zote (Sehemu 1 TU)
 export function getFrameworkSoko() {
   return sokoData
     .filter((item) => item.type === "framework" && isActive(item))
@@ -26,33 +26,31 @@ export function getFrameworkSoko() {
     .sort((a, b) => new Date(a.publishDate) - new Date(b.publishDate));
 }
 
-// 3. CASE STUDY YA WIKI — moja tu, inabadilika kila wiki
-export function getWeeklyCaseStudy() {
-  // Case Studies zote (Sehemu 1 TU)
-  const all = sokoData
+// 3. CASE STUDY YA SASA — ile ya mwisho iliyofunguliwa
+export function getCurrentCaseStudy() {
+  const now = new Date();
+  const unlocked = sokoData
     .filter((item) => item.type === "case-study" && isActive(item))
     .filter((item) => !item.partNumber || item.partNumber === 1)
-    .sort((a, b) => new Date(a.publishDate) - new Date(b.publishDate));
+    .filter((item) => !item.unlockDate || new Date(item.unlockDate) <= now)
+    .sort((a, b) => new Date(b.unlockDate || b.publishDate) - new Date(a.unlockDate || a.publishDate));
 
-  if (all.length === 0) return null;
-
-  // Hesabu wiki tangu epoch
-  const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
-  const weekNumber = Math.floor(Date.now() / MS_PER_WEEK);
-  const index = weekNumber % all.length;
-
-  return all[index];
+  return unlocked[0] || null;
 }
 
-// Case Studies zote (kwa archive)
+// 4. CASE STUDIES ZOTE (kwa archive) — pamoja na locked
 export function getAllCaseStudies() {
+  const now = new Date();
   return sokoData
-    .filter((item) => item.type === "case-study" && isActive(item))
+    .filter((item) => item.type === "case-study" && item.status === "published")
     .filter((item) => !item.partNumber || item.partNumber === 1)
-    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+    .map((item) => ({
+      ...item,
+      locked: item.unlockDate ? new Date(item.unlockDate) > now : false,
+    }))
+    .sort((a, b) => new Date(a.unlockDate || a.publishDate) - new Date(b.unlockDate || b.publishDate));
 }
 
-// Get by slug
 export function getSokoBySlug(slug) {
   return sokoData.find((item) => item.slug === slug);
 }
