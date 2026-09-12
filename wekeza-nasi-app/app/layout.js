@@ -19,7 +19,7 @@ export const metadata = {
     template: "%s — WEKEZA NASI",
   },
   description:
-    "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy (masomo 20), Uchambuzi wa Kampuni 8 za DSE, na Somo la Mwezi. Kuanzia Tanzania, kwa Afrika.",
+    "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy (masomo 20), Uchambuzi wa Kampuni 8 za DSE, na Somo (Mwezi). Kuanzia Tanzania, kwa Afrika.",
   keywords: [
     "uwekezaji", "hisa", "DSE", "Dar es Salaam Stock Exchange",
     "soko la hisa", "Tanzania", "academy", "kujifunza uwekezaji",
@@ -35,13 +35,13 @@ export const metadata = {
     siteName: "WEKEZA NASI",
     title: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
     description:
-      "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
+      "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo (Mwezi).",
   },
   twitter: {
     card: "summary_large_image",
     title: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
     description:
-      "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo la Mwezi.",
+      "Elimu ya uwekezaji kwa Kiswahili rahisi. Academy, Uchambuzi wa Kampuni, na Somo (Mwezi).",
   },
   robots: { index: true, follow: true },
   verification: {
@@ -51,8 +51,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="sw" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+    <html lang="sw" className={`${geistSans.variable} ${geistMono.variable}`} style={{ colorScheme: "light" }}>
+      <body style={{ background: "#ffffff", color: "#1a1a1a" }}>
         <Header />
         {children}
       </body>

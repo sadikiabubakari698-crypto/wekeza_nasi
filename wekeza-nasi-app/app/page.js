@@ -11,7 +11,6 @@ export default function Home() {
     padding: "1.75rem 1.5rem",
     color: "#ffffff",
     marginBottom: "2rem",
-    boxShadow: "var(--shadow-md)",
   };
 
   const heroTitleStyle = {
@@ -64,12 +63,11 @@ export default function Home() {
     padding: "1.25rem",
     background: "#ffffff",
     borderRadius: "var(--radius-md)",
-    color: "var(--color-text)",
+    color: "#1a1a1a",
     textDecoration: "none",
     minHeight: "150px",
-    border: "1px solid var(--color-border)",
-    boxShadow: "var(--shadow-sm)",
-    transition: "box-shadow 0.2s ease, transform 0.2s ease",
+    border: "1px solid #e9edf2",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
   };
 
   const carouselStyle = {
@@ -87,12 +85,12 @@ export default function Home() {
 
   const statBoxStyle = {
     background: "#ffffff",
-    border: "1px solid var(--color-border)",
+    border: "1px solid #e9edf2",
     borderRadius: "var(--radius-md)",
     padding: "1.25rem 1rem",
     textAlign: "center",
     flex: 1,
-    boxShadow: "var(--shadow-sm)",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
   };
 
   const gridStyle = {
@@ -105,7 +103,7 @@ export default function Home() {
   const sectionTitleStyle = {
     fontSize: "1.35rem",
     fontWeight: 700,
-    color: "var(--color-text)",
+    color: "#1a1a1a",
     marginTop: "2rem",
     marginBottom: "0.75rem",
     letterSpacing: "-0.01em",
@@ -121,7 +119,7 @@ export default function Home() {
   ];
 
   return (
-    <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "var(--color-text)", background: "var(--color-bg)", minHeight: "100vh" }}>
+    <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
       <section style={heroStyle}>
         <h1 style={heroTitleStyle}>Jifunze Uwekezaji. Anza Safari.</h1>
         <p style={heroSubStyle}>
@@ -136,16 +134,16 @@ export default function Home() {
         {slides.map((s, i) => {
           if (s.comingSoon) {
             return (
-              <div key={i} style={{ ...slideCardStyle, background: "#f0f0f0", opacity: 0.7, boxShadow: "none" }}>
-                <h3 style={{ margin: 0, color: "var(--color-text)", fontSize: "1.1rem" }}>{s.title}</h3>
-                <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "var(--color-text-muted)" }}>{s.subtitle}</p>
+              <div key={i} style={{ ...slideCardStyle, background: "#f0f0f0", opacity: 0.7 }}>
+                <h3 style={{ margin: 0, color: "#1a1a1a", fontSize: "1.1rem" }}>{s.title}</h3>
+                <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "#555555" }}>{s.subtitle}</p>
               </div>
             );
           }
           return (
             <a key={i} href={s.href} style={slideCardStyle}>
-              <h3 style={{ margin: 0, color: "var(--color-text)", fontSize: "1.1rem" }}>{s.title}</h3>
-              <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "var(--color-text-muted)" }}>{s.subtitle}</p>
+              <h3 style={{ margin: 0, color: "#1a1a1a", fontSize: "1.1rem" }}>{s.title}</h3>
+              <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.9rem", color: "#555555" }}>{s.subtitle}</p>
             </a>
           );
         })}
@@ -154,12 +152,12 @@ export default function Home() {
       <h2 style={sectionTitleStyle}>Maendeleo Yetu</h2>
       <div style={gridStyle}>
         <div style={statBoxStyle}>
-          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "var(--color-primary)" }}>20</p>
-          <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Masomo</p>
+          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "#1e7b4c" }}>20</p>
+          <p style={{ margin: 0, fontSize: "0.85rem", color: "#555555" }}>Masomo</p>
         </div>
         <div style={statBoxStyle}>
-          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "var(--color-primary)" }}>8</p>
-          <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Kampuni</p>
+          <p style={{ margin: 0, fontSize: "1.75rem", fontWeight: 700, color: "#1e7b4c" }}>8</p>
+          <p style={{ margin: 0, fontSize: "0.85rem", color: "#555555" }}>Kampuni</p>
         </div>
       </div>
 

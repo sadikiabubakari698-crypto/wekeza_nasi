@@ -18,7 +18,7 @@ export default function Header() {
     zIndex: 100,
     background: "#ffffff",
     borderBottom: "1px solid #e9edf2",
-    padding: "0.75rem 1.5rem",
+    padding: "0.75rem 1rem",
   };
 
   const innerStyle = {
@@ -27,27 +27,27 @@ export default function Header() {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    gap: "0.5rem",
   };
 
   const logoStyle = {
     fontWeight: 800,
-    fontSize: "1rem",
+    fontSize: "0.95rem",
     color: "#1e7b4c",
     textDecoration: "none",
-    letterSpacing: "-0.01em",
     whiteSpace: "nowrap",
   };
 
   const desktopNavStyle = {
     display: "flex",
-    gap: "1rem",
+    gap: "0.85rem",
     alignItems: "center",
   };
 
   const navLinkStyle = {
     color: "#1a1a1a",
     textDecoration: "none",
-    fontSize: "0.9rem",
+    fontSize: "0.85rem",
     fontWeight: 500,
     whiteSpace: "nowrap",
   };
@@ -55,7 +55,7 @@ export default function Header() {
   const menuBtnStyle = {
     background: "transparent",
     border: "none",
-    fontSize: "1.5rem",
+    fontSize: "1.4rem",
     lineHeight: 1,
     color: "#1a1a1a",
     padding: "0.25rem 0.5rem",
@@ -110,7 +110,7 @@ export default function Header() {
       <style jsx global>{`
         .desktop-nav { display: none; }
         .mobile-menu-btn { display: block; }
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
           .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
         }
