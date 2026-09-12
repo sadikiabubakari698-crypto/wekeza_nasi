@@ -1,68 +1,164 @@
 [
   {
-    "id": "framework-swali-sahihi",
+    "id": "framework-swali-sahihi-1",
     "slug": "jinsi-ya-kuuliza-maswali-sahihi",
+    "seriesId": "framework-swali-sahihi",
+    "partNumber": 1,
+    "totalParts": 3,
+    "nextSlug": "jinsi-ya-kuuliza-maswali-sahihi-2",
     "type": "framework",
     "category": "planned",
-    "title": "Jinsi ya Kuuliza Maswali Sahihi Kuhusu Tukio la Soko",
-    "excerpt": "Tukio linapotokea sokoni, maswali unayouliza yanaamua kama unaelewa au unachanganyikiwa.",
+    "title": "Jinsi ya Kuuliza Maswali Sahihi",
+    "subtitle": "Sehemu 1: Kwa nini maswali ni ufunguo wa uchambuzi",
+    "excerpt": "Kila tukio la soko linafungua fursa ya kujifunza — kama tunajua maswali ya kuuliza.",
     "publishDate": "2026-09-12",
     "status": "published",
     "sections": [
       {
-        "title": "Kwa Nini Somo Hili ni Muhimu",
-        "content": "Kila siku, matukio mbalimbali yanatokea sokoni: kampuni inatangaza gawio, benki kuu inapandisha riba, kampuni inatangaza faida au hasara, mwekezaji mkubwa ananunua au kuuza hisa nyingi.\n\nWatu wengi wanapoona tukio la soko, wanaanza kubahatisha. Wengine wanasema \"bei itapanda kesho.\" Wengine wanasema \"itashuka.\" Wengine wanakimbilia kununua au kuuza kwa hofu.\n\nLakini mwekezaji mwerevu anafanya kitu kimoja kwanza: ANAULIZA MASWALI SAHIHI.\n\nSomo hili linakufundisha maswali 6 ambayo kila mwekezaji anapaswa kujiuliza kila tukio la soko linapotokea. Maswali haya yatakusaidia kutofautisha kati ya UKWELI na MAONI, na kufanya maamuzi kwa akili, sio kwa hisia."
+        "title": "Karibu Kwenye Safari Hii",
+        "content": "Tunapoona tukio la soko — kampuni inatangaza gawio, benki kuu inapandisha riba, au mwekezaji mkubwa ananunua hisa nyingi — kuna fursa nzuri ya kujifunza.\n\nLakini fursa hii inahitaji kitu kimoja: kuuliza maswali sahihi.\n\nSomo hili lina sehemu tatu fupi. Tutaanza kwa kujifunza kwa nini maswali ni muhimu, kisha tutaona mifano halisi, na mwisho tutakuwa na zana ya kutumia kila siku.\n\nSafari hii inachukua dakika 5-7 kwa kila sehemu. Ukiimaliza yote, utakuwa na zana muhimu kwa maisha yako ya uwekezaji."
       },
       {
-        "title": "Tofauti Kati ya Ukweli na Maoni",
-        "content": "Kabla ya kuuliza maswali, elewa tofauti hii ya msingi:\n\nUKWELI (Fact) — kitu kinachoweza kuthibitishwa kwa data, ripoti, au tangazo rasmi.\nMfano: \"NMB ilitangaza stock split ya 1:10 Julai 27, 2026.\" Hii ni kweli — ipo kwenye tangazo la CMSA.\n\nMAONI (Opinion) — maoni ya mtu, ambayo yanaweza kuwa sahihi au si sahihi.\nMfano: \"Bei ya NMB itapanda baada ya stock split.\" Hii ni maoni — hakuna anayejua kesho itatokea nini.\n\nTatizo la wengi: Wanachukulia maoni kama ukweli. Wanasikia mtu akisema \"bei itapanda,\" na wanaamini. Wanakimbilia kununua.\n\nMwekezaji mwerevu: Anajua kutofautisha. Anatafuta ukweli kwanza, kisha anaangalia maoni kwa makini."
+        "title": "Ukweli na Maoni — Tofauti Muhimu",
+        "content": "Kuna kitu kimoja ambacho mwekezaji makini anajua kuanzia mwanzo: kutofautisha UKWELI na MAONI.\n\nUKWELI — kitu kinachoweza kuthibitishwa kwa data, ripoti, au tangazo rasmi.\nMfano: \"NMB ilitangaza stock split Julai 27, 2026.\" Hii ni kweli — ipo kwenye tangazo la CMSA.\n\nMAONI — mawazo ya mtu, yanayoweza kuwa sahihi au si sahihi.\nMfano: \"Bei ya NMB itapanda baada ya split.\" Hii ni maoni — hakuna anayejua kesho itatokea nini.\n\nWakati mwingine, ni rahisi kuchukulia maoni kama ukweli — hasa tunaposikia watu wengi wakisema kitu kimoja. Lakini kama mwekezaji, tunajifunza kutofautisha kwanza. Ukweli una data nyuma yake. Maoni yana mtu nyuma yake."
       },
       {
         "title": "Maswali 6 ya Msingi",
-        "content": "Kila tukio la soko, jiulize maswali haya sita:\n\n1. NINI hasa kilitokea?\n   Eleza tukio bila maoni. Nini kilitokea, kwa ukweli?\n\n2. LINI kilitokea?\n   Tarehe maalum. Siku hii, mwezi huu, mwaka huu. Tarehe ni muhimu kwa muktadha.\n\n3. NANI anahusika?\n   Kampuni gani? Taasisi gani? Watu gani? Nani alifanya uamuzi?\n\n4. KWA NINI kilitokea?\n   Sababu zilizotajwa rasmi. Sio maoni — eleza sababu zilizotolewa kwenye tangazo au ripoti.\n\n5. USHAHIDI ni upi?\n   Tangazo rasmi, ripoti ya mwaka, data ya DSE, taarifa ya waandishi. Ushahidi ni nini hasa?\n\n6. NINI kinafuata?\n   Matokeo yanayotarajiwa baada ya tukio. Hii inaweza kuwa uchambuzi — lakini eleza wazi kwamba ni uchambuzi, sio ukweli."
+        "content": "Kila tukio la soko, tunaanza na maswali haya sita:\n\n1. NINI hasa kilitokea?\n   Eleza tukio bila maoni.\n\n2. LINI kilitokea?\n   Tarehe maalum — siku, mwezi, mwaka.\n\n3. NANI anahusika?\n   Kampuni gani, taasisi gani, watu gani.\n\n4. KWA NINI kilitokea?\n   Sababu zilizotajwa rasmi.\n\n5. USHAHIDI ni upi?\n   Tangazo, ripoti, data halisi.\n\n6. NINI kinafuata?\n   Matokeo yanayotarajiwa — eleza wazi kwamba ni uchambuzi.\n\nMaswali haya sita ni zana yetu. Kila tukio la soko — kubwa au dogo — tunaanza hapa."
+      },
+      {
+        "title": "Kwa Nini Maswali ni Muhimu",
+        "content": "Maswali haya yanatusaidia kwa njia nyingi:\n\nKwanza, yanatuzuia kufanya maamuzi kwa hisia. Tukio linapotokea, ni kawaida kuhisi msisimko au hofu. Maswali yanatuletea utulivu.\n\nPili, yanatupa picha kamili. Badala ya kusikia kipande kimoja cha habari, tunapata picha nzima.\n\nTatu, yanatufanya wachambuzi. Badala ya kuwa watumiaji wa habari, tunakuwa watu wanaochambua.\n\nHii ni safari — kila tukio linatusaidia kujifunza zaidi."
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
+  },
+  {
+    "id": "framework-swali-sahihi-2",
+    "slug": "jinsi-ya-kuuliza-maswali-sahihi-2",
+    "seriesId": "framework-swali-sahihi",
+    "partNumber": 2,
+    "totalParts": 3,
+    "prevSlug": "jinsi-ya-kuuliza-maswali-sahihi",
+    "nextSlug": "jinsi-ya-kuuliza-maswali-sahihi-3",
+    "type": "framework",
+    "category": "planned",
+    "title": "Jinsi ya Kuuliza Maswali Sahihi",
+    "subtitle": "Sehemu 2: Mifano Halisi",
+    "excerpt": "Tutumie maswali 6 kwenye matukio mawili halisi — NMB stock split na kampuni iliyopata hasara.",
+    "publishDate": "2026-09-12",
+    "status": "published",
+    "sections": [
+      {
+        "title": "Karibu Sehemu ya Pili",
+        "content": "Sehemu ya kwanza ilitufundisha maswali 6 ya msingi. Sasa, tutaona jinsi ya kuyatumia kwenye matukio halisi.\n\nTutaangalia mifano miwili. Kila mmoja utaonyesha jinsi ya kutumia maswali haya kwa vitendo."
       },
       {
         "title": "Mfano 1: NMB Stock Split (Julai 2026)",
-        "content": "Hebu tutumie maswali 6 kwenye tukio halisi:\n\nTUKIO: NMB ilifanya stock split ya 1:10 Julai 2026.\n\n❌ Maswali MABAYA (yasiyosaidia):\n- \"Bei itapanda?\"\n- \"Nunua au usinunue?\"\n- \"Ni wakati mzuri wa kuwekeza?\"\n\n✅ Maswali SAHIHI:\n\n1. NINI kilitokea?\n   NMB iligawanya kila hisa 1 kuwa hisa 10. Bei ya kila hisa ilipungua kwa sehemu ya kumi.\n\n2. LINI kilitokea?\n   Iliidhinishwa Julai 24, 2026. Ilitangazwa rasmi Julai 27, 2026.\n\n3. NANI anahusika?\n   NMB Bank Plc, CMSA (walioidhinisha), DSE (waliotangaza).\n\n4. KWA NINI kilitokea?\n   NMB ilieleza: kuongeza ukwasi wa hisa, kufanya hisa ziwe nafuu kwa wawekezaji wadogo.\n\n5. USHAHIDI ni upi?\n   Tangazo la CMSA, taarifa ya NMB kwa waandishi, tangazo la DSE.\n\n6. NINI kinafuata?\n   Inatarajiwa wawekezaji wengi zaidi wanaweza kuingia. Lakini hii ni uchambuzi — hatujui kwa hakika kesho itatokea nini."
+        "content": "TUKIO: NMB ilifanya stock split ya 1:10 Julai 2026.\n\nHebu tuone tofauti kati ya maswali yasiyokusaidia na maswali yenye manufaa:"
+      },
+      {
+        "title": "Maswali Yasiyokusaidia",
+        "callout": "avoid",
+        "items": [
+          "\"Bei itapanda?\" — hili ni swali la kesho, hakuna anayejua jibu",
+          "\"Nunua au usinunue?\" — hili ni ombi la ushauri, sio uchambuzi",
+          "\"Ni wakati mzuri wa kuwekeza?\" — hili linategemea hali yako, sio tukio lenyewe"
+        ]
+      },
+      {
+        "title": "Maswali Yenye Manufaa",
+        "callout": "good",
+        "items": [
+          "NINI kilitokea? — NMB iligawanya kila hisa 1 kuwa hisa 10",
+          "LINI kilitokea? — Iliidhinishwa Julai 24, kutangazwa Julai 27, 2026",
+          "NANI anahusika? — NMB Bank Plc, CMSA, DSE",
+          "KWA NINI kilitokea? — NMB ilieleza: kuongeza ukwasi, kufanya hisa ziwe rahisi kununua",
+          "USHAHIDI ni upi? — Tangazo la CMSA na NMB",
+          "NINI kinafuata? — Inatarajiwa wawekezaji wengi zaidi (hii ni uchambuzi)"
+        ]
       },
       {
         "title": "Mfano 2: Kampuni Yatangaza Hasara",
-        "content": "TUKIO: Kampuni X ilitangaza hasara ya TSh bilioni 50 mwaka 2025.\n\n❌ Maswali MABAYA:\n- \"Bei itashuka kesho?\"\n- \"Niuze hisa zangu haraka?\"\n- \"Kampuni itafilisika?\"\n\n✅ Maswali SAHIHI:\n\n1. NINI kilitokea?\n   Kampuni ilipata hasara — gharama zilizidi mapato kwa TSh bilioni 50.\n\n2. LINI kilitokea?\n   Ripoti ya mwaka 2025, iliyotolewa mwezi Februari 2026.\n\n3. NANI anahusika?\n   Kampuni X, bodi ya wakurugenzi, wakaguzi wa nje.\n\n4. KWA NINI kilitokea?\n   Sababu zilizotajwa kwenye ripoti: kushuka kwa mauzo, gharama za uendeshaji zilizopanda, au kupungua kwa thamani ya mali.\n\n5. USHAHIDI ni upi?\n   Ripoti ya mwaka ya kampuni, taarifa ya bodi, ripoti ya wakaguzi.\n\n6. NINI kinafuata?\n   Bodi ilitangaza mpango wa kurekebisha. Lakini — je, mpango huo utafanikiwa? Hii ni sehemu ya uchambuzi.\n\nSoma tofauti: Ukweli ni kwamba kampuni ilipata hasara. Uchambuzi ni kuangalia nini kitatokea baadaye."
+        "content": "TUKIO: Kampuni X ilitangaza hasara ya TSh bilioni 50 mwaka 2025.\n\nHebu tutumie maswali 6:"
       },
       {
-        "title": "Kwa Nini Maswali Haya 6 ni Muhimu",
-        "content": "Maswali haya 6 yanakusaidia kwa njia tatu:\n\n1. YANAKUZUIA KUTOKA KWA HISIA\n   Badala ya kununua au kuuza kwa hofu, unaanza kwa kukusanya ukweli.\n\n2. YANAKUONYESHA UKWELI WA UKWELI\n   Unajua nini kilitokea hasa, sio kile watu wanasema kilitokea.\n\n3. YANAKUFANYA MCHAMBUZI\n   Badala ya kuwa mtumiaji wa habari, unakuwa mtu anayechambua habari.\n\nKumbuka: Kusoma habari ni rahisi. Kuchambua habari ni ujuzi. Maswali haya 6 ni hatua yako ya kwanza kwenye uchambuzi."
+        "title": "Maswali Yasiyokusaidia",
+        "callout": "avoid",
+        "items": [
+          "\"Bei itashuka kesho?\" — kesho haijulikani",
+          "\"Niuze hisa zangu haraka?\" — hofu haisaidii kufikiri",
+          "\"Kampuni itafilisika?\" — hitimisho la haraka bila data"
+        ]
+      },
+      {
+        "title": "Maswali Yenye Manufaa",
+        "callout": "good",
+        "items": [
+          "NINI kilitokea? — Kampuni ilipata hasara ya TSh bilioni 50",
+          "LINI kilitokea? — Ripoti ya mwaka 2025, iliyotolewa Februari 2026",
+          "NANI anahusika? — Kampuni X, bodi ya wakurugenzi, wakaguzi",
+          "KWA NINI kilitokea? — Kushuka kwa mauzo, gharama zilizopanda (kama ilivyotajwa)",
+          "USHAHIDI ni upi? — Ripoti ya mwaka, taarifa ya bodi, ripoti ya wakaguzi",
+          "NINI kinafuata? — Bodi ilitangaza mpango wa kurekebisha (hii ni sehemu ya uchambuzi)"
+        ]
+      },
+      {
+        "title": "Somo Kutoka Mifano Hii",
+        "content": "Mifano hii miwili inatuonyesha kitu kimoja: maswali yenye manufaa yanatuweka kwenye udongo imara.\n\nTunajua NINI kilitokea. Tunajua LINI. Tunajua NANI. Tunajua KWA NINI. Tunajua USHAHIDI. Na kuhusu NINI kinafuata — tunajua kwamba ni uchambuzi wetu, sio ukweli.\n\nHii ndiyo tofauti kati ya mwekezaji anayejifunza na mtu anayebahatisha."
+      }
+    ],
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
+  },
+  {
+    "id": "framework-swali-sahihi-3",
+    "slug": "jinsi-ya-kuuliza-maswali-sahihi-3",
+    "seriesId": "framework-swali-sahihi",
+    "partNumber": 3,
+    "totalParts": 3,
+    "prevSlug": "jinsi-ya-kuuliza-maswali-sahihi-2",
+    "type": "framework",
+    "category": "planned",
+    "title": "Jinsi ya Kuuliza Maswali Sahihi",
+    "subtitle": "Sehemu 3: Kipimo na Hatua Inayofuata",
+    "excerpt": "Tujaribu kile tulichojifunza, na tuone wapi tunaenda kutoka hapa.",
+    "publishDate": "2026-09-12",
+    "status": "published",
+    "sections": [
+      {
+        "title": "Tumefika Mwisho wa Safari Hii",
+        "content": "Hongera! Umefika mwisho wa somo hili la sehemu tatu.\n\nTumejifunza kitu cha maana: maswali 6 rahisi yanayoweza kubadilisha jinsi tunavyoona soko.\n\nSasa, hebu tujaribu kile tulichojifunza."
       },
       {
         "title": "Kipimo Kidogo",
         "quiz": [
           {
-            "q": "Swali bora kwa tukio la soko ni lipi?",
-            "options": "(a) Bei itapanda?   (b) Nini hasa kilitokea?   (c) Nunua au usinunue?",
-            "answer": "Jibu: (b) Nini hasa kilitokea? — ukweli kwanza, maoni baadaye. Bei itapanda ni maoni. Nunua au usinunue ni ombi la ushauri — sio swali la uchambuzi."
+            "q": "Kwa nini tunaanza kwa kutafuta UKWELI kabla ya MAONI?",
+            "options": "(a) Kwa sababu maoni hayana maana   (b) Kwa sababu ukweli una data nyuma yake, maoni yana mtu nyuma yake   (c) Kwa sababu ukweli ni rahisi zaidi",
+            "answer": "Jibu: (b) — Ukweli unaweza kuthibitishwa kwa data na ripoti. Maoni yanategemea mtu mmoja. Kuanza na ukweli kunatupa msingi imara."
           },
           {
-            "q": "Tofauti kati ya ukweli na maoni ni ipi?",
-            "options": "(a) Ukweli ni wa zamani, maoni ni ya sasa   (b) Ukweli unathibitishwa kwa data/ripoti, maoni ni mawazo ya mtu   (c) Ukweli ni wa kampuni, maoni ni ya mwekezaji",
-            "answer": "Jibu: (b) Ukweli unathibitishwa kwa data/ripoti, maoni ni mawazo ya mtu. Mfano: 'NMB ilifanya split Julai 2026' ni ukweli. 'Bei itapanda' ni maoni."
+            "q": "Kati ya haya, lipi ni UKWELI?",
+            "options": "(a) Bei ya CRDB itapanda kesho   (b) CRDB ilitangaza gawio la TSh 42 kwa hisa mwaka 2025   (c) CRDB ni benki nzuri zaidi Tanzania",
+            "answer": "Jibu: (b) — Hili linaweza kuthibitishwa kwenye tangazo la CRDB. (a) ni maoni kuhusu kesho. (c) ni maoni yenye upendeleo."
           },
           {
-            "q": "Kwa nini tunapaswa kuuliza 'USHAHIDI ni upi?'",
-            "options": "(a) Ili kupata jibu la haraka   (b) Ili kuthibitisha kwamba tukio ni la kweli, sio uvumi   (c) Ili kumaliza mazungumzo",
-            "answer": "Jibu: (b) Ili kuthibitisha kwamba tukio ni la kweli, sio uvumi. Ushahidi unaweza kuwa tangazo rasmi, ripoti ya mwaka, au taarifa ya DSE."
+            "q": "Tunapouliza 'NINI kinafuata?', tunapaswa kuelewa kwamba...",
+            "options": "(a) Ni ukweli usio na shaka   (b) Ni uchambuzi wetu, sio ukweli   (c) Ni jibu la mwisho",
+            "answer": "Jibu: (b) — Ni uchambuzi. Tunatoa mawazo yetu kwa heshima, lakini hatujui kesho. Hii inatupa unyenyekevu."
           }
         ]
       },
       {
-        "title": "Muhtasari wa Dakika 1",
-        "content": "Kila tukio la soko, jiulize maswali haya 6:\n\n1. NINI kilitokea? (Ukweli, sio maoni)\n2. LINI kilitokea? (Tarehe maalum)\n3. NANI anahusika? (Watu, kampuni, taasisi)\n4. KWA NINI? (Sababu zilizotajwa)\n5. USHAHIDI ni upi? (Tangazo, ripoti, data)\n6. NINI kinafuata? (Uchambuzi — eleza kwamba ni uchambuzi)\n\nMaswali haya yanakufanya mchambuzi, sio mtumiaji wa habari. Yanakusaidia kutofautisha ukweli na maoni. Yanakupa uwezo wa kufikiri kwa akili, sio kwa hisia."
+        "title": "Muhtasari wa Safari",
+        "content": "Kila tukio la soko, tunajiuliza:\n\n1. NINI kilitokea?\n2. LINI kilitokea?\n3. NANI anahusika?\n4. KWA NINI kilitokea?\n5. USHAHIDI ni upi?\n6. NINI kinafuata? (kwa unyenyekevu — ni uchambuzi)\n\nMaswali haya sita yanatupa zana ya maisha yote. Kila tukio jipya linatupa fursa ya kuyatumia tena, kwa undani zaidi."
       },
       {
-        "title": "Hatua Inayofuata",
-        "content": "Sasa unajua maswali 6 ya msingi. Somo linalofuata linaenda mbali zaidi: tutajifunza jinsi ya kutambua BID KUBWA na OFFER KUBWA kwenye soko, na kwa nini bid kubwa peke yake haipandishi bei.\n\nPia, unaweza kuanza kusoma Case Studies zetu — uchambuzi wa matukio halisi ya soko yaliyotokea Tanzania. Kila Case Study inatumia maswali haya 6 kama mwongozo."
+        "title": "Umekamilisha Somo Hili",
+        "content": "Umemaliza sehemu zote tatu. Umepata zana muhimu kwa safari yako ya uwekezaji.\n\nSehemu inayofuata ya safari: tunaangalia mfano halisi wa jinsi maswali haya yalivyotumika kwenye tukio la NMB Stock Split. Case Study inaonyesha jinsi uchambuzi unavyofanyika kwa vitendo."
       }
     ],
-    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji. Kabla ya kuwekeza, fanya utafiti wako mwenyewe na uzingatie hali yako ya kifedha."
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
   },
   {
     "id": "case-nmb-split-2026",
@@ -70,52 +166,49 @@
     "type": "case-study",
     "category": "planned",
     "title": "Kwa Nini NMB Ilifanya Stock Split Julai 2026?",
-    "excerpt": "Uchambuzi wa kina wa tukio la stock split ya NMB — nini kilitokea, kwa nini, na athari zake.",
+    "subtitle": "Case Study: Uchambuzi wa tukio halisi",
+    "excerpt": "Uchambuzi wa kina wa stock split ya NMB — nini kilitokea, kwa nini, na masomo kwa mwekezaji.",
     "publishDate": "2026-09-13",
     "status": "published",
     "sections": [
       {
         "title": "Tukio",
-        "content": "Julai 2026, NMB Bank Plc ilitangaza stock split ya 1:10 — kila hisa 1 ya zamani ilibadilika kuwa hisa 10 mpya.\n\nTangazo liliidhinishwa na CMSA (Capital Markets and Securities Authority) Julai 24, 2026, na kutangazwa rasmi Julai 27, 2026.\n\nStock split ni kugawanya hisa zilizopo ili kupunguza bei ya kila hisa, bila kubadilisha thamani jumla ya uwekezaji wa mwanahisa."
+        "content": "Julai 2026, NMB Bank Plc ilitangaza stock split ya 1:10 — kila hisa 1 ya zamani ilibadilika kuwa hisa 10 mpya.\n\nTangazo liliidhinishwa na CMSA Julai 24, 2026, na kutangazwa rasmi Julai 27, 2026.\n\nStock split ni kugawanya hisa zilizopo ili kupunguza bei ya kila hisa, bila kubadilisha thamani jumla ya uwekezaji."
       },
       {
         "title": "Ushahidi",
-        "content": "Ushahidi wa tukio hili ni pamoja na:\n\n1. Tangazo rasmi la CMSA lililoidhinisha stock split (Julai 24, 2026).\n2. Tangazo rasmi la NMB kwa waandishi wa habari (Julai 27, 2026).\n3. Taarifa ya DSE kwa wawekezaji.\n4. Ripoti mbalimbali za vyombo vya habari vya Tanzania.\n\nKwa kuwa hii ni Case Study — tukio lililopita — tunaweza kuchambua kwa utulivu, bila kubahatisha."
+        "content": "Ushahidi wa tukio hili:\n\n• Tangazo rasmi la CMSA (Julai 24, 2026)\n• Tangazo la NMB kwa waandishi (Julai 27, 2026)\n• Taarifa ya DSE kwa wawekezaji\n• Ripoti za vyombo vya habari vya Tanzania\n\nKwa kuwa hii ni Case Study — tukio lililopita — tunaweza kuchambua kwa utulivu."
       },
       {
         "title": "Kwa Nini Ilifanyika",
-        "content": "NMB ilieleza malengo mawili makuu:\n\n1. KUPUNGUZA BEI YA KILA HISA\n   Kabla ya split, bei ya hisa ya NMB ilikuwa juu — isiyofikika kwa wawekezaji wadogo. Baada ya split, bei ilipungua kwa sehemu ya kumi, ikawa rahisi kununua.\n\n2. KUONGEZA UKWASI (LIQUIDITY)\n   Hisa nyingi zaidi sokoni inamaanisha biashara nyingi zaidi. Hii inavutia wawekezaji zaidi na inafanya hisa kuwa rahisi kununua au kuuza.\n\nSababu hizi mbili zinaendana — wawekezaji wengi wanapoingia, ukwasi unaongezeka."
+        "content": "NMB ilieleza malengo mawili:\n\n1. KUPUNGUZA BEI YA KILA HISA\n   Kabla ya split, bei ya hisa ya NMB ilikuwa juu — rahisi kwa wawekezaji wakubwa, vigumu kwa wadogo. Baada ya split, bei ilipungua kwa sehemu ya kumi.\n\n2. KUONGEZA UKWASI\n   Hisa nyingi zaidi sokoni inamaanisha biashara nyingi zaidi. Hii inavutia wawekezaji zaidi."
       },
       {
         "title": "Data",
-        "content": "Nambari kuu za stock split:\n\n• Hisa zilizoidhinishwa kabla: Milioni 625\n• Hisa zilizoidhinishwa baada: Bilioni 6.25\n• Uwiano: 1 hisa ya zamani = hisa 10 mpya\n• Bei ya kila hisa mpya: Sehemu ya kumi ya bei ya zamani\n\nMfano: Mwanahisa mwenye hisa 100,000 kabla ya split, alikuwa na hisa 1,000,000 baada ya split. Bei ya kila hisa ilipungua kwa sehemu ya kumi. Thamani jumla ya uwekezaji wake haikubadilika."
+        "content": "Nambari kuu:\n\n• Hisa zilizoidhinishwa kabla: Milioni 625\n• Hisa zilizoidhinishwa baada: Bilioni 6.25\n• Uwiano: 1 hisa ya zamani = hisa 10 mpya\n• Bei ya kila hisa mpya: Sehemu ya kumi ya bei ya zamani\n\nMfano: Mwanahisa mwenye hisa 100,000 kabla ya split, alikuwa na hisa 1,000,000 baada. Thamani jumla haikubadilika."
       },
       {
-        "title": "Nini Kilitokea Baada ya Split",
-        "content": "Baada ya split, soko la hisa za NMB lilipata mabadiliko kadhaa:\n\n1. Bei ya kila hisa ilipungua — rahisi kununua kwa wawekezaji wadogo.\n2. Volume ya biashara iliongezeka — biashara nyingi zaidi.\n3. Wawekezaji wapya waliingia — wale ambao hawakuweza kununua awali.\n4. Biashara kwenye DSE iliongezeka kwa hisa za NMB.\n\nHivi ni matokeo yanayotarajiwa ya stock split. Kampuni nyingi duniani hufanya hivi ili kuboresha upatikanaji wa hisa."
-      },
-      {
-        "title": "Somo Muhimu Kwa Mwekezaji",
-        "content": "Kitu kimoja muhimu sana: STOCK SPLIT HAIONGEZI THAMANI YAKO.\n\nKama ulikuwa na hisa 100 kabla ya split, una hisa 1,000 baada ya split. Lakini thamani jumla ya uwekezaji wako ni sawa.\n\nMfano:\n\nKabla: Hisa 100 × TSh 3,000 = TSh 300,000\nBaada: Hisa 1,000 × TSh 300 = TSh 300,000\n\nThamani ni sawa. Split HAIKUPI faida ya haraka. Inakupa hisa nyingi, lakini kila moja ina bei ndogo.\n\nLengo la split ni kuongeza ukwasi, sio kukupa faida ya papo hapo."
+        "title": "Somo Muhimu",
+        "content": "Kitu kimoja cha maana: STOCK SPLIT HAIONGEZI THAMANI YAKO.\n\nKama ulikuwa na hisa 100 kabla, una hisa 1,000 baada. Lakini thamani jumla ni sawa.\n\nMfano:\nKabla: Hisa 100 × TSh 3,000 = TSh 300,000\nBaada: Hisa 1,000 × TSh 300 = TSh 300,000\n\nSplit HAIKUPI faida ya haraka. Inakupa hisa nyingi, kila moja na bei ndogo. Lengo ni kuongeza ukwasi."
       },
       {
         "title": "Kwa Nini Hii ni Muhimu Kwa Tanzania",
-        "content": "Stock split ya NMB ilikuwa tukio muhimu kwa soko la hisa la Tanzania kwa sababu tatu:\n\n1. Ilionyesha kwamba makampuni makubwa Tanzania yanatumia zana za kisasa za soko.\n2. Ilivutia wawekezaji wapya kwenye DSE — wale ambao hawakuwa na uwezo wa kununua hisa za bei ya juu.\n3. Iliongeza uelewa wa umma kuhusu dhana ya stock split.\n\nHii ni ishara nzuri kwa soko la Tanzania — linaendelea kukua na kuwa la kisasa."
+        "content": "Stock split ya NMB ilikuwa tukio muhimu kwa soko la Tanzania:\n\n1. Ilionyesha makampuni makubwa Tanzania yanatumia zana za kisasa\n2. Ilivutia wawekezaji wapya kwenye DSE\n3. Iliongeza uelewa wa umma kuhusu stock split\n\nHii ni ishara nzuri — soko letu linaendelea kukua."
       },
       {
         "title": "Maswali ya Kujitafakari",
         "questions": [
-          "Je, stock split ya 1:10 iliongeza ukwasi wa hisa za NMB? Ni data gani unaweza kutumia kuthibitisha hili?",
+          "Je, stock split ya 1:10 iliongeza ukwasi wa hisa za NMB? Ni data gani unaweza kutumia kuthibitisha?",
           "Je, wawekezaji wadogo walivutiwa zaidi baada ya split? Kwa nini au kwa nini hapana?",
           "Kwa nini kampuni nyingine Tanzania hazijafanya stock split? Nini kinawahusu?",
-          "Je, kama kampuni unayoiangalia inatangaza stock split, ni swali gani la kwanza utakalojiuliza?"
+          "Kama kampuni unayoiangalia inatangaza stock split, swali lako la kwanza litakuwa lipi?"
         ]
       },
       {
         "title": "Vyanzo na Marejeleo",
-        "content": "Case Study hii imeandikwa kwa kutumia vyanzo vifuatavyo:\n\n1. Tangazo rasmi la CMSA — Julai 24, 2026\n2. Tangazo rasmi la NMB Bank Plc — Julai 27, 2026\n3. Taarifa ya DSE kwa wawekezaji — Julai 2026\n4. Ripoti za vyombo vya habari vya Tanzania\n\nKwa taarifa zaidi, tembelea tovuti ya DSE (dse.co.tz) au CMSA (cmsa.go.tz)."
+        "content": "Case Study hii imeandikwa kwa kutumia:\n\n1. Tangazo rasmi la CMSA — Julai 24, 2026\n2. Tangazo la NMB Bank Plc — Julai 27, 2026\n3. Taarifa ya DSE kwa wawekezaji\n4. Ripoti za vyombo vya habari vya Tanzania\n\nKwa taarifa zaidi: dse.co.tz au cmsa.go.tz"
       }
     ],
-    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji. Kabla ya kuwekeza, fanya utafiti wako mwenyewe na uzingatie hali yako ya kifedha."
+    "disclaimer": "Uchambuzi huu ni kwa madhumuni ya elimu pekee. Sio ushauri wa kifedha, kodi, au uwekezaji."
   }
 ]
