@@ -11,11 +11,13 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref, onPass }) {
   const parseOptions = (optionsStr) => {
     if (!optionsStr) return [];
     const parts = optionsStr.split(/\s{2,}/);
-    return parts.map((p) => {
-      const match = p.match(/^\(([a-d])\)\s*(.+)$/i);
-      if (match) return { letter: match[1].toLowerCase(), text: match[2].trim() };
-      return null;
-    }).filter(Boolean);
+    return parts
+      .map((p) => {
+        const match = p.match(/^\(([a-d])\)\s*(.+)$/i);
+        if (match) return { letter: match[1].toLowerCase(), text: match[2].trim() };
+        return null;
+      })
+      .filter(Boolean);
   };
 
   const handleSelect = (qIndex, option) => {
@@ -122,15 +124,22 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref, onPass }) {
               const isSelected = selected === opt.letter;
               let bg = "#f7f7f7";
               let border = "2px solid transparent";
+
               if (isSelected && !submitted) {
                 bg = "#e3f0ea";
                 border = "2px solid #1e7b4c";
               }
-              if (submitted && opt.letter === correctLetter) {
+              // Kama amepasi — onyesha kijani/nyekundu + jibu
+              if (submitted && passed && opt.letter === correctLetter) {
                 bg = "#d1fae5";
                 border = "2px solid #16a34a";
               }
-              if (submitted && isSelected && opt.letter !== correctLetter) {
+              if (submitted && passed && isSelected && opt.letter !== correctLetter) {
+                bg = "#fee2e2";
+                border = "2px solid #dc2626";
+              }
+              // Kama amekosa — onyesha alichochagua tu (nyekundu), bila kumwonyesha sahihi
+              if (submitted && !passed && isSelected) {
                 bg = "#fee2e2";
                 border = "2px solid #dc2626";
               }
@@ -157,13 +166,20 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref, onPass }) {
               );
             })}
 
-            {submitted && (
-              <p style={{ marginTop: "0.75rem", fontSize: "0.9rem", color: isCorrect ? "#166534" : "#991b1b", fontWeight: 600 }}>
-                {isCorrect ? "✓ Sahihi!" : "Sio sahihi — jibu sahihi ni (" + correctLetter + ")."}
+            {/* Kama amepasi — onyesha kama ni sahihi + jibu */}
+            {submitted && passed && (
+              <p
+                style={{
+                  marginTop: "0.75rem",
+                  fontSize: "0.9rem",
+                  color: isCorrect ? "#166534" : "#991b1b",
+                  fontWeight: 600,
+                }}
+              >
+                {isCorrect ? "✓ Sahihi!" : "Sio sahihi."}
               </p>
             )}
-
-            {submitted && (
+            {submitted && passed && (
               <p style={{ marginTop: "0.25rem", fontSize: "0.85rem", color: "#555555" }}>
                 {q.answer}
               </p>
@@ -184,24 +200,45 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref, onPass }) {
         >
           Angalia Matokeo →
         </button>
+      ) : passed ? (
+        <div
+          style={{
+            background: "#f0fdf4",
+            borderLeft: "5px solid #16a34a",
+            borderRadius: "var(--radius-md)",
+            padding: "1.25rem 1.5rem",
+            marginTop: "1rem",
+          }}
+        >
+          <p style={{ margin: 0, fontWeight: 700, fontSize: "1.1rem", color: "#166534" }}>
+            🎉 Hongera!
+          </p>
+          <p style={{ margin: "0.25rem 0 0 0", color: "#1a1a1a" }}>
+            Umepata {score} kati ya {total} ({percent}%). Umepasi! Unaweza kuendelea.
+          </p>
+        </div>
       ) : (
-        <div style={{
-          background: passed ? "#f0fdf4" : "#fef8ee",
-          borderLeft: passed ? "5px solid #16a34a" : "5px solid #d48d3b",
-          borderRadius: "var(--radius-md)",
-          padding: "1.25rem 1.5rem",
-          marginTop: "1rem",
-        }}>
-          <p style={{ margin: 0, fontWeight: 700, fontSize: "1.1rem", color: passed ? "#166534" : "#991b1b" }}>
-            {passed ? "🎉 Hongera!" : "Karibu tena!"}
+        <div
+          style={{
+            background: "#fef8ee",
+            borderLeft: "5px solid #d48d3b",
+            borderRadius: "var(--radius-md)",
+            padding: "1.25rem 1.5rem",
+            marginTop: "1rem",
+          }}
+        >
+          <p style={{ margin: 0, fontWeight: 700, fontSize: "1.1rem", color: "#991b1b" }}>
+            Bado kidogo!
           </p>
           <p style={{ margin: "0.25rem 0 0.75rem 0", color: "#1a1a1a" }}>
-            Umepata {score} kati ya {total} ({percent}%).{" "}
-            {passed ? "Unaweza kuendelea." : "Jaribu tena — unakaribia!"}
+            Umepata {score} kati ya {total} ({percent}%). Unahitaji 60% kupasi.
           </p>
-          {!passed && (
-            <button style={btnSecondaryStyle} onClick={handleReset}>Jaribu Tena</button>
-          )}
+          <p style={{ margin: "0 0 1rem 0", color: "#555555", fontSize: "0.9rem" }}>
+            Jibu sahihi halionyeshwi. Rudi kwenye somo, jifunze tena, kisha jaribu tena — hivi ndivyo unakua mchambuzi.
+          </p>
+          <button style={btnSecondaryStyle} onClick={handleReset}>
+            Jaribu Tena
+          </button>
         </div>
       )}
     </div>

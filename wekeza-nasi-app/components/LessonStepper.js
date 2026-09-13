@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LessonQuiz from "./LessonQuiz";
 import SaveToJournal from "./SaveToJournal";
+import { markPassed } from "../lib/progress";
 
 export default function LessonStepper({
   steps,
@@ -15,14 +16,18 @@ export default function LessonStepper({
   const [current, setCurrent] = useState(0);
   const [quizPassed, setQuizPassed] = useState(false);
 
-  // Hatua za maudhui (bila quiz)
   const contentSteps = steps;
   const totalSteps = contentSteps.length;
   const isLastStep = current === totalSteps - 1;
 
-  const containerStyle = {
-    marginTop: "1.5rem",
+  const handlePass = () => {
+    setQuizPassed(true);
+    // Hifadhi progress — lessonId inatokana na lessonHref (mfano "/somo1" → "somo1")
+    const lessonId = lessonHref ? lessonHref.replace(/^\//, "") : null;
+    if (lessonId) markPassed(lessonId);
   };
+
+  const containerStyle = { marginTop: "1.5rem" };
 
   const stepBoxStyle = {
     background: "#ffffff",
@@ -42,25 +47,9 @@ export default function LessonStepper({
     paddingBottom: "0.4rem",
   };
 
-  const bodyStyle = {
-    color: "#1a1a1a",
-    lineHeight: 1.7,
-    whiteSpace: "pre-line",
-  };
-
-  const listStyle = {
-    color: "#1a1a1a",
-    lineHeight: 1.8,
-    paddingLeft: "1.5rem",
-    marginTop: "0.75rem",
-  };
-
-  const counterStyle = {
-    fontSize: "0.85rem",
-    color: "#555555",
-    marginBottom: "0.5rem",
-  };
-
+  const bodyStyle = { color: "#1a1a1a", lineHeight: 1.7, whiteSpace: "pre-line" };
+  const listStyle = { color: "#1a1a1a", lineHeight: 1.8, paddingLeft: "1.5rem", marginTop: "0.75rem" };
+  const counterStyle = { fontSize: "0.85rem", color: "#555555", marginBottom: "0.5rem" };
   const navRowStyle = {
     display: "flex",
     justifyContent: "space-between",
@@ -95,17 +84,10 @@ export default function LessonStepper({
     textDecoration: "none",
   };
 
-  const btnDisabledStyle = {
-    ...btnPrevStyle,
-    opacity: 0.3,
-    cursor: "not-allowed",
-  };
-
   const currentStep = contentSteps[current];
 
   return (
     <div style={containerStyle}>
-      {/* Hatua ya Maudhui */}
       <div style={stepBoxStyle}>
         <p style={counterStyle}>Hatua {current + 1} kati ya {totalSteps}</p>
         <h2 style={stepTitleStyle}>{currentStep.title}</h2>
@@ -119,14 +101,13 @@ export default function LessonStepper({
         )}
       </div>
 
-      {/* Navigation */}
       <div style={navRowStyle}>
         {current > 0 ? (
           <button style={btnPrevStyle} onClick={() => setCurrent(current - 1)}>
             ← Iliyotangulia
           </button>
         ) : (
-          <span style={btnDisabledStyle}>← Iliyotangulia</span>
+          <span style={{ ...btnPrevStyle, opacity: 0.3, cursor: "not-allowed" }}>← Iliyotangulia</span>
         )}
 
         {!isLastStep ? (
@@ -140,19 +121,25 @@ export default function LessonStepper({
         )}
       </div>
 
-      {/* Quiz — inaonekana tu baada ya hatua zote */}
       {isLastStep && quiz && quiz.length > 0 && (
         <LessonQuiz
           quiz={quiz}
           lessonTitle={lessonTitle}
           lessonHref={lessonHref}
-          onPass={() => setQuizPassed(true)}
+          onPass={handlePass}
         />
       )}
 
-      {/* Baada ya kupasi quiz: SaveToJournal + Endelea */}
       {isLastStep && quizPassed && (
-        <div style={{ marginTop: "2rem", padding: "1.5rem", background: "#f0fdf4", borderRadius: "var(--radius-lg)", border: "1px solid #86efac" }}>
+        <div
+          style={{
+            marginTop: "2rem",
+            padding: "1.5rem",
+            background: "#f0fdf4",
+            borderRadius: "var(--radius-lg)",
+            border: "1px solid #86efac",
+          }}
+        >
           <p style={{ margin: 0, color: "#166534", fontWeight: 700, fontSize: "1.1rem" }}>
             🎉 Hongera! Umemaliza somo hili.
           </p>
