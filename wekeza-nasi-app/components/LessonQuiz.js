@@ -1,12 +1,22 @@
 "use client";
 import { useState } from "react";
 
-export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
+export default function LessonQuiz({ quiz, lessonTitle, lessonHref, onPass }) {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
 
   if (!quiz || quiz.length === 0) return null;
+
+  const parseOptions = (optionsStr) => {
+    if (!optionsStr) return [];
+    const parts = optionsStr.split(/\s{2,}/);
+    return parts.map((p) => {
+      const match = p.match(/^\(([a-d])\)\s*(.+)$/i);
+      if (match) return { letter: match[1].toLowerCase(), text: match[2].trim() };
+      return null;
+    }).filter(Boolean);
+  };
 
   const handleSelect = (qIndex, option) => {
     if (submitted) return;
@@ -16,7 +26,6 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
   const handleSubmit = () => {
     let correct = 0;
     quiz.forEach((q, i) => {
-      // answer format: "Jibu: (b) ..." — extract letter
       const match = q.answer.match(/\(([a-d])\)/i);
       if (match && answers[i] === match[1].toLowerCase()) {
         correct++;
@@ -24,6 +33,11 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
     });
     setScore(correct);
     setSubmitted(true);
+
+    const percent = Math.round((correct / quiz.length) * 100);
+    if (percent >= 60 && onPass) {
+      onPass();
+    }
   };
 
   const handleReset = () => {
@@ -34,6 +48,7 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
 
   const total = quiz.length;
   const percent = Math.round((score / total) * 100);
+  const passed = percent >= 60;
 
   const boxStyle = {
     background: "#ffffff",
@@ -41,19 +56,6 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
     borderRadius: "var(--radius-lg)",
     padding: "1.5rem",
     marginTop: "2rem",
-  };
-
-  const headerStyle = {
-    fontSize: "1.25rem",
-    fontWeight: 700,
-    color: "#1a1a1a",
-    marginBottom: "0.25rem",
-  };
-
-  const subtitleStyle = {
-    fontSize: "0.9rem",
-    color: "#555555",
-    marginBottom: "1.5rem",
   };
 
   const qStyle = {
@@ -68,18 +70,6 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
     marginBottom: "0.75rem",
     fontSize: "1rem",
   };
-
-  const optionStyle = (selected) => ({
-    display: "block",
-    padding: "0.75rem 1rem",
-    marginBottom: "0.5rem",
-    background: selected ? "#e3f0ea" : "#f7f7f7",
-    border: selected ? "2px solid #1e7b4c" : "2px solid transparent",
-    borderRadius: "var(--radius-md)",
-    cursor: submitted ? "default" : "pointer",
-    fontSize: "0.95rem",
-    color: "#1a1a1a",
-  });
 
   const btnPrimaryStyle = {
     display: "inline-block",
@@ -108,30 +98,13 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
     marginTop: "0.5rem",
   };
 
-  const resultBoxStyle = (passed) => ({
-    background: passed ? "#f0fdf4" : "#fef8ee",
-    borderLeft: passed ? "5px solid #16a34a" : "5px solid #d48d3b",
-    borderRadius: "var(--radius-md)",
-    padding: "1.25rem 1.5rem",
-    marginTop: "1rem",
-  });
-
-  // Parse options string: "(a) Option 1   (b) Option 2   (c) Option 3"
-  const parseOptions = (optionsStr) => {
-    if (!optionsStr) return [];
-    const parts = optionsStr.split(/\s{2,}/);
-    return parts.map((p) => {
-      const match = p.match(/^\(([a-d])\)\s*(.+)$/i);
-      if (match) return { letter: match[1].toLowerCase(), text: match[2].trim() };
-      return null;
-    }).filter(Boolean);
-  };
-
   return (
     <div style={boxStyle}>
-      <h3 style={headerStyle}>Kipimo Kidogo</h3>
-      <p style={subtitleStyle}>
-        Jaribu kile ulichojifunza. Ukikamilisha, unaweza kuendelea na somo linalofuata.
+      <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#1a1a1a", marginBottom: "0.25rem" }}>
+        Kipimo Kidogo
+      </h3>
+      <p style={{ fontSize: "0.9rem", color: "#555555", marginBottom: "1.5rem" }}>
+        Jibu maswali yote. Ukifanikiwa (60%+), unaweza kuendelea na somo linalofuata.
       </p>
 
       {quiz.map((q, i) => {
@@ -201,21 +174,34 @@ export default function LessonQuiz({ quiz, lessonTitle, lessonHref }) {
 
       {!submitted ? (
         <button
-          style={btnPrimaryStyle}
+          style={{
+            ...btnPrimaryStyle,
+            opacity: Object.keys(answers).length !== quiz.length ? 0.5 : 1,
+            cursor: Object.keys(answers).length !== quiz.length ? "not-allowed" : "pointer",
+          }}
           onClick={handleSubmit}
           disabled={Object.keys(answers).length !== quiz.length}
         >
           Angalia Matokeo →
         </button>
       ) : (
-        <div style={resultBoxStyle(percent >= 60)}>
-          <p style={{ margin: 0, fontWeight: 700, fontSize: "1.1rem", color: percent >= 60 ? "#166534" : "#991b1b" }}>
-            {percent >= 60 ? "🎉 Hongera!" : "Karibu tena!"}
+        <div style={{
+          background: passed ? "#f0fdf4" : "#fef8ee",
+          borderLeft: passed ? "5px solid #16a34a" : "5px solid #d48d3b",
+          borderRadius: "var(--radius-md)",
+          padding: "1.25rem 1.5rem",
+          marginTop: "1rem",
+        }}>
+          <p style={{ margin: 0, fontWeight: 700, fontSize: "1.1rem", color: passed ? "#166534" : "#991b1b" }}>
+            {passed ? "🎉 Hongera!" : "Karibu tena!"}
           </p>
           <p style={{ margin: "0.25rem 0 0.75rem 0", color: "#1a1a1a" }}>
-            Umepata {score} kati ya {total} ({percent}%).
+            Umepata {score} kati ya {total} ({percent}%).{" "}
+            {passed ? "Unaweza kuendelea." : "Jaribu tena — unakaribia!"}
           </p>
-          <button style={btnSecondaryStyle} onClick={handleReset}>Jaribu Tena</button>
+          {!passed && (
+            <button style={btnSecondaryStyle} onClick={handleReset}>Jaribu Tena</button>
+          )}
         </div>
       )}
     </div>
