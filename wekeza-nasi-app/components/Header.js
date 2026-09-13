@@ -104,6 +104,13 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/mfuko-wa-maarifa"
+            style={{ ...navLinkStyle, fontSize: "1rem", fontWeight: 600 }}
+            onClick={() => setOpen(false)}
+          >
+            Mfuko wa Maarifa
+          </Link>
         </div>
       )}
 
