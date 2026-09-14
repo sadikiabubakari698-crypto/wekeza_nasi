@@ -1,6 +1,7 @@
 import { getAllPlannedItems } from "../../../lib/content-engine";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
+import ListenButton from "../../../components/ListenButton";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -15,6 +16,23 @@ export default async function SomoLaMwezi({ params }) {
   const tableHeaderStyle = { padding: "0.6rem", textAlign: "left", borderBottom: "1px solid #ddd", color: "#1a1a1a", background: "#f3f7fb" };
   const tableCellStyle = { padding: "0.6rem", borderBottom: "1px solid #eee", color: "#1a1a1a" };
   const disclaimerStyle = { background: "#fef8ee", borderLeft: "5px solid #d48d3b", padding: "1rem 1.25rem", borderRadius: "8px", marginTop: "2.5rem", fontSize: "0.9rem", color: "#1a1a1a" };
+
+  // Tengeneza maandishi ya kusikiliza (executive summary + sections zote)
+  const audioText = [
+    article.title,
+    article.subtitle || "",
+    article.executiveSummary || "",
+    ...(article.sections || []).map((s) => {
+      let text = s.title + ". ";
+      if (s.content) text += s.content + " ";
+      if (s.ratios) text += s.ratios.map((r) => `${r.name}: ${r.value}.`).join(" ") + " ";
+      if (s.risks) text += s.risks.map((r) => `${r.type}: ${r.detail}`).join(" ") + " ";
+      if (s.drivers) text += s.drivers.join(". ") + ". ";
+      if (s.questions) text += s.questions.join(" ") + " ";
+      if (s.sources) text += s.sources.join(". ") + ". ";
+      return text;
+    }),
+  ].join("\n\n");
 
   return (
     <main style={pageStyle}>
@@ -31,6 +49,8 @@ export default async function SomoLaMwezi({ params }) {
       {article.subtitle && (
         <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555555" }}>{article.subtitle}</p>
       )}
+
+      <ListenButton text={audioText} label="Sikiliza Uchambuzi" />
 
       {article.company && (
         <div style={infoBoxStyle}>
