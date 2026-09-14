@@ -490,3 +490,324 @@ Detailed future framework for deep market analysis, requiring real DSE daily tra
 ---
 
 **Last Updated:** Novemba 2026
+## 34. ACADEMY QUIZ & PROGRESS SYSTEM
+
+**Status:** Implemented (Novemba 2026)
+
+### 34.1 Lesson Structure
+
+Kila somo lina props mbili:
+- steps — maudhui (hatua 1-9)
+- quiz — maswali (hatua ya 10)
+
+"Kipimo Kidogo" HAIWI hatua ndani ya steps. Ni quiz prop tofauti.
+
+### 34.2 Format ya Quiz
+
+const quiz = [
+  { q: "Swali?", options: "(a) A   (b) B   (c) C", answer: "Jibu: (b) Maelezo" },
+];
+
+Options zimetenganishwa na nafasi 2+. Answer inaanza na "Jibu: (letter)".
+
+### 34.3 Tabia ya Quiz
+
+Kama amekosa (< 60%):
+- Onyesha aliyochagua tu (nyekundu)
+- HAKUNA jibu sahihi linaloonyeshwa
+- Ujumbe: "Jibu sahihi halionyeshwi. Rudi kwenye somo."
+- Kitufe: "Jaribu Tena"
+
+Kama amepasi (>= 60%):
+- Kijani kwa sahihi, nyekundu kwa kosa
+- Onyesha jibu kamili
+- Ujumbe: "Hongera! Umepasi!"
+- Vitufe: "Hifadhi kwenye Mfuko" + "Somo linalofuata"
+
+Kiwango cha kupasi: 60%.
+
+### 34.4 Progress System (Gating)
+
+Hifadhi: localStorage key wekeza_progress = array ya ["somo1", "somo2"].
+
+Kanuni:
+- Somo 1: wazi daima
+- Somo N: inafunguliwa tu kama Somo N-1 imepasi
+
+UI kwenye /academy:
+- Imepasi: background kijani, badge "Imepasi"
+- Wazi: background nyeupe, badge "Anza"
+- Imefungwa: background kijivu, badge "Imefungwa", haiwezi kubonyezwa
+
+File: lib/progress.js ina functions 4:
+- getProgress()
+- hasPassed(lessonId)
+- markPassed(lessonId)
+- isLessonUnlocked(lessonId)
+
+### 34.5 Mfuko wa Maarifa
+
+Route: /mfuko-wa-maarifa
+
+Hifadhi: localStorage key wekeza_journal = array ya { id, title, href, savedAt }.
+
+Kanuni:
+- Hifadhi ni hiari
+- Mwanafunzi anaweza kuondoa kitu wakati wowote
+- Mfuko tupu unatoa mwongozo
+
+Component: SaveToJournal — kitufe kinabadilisha save/remove.
+
+## 35. SOKO ENGINE V2 (Timely + Framework + Case Study)
+
+**Status:** Implemented (Novemba 2026). Inachukua nafasi ya Section 33.
+
+**Tatizo:** Hakuna data ya DSE ya wakati halisi (Section 26, Level 2+).
+
+**Suluhisho:** Soko imegawanyika sehemu tatu.
+
+**Files:**
+- content/soko.json — Maudhui
+- lib/soko-engine.js — Engine
+
+### 35.1 Tabaka Tatu
+
+TABAKA 1 — TIMELY (Kinachoendelea Sasa)
+- Inaonekana JUU ya /soko
+- Inaisha yenyewe baada ya expiryDate
+- Lazima iwe na category: "timely" + expiryDate
+- Muda wa maisha: siku 7-14
+
+TABAKA 2 — FRAMEWORK (Misingi ya Uchambuzi)
+- Zote zinaonekana — hazizunguki
+- Zinafundisha jinsi ya kufikiri kuhusu soko
+- Format: sehemu 3 (partNumber + totalParts)
+- Sehemu 1 tu inaonekana kwenye list
+
+TABAKA 3 — CASE STUDY YA SASA
+- Moja tu inaonekana kwa wakati mmoja
+- Inazunguka kila siku 5
+- Kila Case Study ina unlockDate
+- Format: sehemu 3
+
+Archive (/soko/archive):
+- Zote zinaonekana
+- Unlocked (unlockDate <= leo) — link, badge "Inapatikana"
+- Locked (unlockDate > leo) — kijivu, badge "Inafunguliwa [tarehe]", haiwezi kubonyezwa
+- Lengo: Roadmap — mwanafunzi anaona kinachokuja
+
+### 35.2 Rotation Rule
+
+Kila Case Study mpya ina unlockDate — siku 5 baada ya iliyopita.
+
+Mfano:
+- TBL Ilipanda 40% — Sept 12
+- NMB Stock Split — Sept 17
+- CRDB Ilipanda 60% — Sept 22
+- Vodacom Ilipoteza Soko — Sept 27
+- TCC Gawio Kubwa — Oct 2
+
+Kanuni: Founder anaweka unlockDate kwa mkono.
+
+Kanuni: Kuongeza Case Study mpya = edit soko.json, weka unlockDate, push.
+
+### 35.3 Structure ya Content
+
+{
+  "id": "case-nmb-split-1",
+  "slug": "kwa-nini-nmb-ilifanya-stock-split",
+  "seriesId": "case-nmb-split",
+  "partNumber": 1,
+  "totalParts": 3,
+  "nextSlug": "kwa-nini-nmb-ilifanya-stock-split-2",
+  "type": "case-study",
+  "category": "planned",
+  "unlockDate": "2026-09-17",
+  "title": "...",
+  "subtitle": "Sehemu 1: Tukio na Muktadha",
+  "sections": [ ... ]
+}
+
+Kanuni:
+- Sehemu 1: nextSlug tu
+- Sehemu 2: prevSlug + nextSlug
+- Sehemu 3 (mwisho): prevSlug tu
+
+Subtitles: "Sehemu 1: [Mada]", "Sehemu 2: [Mada]", "Sehemu 3: [Mada]"
+
+### 35.4 Kanuni za Lugha
+
+Kanuni 1: HAKUNA emoji kwenye content. Tumia callouts za rangi:
+- callout: "avoid" — nyekundu
+- callout: "good" — kijani
+
+Kanuni 2: Lugha ya kuvutia na kuhamasisha. Maneno ya heshima.
+
+Mfano:
+- Sema: "Maswali Yasiyokusaidia" (sio "Maswali MABAYA")
+- Sema: "Bado tunajifunza" (sio "Wewe ni mjinga")
+
+Kanuni 3: Kila sehemu iwe fupi (dakika 5-7). Kama ni ndefu, igawanye.
+
+Kanuni 4: USISEME "bei ya sasa". Tumia tarehe: "bei ilikuwa TSh X tarehe Y".
+
+Kanuni 5: HAKUNA hitimisho la "NUNUA" / "USINUNUE". Sema: "sasa tunahitaji kuangalia assumptions na hatari kabla ya hitimisho".
+
+### 35.5 Navigation ya Parts
+
+Chini ya kila sehemu:
+- Kama nextSlug ipo — kitufe kijani "Endelea — Sehemu N+1"
+- Kama ni sehemu ya mwisho — "Umekamilisha somo hili!" + "Rudi Soko" + "Endelea Academy"
+- Kama prevSlug ipo — link "Rudi Sehemu N-1"
+
+Kanuni: Navigation ni LAZIMA.
+
+## 36. DESIGN SYSTEM & UI STANDARDS
+
+**Status:** Implemented (Novemba 2026)
+
+### 36.1 Design Tokens
+
+File: app/globals.css — CSS variables:
+
+Rangi:
+- --color-primary: #1e7b4c
+- --color-primary-dark: #16633d
+- --color-primary-light: #e3f0ea
+- --color-accent: #d48d3b
+- --color-text: #1a1a1a
+- --color-text-muted: #555555
+- --color-bg: #ffffff
+- --color-bg-light: #f7f7f7
+- --color-bg-blue: #f3f7fb
+- --color-border: #e9edf2
+
+Radius:
+- --radius-sm: 8px, --radius-md: 12px, --radius-lg: 16px, --radius-pill: 999px
+
+Shadows:
+- --shadow-sm, --shadow-md, --shadow-lg
+
+Spacing:
+- --space-xs, --space-sm, --space-md, --space-lg, --space-xl, --space-2xl
+
+Kanuni: Kila component mpya inatumia var(--name).
+
+### 36.2 Light Mode Only
+
+Kanuni: Website inalazimisha light mode. Hakuna dark mode.
+
+Sababu: Dark mode ya browser za simu ilifanya maandishi yasionekane.
+
+Kanuni: Kila page container ina background "#ffffff" + color "#1a1a1a" wazi.
+
+### 36.3 Hakuna Emoji
+
+Kanuni: Hakuna emoji kwenye UI.
+
+Isipokuwa:
+- Hongera kwa kumaliza somo
+- Locked kwa lessons/case studies zilizofungwa
+
+Sababu: Mpaka tuwe na icons za WEKEZA NASI.
+
+### 36.4 Header (Kudumu Juu)
+
+Component: components/Header.js
+
+Sifa:
+- position: sticky, top: 0
+- Background nyeupe (sio transparent)
+- Links: Academy, Somo (Mwezi), Kampuni, Soko
+- Mobile: hamburger menu — drawer
+- Desktop (>= 768px): full nav
+- "Mfuko wa Maarifa" — kwenye mobile menu tu
+
+Kanuni: Header inaonekana kila ukurasa.
+
+### 36.5 Breadcrumbs
+
+Component: components/Breadcrumbs.js
+
+Inatumika: /academy, /kampuni, /soko, /soko/archive, /soko/[slug], /mfuko-wa-maarifa, /somo-la-mwezi/[slug]
+
+HAITUMIKI: Homepage (ni root).
+
+Format: Nyumbani > Section > Current
+
+Kanuni: Kipengele cha mwisho ni bold, sio link.
+
+### 36.6 Footer
+
+Component: components/Footer.js
+
+Muundo: Columns 3:
+1. Brand — WEKEZA NASI + tagline
+2. Kurasa — Nyumbani, Academy, Somo (Mwezi), Kampuni, Soko
+3. Kuhusu — Elimu ya uwekezaji, Afrika (Tanzania)
+
+Chini: Copyright 2026 + disclaimer.
+
+### 36.7 Metadata & SEO
+
+app/layout.js ina:
+- metadataBase: https://wekeza-nasi.vercel.app
+- Title template: "%s — WEKEZA NASI"
+- lang="sw" — SIO "en"
+- openGraph
+- Twitter Card
+- Keywords 14
+
+Kanuni: Kila page ina metadata export yake.
+
+### 36.8 Hero (Homepage)
+
+Kichwa: "Jifunze Uwekezaji. Anza Safari."
+Subtitle: "Elimu ya uwekezaji kwa Kiswahili rahisi. Afrika (Tanzania)."
+
+Kanuni 1: HAKUNA neno "bure" kwenye Hero au marketing copy yoyote.
+
+Sababu: Premium tiers zinakuja. "Bure" inafunga brand.
+
+Kanuni 2: Subtitle inasema "Afrika (Tanzania)" — SIO "Kuanzia Tanzania, kwa Afrika".
+
+### 36.9 Carousel (Safari Yangu)
+
+Kanuni: Sehemu kuu za homepage zinatumia carousel (kama DSE mobile app):
+- Kadi flex: 0 0 72%
+- scroll-snap-type: x mandatory
+- Scrollbar imefichwa
+
+### 36.10 Cards
+
+Kanuni: Kila card ina:
+- Background: #ffffff
+- Border: 1px solid #e9edf2
+- Shadow: 0 1px 3px rgba(0,0,0,0.04)
+- Radius: var(--radius-md)
+- Maandishi yote na color "#1a1a1a" wazi
+
+### 36.11 Next.js 16 — Technical Notes
+
+Kanuni 1: Dynamic routes zinahitaji await params:
+export default async function Page({ params }) {
+  const { slug } = await params;
+  ...
+}
+
+Kanuni 2: Folders zenye brackets [slug]:
+- mkdir -p "app/path/[slug]" — tumia quotes
+- git add -A — kutoka root
+
+Kanuni 3: Push kila wakati kutoka root:
+cd /workspaces/wekeza_nasi
+git add -A && git commit -m "..." && git push origin main
+
+Kanuni 4: Vercel ikionyesha toleo la zamani:
+- Clear browser cache
+- Angalia vercel.com/wekeza-nasi
+- Force Redeploy
+
+---
+
+**Last Updated:** Novemba 2026 (Sections 34-36 zimeongezwa)
