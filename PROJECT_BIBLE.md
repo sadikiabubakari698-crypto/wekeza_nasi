@@ -811,3 +811,137 @@ Kanuni 4: Vercel ikionyesha toleo la zamani:
 ---
 
 **Last Updated:** Novemba 2026 (Sections 34-36 zimeongezwa)
+## 37. AUDIO SYSTEM (Mfumo wa Sauti)
+
+**Status:** V1 Implemented (Novemba 2026). V2 planned.
+
+### 37.1 Lengo
+
+Kila mwanafunzi awe na uwezo wa kusikiliza maudhui badala ya kusoma pekee. Hii ni accessibility na inasaidia watu wengi wa Tanzania wanaopenda kusikiliza.
+
+### 37.2 Awamu Mbili
+
+AWAMU 1 (Sasa) — Browser SpeechSynthesis
+- Inatumia API ya browser (bure kabisa)
+- Hakuna backend, hakuna API key
+- Inafanya kazi mara moja
+- Kikwazo: Sauti ya Kiswahili haipo kwenye vifaa vingi
+
+AWAMU 2 (Baadaye) — Google Cloud TTS
+- Sauti halisi ya Kiswahili (sw-KE)
+- Inahitaji API key + credit card
+- Inahitaji backend (Next.js API route)
+- Bei: $4 / milioni 1 herufi, free tier milioni 1 kwa mwezi
+- Credit ya mwanzo: $300 (milioni 75 herufi)
+
+### 37.3 Component: ListenButton
+
+**File:** components/ListenButton.js
+
+**Sifa za V1:**
+- Kitufe "Sikiliza"
+- Simamisha / Endelea / Acha
+- Mwendo: 0.75x, 1x, 1.25x, 1.5x
+- Progress bar ya asilimia (0-100%)
+- "Umekamilisha kusikiliza" kwa 100%
+- Voice picker kama kifaa hakina Kiswahili
+- Onyo kama hakuna sauti ya Kiswahili
+
+**Sifa za V2 (baadaye):**
+- Sifa zote za V1
+- Sauti halisi ya Kiswahili
+- Audio controls za browser
+
+### 37.4 Flag ya Kubadilisha (USE_API)
+
+Kwenye ListenButton.js kuna flag moja:
+
+const USE_API = false;  // V1 — browser
+
+Baada ya API key kupatikana, badilisha kuwa:
+
+const USE_API = true;   // V2 — Google Cloud TTS
+
+Interface ni ile ile. Hakuna code nyingine inabadilika.
+
+### 37.5 API Route (Tayari Ipo)
+
+**File:** app/api/tts/route.js
+
+- Inapokea POST na { text, voice, rate }
+- Inatuma kwa Google Cloud TTS
+- Inarudisha MP3
+- Ina cache ya kumbukumbu (memory cache)
+
+**Environment Variable:**
+GOOGLE_TTS_API_KEY = API key yako
+
+Weka kwenye Vercel Settings — Environment Variables.
+
+**Kikomo:** Herufi 5000 kwa ombi moja (kuepuka gharama kubwa).
+
+### 37.6 Cache
+
+Cache ni muhimu sana kupunguza gharama.
+
+Mfano:
+- Mwanafunzi wa kwanza anasikiliza somo → API inatengeneza MP3 → inahifadhi
+- Mwanafunzi wa pili anasikiliza → inatumia MP3 iliyohifadhiwa (BURE)
+- Mwanafunzi wa 1,000 anasikiliza → bado BURE
+
+Kwa cache, gharama inaweza kushuka kwa 80-90%.
+
+### 37.7 Mahali Inapotumika
+
+- Academy (kila hatua ya somo) — tayari
+- Somo la Mwezi — tayari
+- Soko (Framework + Case Study) — inayofuata
+- Kampuni (profiles) — inayofuata
+
+### 37.8 Muundo wa Maandishi ya Sauti
+
+Kila component inatengeneza audioText kutoka maudhui:
+
+Academy (kila hatua):
+- title + body + list items
+
+Somo la Mwezi:
+- title + subtitle + executiveSummary + sections zote
+
+Soko:
+- title + subtitle + sections zote
+
+Kampuni:
+- title + subtitle + sections zote
+
+### 37.9 Gharama Inayotarajiwa (V2)
+
+Kwa wanafunzi 500 kwa mwezi:
+- Herufi: milioni 2.5
+- Chini ya free tier — TZS 0
+
+Kwa wanafunzi 1,000 kwa mwezi:
+- Herufi: milioni 5
+- Baada ya free tier: milioni 4 x $4 = $16
+- Kwa mwaka: ~TZS 500,000
+
+Kwa wanafunzi 10,000 kwa mwezi:
+- Herufi: milioni 50
+- Baada ya free tier: milioni 49 x $4 = $196
+- Kwa mwaka: ~TZS 6,100,000
+
+Cache inapunguza gharama hizi kwa 80-90%.
+
+### 37.10 Kanuni
+
+1. ListenButton ni component moja — inatumika kila mahali
+2. USE_API flag inadhibiti browser vs API
+3. Cache ni LAZIMA kwa V2 (kuepuka gharama)
+4. Audio text inatengenezwa kutoka maudhui halisi
+5. Kama browser haina sauti ya Kiswahili, onyesha onyo
+6. Progress bar inaonyesha asilimia iliyokamilika
+7. Hakuna emoji kwenye UI isipokuwa play/pause/stop icons
+
+---
+
+**Last Updated:** Novemba 2026 (Section 37)
