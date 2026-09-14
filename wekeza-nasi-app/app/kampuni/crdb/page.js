@@ -1,3 +1,4 @@
+import ListenButton from "../../../components/ListenButton";
 export default function CRDB() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -17,6 +18,8 @@ export default function CRDB() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Benki kubwa zaidi Tanzania kwa mtaji wa soko
       </p>
+
+      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
 
       <div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> CRDB</div>

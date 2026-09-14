@@ -1,8 +1,8 @@
 import { getSokoBySlug } from "../../../lib/soko-engine";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import Footer from "../../../components/Footer";
+import ListenButton from "../../../components/ListenButton";
 
 export default async function SokoItem({ params }) {
   const { slug } = await params;
@@ -17,6 +17,20 @@ export default async function SokoItem({ params }) {
   const navBoxStyle = { background: "#f3f7fb", borderRadius: "var(--radius-md)", padding: "1.5rem", marginTop: "2.5rem" };
   const btnPrimaryStyle = { display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.75rem 1.5rem", borderRadius: "var(--radius-pill)", textDecoration: "none", fontWeight: 700, fontSize: "0.95rem" };
   const btnSecondaryStyle = { display: "inline-block", background: "transparent", color: "#1e7b4c", padding: "0.75rem 1.5rem", borderRadius: "var(--radius-pill)", textDecoration: "none", fontWeight: 600, fontSize: "0.95rem", border: "1.5px solid #1e7b4c" };
+
+  // Tengeneza maandishi ya sauti
+  const audioText = [
+    article.title,
+    article.subtitle || article.excerpt || "",
+    ...(article.sections || []).map((s) => {
+      let text = s.title + ". ";
+      if (s.content) text += s.content + " ";
+      if (s.items) text += s.items.join(". ") + ". ";
+      if (s.quiz) text += s.quiz.map((q) => `${q.q} ${q.answer}`).join(" ") + " ";
+      if (s.questions) text += s.questions.join(" ") + " ";
+      return text;
+    }),
+  ].join("\n\n");
 
   return (
     <main style={pageStyle}>
@@ -41,8 +55,9 @@ export default async function SokoItem({ params }) {
         <p style={{ fontSize: "1.05rem", fontStyle: "italic", color: "#555555", marginTop: "0.25rem" }}>{article.subtitle}</p>
       )}
 
+      <ListenButton text={audioText} label="Sikiliza Somo Hili" />
+
       {article.sections?.map((section, i) => {
-        // Callout: avoid (nyekundu)
         if (section.callout === "avoid") {
           return (
             <div key={i} style={{ background: "#fef2f2", borderLeft: "4px solid #dc2626", borderRadius: "var(--radius-md)", padding: "1.25rem 1.5rem", margin: "1.5rem 0" }}>
@@ -56,7 +71,6 @@ export default async function SokoItem({ params }) {
           );
         }
 
-        // Callout: good (kijani)
         if (section.callout === "good") {
           return (
             <div key={i} style={{ background: "#f0fdf4", borderLeft: "4px solid #16a34a", borderRadius: "var(--radius-md)", padding: "1.25rem 1.5rem", margin: "1.5rem 0" }}>
@@ -70,7 +84,6 @@ export default async function SokoItem({ params }) {
           );
         }
 
-        // Kawaida
         return (
           <div key={i}>
             <h2 style={h2Style}>{section.title}</h2>
@@ -101,16 +114,15 @@ export default async function SokoItem({ params }) {
         );
       })}
 
-      {/* NAVIGATION: Prev / Next / Mwisho */}
       <div style={navBoxStyle}>
         {article.nextSlug ? (
           <>
             <p style={{ margin: "0 0 1rem 0", color: "#1a1a1a", fontWeight: 600 }}>
               Unaendelea vizuri. Endelea na sehemu inayofuata.
             </p>
-            <Link href={`/soko/${article.nextSlug}`} style={btnPrimaryStyle}>
+            <a href={`/soko/${article.nextSlug}`} style={btnPrimaryStyle}>
               Endelea → Sehemu {article.partNumber + 1}
-            </Link>
+            </a>
           </>
         ) : (
           <>
@@ -118,20 +130,20 @@ export default async function SokoItem({ params }) {
               🎉 Umekamilisha somo hili!
             </p>
             <p style={{ margin: "0 0 1rem 0", color: "#555555", fontSize: "0.95rem" }}>
-              Umejifunza kitu cha maana. Endelea na safari — kuna masomo mengine yanayokungoja.
+              Umejifunza kitu cha maana. Endelea na safari.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-              <Link href="/soko" style={btnPrimaryStyle}>Rudi Soko →</Link>
-              <Link href="/academy" style={btnSecondaryStyle}>Endelea Academy</Link>
+              <a href="/soko" style={btnPrimaryStyle}>Rudi Soko →</a>
+              <a href="/academy" style={btnSecondaryStyle}>Endelea Academy</a>
             </div>
           </>
         )}
 
         {article.prevSlug && (
           <p style={{ marginTop: "1rem", marginBottom: 0 }}>
-            <Link href={`/soko/${article.prevSlug}`} style={{ color: "#1e7b4c", fontSize: "0.9rem", textDecoration: "none" }}>
+            <a href={`/soko/${article.prevSlug}`} style={{ color: "#1e7b4c", fontSize: "0.9rem", textDecoration: "none" }}>
               ← Rudi Sehemu {article.partNumber - 1}
-            </Link>
+            </a>
           </p>
         )}
       </div>
