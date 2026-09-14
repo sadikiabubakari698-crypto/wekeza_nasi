@@ -1,6 +1,12 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 
+// Mfumo wa Sauti — V1 (Browser SpeechSynthesis)
+// Baadaye: V2 (Google Cloud TTS API)
+// Interface ni ile ile — kubadilisha backend ni kubadilisha USE_API tu.
+
+const USE_API = false; // Badilisha kuwa true baada ya API key ya Google Cloud
+
 export default function ListenButton({ text, label = "Sikiliza" }) {
   const [supported, setSupported] = useState(false);
   const [speaking, setSpeaking] = useState(false);
@@ -9,24 +15,24 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
   const [voices, setVoices] = useState([]);
   const [selectedVoice, setSelectedVoice] = useState(null);
   const [swahiliVoice, setSwahiliVoice] = useState(null);
-  const [progress, setProgress] = useState(0); // 0-100
+  const [progress, setProgress] = useState(0);
   const [showVoicePicker, setShowVoicePicker] = useState(false);
+  const [audioSrc, setAudioSrc] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  // Chunks za maandishi
   const chunksRef = useRef([]);
   const currentChunkRef = useRef(0);
   const utteranceRef = useRef(null);
+  const audioRef = useRef(null);
 
-  // Gawanya maandishi kwa sentensi
   const splitIntoChunks = (fullText) => {
     if (!fullText) return [];
-    // Gawanya kwa sentensi (kwa . ! ? au newline)
     const sentences = fullText
       .split(/(?<=[.!?\n])\s+/)
       .map((s) => s.trim())
       .filter((s) => s.length > 0);
 
-    // Unganisha sentensi ndogo kuwa chunks za ~200 herufi
     const chunks = [];
     let current = "";
     for (const s of sentences) {
@@ -43,6 +49,12 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    if (USE_API) {
+      setSupported(true);
+      return;
+    }
+
     if (!("speechSynthesis" in window)) {
       setSupported(false);
       return;
@@ -54,13 +66,11 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
       if (v.length === 0) return;
       setVoices(v);
 
-      // Tafuta voice ya Kiswahili
       const sw = v.find((voice) => voice.lang && voice.lang.toLowerCase().startsWith("sw"));
       if (sw) {
         setSwahiliVoice(sw);
         setSelectedVoice(sw);
       } else {
-        // Fallback: Chagua voice ya Kiingereza
         const en = v.find((voice) => voice.lang && voice.lang.toLowerCase().startsWith("en"));
         setSelectedVoice(en || v[0]);
       }
@@ -74,9 +84,9 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
     };
   }, []);
 
+  // ==== BROWSER SPEECH ====
   const speakChunk = (index) => {
     if (index >= chunksRef.current.length) {
-      // Kumaliza
       setSpeaking(false);
       setPaused(false);
       setProgress(100);
@@ -111,9 +121,47 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
     window.speechSynthesis.speak(utterance);
   };
 
+  // ==== API TTS ====
+  const fetchAudio = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, voice: "sw-KE-Standard-A", rate }),
+      });
+      if (!res.ok) throw new Error("TTS API imeshindwa");
+      const blob = await res.blob();
+      setAudioSrc(URL.createObjectURL(blob));
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handlePlay = () => {
     if (!supported) return;
+    setError(null);
 
+    if (USE_API) {
+      if (audioRef.current) {
+        if (audioRef.current.paused) {
+          audioRef.current.play();
+          setSpeaking(true);
+          setPaused(false);
+        } else {
+          audioRef.current.pause();
+          setPaused(true);
+        }
+        return;
+      }
+      fetchAudio();
+      return;
+    }
+
+    // Browser SpeechSynthesis
     if (speaking && paused) {
       window.speechSynthesis.resume();
       setPaused(false);
@@ -126,7 +174,6 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
       return;
     }
 
-    // Anza upya
     chunksRef.current = splitIntoChunks(text);
     currentChunkRef.current = 0;
     setProgress(0);
@@ -137,7 +184,15 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
 
   const handleStop = () => {
     if (typeof window === "undefined") return;
-    window.speechSynthesis.cancel();
+    if (USE_API) {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+      setAudioSrc(null);
+    } else {
+      window.speechSynthesis.cancel();
+    }
     setSpeaking(false);
     setPaused(false);
     setProgress(0);
@@ -155,7 +210,19 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
     if (speaking) handleStop();
   };
 
-  if (!supported) {
+  // Auto-play API audio baada ya kupatikana
+  useEffect(() => {
+    if (USE_API && audioSrc && audioRef.current) {
+      audioRef.current.play().then(() => {
+        setSpeaking(true);
+        setPaused(false);
+      }).catch((err) => {
+        setError("Browser ilizuia autoplay. Bonyeza kitufe tena.");
+      });
+    }
+  }, [audioSrc]);
+
+  if (!supported && !USE_API) {
     return (
       <div style={{ background: "#fef8ee", borderLeft: "5px solid #d48d3b", padding: "1rem 1.25rem", borderRadius: "var(--radius-md)", margin: "1.5rem 0", fontSize: "0.9rem", color: "#1a1a1a" }}>
         Kifaa chako hakiwezi kusoma maandishi kwa sauti.
@@ -182,13 +249,11 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
     fontSize: "0.9rem",
     borderRadius: "var(--radius-pill)",
     border: "none",
-    cursor: "pointer",
+    cursor: loading ? "wait" : "pointer",
+    opacity: loading ? 0.6 : 1,
   };
 
   const btnStop = {
-    display: "inline-flex",
-    alignItems: "center",
-    gap: "0.4rem",
     padding: "0.6rem 1rem",
     background: "transparent",
     color: "#991b1b",
@@ -234,26 +299,52 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
 
   return (
     <div style={wrapperStyle}>
+      {/* API Audio Element */}
+      {USE_API && audioSrc && (
+        <audio
+          ref={audioRef}
+          src={audioSrc}
+          onTimeUpdate={(e) => {
+            const pct = Math.round((e.target.currentTime / e.target.duration) * 100);
+            setProgress(pct);
+          }}
+          onEnded={() => {
+            setSpeaking(false);
+            setProgress(100);
+          }}
+          style={{ width: "100%", marginBottom: "0.5rem" }}
+          controls
+        />
+      )}
+
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-        <button style={btnPrimary} onClick={handlePlay}>
-          {speaking && !paused ? "⏸ Simamisha" : speaking && paused ? "▶ Endelea" : "🔊 " + label}
+        <button style={btnPrimary} onClick={handlePlay} disabled={loading}>
+          {loading
+            ? "⏳ Inatengeneza..."
+            : speaking && !paused
+            ? "⏸ Simamisha"
+            : speaking && paused
+            ? "▶ Endelea"
+            : "🔊 " + label}
         </button>
 
         {speaking && <button style={btnStop} onClick={handleStop}>⏹ Acha</button>}
 
-        <div style={{ display: "flex", gap: "0.3rem", alignItems: "center", marginLeft: "auto" }}>
-          <span style={{ fontSize: "0.75rem", color: "#555555", marginRight: "0.2rem" }}>Mwendo:</span>
-          <button style={rateBtn(rate === 0.75)} onClick={() => handleRateChange(0.75)}>0.75×</button>
-          <button style={rateBtn(rate === 1)} onClick={() => handleRateChange(1)}>1×</button>
-          <button style={rateBtn(rate === 1.25)} onClick={() => handleRateChange(1.25)}>1.25×</button>
-          <button style={rateBtn(rate === 1.5)} onClick={() => handleRateChange(1.5)}>1.5×</button>
-        </div>
+        {!USE_API && (
+          <div style={{ display: "flex", gap: "0.3rem", alignItems: "center", marginLeft: "auto" }}>
+            <span style={{ fontSize: "0.75rem", color: "#555555", marginRight: "0.2rem" }}>Mwendo:</span>
+            <button style={rateBtn(rate === 0.75)} onClick={() => handleRateChange(0.75)}>0.75×</button>
+            <button style={rateBtn(rate === 1)} onClick={() => handleRateChange(1)}>1×</button>
+            <button style={rateBtn(rate === 1.25)} onClick={() => handleRateChange(1.25)}>1.25×</button>
+            <button style={rateBtn(rate === 1.5)} onClick={() => handleRateChange(1.5)}>1.5×</button>
+          </div>
+        )}
       </div>
 
-      {/* Progress bar — inaonekana kama speaking au progress > 0 */}
-      {(speaking || progress > 0) && (
+      {/* Progress (kwa browser tu — API inatumia controls za audio) */}
+      {!USE_API && (speaking || progress > 0) && (
         <div style={{ marginTop: "0.75rem" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.4rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
             <span style={{ fontSize: "0.8rem", color: "#1a1a1a", fontWeight: 600 }}>
               {progress}% imekamilika
             </span>
@@ -269,26 +360,30 @@ export default function ListenButton({ text, label = "Sikiliza" }) {
         </div>
       )}
 
-      {/* Onyo kama hakuna voice ya Kiswahili */}
-      {!swahiliVoice && (
+      {/* Error */}
+      {error && (
+        <p style={{ marginTop: "0.75rem", fontSize: "0.85rem", color: "#991b1b", fontWeight: 600 }}>
+          {error}
+        </p>
+      )}
+
+      {/* Onyo la Kiswahili — browser tu */}
+      {!USE_API && !swahiliVoice && (
         <div style={{ marginTop: "0.75rem", padding: "0.75rem 1rem", background: "#fef8ee", borderLeft: "4px solid #d48d3b", borderRadius: "var(--radius-md)", fontSize: "0.8rem", color: "#1a1a1a" }}>
-          <strong>Kifaa chako hakina sauti ya Kiswahili.</strong> Sauti itasoma kwa lafudhi ya Kiingereza — maneno yanaweza kusikika vibaya.
+          <strong>Kifaa chako hakina sauti ya Kiswahili.</strong> Sauti itasoma kwa lafudhi ya Kiingereza.
           <br />
           <button
             style={{ ...btnSmall, marginTop: "0.5rem" }}
             onClick={() => setShowVoicePicker(!showVoicePicker)}
           >
-            {showVoicePicker ? "Funga" : "Chagua sauti nyingine"} ({voices.length} zipo)
+            {showVoicePicker ? "Funga" : `Chagua sauti nyingine (${voices.length} zipo)`}
           </button>
         </div>
       )}
 
-      {/* Voice picker */}
-      {showVoicePicker && (
+      {showVoicePicker && !USE_API && (
         <div style={{ marginTop: "0.75rem" }}>
-          <p style={{ margin: "0 0 0.5rem 0", fontSize: "0.8rem", color: "#555555" }}>
-            Chagua sauti:
-          </p>
+          <p style={{ margin: "0 0 0.5rem 0", fontSize: "0.8rem", color: "#555555" }}>Chagua sauti:</p>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", maxHeight: "200px", overflowY: "auto" }}>
             {voices.map((v, i) => (
               <button

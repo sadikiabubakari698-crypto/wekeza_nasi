@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LessonQuiz from "./LessonQuiz";
 import SaveToJournal from "./SaveToJournal";
+import ListenButton from "./ListenButton";
 import { markPassed } from "../lib/progress";
 
 export default function LessonStepper({
@@ -22,12 +23,9 @@ export default function LessonStepper({
 
   const handlePass = () => {
     setQuizPassed(true);
-    // Hifadhi progress — lessonId inatokana na lessonHref (mfano "/somo1" → "somo1")
     const lessonId = lessonHref ? lessonHref.replace(/^\//, "") : null;
     if (lessonId) markPassed(lessonId);
   };
-
-  const containerStyle = { marginTop: "1.5rem" };
 
   const stepBoxStyle = {
     background: "#ffffff",
@@ -50,13 +48,7 @@ export default function LessonStepper({
   const bodyStyle = { color: "#1a1a1a", lineHeight: 1.7, whiteSpace: "pre-line" };
   const listStyle = { color: "#1a1a1a", lineHeight: 1.8, paddingLeft: "1.5rem", marginTop: "0.75rem" };
   const counterStyle = { fontSize: "0.85rem", color: "#555555", marginBottom: "0.5rem" };
-  const navRowStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginTop: "1.5rem",
-    gap: "0.5rem",
-  };
+  const navRowStyle = { display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.5rem", gap: "0.5rem" };
 
   const btnPrevStyle = {
     display: "inline-block",
@@ -86,8 +78,15 @@ export default function LessonStepper({
 
   const currentStep = contentSteps[current];
 
+  // Tengeneza maandishi ya sauti kwa hatua hii
+  const stepAudioText = [
+    currentStep.title,
+    currentStep.body || "",
+    currentStep.list ? currentStep.list.join(". ") : "",
+  ].join(". ");
+
   return (
-    <div style={containerStyle}>
+    <div style={{ marginTop: "1.5rem" }}>
       <div style={stepBoxStyle}>
         <p style={counterStyle}>Hatua {current + 1} kati ya {totalSteps}</p>
         <h2 style={stepTitleStyle}>{currentStep.title}</h2>
@@ -99,6 +98,8 @@ export default function LessonStepper({
             ))}
           </ul>
         )}
+
+        <ListenButton text={stepAudioText} label="Sikiliza Hatua Hii" />
       </div>
 
       <div style={navRowStyle}>
@@ -131,15 +132,7 @@ export default function LessonStepper({
       )}
 
       {isLastStep && quizPassed && (
-        <div
-          style={{
-            marginTop: "2rem",
-            padding: "1.5rem",
-            background: "#f0fdf4",
-            borderRadius: "var(--radius-lg)",
-            border: "1px solid #86efac",
-          }}
-        >
+        <div style={{ marginTop: "2rem", padding: "1.5rem", background: "#f0fdf4", borderRadius: "var(--radius-lg)", border: "1px solid #86efac" }}>
           <p style={{ margin: 0, color: "#166534", fontWeight: 700, fontSize: "1.1rem" }}>
             🎉 Hongera! Umemaliza somo hili.
           </p>
