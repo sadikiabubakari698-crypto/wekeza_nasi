@@ -1,9 +1,11 @@
-import { getSokoBySlug } from "../../../lib/soko-engine";
+import { getSokoBySlug, getAllSokoItems } from "../../../lib/soko-engine";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import Footer from "../../../components/Footer";
 import ListenButton from "../../../components/ListenButton";
 import TableOfContents from "../../../components/TableOfContents";
+import ShareButtons from "../../../components/ShareButtons";
+import RelatedArticles from "../../../components/RelatedArticles";
 
 export default async function SokoItem({ params }) {
   const { slug } = await params;
@@ -33,6 +35,17 @@ export default async function SokoItem({ params }) {
   ].join("\n\n");
 
   const tocItems = (article.sections || []).map((s, i) => ({ id: `sec-${i}`, title: s.title }));
+
+  const allItems = getAllSokoItems();
+  const related = allItems
+    .filter((item) => item.slug !== article.slug && (item.partNumber === 1 || !item.partNumber))
+    .slice(0, 3)
+    .map((item) => ({
+      type: "Soko",
+      title: item.title,
+      href: `/soko/${item.slug}`,
+      excerpt: item.subtitle || item.excerpt,
+    }));
 
   return (
     <main style={pageStyle}>
@@ -157,6 +170,12 @@ export default async function SokoItem({ params }) {
           <strong>Kumbuka:</strong> {article.disclaimer}
         </div>
       )}
+
+      {related.length > 0 && (
+        <RelatedArticles items={related} title="Masomo Mengine ya Soko" />
+      )}
+
+      <ShareButtons title={article.title} path={`/soko/${article.slug}`} />
 
       <Footer />
     </main>
