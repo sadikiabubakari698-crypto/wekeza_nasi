@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import Footer from "../../../components/Footer";
 import ListenButton from "../../../components/ListenButton";
+import TableOfContents from "../../../components/TableOfContents";
 
 export default async function SokoItem({ params }) {
   const { slug } = await params;
@@ -11,14 +12,13 @@ export default async function SokoItem({ params }) {
   if (!article) return notFound();
 
   const pageStyle = { padding: "1.75rem", maxWidth: "700px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.7, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" };
-  const h2Style = { fontSize: "1.35rem", marginTop: "2rem", marginBottom: "0.75rem", color: "#1a1a1a", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
+  const h2Style = { fontSize: "1.35rem", marginTop: "2rem", marginBottom: "0.75rem", color: "#1a1a1a", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem", scrollMarginTop: "80px" };
   const disclaimerStyle = { background: "#fef8ee", borderLeft: "5px solid #d48d3b", padding: "1rem 1.25rem", borderRadius: "8px", marginTop: "2.5rem", fontSize: "0.9rem", color: "#1a1a1a" };
   const partBadgeStyle = { display: "inline-block", background: "#e3f0ea", color: "#1e7b4c", fontSize: "0.75rem", fontWeight: 700, padding: "0.25rem 0.75rem", borderRadius: "999px", marginBottom: "0.75rem" };
   const navBoxStyle = { background: "#f3f7fb", borderRadius: "var(--radius-md)", padding: "1.5rem", marginTop: "2.5rem" };
   const btnPrimaryStyle = { display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.75rem 1.5rem", borderRadius: "var(--radius-pill)", textDecoration: "none", fontWeight: 700, fontSize: "0.95rem" };
   const btnSecondaryStyle = { display: "inline-block", background: "transparent", color: "#1e7b4c", padding: "0.75rem 1.5rem", borderRadius: "var(--radius-pill)", textDecoration: "none", fontWeight: 600, fontSize: "0.95rem", border: "1.5px solid #1e7b4c" };
 
-  // Tengeneza maandishi ya sauti
   const audioText = [
     article.title,
     article.subtitle || article.excerpt || "",
@@ -31,6 +31,8 @@ export default async function SokoItem({ params }) {
       return text;
     }),
   ].join("\n\n");
+
+  const tocItems = (article.sections || []).map((s, i) => ({ id: `sec-${i}`, title: s.title }));
 
   return (
     <main style={pageStyle}>
@@ -57,10 +59,12 @@ export default async function SokoItem({ params }) {
 
       <ListenButton text={audioText} label="Sikiliza Somo Hili" />
 
+      <TableOfContents items={tocItems} />
+
       {article.sections?.map((section, i) => {
         if (section.callout === "avoid") {
           return (
-            <div key={i} style={{ background: "#fef2f2", borderLeft: "4px solid #dc2626", borderRadius: "var(--radius-md)", padding: "1.25rem 1.5rem", margin: "1.5rem 0" }}>
+            <div key={i} id={`sec-${i}`} style={{ background: "#fef2f2", borderLeft: "4px solid #dc2626", borderRadius: "var(--radius-md)", padding: "1.25rem 1.5rem", margin: "1.5rem 0", scrollMarginTop: "80px" }}>
               <p style={{ margin: "0 0 0.75rem 0", fontWeight: 700, color: "#991b1b", fontSize: "1.05rem" }}>{section.title}</p>
               <ul style={{ margin: 0, paddingLeft: "1.25rem", color: "#7f1d1d" }}>
                 {section.items?.map((item, j) => (
@@ -73,7 +77,7 @@ export default async function SokoItem({ params }) {
 
         if (section.callout === "good") {
           return (
-            <div key={i} style={{ background: "#f0fdf4", borderLeft: "4px solid #16a34a", borderRadius: "var(--radius-md)", padding: "1.25rem 1.5rem", margin: "1.5rem 0" }}>
+            <div key={i} id={`sec-${i}`} style={{ background: "#f0fdf4", borderLeft: "4px solid #16a34a", borderRadius: "var(--radius-md)", padding: "1.25rem 1.5rem", margin: "1.5rem 0", scrollMarginTop: "80px" }}>
               <p style={{ margin: "0 0 0.75rem 0", fontWeight: 700, color: "#166534", fontSize: "1.05rem" }}>{section.title}</p>
               <ul style={{ margin: 0, paddingLeft: "1.25rem", color: "#14532d" }}>
                 {section.items?.map((item, j) => (
@@ -85,7 +89,7 @@ export default async function SokoItem({ params }) {
         }
 
         return (
-          <div key={i}>
+          <div key={i} id={`sec-${i}`} style={{ scrollMarginTop: "80px" }}>
             <h2 style={h2Style}>{section.title}</h2>
             {section.content && (
               <div style={{ whiteSpace: "pre-line", color: "#1a1a1a" }}>{section.content}</div>

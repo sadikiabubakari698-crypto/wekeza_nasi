@@ -2,6 +2,7 @@ import { getAllPlannedItems } from "../../../lib/content-engine";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import ListenButton from "../../../components/ListenButton";
+import TableOfContents from "../../../components/TableOfContents";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -11,13 +12,12 @@ export default async function SomoLaMwezi({ params }) {
   if (!article) return notFound();
 
   const pageStyle = { padding: "1.75rem", maxWidth: "750px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.7, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" };
-  const h2Style = { fontSize: "1.4rem", marginTop: "2rem", marginBottom: "0.75rem", color: "#1a1a1a", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
+  const h2Style = { fontSize: "1.4rem", marginTop: "2rem", marginBottom: "0.75rem", color: "#1a1a1a", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem", scrollMarginTop: "80px" };
   const infoBoxStyle = { background: "#f3f7fb", borderRadius: "var(--radius-md)", padding: "1rem 1.25rem", margin: "1.5rem 0", color: "#1a1a1a" };
   const tableHeaderStyle = { padding: "0.6rem", textAlign: "left", borderBottom: "1px solid #ddd", color: "#1a1a1a", background: "#f3f7fb" };
   const tableCellStyle = { padding: "0.6rem", borderBottom: "1px solid #eee", color: "#1a1a1a" };
   const disclaimerStyle = { background: "#fef8ee", borderLeft: "5px solid #d48d3b", padding: "1rem 1.25rem", borderRadius: "8px", marginTop: "2.5rem", fontSize: "0.9rem", color: "#1a1a1a" };
 
-  // Tengeneza maandishi ya kusikiliza (executive summary + sections zote)
   const audioText = [
     article.title,
     article.subtitle || "",
@@ -33,6 +33,12 @@ export default async function SomoLaMwezi({ params }) {
       return text;
     }),
   ].join("\n\n");
+
+  // TOC items
+  const tocItems = [
+    { id: "sec-muhtasari", title: "Muhtasari wa Mtendaji" },
+    ...(article.sections || []).map((s, i) => ({ id: `sec-${i}`, title: s.title })),
+  ];
 
   return (
     <main style={pageStyle}>
@@ -60,12 +66,14 @@ export default async function SomoLaMwezi({ params }) {
         </div>
       )}
 
-      <h2 style={h2Style}>Muhtasari wa Mtendaji</h2>
+      <TableOfContents items={tocItems} />
+
+      <h2 id="sec-muhtasari" style={h2Style}>Muhtasari wa Mtendaji</h2>
       <p style={{ color: "#1a1a1a" }}>{article.executiveSummary}</p>
 
       {article.sections?.map((section, i) => (
         <div key={i}>
-          <h2 style={h2Style}>{i + 1}. {section.title}</h2>
+          <h2 id={`sec-${i}`} style={h2Style}>{i + 1}. {section.title}</h2>
           {section.content && (
             <div style={{ whiteSpace: "pre-line", color: "#1a1a1a" }}>{section.content}</div>
           )}
