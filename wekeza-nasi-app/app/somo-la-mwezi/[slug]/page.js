@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import ListenButton from "../../../components/ListenButton";
 import TableOfContents from "../../../components/TableOfContents";
+import ShareButtons from "../../../components/ShareButtons";
+import RelatedArticles from "../../../components/RelatedArticles";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -34,11 +36,20 @@ export default async function SomoLaMwezi({ params }) {
     }),
   ].join("\n\n");
 
-  // TOC items
   const tocItems = [
     { id: "sec-muhtasari", title: "Muhtasari wa Mtendaji" },
     ...(article.sections || []).map((s, i) => ({ id: `sec-${i}`, title: s.title })),
   ];
+
+  const related = items
+    .filter((item) => item.slug !== article.slug)
+    .slice(0, 3)
+    .map((item) => ({
+      type: "Somo la Mwezi",
+      title: item.title,
+      href: `/somo-la-mwezi/${item.slug}`,
+      excerpt: item.subtitle || item.executiveSummary?.substring(0, 100),
+    }));
 
   return (
     <main style={pageStyle}>
@@ -140,6 +151,12 @@ export default async function SomoLaMwezi({ params }) {
           <strong>Kumbuka:</strong> {article.disclaimer}
         </div>
       )}
+
+      {related.length > 0 && (
+        <RelatedArticles items={related} title="Somo la Mwezi — Zingine" />
+      )}
+
+      <ShareButtons title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
     </main>
   );
 }
