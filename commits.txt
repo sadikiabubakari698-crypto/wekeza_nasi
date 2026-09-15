@@ -1,0 +1,30 @@
+cceaea1 Fix: Move ShareButtons after RelatedArticles on all articles
+5028e59 Add Share buttons and Related articles to Soko and Kampuni pages
+d5187e6 Move ShareButtons to bottom of articles (after reading)
+14c4467 Kikao 3: Share buttons, Related articles, Reading progress
+8db5b79 Add search functionality: index, page, header icon
+edc59df Add Table of Contents to Somo la Mwezi and Soko articles
+2a64787 Kikao 1: fix duplicate Vodacom, add loading state, add scroll-to-top
+d0d8d7d Add ListenButton to Soko articles and all 8 Company profiles
+157f988 Add Section 37 to PROJECT_BIBLE: Audio System
+501429f Audio foundation: ListenButton v1 (browser + API-ready) + integrate into every lesson step
+13f5565 ListenButton: progress %, voice picker, Swahili warning
+c3af8dd Add ListenButton (browser SpeechSynthesis) to Somo la Mwezi
+d399271 Fix: Remove duplicate Vodacom case study from soko.json
+e696acc Add Sections 34-36 to PROJECT_BIBLE
+e876edf Quiz: hide answers on fail, gate lessons with localStorage progress
+df7fa9d Fix Somo 19, 20: quiz as separate prop - Academy complete
+0145131 Fix Somo 17, 18: quiz as separate prop
+a0aab3e Fix Somo 14, 15, 16: quiz as separate prop
+fe1f751 Fix Somo 11, 12, 13: quiz as separate prop
+5fc550c Fix Somo 8, 9, 10: quiz as separate prop
+e1de34d Fix Somo 5, 6, 7: quiz as separate prop
+0dedfed Fix Somo 2 and Somo 4: quiz as separate prop, remove Kipimo Kidogo step
+dd3e842 Fix Somo 1: remove Kipimo Kidogo step, add quiz as separate prop
+a01060f New LessonStepper: quiz as final step, interactive, gates progression
+a8f6bd1 Add Quiz System V1: LessonQuiz, SaveToJournal, Mfuko wa Maarifa page
+ce48a53 Add Case Study 5: TCC (gawio kubwa, sekta inapungua) - 3 parts, unlocks Oct 2
+d102d51 Add Case Study 4: Vodacom Ilipoteza Soko kwa Airtel (3 parts, unlocks Sept 27)
+439e3e6 Add Case Study 4: Vodacom Ilipoteza Soko kwa Airtel (3 parts, unlocks Sept 27)
+2289f23 Add Case Study 3: CRDB Ilipanda 60% 2022-2023 (3 parts, unlocks Sept 22)
+14d1b40 Add unlockDate system: case studies unlock every 5 days, archive shows locked/unlocked
