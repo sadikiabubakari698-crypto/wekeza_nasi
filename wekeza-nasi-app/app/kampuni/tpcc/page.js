@@ -1,4 +1,5 @@
 import ShareButtons from "../../../components/ShareButtons";
+import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function TPCC() {
   const sectionStyle = { marginBottom: "2.5rem" };
@@ -108,6 +109,9 @@ export default function TPCC() {
         <p style={{ ...pStyle, fontSize: "0.85rem", color: "#666", fontStyle: "italic" }}>
           <strong>Taarifa za mwisho zilisasishwa:</strong> Septemba 2026
         </p>
+
+
+      <ArticleActions title="TPCC — Twiga Cement" path="/kampuni/tpcc" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>

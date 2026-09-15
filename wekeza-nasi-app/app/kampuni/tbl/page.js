@@ -1,4 +1,5 @@
 import ShareButtons from "../../../components/ShareButtons";
+import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function TBL() {
   const sectionStyle = { marginBottom: "2.5rem" };
@@ -84,6 +85,9 @@ export default function TBL() {
         <p style={{ ...pStyle, fontSize: "0.85rem", color: "#666", fontStyle: "italic" }}>
           <strong>Taarifa za mwisho zilisasishwa:</strong> Septemba 2026
         </p>
+
+
+      <ArticleActions title="Tanzania Breweries Plc (TBL)" path="/kampuni/tbl" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>Mapato ya jumla yamekuwa thabiti kwa miaka 5, yakikua kwa wastani wa asilimia 6-8 kwa mwaka. Faida halisi iliongezeka kutoka TSh bilioni 150 (2022) hadi TSh bilioni 200+ (2025). Uwiano wa ROE ni ~25%, moja ya juu zaidi kwenye DSE.</p>

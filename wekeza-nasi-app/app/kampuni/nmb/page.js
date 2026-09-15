@@ -1,4 +1,5 @@
 import ShareButtons from "../../../components/ShareButtons";
+import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function NMB() {
   const sectionStyle = { marginBottom: "2.5rem" };
@@ -82,6 +83,9 @@ export default function NMB() {
         <p style={{ ...pStyle, fontSize: "0.85rem", color: "#666", fontStyle: "italic" }}>
           <strong>Taarifa za mwisho zilisasishwa:</strong> Septemba 2026
         </p>
+
+
+      <ArticleActions title="NMB Bank Plc" path="/kampuni/nmb" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>Mapato ya jumla yalikua kwa wastani wa asilimia 15 kwa mwaka kati ya 2022-2025. Faida halisi iliongezeka kutoka TSh bilioni 450 (2023) hadi TSh bilioni 600+ (2025). NMB ina moja ya uwiano bora wa ufanisi (cost-to-income ratio) chini ya asilimia 45.</p>

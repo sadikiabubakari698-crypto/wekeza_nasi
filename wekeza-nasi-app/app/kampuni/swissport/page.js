@@ -1,4 +1,5 @@
 import ShareButtons from "../../../components/ShareButtons";
+import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function Swissport() {
   const sectionStyle = { marginBottom: "2.5rem" };
@@ -109,6 +110,9 @@ export default function Swissport() {
         <p style={{ ...pStyle, fontSize: "0.85rem", color: "#666", fontStyle: "italic" }}>
           <strong>Taarifa za mwisho zilisasishwa:</strong> Septemba 2026
         </p>
+
+
+      <ArticleActions title="Swissport Tanzania Plc" path="/kampuni/swissport" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>

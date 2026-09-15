@@ -4,6 +4,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs";
 import Footer from "../../../components/Footer";
 import TableOfContents from "../../../components/TableOfContents";
 import ShareButtons from "../../../components/ShareButtons";
+import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
 
 export default async function SokoItem({ params }) {

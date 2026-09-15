@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import TableOfContents from "../../../components/TableOfContents";
 import ShareButtons from "../../../components/ShareButtons";
+import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
 
 export default async function SomoLaMwezi({ params }) {
@@ -72,6 +73,8 @@ export default async function SomoLaMwezi({ params }) {
           <div><strong>Iliorodheshwa:</strong> {article.company.listed}</div>
         </div>
       )}
+
+      <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
 
       <TableOfContents items={tocItems} />
 
