@@ -52,6 +52,16 @@ export default function Header() {
     whiteSpace: "nowrap",
   };
 
+  const iconBtnStyle = {
+    background: "transparent",
+    border: "none",
+    fontSize: "1.1rem",
+    cursor: "pointer",
+    color: "#1a1a1a",
+    padding: "0.25rem 0.5rem",
+    textDecoration: "none",
+  };
+
   const menuBtnStyle = {
     background: "transparent",
     border: "none",
@@ -59,6 +69,7 @@ export default function Header() {
     lineHeight: 1,
     color: "#1a1a1a",
     padding: "0.25rem 0.5rem",
+    cursor: "pointer",
   };
 
   const mobileMenuStyle = {
@@ -80,16 +91,20 @@ export default function Header() {
           {links.map((l) => (
             <Link key={l.href} href={l.href} style={navLinkStyle}>{l.label}</Link>
           ))}
+          <Link href="/search" style={iconBtnStyle} aria-label="Tafuta">🔍</Link>
         </nav>
 
-        <button
-          style={menuBtnStyle}
-          className="mobile-menu-btn"
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-        >
-          {open ? "✕" : "☰"}
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
+          <Link href="/search" style={{ ...iconBtnStyle, display: "flex" }} className="mobile-search-btn" aria-label="Tafuta">🔍</Link>
+          <button
+            style={menuBtnStyle}
+            className="mobile-menu-btn"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -117,9 +132,11 @@ export default function Header() {
       <style jsx global>{`
         .desktop-nav { display: none; }
         .mobile-menu-btn { display: block; }
+        .mobile-search-btn { display: flex; }
         @media (min-width: 768px) {
           .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
+          .mobile-search-btn { display: none !important; }
         }
       `}</style>
     </header>
