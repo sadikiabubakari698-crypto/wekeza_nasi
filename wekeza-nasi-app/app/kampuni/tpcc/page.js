@@ -1,4 +1,6 @@
 import ListenButton from "../../../components/ListenButton";
+import ShareButtons from "../../../components/ShareButtons";
+import RelatedArticles from "../../../components/RelatedArticles";
 export default function TPCC() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -178,6 +180,17 @@ export default function TPCC() {
       <p style={{ marginTop: "2.5rem" }}>
         <a href="/kampuni" style={{ color: "#1e7b4c", fontWeight: 600 }}>← Rudi kwa Uchambuzi wa Kampuni</a>
       </p>
+    
+      <RelatedArticles
+        title="Kampuni Nyingine"
+        items={[
+          { type: "Kampuni", title: "CRDB Bank Plc", href: "/kampuni/crdb", excerpt: "Uchambuzi wa CRDB Bank Plc" },
+          { type: "Kampuni", title: "NMB Bank Plc", href: "/kampuni/nmb", excerpt: "Uchambuzi wa NMB Bank Plc" },
+          { type: "Kampuni", title: "Tanzania Breweries Plc (TBL)", href: "/kampuni/tbl", excerpt: "Uchambuzi wa Tanzania Breweries Plc (TBL)" }
+        ]}
+      />
+
+      <ShareButtons title="TPCC — Twiga Cement" path="/kampuni/tpcc" />
     </main>
   );
 }
