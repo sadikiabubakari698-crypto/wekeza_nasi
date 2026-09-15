@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function Vodacom() {
@@ -20,10 +19,7 @@ export default function Vodacom() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Kampuni kubwa zaidi ya mawasiliano Tanzania
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> VODA</div>
         <div><strong>Sekta:</strong> Mawasiliano</div>
         <div><strong>Iliorodheshwa DSE:</strong> 2017</div>

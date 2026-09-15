@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function Swissport() {
@@ -20,10 +19,7 @@ export default function Swissport() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Huduma za uwanja wa ndege — mlango wa anga wa Tanzania
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> SWIS</div>
         <div><strong>Sekta:</strong> Huduma za Anga (Aviation Ground Services)</div>
         <div><strong>Iliorodheshwa DSE:</strong> 2003</div>

@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function TCC() {
@@ -20,10 +19,7 @@ export default function TCC() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Kampuni ya zamani zaidi iliyoorodheshwa DSE
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> TCC</div>
         <div><strong>Sekta:</strong> Bidhaa za Matumizi (Sigara)</div>
         <div><strong>Iliorodheshwa DSE:</strong> 2000 (moja ya za kwanza)</div>

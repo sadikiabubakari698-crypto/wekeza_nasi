@@ -2,7 +2,6 @@ import { getSokoBySlug, getAllSokoItems } from "../../../lib/soko-engine";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import Footer from "../../../components/Footer";
-import ListenButton from "../../../components/ListenButton";
 import TableOfContents from "../../../components/TableOfContents";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
@@ -69,10 +68,7 @@ export default async function SokoItem({ params }) {
       {article.subtitle && (
         <p style={{ fontSize: "1.05rem", fontStyle: "italic", color: "#555555", marginTop: "0.25rem" }}>{article.subtitle}</p>
       )}
-
-      <ListenButton text={audioText} label="Sikiliza Somo Hili" />
-
-      <TableOfContents items={tocItems} />
+<TableOfContents items={tocItems} />
 
       {article.sections?.map((section, i) => {
         if (section.callout === "avoid") {

@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function CRDB() {
@@ -20,10 +19,7 @@ export default function CRDB() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Benki kubwa zaidi Tanzania kwa mtaji wa soko
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> CRDB</div>
         <div><strong>Sekta:</strong> Benki</div>
         <div><strong>Iliorodheshwa DSE:</strong> 2009</div>

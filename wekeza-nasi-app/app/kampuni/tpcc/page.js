@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function TPCC() {
@@ -21,10 +20,7 @@ export default function TPCC() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Twiga Cement — Saruji inayojenga Tanzania
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> TPCC</div>
         <div><strong>Sekta:</strong> Ujenzi / Saruji</div>
         <div><strong>Iliorodheshwa DSE:</strong> 2000</div>

@@ -3,7 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import LessonQuiz from "./LessonQuiz";
 import SaveToJournal from "./SaveToJournal";
-import ListenButton from "./ListenButton";
 import { markPassed } from "../lib/progress";
 
 export default function LessonStepper({
@@ -98,9 +97,7 @@ export default function LessonStepper({
             ))}
           </ul>
         )}
-
-        <ListenButton text={stepAudioText} label="Sikiliza Hatua Hii" />
-      </div>
+</div>
 
       <div style={navRowStyle}>
         {current > 0 ? (

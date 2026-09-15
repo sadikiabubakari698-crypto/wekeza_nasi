@@ -1,7 +1,6 @@
 import { getAllPlannedItems } from "../../../lib/content-engine";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
-import ListenButton from "../../../components/ListenButton";
 import TableOfContents from "../../../components/TableOfContents";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
@@ -66,10 +65,7 @@ export default async function SomoLaMwezi({ params }) {
       {article.subtitle && (
         <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555555" }}>{article.subtitle}</p>
       )}
-
-      <ListenButton text={audioText} label="Sikiliza Uchambuzi" />
-
-      {article.company && (
+{article.company && (
         <div style={infoBoxStyle}>
           <div><strong>Sekta:</strong> {article.company.sector}</div>
           <div><strong>Ticker:</strong> {article.company.ticker}</div>

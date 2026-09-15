@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function NMB() {
@@ -20,10 +19,7 @@ export default function NMB() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Benki yenye faida kubwa zaidi Tanzania
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> NMB</div>
         <div><strong>Sekta:</strong> Benki</div>
         <div><strong>Iliorodheshwa DSE:</strong> 2008</div>

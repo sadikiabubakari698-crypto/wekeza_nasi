@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function DSE() {
@@ -20,10 +19,7 @@ export default function DSE() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Soko la hisa lenyewe ni kampuni — kesi ya kipekee
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> DSE</div>
         <div><strong>Sekta:</strong> Huduma za Fedha / Soko la Hisa</div>
         <div><strong>Iliorodheshwa DSE:</strong> 2016 (self-listing)</div>

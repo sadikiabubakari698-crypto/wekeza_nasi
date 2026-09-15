@@ -1,4 +1,3 @@
-import ListenButton from "../../../components/ListenButton";
 import ShareButtons from "../../../components/ShareButtons";
 import RelatedArticles from "../../../components/RelatedArticles";
 export default function TBL() {
@@ -20,10 +19,7 @@ export default function TBL() {
       <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555", marginTop: 0 }}>
         Kampuni ya zamani zaidi ya viwanda Tanzania
       </p>
-
-      <ListenButton text={typeof document !== "undefined" ? document.body.innerText : ""} label="Sikiliza Uchambuzi" />
-
-      <div style={infoBoxStyle}>
+<div style={infoBoxStyle}>
         <div><strong>Ticker:</strong> TBL</div>
         <div><strong>Sekta:</strong> Vinywaji</div>
         <div><strong>Iliorodheshwa DSE:</strong> 1998</div>
