@@ -4,7 +4,6 @@ import Breadcrumbs from "../../../components/Breadcrumbs";
 import TableOfContents from "../../../components/TableOfContents";
 import RelatedArticles from "../../../components/RelatedArticles";
 import ArticleActions from "../../../components/ArticleActions";
-import AddToCalendar from "../../../components/AddToCalendar";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -19,22 +18,6 @@ export default async function SomoLaMwezi({ params }) {
   const tableHeaderStyle = { padding: "0.6rem", textAlign: "left", borderBottom: "1px solid #ddd", color: "#1a1a1a", background: "#f3f7fb" };
   const tableCellStyle = { padding: "0.6rem", borderBottom: "1px solid #eee", color: "#1a1a1a" };
   const disclaimerStyle = { background: "#fef8ee", borderLeft: "5px solid #d48d3b", padding: "1rem 1.25rem", borderRadius: "8px", marginTop: "2.5rem", fontSize: "0.9rem", color: "#1a1a1a" };
-
-  const audioText = [
-    article.title,
-    article.subtitle || "",
-    article.executiveSummary || "",
-    ...(article.sections || []).map((s) => {
-      let text = s.title + ". ";
-      if (s.content) text += s.content + " ";
-      if (s.ratios) text += s.ratios.map((r) => `${r.name}: ${r.value}.`).join(" ") + " ";
-      if (s.risks) text += s.risks.map((r) => `${r.type}: ${r.detail}`).join(" ") + " ";
-      if (s.drivers) text += s.drivers.join(". ") + ". ";
-      if (s.questions) text += s.questions.join(" ") + " ";
-      if (s.sources) text += s.sources.join(". ") + ". ";
-      return text;
-    }),
-  ].join("\n\n");
 
   const tocItems = [
     { id: "sec-muhtasari", title: "Muhtasari wa Mtendaji" },
@@ -66,22 +49,14 @@ export default async function SomoLaMwezi({ params }) {
       {article.subtitle && (
         <p style={{ fontSize: "1.15rem", fontStyle: "italic", color: "#555555" }}>{article.subtitle}</p>
       )}
-{article.company && (
+
+      {article.company && (
         <div style={infoBoxStyle}>
           <div><strong>Sekta:</strong> {article.company.sector}</div>
           <div><strong>Ticker:</strong> {article.company.ticker}</div>
           <div><strong>Iliorodheshwa:</strong> {article.company.listed}</div>
         </div>
       )}
-
-
-      
-      <AddToCalendar
-        title={article.title}
-        description={article.executiveSummary?.substring(0, 200) || ""}
-        startDate={article.publishDate}
-        url={"https://wekeza-nasi.vercel.app/somo-la-mwezi/" + article.slug}
-      />
 
       <TableOfContents items={tocItems} />
 
@@ -161,9 +136,6 @@ export default async function SomoLaMwezi({ params }) {
       {related.length > 0 && (
         <RelatedArticles items={related} title="Somo la Mwezi — Zingine" />
       )}
-
-
-
 
       <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
     </main>
