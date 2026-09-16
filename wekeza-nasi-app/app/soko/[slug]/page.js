@@ -175,6 +175,8 @@ export default async function SokoItem({ params }) {
       <ShareButtons title={article.title} path={`/soko/${article.slug}`} />
 
       <Footer />
-    </main>
+          <ArticleActions title={article.title} path={`/soko/${article.slug}`} />
+
+</main>
   );
 }

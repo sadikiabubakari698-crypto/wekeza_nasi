@@ -191,6 +191,8 @@ export default function TPCC() {
       />
 
       <ShareButtons title="TPCC — Twiga Cement" path="/kampuni/tpcc" />
-    </main>
+          <ArticleActions title="TPCC — Twiga Cement" path="/kampuni/tpcc" />
+
+</main>
   );
 }

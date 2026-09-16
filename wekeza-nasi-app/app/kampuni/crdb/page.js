@@ -158,6 +158,8 @@ export default function CRDB() {
       />
 
       <ShareButtons title="CRDB Bank Plc" path="/kampuni/crdb" />
-    </main>
+          <ArticleActions title="CRDB Bank Plc" path="/kampuni/crdb" />
+
+</main>
   );
 }

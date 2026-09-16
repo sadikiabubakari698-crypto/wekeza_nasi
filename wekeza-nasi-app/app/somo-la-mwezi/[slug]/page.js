@@ -156,6 +156,8 @@ export default async function SomoLaMwezi({ params }) {
       )}
 
       <ShareButtons title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
-    </main>
+          <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
+
+</main>
   );
 }

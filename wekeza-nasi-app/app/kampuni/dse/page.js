@@ -202,6 +202,8 @@ export default function DSE() {
       />
 
       <ShareButtons title="DSE Plc — Dar es Salaam Stock Exchange" path="/kampuni/dse" />
-    </main>
+          <ArticleActions title="DSE Plc — Dar es Salaam Stock Exchange" path="/kampuni/dse" />
+
+</main>
   );
 }

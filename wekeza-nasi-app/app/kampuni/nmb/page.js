@@ -156,6 +156,8 @@ export default function NMB() {
       />
 
       <ShareButtons title="NMB Bank Plc" path="/kampuni/nmb" />
-    </main>
+          <ArticleActions title="NMB Bank Plc" path="/kampuni/nmb" />
+
+</main>
   );
 }
