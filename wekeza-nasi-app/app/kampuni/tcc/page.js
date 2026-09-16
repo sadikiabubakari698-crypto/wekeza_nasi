@@ -1,5 +1,4 @@
 import RelatedArticles from "../../../components/RelatedArticles";
-import ArticleActions from "../../../components/ArticleActions";
 export default function TCC() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -90,7 +89,6 @@ export default function TCC() {
         </p>
 
 
-      <ArticleActions title="Tanzania Cigarette Company (TCC)" path="/kampuni/tcc" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>TCC ni moja ya makampuni yenye faida kubwa kwenye DSE. ROE yake ni ~30%+, moja ya juu zaidi. Mapato yamekuwa thabiti kwa miaka mingi, yakitokana na mauzo ya sigara. Kupanda kwa kodi ya sigara kunapunguza faida kidogo, lakini TCC inaendelea kuwa na faida kubwa.</p>
@@ -160,9 +158,7 @@ export default function TCC() {
         ]}
       />
 
-          <ArticleActions title="Tanzania Cigarette Company (TCC)" path="/kampuni/tcc" />
 
-      <ArticleActions title="Tanzania Cigarette Company (TCC)" path="/kampuni/tcc" />
 
 </main>
   );

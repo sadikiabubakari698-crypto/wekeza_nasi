@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import TableOfContents from "../../../components/TableOfContents";
 import RelatedArticles from "../../../components/RelatedArticles";
-import ArticleActions from "../../../components/ArticleActions";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -73,7 +72,6 @@ export default async function SomoLaMwezi({ params }) {
         </div>
       )}
 
-      <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
 
       <TableOfContents items={tocItems} />
 
@@ -154,9 +152,7 @@ export default async function SomoLaMwezi({ params }) {
         <RelatedArticles items={related} title="Somo la Mwezi — Zingine" />
       )}
 
-          <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
 
-      <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
 
 </main>
   );

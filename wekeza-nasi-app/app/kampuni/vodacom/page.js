@@ -1,5 +1,4 @@
 import RelatedArticles from "../../../components/RelatedArticles";
-import ArticleActions from "../../../components/ArticleActions";
 export default function Vodacom() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -92,7 +91,6 @@ export default function Vodacom() {
         </p>
 
 
-      <ArticleActions title="Vodacom Tanzania Plc" path="/kampuni/vodacom" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>Mapato ya Vodacom yamekua kwa kasi, yakisaidiwa na ukuaji wa data ya intaneti na M-Pesa. Faida halisi imeendelea kuwa thabiti, ingawa kuna ushindani mkali wa bei na gharama kubwa za uwekezaji wa minara. ROE ni ya wastani kwenye sekta.</p>
@@ -163,9 +161,7 @@ export default function Vodacom() {
         ]}
       />
 
-          <ArticleActions title="Vodacom Tanzania Plc" path="/kampuni/vodacom" />
 
-      <ArticleActions title="Vodacom Tanzania Plc" path="/kampuni/vodacom" />
 
 </main>
   );

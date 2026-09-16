@@ -1,5 +1,4 @@
 import RelatedArticles from "../../../components/RelatedArticles";
-import ArticleActions from "../../../components/ArticleActions";
 export default function CRDB() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -86,7 +85,6 @@ export default function CRDB() {
         </p>
 
 
-      <ArticleActions title="CRDB Bank Plc" path="/kampuni/crdb" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>Mapato ya jumla yalikua kwa wastani wa asilimia 12 kwa mwaka kati ya 2022-2025. Faida halisi iliongezeka kutoka TSh bilioni 380 (2023) hadi TSh bilioni 500+ (2025). Hii inaonyesha ukuaji thabiti.</p>
@@ -156,9 +154,7 @@ export default function CRDB() {
         ]}
       />
 
-          <ArticleActions title="CRDB Bank Plc" path="/kampuni/crdb" />
 
-      <ArticleActions title="CRDB Bank Plc" path="/kampuni/crdb" />
 
 </main>
   );

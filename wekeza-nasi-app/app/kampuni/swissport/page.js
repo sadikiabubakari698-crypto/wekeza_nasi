@@ -1,5 +1,4 @@
 import RelatedArticles from "../../../components/RelatedArticles";
-import ArticleActions from "../../../components/ArticleActions";
 export default function Swissport() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -111,7 +110,6 @@ export default function Swissport() {
         </p>
 
 
-      <ArticleActions title="Swissport Tanzania Plc" path="/kampuni/swissport" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>
@@ -192,9 +190,7 @@ export default function Swissport() {
         ]}
       />
 
-          <ArticleActions title="Swissport Tanzania Plc" path="/kampuni/swissport" />
 
-      <ArticleActions title="Swissport Tanzania Plc" path="/kampuni/swissport" />
 
 </main>
   );

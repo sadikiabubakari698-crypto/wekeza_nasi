@@ -1,5 +1,4 @@
 import RelatedArticles from "../../../components/RelatedArticles";
-import ArticleActions from "../../../components/ArticleActions";
 export default function NMB() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -84,7 +83,6 @@ export default function NMB() {
         </p>
 
 
-      <ArticleActions title="NMB Bank Plc" path="/kampuni/nmb" />
 
         <h3 style={h3Style}>i. Mapato na Faida</h3>
         <p style={pStyle}>Mapato ya jumla yalikua kwa wastani wa asilimia 15 kwa mwaka kati ya 2022-2025. Faida halisi iliongezeka kutoka TSh bilioni 450 (2023) hadi TSh bilioni 600+ (2025). NMB ina moja ya uwiano bora wa ufanisi (cost-to-income ratio) chini ya asilimia 45.</p>
@@ -154,9 +152,7 @@ export default function NMB() {
         ]}
       />
 
-          <ArticleActions title="NMB Bank Plc" path="/kampuni/nmb" />
 
-      <ArticleActions title="NMB Bank Plc" path="/kampuni/nmb" />
 
 </main>
   );
