@@ -1,4 +1,5 @@
 import RelatedArticles from "../../../components/RelatedArticles";
+import ArticleActions from "../../../components/ArticleActions";
 export default function CRDB() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -156,6 +157,8 @@ export default function CRDB() {
 
 
 
-</main>
+
+      <ArticleActions title="CRDB Bank Plc" path="/kampuni/crdb" />
+    </main>
   );
 }

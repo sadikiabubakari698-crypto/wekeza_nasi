@@ -4,6 +4,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs";
 import Footer from "../../../components/Footer";
 import TableOfContents from "../../../components/TableOfContents";
 import RelatedArticles from "../../../components/RelatedArticles";
+import ArticleActions from "../../../components/ArticleActions";
 
 export default async function SokoItem({ params }) {
   const { slug } = await params;
@@ -174,6 +175,8 @@ export default async function SokoItem({ params }) {
       <Footer />
 
 
-</main>
+
+      <ArticleActions title={article.title} path={`/soko/${article.slug}`} />
+    </main>
   );
 }
