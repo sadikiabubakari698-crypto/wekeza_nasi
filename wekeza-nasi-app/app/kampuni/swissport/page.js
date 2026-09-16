@@ -192,7 +192,6 @@ export default function Swissport() {
         ]}
       />
 
-      <ShareButtons title="Swissport Tanzania Plc" path="/kampuni/swissport" />
           <ArticleActions title="Swissport Tanzania Plc" path="/kampuni/swissport" />
 
       <ArticleActions title="Swissport Tanzania Plc" path="/kampuni/swissport" />

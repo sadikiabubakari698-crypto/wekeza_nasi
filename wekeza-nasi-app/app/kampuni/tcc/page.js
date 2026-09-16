@@ -160,7 +160,6 @@ export default function TCC() {
         ]}
       />
 
-      <ShareButtons title="Tanzania Cigarette Company (TCC)" path="/kampuni/tcc" />
           <ArticleActions title="Tanzania Cigarette Company (TCC)" path="/kampuni/tcc" />
 
       <ArticleActions title="Tanzania Cigarette Company (TCC)" path="/kampuni/tcc" />

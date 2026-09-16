@@ -154,7 +154,6 @@ export default async function SomoLaMwezi({ params }) {
         <RelatedArticles items={related} title="Somo la Mwezi — Zingine" />
       )}
 
-      <ShareButtons title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
           <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
 
       <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />

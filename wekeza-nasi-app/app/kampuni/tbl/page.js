@@ -156,7 +156,6 @@ export default function TBL() {
         ]}
       />
 
-      <ShareButtons title="Tanzania Breweries Plc (TBL)" path="/kampuni/tbl" />
           <ArticleActions title="Tanzania Breweries Plc (TBL)" path="/kampuni/tbl" />
 
       <ArticleActions title="Tanzania Breweries Plc (TBL)" path="/kampuni/tbl" />

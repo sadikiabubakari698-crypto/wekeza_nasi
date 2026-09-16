@@ -163,7 +163,6 @@ export default function Vodacom() {
         ]}
       />
 
-      <ShareButtons title="Vodacom Tanzania Plc" path="/kampuni/vodacom" />
           <ArticleActions title="Vodacom Tanzania Plc" path="/kampuni/vodacom" />
 
       <ArticleActions title="Vodacom Tanzania Plc" path="/kampuni/vodacom" />
