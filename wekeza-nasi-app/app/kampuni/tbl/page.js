@@ -1,6 +1,5 @@
-import ShareButtons from "../../../components/ShareButtons";
-import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
+import ArticleActions from "../../../components/ArticleActions";
 export default function TBL() {
   const sectionStyle = { marginBottom: "2.5rem" };
   const h2Style = { fontSize: "1.4rem", color: "#1a1a1a", marginBottom: "0.75rem", borderBottom: "2px solid #1e7b4c", paddingBottom: "0.4rem" };
@@ -159,6 +158,8 @@ export default function TBL() {
 
       <ShareButtons title="Tanzania Breweries Plc (TBL)" path="/kampuni/tbl" />
           <ArticleActions title="Tanzania Breweries Plc (TBL)" path="/kampuni/tbl" />
+
+      <ArticleActions title="Tanzania Breweries Plc (TBL)" path="/kampuni/tbl" />
 
 </main>
   );

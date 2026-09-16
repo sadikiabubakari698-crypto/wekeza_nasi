@@ -2,9 +2,8 @@ import { getAllPlannedItems } from "../../../lib/content-engine";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import TableOfContents from "../../../components/TableOfContents";
-import ShareButtons from "../../../components/ShareButtons";
-import ArticleActions from "../../../components/ArticleActions";
 import RelatedArticles from "../../../components/RelatedArticles";
+import ArticleActions from "../../../components/ArticleActions";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -157,6 +156,8 @@ export default async function SomoLaMwezi({ params }) {
 
       <ShareButtons title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
           <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
+
+      <ArticleActions title={article.title} path={`/somo-la-mwezi/${article.slug}`} />
 
 </main>
   );
