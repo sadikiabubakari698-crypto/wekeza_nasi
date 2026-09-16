@@ -4,6 +4,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs";
 import TableOfContents from "../../../components/TableOfContents";
 import RelatedArticles from "../../../components/RelatedArticles";
 import ArticleActions from "../../../components/ArticleActions";
+import AddToCalendar from "../../../components/AddToCalendar";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -73,6 +74,14 @@ export default async function SomoLaMwezi({ params }) {
         </div>
       )}
 
+
+      
+      <AddToCalendar
+        title={article.title}
+        description={article.executiveSummary?.substring(0, 200) || ""}
+        startDate={article.publishDate}
+        url={"https://wekeza-nasi.vercel.app/somo-la-mwezi/" + article.slug}
+      />
 
       <TableOfContents items={tocItems} />
 
