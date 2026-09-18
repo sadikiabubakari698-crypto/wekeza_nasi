@@ -4,6 +4,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs";
 import TableOfContents from "../../../components/TableOfContents";
 import RelatedArticles from "../../../components/RelatedArticles";
 import ArticleActions from "../../../components/ArticleActions";
+import AutoRead from "../../../components/AutoRead";
 
 export default async function SomoLaMwezi({ params }) {
   const { slug } = await params;
@@ -36,6 +37,8 @@ export default async function SomoLaMwezi({ params }) {
 
   return (
     <main style={pageStyle}>
+      <AutoRead link={`/somo-la-mwezi/${article.slug}`} />
+
       <Breadcrumbs items={[
         { label: "Nyumbani", href: "/" },
         { label: "Somo (Mwezi)", href: "/somo-la-mwezi/crdb-2026-09" },

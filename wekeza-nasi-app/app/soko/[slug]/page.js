@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer";
 import TableOfContents from "../../../components/TableOfContents";
 import RelatedArticles from "../../../components/RelatedArticles";
 import ArticleActions from "../../../components/ArticleActions";
+import AutoRead from "../../../components/AutoRead";
 
 export default async function SokoItem({ params }) {
   const { slug } = await params;
@@ -48,6 +49,8 @@ export default async function SokoItem({ params }) {
 
   return (
     <main style={pageStyle}>
+      <AutoRead link={`/soko/${article.slug}`} />
+
       <Breadcrumbs items={[
         { label: "Nyumbani", href: "/" },
         { label: "Soko", href: "/soko" },

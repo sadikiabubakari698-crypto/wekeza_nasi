@@ -1,8 +1,8 @@
 const KEY = "wekeza_notifications";
 const NOTIFIED_KEY = "wekeza_notified_items";
 const MAX = 20;
-const FRESH_WINDOW_DAYS = 7; // Notification inaonekana kwa siku 7 tu
-const CLEANUP_DAYS = 30; // Notifications za zamani zinafutwa
+const FRESH_WINDOW_DAYS = 7;
+const CLEANUP_DAYS = 30;
 
 export const NOTIFICATION_TYPES = {
   ACADEMY: "academy",
@@ -20,7 +20,6 @@ export const TYPE_LABELS = {
   journal: "🧠 Mfuko",
 };
 
-// ============ STORAGE ============
 export function getNotifications() {
   if (typeof window === "undefined") return [];
   try {
@@ -64,6 +63,27 @@ export function markAllAsRead() {
   localStorage.setItem(KEY, JSON.stringify(updated));
 }
 
+// ============ MPYA: Mark by link ============
+// Inaitwa mtumiaji anafungua somo/article — inaweka notification yake kama read
+export function markByLink(link) {
+  if (typeof window === "undefined") return;
+  if (!link) return;
+  const list = getNotifications();
+  let changed = false;
+  const updated = list.map((n) => {
+    if (n.status === "unread" && n.link === link) {
+      changed = true;
+      return { ...n, status: "read" };
+    }
+    return n;
+  });
+  if (changed) {
+    localStorage.setItem(KEY, JSON.stringify(updated));
+    // Dispatch event ili Bell ijue
+    window.dispatchEvent(new Event("wekeza-notifications-updated"));
+  }
+}
+
 export function getUnreadCount() {
   return getNotifications().filter((n) => n.status === "unread").length;
 }
@@ -80,8 +100,6 @@ export function clearAll() {
   localStorage.removeItem(KEY);
 }
 
-// ============ CLEANUP ============
-// Futa notifications za zamani (> siku 30)
 function cleanupOldNotifications() {
   if (typeof window === "undefined") return;
   const list = getNotifications();
@@ -92,7 +110,6 @@ function cleanupOldNotifications() {
   }
 }
 
-// ============ TRACKING ============
 function getNotifiedItems() {
   if (typeof window === "undefined") return {};
   try {
@@ -113,30 +130,20 @@ function isNotified(itemId) {
   return !!getNotifiedItems()[itemId];
 }
 
-// ============ AUTO-CHECK ============
-// Kanuni: Notification KWA matukio ya msingi PEKEE
-// - Somo la Mwezi: limefunguliwa siku 7 zilizopita
-// - Case Study: imefunguliwa siku 7 zilizopita
-// - Timely: bado ipo hai (haijaisha)
-// - HAKUNA seed, HAKUNA vitu vya zamani
-
 export function autoCheckNotifications({ somoLaMwezi, caseStudies, timely }) {
   if (typeof window === "undefined") return;
-
-  // Safisha notifications za zamani kwanza
   cleanupOldNotifications();
 
   const now = new Date();
   const freshCutoff = new Date(now.getTime() - FRESH_WINDOW_DAYS * 24 * 60 * 60 * 1000);
 
-  // 1. SOMO LA MWEZI — lililofunguliwa siku 7 zilizopita
   (somoLaMwezi || []).forEach((item) => {
     const notifId = `somo-la-mwezi-${item.slug}`;
     if (isNotified(notifId)) return;
     if (!item.publishDate) return;
     const pubDate = new Date(item.publishDate);
     if (pubDate > now) return;
-    if (pubDate < freshCutoff) return; // Zamani sana
+    if (pubDate < freshCutoff) return;
 
     addNotification({
       id: notifId,
@@ -150,14 +157,13 @@ export function autoCheckNotifications({ somoLaMwezi, caseStudies, timely }) {
     markAsNotified(notifId);
   });
 
-  // 2. CASE STUDIES — zilizofunguliwa siku 7 zilizopita
   (caseStudies || []).forEach((item) => {
     const notifId = `case-study-${item.slug}`;
     if (isNotified(notifId)) return;
     if (!item.unlockDate) return;
     const unlockDate = new Date(item.unlockDate);
     if (unlockDate > now) return;
-    if (unlockDate < freshCutoff) return; // Zamani sana
+    if (unlockDate < freshCutoff) return;
 
     addNotification({
       id: notifId,
@@ -171,7 +177,6 @@ export function autoCheckNotifications({ somoLaMwezi, caseStudies, timely }) {
     markAsNotified(notifId);
   });
 
-  // 3. TIMELY — bado ipo hai
   (timely || []).forEach((item) => {
     const notifId = `timely-${item.slug || item.id}`;
     if (isNotified(notifId)) return;
@@ -194,10 +199,6 @@ export function autoCheckNotifications({ somoLaMwezi, caseStudies, timely }) {
   });
 }
 
-// ============ MANUAL (Kwa Founder) ============
 export function notifyCommunity(title, message, link, action = "Angalia") {
   addNotification({ type: "community", level: "info", title, message, action, link });
 }
-
-// ============ HAKUNA SEED ============
-// Seed imeondolewa — notifications zinatoka kwa matukio halisi pekee

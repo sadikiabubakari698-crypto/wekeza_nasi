@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Footer from "../../components/Footer";
-import { getNotifications, markAsRead, markAllAsRead, deleteNotification, TYPE_LABELS } from "../../lib/notifications";
+import { getNotifications, deleteNotification, TYPE_LABELS } from "../../lib/notifications";
 
 export default function NotificationsPage() {
   const [notifications, setNotifications] = useState([]);
@@ -12,22 +12,17 @@ export default function NotificationsPage() {
   const load = () => setNotifications(getNotifications());
 
   useEffect(() => {
-    // Pakia kwanza
+    // Pakia tu — HAKUNA auto-mark-all-read
+    // Notification inakuwa read mtumiaji ANATEMBELEA somo lenyewe
     load();
     setLoaded(true);
 
-    // Kisha — auto-mark zote kama zimesomwa (baada ya sekunde 1)
-    // Hii inafanya counter iwe 0 mtumiaji anapofungua page
-    const timer = setTimeout(() => {
-      markAllAsRead();
-      load();
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    // Sikiliza update
+    const handleUpdate = () => load();
+    window.addEventListener("wekeza-notifications-updated", handleUpdate);
+    return () => window.removeEventListener("wekeza-notifications-updated", handleUpdate);
   }, []);
 
-  const handleRead = (id) => { markAsRead(id); load(); };
-  const handleMarkAllRead = () => { markAllAsRead(); load(); };
   const handleDelete = (id) => { deleteNotification(id); load(); };
 
   const now = new Date();
@@ -69,7 +64,7 @@ export default function NotificationsPage() {
       <>
         <p style={groupTitleStyle}>{title}</p>
         {items.map((n) => (
-          <NotifCard key={n.id} n={n} onRead={handleRead} onDelete={handleDelete} cardStyle={cardStyle} />
+          <NotifCard key={n.id} n={n} onDelete={handleDelete} cardStyle={cardStyle} />
         ))}
       </>
     );
@@ -79,16 +74,9 @@ export default function NotificationsPage() {
     <main style={pageStyle}>
       <Breadcrumbs items={[{ label: "Nyumbani", href: "/" }, { label: "Taarifa" }]} />
 
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem", flexWrap: "wrap", gap: "0.5rem" }}>
-        <h1 style={{ margin: 0, color: "#1a1a1a" }}>Taarifa</h1>
-        {notifications.some((n) => n.status === "unread") && (
-          <button onClick={handleMarkAllRead} style={{ background: "transparent", border: "none", color: "#1e7b4c", fontWeight: 600, fontSize: "0.85rem", cursor: "pointer", textDecoration: "underline" }}>
-            Weka zote kama zimesomwa
-          </button>
-        )}
-      </div>
-      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1rem" }}>
-        Taarifa muhimu kwa safari yako ya uwekezaji.
+      <h1 style={{ margin: 0, color: "#1a1a1a" }}>Taarifa</h1>
+      <p style={{ color: "#555555", marginTop: "0.25rem", marginBottom: "1rem" }}>
+        Taarifa muhimu kwa safari yako ya uwekezaji. Taarifa inakuwa "imesomwa" baada ya kufungua somo lenyewe.
       </p>
 
       {!loaded ? (
@@ -113,7 +101,7 @@ export default function NotificationsPage() {
   );
 }
 
-function NotifCard({ n, onRead, onDelete, cardStyle }) {
+function NotifCard({ n, onDelete, cardStyle }) {
   const unread = n.status === "unread";
   const label = TYPE_LABELS[n.type] || n.type;
 
@@ -122,12 +110,12 @@ function NotifCard({ n, onRead, onDelete, cardStyle }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem" }}>
         <div style={{ flex: 1 }}>
           <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, color: "#1e7b4c", marginBottom: "0.25rem" }}>
-            {label}
+            {label} {unread && <span style={{ color: "#dc2626" }}>•</span>}
           </span>
           <h3 style={{ margin: "0 0 0.25rem 0", fontSize: "1rem", color: "#1a1a1a" }}>{n.title}</h3>
           {n.message && <p style={{ margin: "0 0 0.5rem 0", fontSize: "0.85rem", color: "#555555" }}>{n.message}</p>}
           {n.link && (
-            <Link href={n.link} onClick={() => onRead(n.id)} style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.4rem 0.9rem", borderRadius: "var(--radius-pill)", fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}>
+            <Link href={n.link} style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.4rem 0.9rem", borderRadius: "var(--radius-pill)", fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}>
               {n.action || "Fungua"}
             </Link>
           )}

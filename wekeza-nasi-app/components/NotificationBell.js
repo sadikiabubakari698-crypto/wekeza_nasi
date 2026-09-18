@@ -11,21 +11,27 @@ export default function NotificationBell() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Auto-check content mpya
     try {
       const somoLaMwezi = contentData.filter((item) => item.category === "planned" && item.type === "monthly-deep-dive");
       const caseStudies = sokoData.filter((item) => item.type === "case-study" && (!item.partNumber || item.partNumber === 1));
       const timely = sokoData.filter((item) => item.category === "timely");
-
       autoCheckNotifications({ somoLaMwezi, caseStudies, timely });
-    } catch (e) {
-      // Fail silently
-    }
+    } catch (e) {}
 
     const update = () => setCount(getUnreadCount());
     update();
+
+    // Angalia kila sekunde 3
     const interval = setInterval(update, 3000);
-    return () => clearInterval(interval);
+
+    // Sikiliza event — markByLink inatuma hii
+    const handleUpdate = () => update();
+    window.addEventListener("wekeza-notifications-updated", handleUpdate);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("wekeza-notifications-updated", handleUpdate);
+    };
   }, []);
 
   const bellStyle = {
