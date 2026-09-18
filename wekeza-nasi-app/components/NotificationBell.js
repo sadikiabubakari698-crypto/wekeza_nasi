@@ -11,8 +11,7 @@ export default function NotificationBell() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // ===== AUTO-CHECK =====
-    // Angalia content mpya — Somo la Mwezi, Case Study, Timely
+    // Auto-check content mpya
     try {
       const somoLaMwezi = contentData.filter((item) => item.category === "planned" && item.type === "monthly-deep-dive");
       const caseStudies = sokoData.filter((item) => item.type === "case-study" && (!item.partNumber || item.partNumber === 1));
@@ -20,7 +19,7 @@ export default function NotificationBell() {
 
       autoCheckNotifications({ somoLaMwezi, caseStudies, timely });
     } catch (e) {
-      // Fail silently — notifications si critical
+      // Fail silently
     }
 
     const update = () => setCount(getUnreadCount());
