@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FeedbackButton from "./FeedbackButton";
 
 export default function Footer() {
   const linkStyle = { color: "#1e7b4c", textDecoration: "none", fontWeight: 500, fontSize: "0.9rem" };
@@ -6,21 +7,14 @@ export default function Footer() {
   const columnStyle = { flex: "1 1 100%", minWidth: "160px" };
 
   return (
-    <footer style={{
-      marginTop: "3rem",
-      paddingTop: "2rem",
-      borderTop: "1px solid #e9edf2",
-      color: "#555555",
-      fontSize: "0.9rem",
-    }}>
+    <footer style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid #e9edf2", color: "#555555", fontSize: "0.9rem" }}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", marginBottom: "2rem" }}>
         <div style={columnStyle}>
-          <p style={{ fontWeight: 800, fontSize: "1.05rem", color: "#1e7b4c", margin: "0 0 0.5rem 0" }}>
-            WEKEZA NASI
-          </p>
-          <p style={{ margin: 0, fontSize: "0.85rem", lineHeight: 1.5, color: "#555555" }}>
+          <p style={{ fontWeight: 800, fontSize: "1.05rem", color: "#1e7b4c", margin: "0 0 0.5rem 0" }}>WEKEZA NASI</p>
+          <p style={{ margin: "0 0 1rem 0", fontSize: "0.85rem", lineHeight: 1.5, color: "#555555" }}>
             Mshirika wa safari yako ya uwekezaji. Elimu kwa Kiswahili rahisi.
           </p>
+          <FeedbackButton />
         </div>
 
         <div style={columnStyle}>
@@ -43,17 +37,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{
-        paddingTop: "1.5rem",
-        borderTop: "1px solid #e9edf2",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        alignItems: "center",
-        gap: "0.75rem",
-        fontSize: "0.8rem",
-        color: "#888888",
-      }}>
+      <div style={{ paddingTop: "1.5rem", borderTop: "1px solid #e9edf2", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "0.75rem", fontSize: "0.8rem", color: "#888888" }}>
         <span>© 2026 WEKEZA NASI. Haki zote zimehifadhiwa.</span>
         <span>Kwa elimu tu — sio ushauri wa kifedha.</span>
       </div>
