@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "255700000000"; // Badilisha na namba yako
-const EMAIL = "info@wekeza-nasi.co.tz"; // Badilisha na email yako
+const WHATSAPP_NUMBER = "255764631350"; // Tanzania: 0764631350 → 255764631350
+const EMAIL = "sadikiabubakari698@gmail.com";
 
 export default function FeedbackButton() {
   const [open, setOpen] = useState(false);
