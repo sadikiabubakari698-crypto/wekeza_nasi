@@ -12,8 +12,18 @@ export default function NotificationsPage() {
   const load = () => setNotifications(getNotifications());
 
   useEffect(() => {
+    // Pakia kwanza
     load();
     setLoaded(true);
+
+    // Kisha — auto-mark zote kama zimesomwa (baada ya sekunde 1)
+    // Hii inafanya counter iwe 0 mtumiaji anapofungua page
+    const timer = setTimeout(() => {
+      markAllAsRead();
+      load();
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleRead = (id) => { markAsRead(id); load(); };

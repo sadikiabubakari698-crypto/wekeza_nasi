@@ -27,14 +27,15 @@ export default function Header() {
       <div style={innerStyle}>
         <Link href="/" style={logoStyle}>WEKEZA NASI</Link>
 
+        {/* Desktop nav — links pekee */}
         <nav style={desktopNavStyle} className="desktop-nav">
           {links.map((l) => (
             <Link key={l.href} href={l.href} style={navLinkStyle}>{l.label}</Link>
           ))}
           <Link href="/search" style={searchLinkStyle}>Tafuta</Link>
-          <NotificationBell />
         </nav>
 
+        {/* Right side — Bell kila mahali, Tafuta na Menu kwa mobile */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.15rem" }}>
           <NotificationBell />
           <Link href="/search" style={searchLinkStyle} className="mobile-search-link">Tafuta</Link>
