@@ -945,3 +945,94 @@ Cache inapunguza gharama hizi kwa 80-90%.
 ---
 
 **Last Updated:** Novemba 2026 (Section 37)
+## 38. NOTIFICATION SYSTEM V1
+
+**Status:** Implemented (Novemba 2026)
+
+### 38.1 Lengo
+
+Notification si kwa kila kitu. Ni kwa **matukio ya msingi pekee** ambayo mtumiaji anapaswa kuona.
+
+### 38.2 Aina za Notifications
+
+- **📚 academy** — somo jipya, quiz (baadaye)
+- **📊 market** — Case Study mpya, Timely
+- **🏢 company** — Somo la Mwezi jipya
+- **👥 community** — majibu, mentions (baadaye)
+- **🧠 journal** — Mfuko wa Maarifa (baadaye)
+
+### 38.3 Triggers (Auto)
+
+Auto-check inafanyika kila mtu anafungua website:
+
+- **Somo la Mwezi** — lililofunguliwa siku 5 zilizopita
+- **Case Study** — zilizofunguliwa siku 5 zilizopita (max 2)
+- **Timely** — kama bado ipo hai (max 2)
+
+**HAKUNA notification kwa:** kila click, kila somo, kila page view.
+
+### 38.4 Tabia ya Unread
+
+Notification inabaki **unread** mpaka mtumiaji **afungue somo/article lenyewe** — sio kubonyeza bell.
+
+**Jinsi:** Kila article ina `<AutoRead link="..." />`. Baada ya sekunde 1, notification yenye link hiyo inakuwa **read**.
+
+### 38.5 Storage
+
+- `wekeza_notifications` — array ya notifications
+- `wekeza_notified_items` — items zilizotengenezwa notification
+- `wekeza_notifications_version` — kwa version check (v2 sasa)
+
+### 38.6 Cleanup
+
+- **Fresh window:** siku 5 (notifications za zamani hazionyeshwi)
+- **Cleanup:** siku 14 (zinafutwa kabisa)
+- **Max:** 15 (kupunguza msongamano)
+- **Version check:** kubadilika → futa zote za zamani
+
+### 38.7 Files
+
+- `lib/notifications.js` — engine
+- `components/NotificationBell.js` — 🔔 na counter
+- `components/AutoRead.js` — auto-mark-read
+- `app/notifications/page.js` — Notification Center
+- `components/Header.js` — Bell imeunganishwa
+
+### 38.8 Push (Baadaye)
+
+Push notifications zinahitaji account + backend — Phase 6.
+
+## 39. FEEDBACK SYSTEM V1
+
+**Status:** Implemented (Novemba 2026)
+
+### 39.1 Lengo
+
+Mtumiaji awe na njia rahisi ya kutuma maoni, bug, au ombi — bila backend.
+
+### 39.2 Mahali
+
+Kwenye **Footer** — kitufe "Tuma Maoni".
+
+### 39.3 Aina 3 za Maoni
+
+- **💬 Maoni / Mapendekezo**
+- **🐛 Kosa / Bug**
+- **💡 Ombi la Kipengele**
+
+### 39.4 Njia 2 za Kutuma
+
+- **WhatsApp:** +255 764 631 350 (Chief)
+- **Email:** sadikiabubakari698@gmail.com
+
+**Hakuna backend** — WhatsApp na email client zinafunguliwa moja kwa moja.
+
+### 39.5 File
+
+- `components/FeedbackButton.js` — modal + form
+- `components/Footer.js` — button imewekwa kwenye column ya Brand
+
+### 39.6 Baadaye (Phase 6)
+
+Feedback inaweza kuhifadhiwa kwenye database kwa tracking na analytics.
+
