@@ -1,8 +1,10 @@
 const KEY = "wekeza_notifications";
 const NOTIFIED_KEY = "wekeza_notified_items";
-const MAX = 20;
-const FRESH_WINDOW_DAYS = 7;
-const CLEANUP_DAYS = 30;
+const VERSION_KEY = "wekeza_notifications_version";
+const CURRENT_VERSION = "v2"; // Badilisha hii kila tunabadilisha muundo
+const MAX = 15;
+const FRESH_WINDOW_DAYS = 5;
+const CLEANUP_DAYS = 14;
 
 export const NOTIFICATION_TYPES = {
   ACADEMY: "academy",
@@ -20,8 +22,22 @@ export const TYPE_LABELS = {
   journal: "🧠 Mfuko",
 };
 
+// ============ VERSION CHECK ============
+// Kama version imebadilika, futa zote za zamani
+function checkVersion() {
+  if (typeof window === "undefined") return;
+  const stored = localStorage.getItem(VERSION_KEY);
+  if (stored !== CURRENT_VERSION) {
+    localStorage.removeItem(KEY);
+    localStorage.removeItem(NOTIFIED_KEY);
+    localStorage.removeItem("wekeza_notifications_seeded");
+    localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
+  }
+}
+
 export function getNotifications() {
   if (typeof window === "undefined") return [];
+  checkVersion();
   try {
     return JSON.parse(localStorage.getItem(KEY) || "[]");
   } catch {
@@ -31,6 +47,7 @@ export function getNotifications() {
 
 export function addNotification(notif) {
   if (typeof window === "undefined") return;
+  checkVersion();
   const list = getNotifications();
   const newNotif = {
     id: notif.id || `notif-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
@@ -63,8 +80,6 @@ export function markAllAsRead() {
   localStorage.setItem(KEY, JSON.stringify(updated));
 }
 
-// ============ MPYA: Mark by link ============
-// Inaitwa mtumiaji anafungua somo/article — inaweka notification yake kama read
 export function markByLink(link) {
   if (typeof window === "undefined") return;
   if (!link) return;
@@ -79,7 +94,6 @@ export function markByLink(link) {
   });
   if (changed) {
     localStorage.setItem(KEY, JSON.stringify(updated));
-    // Dispatch event ili Bell ijue
     window.dispatchEvent(new Event("wekeza-notifications-updated"));
   }
 }
@@ -130,54 +144,23 @@ function isNotified(itemId) {
   return !!getNotifiedItems()[itemId];
 }
 
+// ============ AUTO-CHECK ============
+// Kanuni:
+// - Onyesha matukio ya msingi tu (Case Study, Somo la Mwezi, Timely)
+// - Fresh window: siku 5
+// - Max 3 za kila aina (kupunguza msongamano)
+// - Priority: Timely > Case Study > Somo la Mwezi
+
 export function autoCheckNotifications({ somoLaMwezi, caseStudies, timely }) {
   if (typeof window === "undefined") return;
+  checkVersion();
   cleanupOldNotifications();
 
   const now = new Date();
   const freshCutoff = new Date(now.getTime() - FRESH_WINDOW_DAYS * 24 * 60 * 60 * 1000);
 
-  (somoLaMwezi || []).forEach((item) => {
-    const notifId = `somo-la-mwezi-${item.slug}`;
-    if (isNotified(notifId)) return;
-    if (!item.publishDate) return;
-    const pubDate = new Date(item.publishDate);
-    if (pubDate > now) return;
-    if (pubDate < freshCutoff) return;
-
-    addNotification({
-      id: notifId,
-      type: "company",
-      level: "journey",
-      title: `Somo la Mwezi: ${item.title}`,
-      message: item.subtitle || "Uchambuzi mpya wa kina wa kampuni.",
-      action: "Soma Uchambuzi",
-      link: `/somo-la-mwezi/${item.slug}`,
-    });
-    markAsNotified(notifId);
-  });
-
-  (caseStudies || []).forEach((item) => {
-    const notifId = `case-study-${item.slug}`;
-    if (isNotified(notifId)) return;
-    if (!item.unlockDate) return;
-    const unlockDate = new Date(item.unlockDate);
-    if (unlockDate > now) return;
-    if (unlockDate < freshCutoff) return;
-
-    addNotification({
-      id: notifId,
-      type: "market",
-      level: "important",
-      title: `Case Study Mpya: ${item.title}`,
-      message: item.subtitle || item.excerpt || "Uchambuzi wa tukio halisi la soko.",
-      action: "Soma Case Study",
-      link: `/soko/${item.slug}`,
-    });
-    markAsNotified(notifId);
-  });
-
-  (timely || []).forEach((item) => {
+  // ===== PRIORITY 1: TIMELY (tukio la soko) =====
+  (timely || []).slice(0, 2).forEach((item) => {
     const notifId = `timely-${item.slug || item.id}`;
     if (isNotified(notifId)) return;
     if (!item.publishDate) return;
@@ -194,6 +177,58 @@ export function autoCheckNotifications({ somoLaMwezi, caseStudies, timely }) {
       message: item.excerpt || "Jambo jipya la soko limechambuliwa.",
       action: "Soma Uchambuzi",
       link: `/soko/${item.slug}`,
+    });
+    markAsNotified(notifId);
+  });
+
+  // ===== PRIORITY 2: CASE STUDIES (zilizofunguliwa siku 5 zilizopita) =====
+  const freshCases = (caseStudies || [])
+    .filter((item) => {
+      if (!item.unlockDate) return false;
+      const unlockDate = new Date(item.unlockDate);
+      return unlockDate <= now && unlockDate >= freshCutoff;
+    })
+    .sort((a, b) => new Date(b.unlockDate) - new Date(a.unlockDate))
+    .slice(0, 2);
+
+  freshCases.forEach((item) => {
+    const notifId = `case-study-${item.slug}`;
+    if (isNotified(notifId)) return;
+
+    addNotification({
+      id: notifId,
+      type: "market",
+      level: "important",
+      title: `Case Study Mpya: ${item.title}`,
+      message: item.subtitle || item.excerpt || "Uchambuzi wa tukio halisi la soko.",
+      action: "Soma Case Study",
+      link: `/soko/${item.slug}`,
+    });
+    markAsNotified(notifId);
+  });
+
+  // ===== PRIORITY 3: SOMO LA MWEZI (lililofunguliwa siku 5 zilizopita) =====
+  const freshMonthly = (somoLaMwezi || [])
+    .filter((item) => {
+      if (!item.publishDate) return false;
+      const pubDate = new Date(item.publishDate);
+      return pubDate <= now && pubDate >= freshCutoff;
+    })
+    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+    .slice(0, 1);
+
+  freshMonthly.forEach((item) => {
+    const notifId = `somo-la-mwezi-${item.slug}`;
+    if (isNotified(notifId)) return;
+
+    addNotification({
+      id: notifId,
+      type: "company",
+      level: "journey",
+      title: `Somo la Mwezi: ${item.title}`,
+      message: item.subtitle || "Uchambuzi mpya wa kina wa kampuni.",
+      action: "Soma Uchambuzi",
+      link: `/somo-la-mwezi/${item.slug}`,
     });
     markAsNotified(notifId);
   });
