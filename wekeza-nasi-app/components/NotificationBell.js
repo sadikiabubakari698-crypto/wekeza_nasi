@@ -1,18 +1,26 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getUnreadCount, seedNotifications } from "../lib/notifications";
+import { getUnreadCount, autoCheckNotifications } from "../lib/notifications";
+import contentData from "../content/content.json";
+import sokoData from "../content/soko.json";
 
 export default function NotificationBell() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const seeded = localStorage.getItem("wekeza_notifications_seeded");
-      if (!seeded) {
-        seedNotifications();
-        localStorage.setItem("wekeza_notifications_seeded", "true");
-      }
+    if (typeof window === "undefined") return;
+
+    // ===== AUTO-CHECK =====
+    // Angalia content mpya — Somo la Mwezi, Case Study, Timely
+    try {
+      const somoLaMwezi = contentData.filter((item) => item.category === "planned" && item.type === "monthly-deep-dive");
+      const caseStudies = sokoData.filter((item) => item.type === "case-study" && (!item.partNumber || item.partNumber === 1));
+      const timely = sokoData.filter((item) => item.category === "timely");
+
+      autoCheckNotifications({ somoLaMwezi, caseStudies, timely });
+    } catch (e) {
+      // Fail silently — notifications si critical
     }
 
     const update = () => setCount(getUnreadCount());

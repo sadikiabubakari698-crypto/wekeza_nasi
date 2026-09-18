@@ -1,4 +1,5 @@
 const KEY = "wekeza_notifications";
+const NOTIFIED_KEY = "wekeza_notified_items";
 const MAX = 50;
 
 export const NOTIFICATION_TYPES = {
@@ -76,31 +77,97 @@ export function clearAll() {
   localStorage.removeItem(KEY);
 }
 
-export function notifyAcademy(title, message, link, action = "Endelea Kujifunza") {
-  addNotification({ type: "academy", level: "journey", title, message, action, link });
+// ============ TRACKING YA "ALREADY NOTIFIED" ============
+function getNotifiedItems() {
+  if (typeof window === "undefined") return {};
+  try {
+    return JSON.parse(localStorage.getItem(NOTIFIED_KEY) || "{}");
+  } catch {
+    return {};
+  }
 }
 
-export function notifyMarket(title, message, link, action = "Soma Uchambuzi") {
-  addNotification({ type: "market", level: "important", title, message, action, link });
+function markAsNotified(itemId) {
+  if (typeof window === "undefined") return;
+  const notified = getNotifiedItems();
+  notified[itemId] = new Date().toISOString();
+  localStorage.setItem(NOTIFIED_KEY, JSON.stringify(notified));
 }
 
-export function notifyCompany(title, message, link, action = "Soma Uchambuzi") {
-  addNotification({ type: "company", level: "info", title, message, action, link });
+function isNotified(itemId) {
+  return !!getNotifiedItems()[itemId];
 }
 
+// ============ AUTO-CHECK ============
+// Inaitwa mara moja kila mtu anafungua website
+// Inaangalia content mpya (Somo la Mwezi, Case Study, Timely)
+// Inatengeneza notification MARA MOJA tu kwa kila item
+
+export function autoCheckNotifications({ somoLaMwezi, caseStudies, timely }) {
+  if (typeof window === "undefined") return;
+
+  const now = new Date();
+
+  // 1. SOMO LA MWEZI — yale yaliyofunguliwa
+  (somoLaMwezi || []).forEach((item) => {
+    const notifId = `somo-la-mwezi-${item.slug}`;
+    if (isNotified(notifId)) return;
+    if (!item.publishDate) return;
+    if (new Date(item.publishDate) > now) return;
+
+    addNotification({
+      id: notifId,
+      type: "company",
+      level: "journey",
+      title: `Somo la Mwezi: ${item.title}`,
+      message: item.subtitle || "Uchambuzi mpya wa kina wa kampuni.",
+      action: "Soma Uchambuzi",
+      link: `/somo-la-mwezi/${item.slug}`,
+    });
+    markAsNotified(notifId);
+  });
+
+  // 2. CASE STUDIES — yale yaliyofunguliwa
+  (caseStudies || []).forEach((item) => {
+    const notifId = `case-study-${item.slug}`;
+    if (isNotified(notifId)) return;
+    if (!item.unlockDate) return;
+    if (new Date(item.unlockDate) > now) return;
+
+    addNotification({
+      id: notifId,
+      type: "market",
+      level: "important",
+      title: `Case Study Mpya: ${item.title}`,
+      message: item.subtitle || item.excerpt || "Uchambuzi wa tukio halisi la soko.",
+      action: "Soma Case Study",
+      link: `/soko/${item.slug}`,
+    });
+    markAsNotified(notifId);
+  });
+
+  // 3. TIMELY — yale ya sasa
+  (timely || []).forEach((item) => {
+    const notifId = `timely-${item.slug || item.id}`;
+    if (isNotified(notifId)) return;
+    if (!item.publishDate) return;
+    if (new Date(item.publishDate) > now) return;
+    if (item.expiryDate && new Date(item.expiryDate) < now) return;
+
+    addNotification({
+      id: notifId,
+      type: "market",
+      level: "important",
+      title: `🚨 ${item.title}`,
+      message: item.excerpt || "Jambo jipya la soko limechambuliwa.",
+      action: "Soma Uchambuzi",
+      link: `/soko/${item.slug}`,
+    });
+    markAsNotified(notifId);
+  });
+}
+
+// ============ MANUAL TRIGGERS (Kwa Founder) ============
 export function notifyCommunity(title, message, link, action = "Angalia") {
   addNotification({ type: "community", level: "info", title, message, action, link });
-}
-
-export function notifyJournal(title, message, link, action = "Fungua Mfuko") {
-  addNotification({ type: "journal", level: "info", title, message, action, link });
-}
-
-export function seedNotifications() {
-  const samples = [
-    { type: "market", level: "important", title: "Uchambuzi mpya wa soko", message: "Case Study ya NMB Stock Split imeongezwa.", action: "Soma Uchambuzi", link: "/soko/kwa-nini-nmb-ilifanya-stock-split" },
-    { type: "academy", level: "journey", title: "Endelea na safari yako", message: "Una masomo 20 ya Academy yanayokungoja.", action: "Endelea Kujifunza", link: "/academy" },
-    { type: "journal", level: "info", title: "Mfuko wako wa Maarifa", message: "Hifadhi masomo unayopenda kwa marejeleo.", action: "Fungua Mfuko", link: "/mfuko-wa-maarifa" },
-  ];
-  samples.forEach((s) => addNotification(s));
 }
