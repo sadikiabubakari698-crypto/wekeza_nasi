@@ -25,6 +25,7 @@ export default function Footer() {
             <Link href="/somo-la-mwezi/crdb-2026-09" style={linkStyle}>Somo (Mwezi)</Link>
             <Link href="/kampuni" style={linkStyle}>Kampuni</Link>
             <Link href="/soko" style={linkStyle}>Soko</Link>
+            <Link href="/notifications" style={linkStyle}>Taarifa</Link>
           </div>
         </div>
 
@@ -44,3 +45,4 @@ export default function Footer() {
     </footer>
   );
 }
+
