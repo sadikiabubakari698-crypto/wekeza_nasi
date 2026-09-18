@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import NotificationBell from "./NotificationBell";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -31,16 +32,13 @@ export default function Header() {
             <Link key={l.href} href={l.href} style={navLinkStyle}>{l.label}</Link>
           ))}
           <Link href="/search" style={searchLinkStyle}>Tafuta</Link>
+          <NotificationBell />
         </nav>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.15rem" }}>
+          <NotificationBell />
           <Link href="/search" style={searchLinkStyle} className="mobile-search-link">Tafuta</Link>
-          <button
-            style={menuBtnStyle}
-            className="mobile-menu-btn"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-          >
+          <button style={menuBtnStyle} className="mobile-menu-btn" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? "✕" : "☰"}
           </button>
         </div>
@@ -55,6 +53,9 @@ export default function Header() {
           ))}
           <Link href="/mfuko-wa-maarifa" style={{ ...navLinkStyle, fontSize: "1rem", fontWeight: 600 }} onClick={() => setOpen(false)}>
             Mfuko wa Maarifa
+          </Link>
+          <Link href="/notifications" style={{ ...navLinkStyle, fontSize: "1rem", fontWeight: 600 }} onClick={() => setOpen(false)}>
+            Taarifa
           </Link>
         </div>
       )}
