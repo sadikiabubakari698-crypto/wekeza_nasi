@@ -18,7 +18,7 @@ export default function Header() {
   const logoStyle = { fontWeight: 800, fontSize: "0.95rem", color: "#1e7b4c", textDecoration: "none", whiteSpace: "nowrap" };
   const desktopNavStyle = { display: "flex", gap: "0.85rem", alignItems: "center" };
   const navLinkStyle = { color: "#1a1a1a", textDecoration: "none", fontSize: "0.85rem", fontWeight: 500, whiteSpace: "nowrap" };
-  const searchLinkStyle = { color: "#1e7b4c", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, whiteSpace: "nowrap", padding: "0.25rem 0.5rem", border: "1.5px solid #1e7b4c", borderRadius: "var(--radius-pill)" };
+  const searchLinkStyle = { color: "#1e7b4c", textDecoration: "none", fontSize: "0.8rem", fontWeight: 700, whiteSpace: "nowrap", padding: "0.25rem 0.55rem", border: "1.5px solid #1e7b4c", borderRadius: "var(--radius-pill)" };
   const menuBtnStyle = { background: "transparent", border: "none", fontSize: "1.4rem", lineHeight: 1, color: "#1a1a1a", padding: "0.25rem 0.5rem", cursor: "pointer" };
   const mobileMenuStyle = { maxWidth: "600px", margin: "0.5rem auto 0", display: "flex", flexDirection: "column", gap: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid #e9edf2" };
 
@@ -27,18 +27,17 @@ export default function Header() {
       <div style={innerStyle}>
         <Link href="/" style={logoStyle}>WEKEZA NASI</Link>
 
-        {/* Desktop nav — links pekee */}
+        {/* Desktop nav — links pekee (bila Tafuta) */}
         <nav style={desktopNavStyle} className="desktop-nav">
           {links.map((l) => (
             <Link key={l.href} href={l.href} style={navLinkStyle}>{l.label}</Link>
           ))}
-          <Link href="/search" style={searchLinkStyle}>Tafuta</Link>
         </nav>
 
-        {/* Right side — Bell kila mahali, Tafuta na Menu kwa mobile */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.15rem" }}>
+        {/* Right side — Bell + Tafuta + Menu */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
           <NotificationBell />
-          <Link href="/search" style={searchLinkStyle} className="mobile-search-link">Tafuta</Link>
+          <Link href="/search" style={searchLinkStyle}>Tafuta</Link>
           <button style={menuBtnStyle} className="mobile-menu-btn" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? "✕" : "☰"}
           </button>
@@ -64,11 +63,9 @@ export default function Header() {
       <style jsx global>{`
         .desktop-nav { display: none; }
         .mobile-menu-btn { display: block; }
-        .mobile-search-link { display: inline-block; }
         @media (min-width: 768px) {
           .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
-          .mobile-search-link { display: none !important; }
         }
       `}</style>
     </header>
