@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "../components/Header";
 import ScrollToTop from "../components/ScrollToTop";
@@ -40,11 +39,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="sw" className={`${geistSans.variable} ${geistMono.variable}`} style={{ colorScheme: "light" }}>
       <body style={{ background: "#ffffff", color: "#1a1a1a" }}>
+        <a href="#main-content" className="skip-to-content">
+          Ruka kwenda maudhui
+        </a>
         <ReadingProgress />
         <Header />
-        {children}
+        <div id="main-content">{children}</div>
         <ScrollToTop />
-        <Analytics />
       </body>
     </html>
   );

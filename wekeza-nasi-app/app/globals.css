@@ -3,22 +3,12 @@
   --color-primary-dark: #16633d;
   --color-primary-light: #e3f0ea;
   --color-accent: #d48d3b;
-  --color-accent-light: #fef8ee;
   --color-text: #1a1a1a;
   --color-text-muted: #555555;
-  --color-text-light: #888888;
   --color-bg: #ffffff;
   --color-bg-light: #f7f7f7;
   --color-bg-blue: #f3f7fb;
   --color-border: #e9edf2;
-  --color-border-strong: #dfe8f2;
-
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -28,6 +18,13 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
 
   --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
 
@@ -41,6 +38,7 @@
 html {
   color-scheme: light only;
   background: #ffffff;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -64,6 +62,56 @@ button {
   cursor: pointer;
 }
 
+/* ============ ACCESSIBILITY ============ */
+
+/* Focus visible — onyesha wazi kipengele chenye focus */
+*:focus {
+  outline: 2px solid #1e7b4c;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid #1e7b4c;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip to content link — inaonekana tu kwa keyboard */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  background: #1e7b4c;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-md) 0;
+}
+
+.skip-to-content:focus {
+  left: 0;
+  outline: 3px solid #16633d;
+}
+
+/* Screen reader only — maandishi kwa screen readers pekee */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Horizontal scroll: hide scrollbar */
 .scroll-x {
   scrollbar-width: none;
@@ -71,4 +119,16 @@ button {
 }
 .scroll-x::-webkit-scrollbar {
   display: none;
+}
+
+/* Reduced motion — heshimu watumiaji wanaotaka motion ndogo */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

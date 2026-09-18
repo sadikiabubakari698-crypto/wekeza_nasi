@@ -48,7 +48,7 @@ export default async function SokoItem({ params }) {
     }));
 
   return (
-    <main style={pageStyle}>
+    <main id="main-content" style={pageStyle}>
       <AutoRead link={`/soko/${article.slug}`} />
 
       <Breadcrumbs items={[

@@ -20,7 +20,7 @@ export default function Kampuni() {
   ];
 
   return (
-    <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
+    <main id="main-content" style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
       <Breadcrumbs items={[
         { label: "Nyumbani", href: "/" },
         { label: "Kampuni" },

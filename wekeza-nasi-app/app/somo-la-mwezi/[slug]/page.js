@@ -36,7 +36,7 @@ export default async function SomoLaMwezi({ params }) {
     }));
 
   return (
-    <main style={pageStyle}>
+    <main id="main-content" style={pageStyle}>
       <AutoRead link={`/somo-la-mwezi/${article.slug}`} />
 
       <Breadcrumbs items={[

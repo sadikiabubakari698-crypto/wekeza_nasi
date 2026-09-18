@@ -119,7 +119,7 @@ export default function Home() {
   ];
 
   return (
-    <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
+    <main id="main-content" style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
       <section style={heroStyle}>
         <h1 style={heroTitleStyle}>Jifunze Uwekezaji. Anza Safari.</h1>
         <p style={heroSubStyle}>

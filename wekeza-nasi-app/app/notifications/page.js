@@ -71,7 +71,7 @@ export default function NotificationsPage() {
   };
 
   return (
-    <main style={pageStyle}>
+    <main id="main-content" style={pageStyle}>
       <Breadcrumbs items={[{ label: "Nyumbani", href: "/" }, { label: "Taarifa" }]} />
 
       <h1 style={{ margin: 0, color: "#1a1a1a" }}>Taarifa</h1>

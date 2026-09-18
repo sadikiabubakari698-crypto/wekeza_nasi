@@ -74,7 +74,7 @@ export default function SearchPage() {
   };
 
   return (
-    <main style={pageStyle}>
+    <main id="main-content" style={pageStyle}>
       <Breadcrumbs items={[{ label: "Nyumbani", href: "/" }, { label: "Tafuta" }]} />
 
       <h1 style={{ marginBottom: "0.25rem", color: "#1a1a1a" }}>Tafuta</h1>
