@@ -24,7 +24,6 @@ export default function SokoMuhtasari() {
   const beiStyle = { fontWeight: 700, color: "#1a1a1a", fontSize: "0.9rem", textAlign: "right" };
   const changeStyle = (val) => ({ fontSize: "0.8rem", fontWeight: 700, minWidth: "55px", textAlign: "right", color: val > 0 ? "#166534" : val < 0 ? "#991b1b" : "#888888" });
   const tareheStyle = { fontSize: "0.75rem", color: "#888888", marginTop: "1rem", textAlign: "center" };
-  const btnStyle = { display: "inline-flex", alignItems: "center", gap: "0.35rem", padding: "0.65rem 1.25rem", background: "#1e7b4c", color: "#ffffff", fontWeight: 600, fontSize: "0.85rem", borderRadius: "var(--radius-pill)", textDecoration: "none", marginTop: "1rem" };
 
   return (
     <div style={wrapperStyle}>
@@ -47,10 +46,6 @@ export default function SokoMuhtasari() {
       ))}
 
       <p style={tareheStyle}>Data: {formatTarehe(data.tarehe)} ({data.muda})</p>
-
-      <div style={{ textAlign: "center" }}>
-        <Link href="/soko/zaidi" style={btnStyle}>Kuona Zaidi →</Link>
-      </div>
     </div>
   );
 }
