@@ -1,120 +1,38 @@
-import { getTimelySoko, getFrameworkSoko, getCurrentCaseStudy } from "../../lib/soko-engine";
+import SokoMuhtasari from "../../components/SokoMuhtasari";
 import Footer from "../../components/Footer";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata = {
-  title: "Uchambuzi wa Soko",
-  description:
-    "Uchambuzi wa matukio ya soko la hisa Tanzania — nini kimetokea, kwa nini, na ushahidi unasemaje.",
+  title: "Soko Leo",
+  description: "Muhtasari wa soko la hisa Tanzania — bei, DSEI, na mwenendo wa leo.",
 };
 
 export default function Soko() {
-  const timely = getTimelySoko();
-  const frameworks = getFrameworkSoko();
-  const currentCase = getCurrentCaseStudy();
-
-  const cardStyle = {
-    display: "block",
-    padding: "1.25rem",
-    background: "#ffffff",
-    border: "1px solid #e9edf2",
-    borderRadius: "var(--radius-md)",
-    marginBottom: "0.75rem",
-    color: "#1a1a1a",
-    textDecoration: "none",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-  };
-
-  const timelyCardStyle = { ...cardStyle, borderLeft: "4px solid #d48d3b", background: "#fef8ee" };
-  const caseCardStyle = { ...cardStyle, borderLeft: "4px solid #1e7b4c" };
-
-  const badgeStyle = {
-    display: "inline-block",
-    fontSize: "0.7rem",
-    fontWeight: 700,
-    padding: "0.15rem 0.6rem",
-    borderRadius: "999px",
-    letterSpacing: "0.05em",
-  };
-
-  const archiveLinkStyle = {
-    display: "inline-block",
-    marginTop: "0.5rem",
-    color: "#1e7b4c",
-    fontWeight: 600,
-    fontSize: "0.9rem",
-    textDecoration: "none",
-  };
-
   return (
     <main id="main-content" style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
-      <Breadcrumbs items={[{ label: "Nyumbani", href: "/" }, { label: "Soko" }]} />
+      <Breadcrumbs items={[
+        { label: "Nyumbani", href: "/" },
+        { label: "Soko" },
+      ]} />
 
-      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>Uchambuzi wa Soko</h1>
-      <p style={{ color: "#555555", marginTop: 0 }}>
-        Tukio la sasa, uchambuzi wa kina, na masomo ya kudumu kuhusu soko la hisa Tanzania.
+      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>Soko</h1>
+      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>
+        Muhtasari wa soko la hisa Tanzania.
       </p>
 
-      {/* TIMELY */}
-      {timely.length > 0 && (
-        <>
-          <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
-            Kinachoendelea Sasa
-          </h2>
-          {timely.map((item) => (
-            <a key={item.id} href={`/soko/${item.slug}`} style={timelyCardStyle}>
-              <span style={{ ...badgeStyle, background: "#d48d3b", color: "#ffffff" }}>TIMELY</span>
-              <h3 style={{ margin: "0.5rem 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>{item.title}</h3>
-              <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>{item.excerpt}</p>
-            </a>
-          ))}
-        </>
-      )}
+      <SokoMuhtasari />
 
-      {/* FRAMEWORK */}
-      <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
-        Misingi ya Uchambuzi
-      </h2>
-      <p style={{ color: "#555555", marginTop: 0, fontSize: "0.9rem", marginBottom: "1rem" }}>
-        Masomo ya kudumu — zana za kufikiri kuhusu soko.
-      </p>
-      {frameworks.map((item) => (
-        <a key={item.id} href={`/soko/${item.slug}`} style={cardStyle}>
-          <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
-            <span style={{ ...badgeStyle, background: "#e3f0ea", color: "#1e7b4c" }}>FRAMEWORK</span>
-            {item.totalParts > 1 && (
-              <span style={{ ...badgeStyle, background: "#f3f7fb", color: "#1a1a1a" }}>Sehemu 1 kati ya {item.totalParts}</span>
-            )}
-          </div>
-          <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>{item.title}</h3>
-          <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>{item.subtitle || item.excerpt}</p>
+      <div style={{ background: "#f0f6fd", borderLeft: "5px solid #1e7b4c", padding: "1rem 1.25rem", borderRadius: "var(--radius-md)", marginTop: "1.5rem" }}>
+        <p style={{ margin: 0, color: "#1a1a1a", fontWeight: 600, fontSize: "0.9rem" }}>
+          📚 Karibu WEKEZA NASI
+        </p>
+        <p style={{ margin: "0.25rem 0 0.75rem 0", color: "#555555", fontSize: "0.85rem" }}>
+          Hujui hisa ni nini? Tunaanza hapa, hatua kwa hatua.
+        </p>
+        <a href="/somo1" style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.5rem 1rem", borderRadius: "var(--radius-pill)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}>
+          Somo la 1: Hisa ni nini? →
         </a>
-      ))}
-
-      {/* CASE STUDY YA SASA */}
-      <h2 style={{ fontSize: "1.35rem", fontWeight: 700, color: "#1a1a1a", marginTop: "2rem", marginBottom: "0.75rem" }}>
-        Case Study ya Sasa
-      </h2>
-      <p style={{ color: "#555555", marginTop: 0, fontSize: "0.9rem", marginBottom: "1rem" }}>
-        Uchambuzi wa tukio halisi la soko — linabadilika kila siku 5.
-      </p>
-      {currentCase ? (
-        <>
-          <a href={`/soko/${currentCase.slug}`} style={caseCardStyle}>
-            <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
-              <span style={{ ...badgeStyle, background: "#1e7b4c", color: "#ffffff" }}>CASE STUDY</span>
-              {currentCase.totalParts > 1 && (
-                <span style={{ ...badgeStyle, background: "#f3f7fb", color: "#1a1a1a" }}>Sehemu 1 kati ya {currentCase.totalParts}</span>
-              )}
-            </div>
-            <h3 style={{ margin: "0 0 0.25rem 0", color: "#1a1a1a", fontSize: "1.1rem" }}>{currentCase.title}</h3>
-            <p style={{ margin: 0, fontSize: "0.9rem", color: "#555555" }}>{currentCase.subtitle || currentCase.excerpt}</p>
-          </a>
-          <a href="/soko/archive" style={archiveLinkStyle}>Ona Case Studies zote →</a>
-        </>
-      ) : (
-        <p style={{ color: "#555555" }}><em>Hakuna case study kwa sasa.</em></p>
-      )}
+      </div>
 
       <Footer />
     </main>
