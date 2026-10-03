@@ -20,15 +20,15 @@ export default function Soko() {
   }, []);
 
   const cardStyle = { background: "#ffffff", border: "1px solid #e9edf2", borderRadius: "var(--radius-md)", padding: "1.25rem", marginBottom: "1rem", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" };
+  const sourceStyle = { display: "inline-block", fontSize: "0.7rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", marginBottom: "0.5rem", background: "#e3f0ea", color: "#1e7b4c" };
+  const uchambuziBoxStyle = { background: "#f0f6fd", borderLeft: "4px solid #1e7b4c", borderRadius: "var(--radius-md)", padding: "0.75rem 1rem", marginTop: "0.75rem" };
 
   return (
     <main id="main-content" style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
       <Breadcrumbs items={[{ label: "Nyumbani", href: "/" }, { label: "Soko" }]} />
 
       <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>Soko</h1>
-      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>
-        Picha ya soko la hisa Tanzania.
-      </p>
+      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>Picha ya soko la hisa Tanzania.</p>
 
       <SokoMuhtasari />
 
@@ -37,16 +37,17 @@ export default function Soko() {
           <h2 style={{ fontSize: "1.15rem", fontWeight: 700, marginTop: "2rem", marginBottom: "0.75rem" }}>Habari za Soko</h2>
           {news.map((n, i) => (
             <div key={i} style={cardStyle}>
-              <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", marginBottom: "0.5rem", background: "#e3f0ea", color: "#1e7b4c" }}>
-                {n.source}
-              </span>
-              <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.05rem", color: "#1a1a1a" }}>{n.title}</h3>
-              {n.description && (
-                <p style={{ margin: "0 0 0.75rem 0", fontSize: "0.9rem", color: "#555555" }}>{n.description}</p>
+              <span style={sourceStyle}>{n.chanzo}</span>
+              <h3 style={{ margin: "0 0 0.5rem 0", fontSize: "1.05rem", color: "#1a1a1a" }}>{n.kichwa}</h3>
+              {n.muhtasari && (
+                <p style={{ margin: "0 0 0.5rem 0", fontSize: "0.9rem", color: "#555555" }}>{n.muhtasari}</p>
               )}
-              <a href={n.link} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", color: "#1e7b4c", fontWeight: 600, fontSize: "0.85rem", textDecoration: "none" }}>
-                Soma →
-              </a>
+              {n.uchambuziWetu && (
+                <div style={uchambuziBoxStyle}>
+                  <p style={{ margin: 0, fontSize: "0.75rem", fontWeight: 700, color: "#1e7b4c", textTransform: "uppercase", letterSpacing: "0.05em" }}>Uchambuzi Wetu</p>
+                  <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.9rem", color: "#1a1a1a" }}>{n.uchambuziWetu}</p>
+                </div>
+              )}
             </div>
           ))}
         </>
@@ -55,12 +56,8 @@ export default function Soko() {
       {news.length === 0 && (
         <div style={{ background: "#f3f7fb", borderLeft: "5px solid #1e7b4c", borderRadius: "var(--radius-md)", padding: "1rem 1.25rem", marginTop: "1.5rem" }}>
           <p style={{ margin: 0, color: "#1a1a1a", fontWeight: 600, fontSize: "0.9rem" }}>Karibu WEKEZA NASI</p>
-          <p style={{ margin: "0.25rem 0 0.75rem 0", color: "#555555", fontSize: "0.85rem" }}>
-            Hujui hisa ni nini? Tunaanza hapa, hatua kwa hatua.
-          </p>
-          <a href="/somo1" style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.5rem 1rem", borderRadius: "var(--radius-pill)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}>
-            Somo la 1: Hisa ni nini? →
-          </a>
+          <p style={{ margin: "0.25rem 0 0.75rem 0", color: "#555555", fontSize: "0.85rem" }}>Hujui hisa ni nini? Tunaanza hapa, hatua kwa hatua.</p>
+          <a href="/somo1" style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.5rem 1rem", borderRadius: "var(--radius-pill)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}>Somo la 1: Hisa ni nini? →</a>
         </div>
       )}
 
