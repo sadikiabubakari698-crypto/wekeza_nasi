@@ -3,23 +3,25 @@
 
 import { NEWS_SOURCES, NEWS_KEYWORDS, NEWS_TYPES } from "./news-sources";
 
-// ===== Kuchambua RSS =====
-// RSS ni XML — tunaichukua kama text
-export async function fetchRss(url) {
-  try {
-    const response = await fetch(url, {
-      headers: { "User-Agent": "WEKEZA-NASI/1.0" },
-      next: { revalidate: 3600 }, // Cache kwa saa 1
-    });
-    if (!response.ok) return null;
-    return await response.text();
-  } catch (e) {
-    return null;
-  }
+// ===== Safisha HTML tags =====
+export function cleanHtml(text) {
+  if (!text) return "";
+  return text
+    .replace(/<[^>]*>/g, "")           // Ondoa tags zote
+    .replace(/&nbsp;/g, " ")            // Badilisha &nbsp;
+    .replace(/&amp;/g, "&")             // Badilisha &amp;
+    .replace(/&lt;/g, "<")              // Badilisha &lt;
+    .replace(/&gt;/g, ">")              // Badilisha &gt;
+    .replace(/&quot;/g, '"')            // Badilisha &quot;
+    .replace(/&#39;/g, "'")             // Badilisha &#39;
+    .replace(/<!\[CDATA\[/g, "")        // Ondoa CDATA
+    .replace(/\]\]>/g, "")              // Ondoa CDATA
+    .replace(/\s+/g, " ")               // Badilisha spaces nyingi
+    .trim();
 }
 
-// ===== Kuchambua HTML =====
-export async function fetchHtml(url) {
+// ===== Kuchambua RSS =====
+export async function fetchRss(url) {
   try {
     const response = await fetch(url, {
       headers: { "User-Agent": "WEKEZA-NASI/1.0" },
@@ -36,17 +38,14 @@ export async function fetchHtml(url) {
 export function classifyNews(title, content) {
   const text = (title + " " + content).toLowerCase();
   
-  // Muhimu sana
   for (const kw of NEWS_KEYWORDS.muhimuSana) {
     if (text.includes(kw)) return { level: "muhimuSana", score: 3 };
   }
   
-  // Muhimu
   for (const kw of NEWS_KEYWORDS.muhimu) {
     if (text.includes(kw)) return { level: "muhimu", score: 2 };
   }
   
-  // Kawaida
   for (const kw of NEWS_KEYWORDS.kawaida) {
     if (text.includes(kw)) return { level: "kawaida", score: 1 };
   }
@@ -72,9 +71,9 @@ export function parseRssItems(xml) {
     
     if (titleMatch && linkMatch) {
       items.push({
-        title: titleMatch[1].trim(),
+        title: cleanHtml(titleMatch[1]).trim(),
         link: linkMatch[1].trim(),
-        description: descMatch ? descMatch[1].trim().slice(0, 300) : "",
+        description: descMatch ? cleanHtml(descMatch[1]).slice(0, 250) : "",
         pubDate: pubMatch ? pubMatch[1].trim() : new Date().toISOString(),
       });
     }
@@ -109,7 +108,6 @@ export async function fetchAllNews() {
     }
   }
   
-  // Panga kwa score (juu kwanza)
   return allNews.sort((a, b) => b.score - a.score);
 }
 
