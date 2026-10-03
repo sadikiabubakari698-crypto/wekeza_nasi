@@ -3,17 +3,14 @@
 // Baadaye: itachukuliwa moja kwa moja kutoka DSE (Awamu 2)
 
 export const SOKO_DATA = {
-  // Tarehe ya data (inaonyeshwa kwa mtumiaji)
   tarehe: "2026-10-03",
   muda: "jioni",
 
-  // DSEI — DSE All Share Index
   dsei: {
     value: 2450.32,
-    change: 0.5, // asilimia
+    change: 0.5,
   },
 
-  // Bei za hisa (5-8 kubwa)
   hisa: [
     { ticker: "CRDB", jina: "CRDB Bank", bei: 2650, change: 1.9 },
     { ticker: "NMB", jina: "NMB Bank", bei: 3150, change: -0.8 },
