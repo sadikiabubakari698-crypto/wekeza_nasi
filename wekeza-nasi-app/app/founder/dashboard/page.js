@@ -8,6 +8,8 @@ export default function FounderDashboard() {
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState({});
   const [uchambuzi, setUchambuzi] = useState({});
+  const [analyzing, setAnalyzing] = useState({});
+  const [aiResults, setAiResults] = useState({});
   const [error, setError] = useState(null);
   const [saved, setSaved] = useState(false);
 
@@ -56,6 +58,28 @@ export default function FounderDashboard() {
     }
   };
 
+  const handleAnalyze = async (item) => {
+    setAnalyzing((p) => ({ ...p, [item.link]: true }));
+    try {
+      const res = await fetch("/api/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: item.title, description: item.description }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setAiResults((p) => ({ ...p, [item.link]: data }));
+        updateUchambuzi(item.link, data.uchambuzi || data.muhtasari || "");
+      } else {
+        setAiResults((p) => ({ ...p, [item.link]: { error: data.error } }));
+      }
+    } catch (e) {
+      setAiResults((p) => ({ ...p, [item.link]: { error: e.message } }));
+    } finally {
+      setAnalyzing((p) => ({ ...p, [item.link]: false }));
+    }
+  };
+
   const pageStyle = { padding: "2rem", maxWidth: "700px", margin: "0 auto", fontFamily: "var(--font-sans)", color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" };
   const cardStyle = (isSel, level) => ({
     background: isSel ? "#f0fdf4" : "#ffffff",
@@ -74,12 +98,12 @@ export default function FounderDashboard() {
     };
     return c[level] || c.kawaida;
   };
-  const btnStyle = (active) => ({
+  const btnStyle = (active, color) => ({
     display: "inline-block",
     padding: "0.4rem 0.9rem",
-    background: active ? "#1e7b4c" : "#ffffff",
+    background: active ? (color || "#1e7b4c") : "#ffffff",
     color: active ? "#ffffff" : "#1a1a1a",
-    border: "1.5px solid #1e7b4c",
+    border: "1.5px solid " + (color || "#1e7b4c"),
     borderRadius: "var(--radius-pill)",
     fontSize: "0.8rem",
     fontWeight: 600,
@@ -87,19 +111,8 @@ export default function FounderDashboard() {
     textDecoration: "none",
     marginRight: "0.4rem",
   });
-  const textareaStyle = {
-    width: "100%",
-    padding: "0.75rem",
-    fontSize: "0.9rem",
-    border: "1.5px solid #e9edf2",
-    borderRadius: "var(--radius-md)",
-    background: "#ffffff",
-    color: "#1a1a1a",
-    fontFamily: "inherit",
-    minHeight: "80px",
-    marginTop: "0.5rem",
-    boxSizing: "border-box",
-  };
+  const textareaStyle = { width: "100%", padding: "0.75rem", fontSize: "0.9rem", border: "1.5px solid #e9edf2", borderRadius: "var(--radius-md)", background: "#ffffff", color: "#1a1a1a", fontFamily: "inherit", minHeight: "80px", marginTop: "0.5rem", boxSizing: "border-box" };
+  const aiBoxStyle = { background: "#f0f6fd", borderLeft: "4px solid #1e7b4c", borderRadius: "var(--radius-md)", padding: "0.75rem 1rem", marginTop: "0.75rem" };
 
   const selectedCount = Object.keys(selected).length;
 
@@ -107,7 +120,7 @@ export default function FounderDashboard() {
     <main style={pageStyle}>
       <h1 style={{ marginBottom: "0.25rem" }}>Dashboard ya Chief</h1>
       <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>
-        Habari zilizopatikana leo. Chagua na andika uchambuzi wa Kiswahili.
+        Habari zilizopatikana leo. Chagua, chambua kwa AI, na uandike uchambuzi.
       </p>
 
       {saved && (
@@ -141,6 +154,8 @@ export default function FounderDashboard() {
           {news.map((n, i) => {
             const b = badgeStyle(n.level);
             const isSel = !!selected[n.link];
+            const isAnalyzing = analyzing[n.link];
+            const ai = aiResults[n.link];
             return (
               <div key={i} style={cardStyle(isSel, n.level)}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem", marginBottom: "0.5rem", flexWrap: "wrap" }}>
@@ -155,19 +170,42 @@ export default function FounderDashboard() {
                 )}
 
                 <div>
+                  <button style={btnStyle(isAnalyzing, "#d48d3b")} onClick={() => handleAnalyze(n)} disabled={isAnalyzing}>
+                    {isAnalyzing ? "Inachambua..." : "Chambua kwa AI"}
+                  </button>
                   <button style={btnStyle(isSel)} onClick={() => toggle(n)}>
                     {isSel ? "Imechaguliwa" : "Weka Soko"}
                   </button>
                 </div>
 
+                {ai && ai.ok && (
+                  <div style={aiBoxStyle}>
+                    <p style={{ margin: 0, fontSize: "0.7rem", fontWeight: 700, color: "#1e7b4c", textTransform: "uppercase", letterSpacing: "0.05em" }}>AI Uchambuzi</p>
+                    {ai.muhtasari && <p style={{ margin: "0.4rem 0 0 0", fontSize: "0.85rem", color: "#1a1a1a" }}><strong>Muhtasari:</strong> {ai.muhtasari}</p>}
+                    {ai.uchambuzi && <p style={{ margin: "0.4rem 0 0 0", fontSize: "0.85rem", color: "#1a1a1a" }}><strong>Uchambuzi:</strong> {ai.uchambuzi}</p>}
+                    {ai.maswali && ai.maswali.length > 0 && (
+                      <div style={{ marginTop: "0.4rem" }}>
+                        <p style={{ margin: 0, fontSize: "0.85rem", color: "#1a1a1a" }}><strong>Maswali:</strong></p>
+                        <ol style={{ margin: "0.2rem 0 0 1.2rem", padding: 0, fontSize: "0.85rem", color: "#1a1a1a" }}>
+                          {ai.maswali.map((q, j) => <li key={j}>{q}</li>)}
+                        </ol>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {ai && !ai.ok && (
+                  <div style={{ background: "#fef2f2", borderRadius: "var(--radius-md)", padding: "0.75rem", marginTop: "0.75rem", fontSize: "0.8rem", color: "#991b1b" }}>
+                    Kosa: {ai.error}
+                  </div>
+                )}
+
                 {isSel && (
                   <div style={{ marginTop: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid #e9edf2" }}>
-                    <label style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1a1a1a" }}>
-                      Uchambuzi Wetu (Kiswahili):
-                    </label>
+                    <label style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1a1a1a" }}>Uchambuzi Wetu (hariri kama unataka):</label>
                     <textarea
                       style={textareaStyle}
-                      placeholder="Andika uchambuzi wako hapa..."
+                      placeholder="Andika au hariri uchambuzi..."
                       value={uchambuzi[n.link] || ""}
                       onChange={(e) => updateUchambuzi(n.link, e.target.value)}
                     />
