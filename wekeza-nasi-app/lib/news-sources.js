@@ -5,11 +5,25 @@ export const NEWS_SOURCES = {
   dailynews: { jina: "Daily News", url: "https://dailynews.co.tz/", rss: "https://dailynews.co.tz/feed/", lugha: "en" },
 };
 
-// Kampuni za DSE
+// KAMPUNI ZOTE 28 ZA DSE
 export const DSE_COMPANIES = [
-  "CRDB", "NMB", "TBL", "Vodacom", "VODA", "TCC", "TPCC",
-  "Swissport", "SWIS", "DSE", "Tanga Cement", "TOL",
-  "Jatu", "Mkombozi", "Maendeleo Bank", "Yetu Microfinance",
+  // Benki
+  "CRDB", "NMB", "NBC", "Stanbic", "Exim", "Absa", "DCB",
+  // Viwanda & Vinywaji
+  "TBL", "Tanzania Breweries", "TCC", "Tanzania Cigarette",
+  "TPCC", "Twiga Cement", "Tanga Cement",
+  // Mawasiliano
+  "Vodacom", "VODA", "TTCL",
+  // Huduma
+  "Swissport", "SWIS", "TOL", "Jatu", "Precision Air", "DSE",
+  // Fedha & Uwekezaji
+  "Maendeleo Bank", "Mkombozi", "Yetu Microfinance", "Mwalimu Commercial Bank",
+  // Kilimo & Nyingine
+  "Tanzania Tea Packers", "Tanzania Portland Cement",
+  "NICOL", "National Investment", "Tanzania Oxygen", "Coastal Aviation",
+  // Jina kamili
+  "Tanzania Breweries Limited", "Tanzania Cigarette Company",
+  "Tanzania Portland Cement Company", "Swissport Tanzania",
 ];
 
 // Maneno ya soko la hisa
@@ -21,12 +35,23 @@ export const MARKET_WORDS = [
   "ripoti ya mwaka", "ripoti ya robo", "mapato ya kampuni",
 ];
 
-// TUNAPASWA kumpa uzito KAMPUNI ZA DSE na DSE/CMSA PEKEE
+// Kampuni za DSE + DSE + CMSA
 export const ONLY_TANZANIA_MARKET = [
   "DSE", "Dar es Salaam Stock Exchange", "CMSA",
-  "CRDB", "NMB", "TBL", "Vodacom", "VODA", "TCC", "TPCC",
-  "Swissport", "SWIS", "Tanga Cement", "TOL", "Jatu",
-  "Mkombozi", "Maendeleo Bank", "Yetu Microfinance",
+  // Benki
+  "CRDB", "NMB", "NBC", "Stanbic", "Exim", "Absa", "DCB",
+  // Viwanda
+  "TBL", "Tanzania Breweries", "TCC", "Tanzania Cigarette",
+  "TPCC", "Twiga Cement", "Tanga Cement",
+  // Mawasiliano
+  "Vodacom", "VODA", "TTCL",
+  // Huduma
+  "Swissport", "SWIS", "TOL", "Jatu", "Precision Air",
+  // Fedha
+  "Maendeleo Bank", "Mkombozi", "Yetu Microfinance", "Mwalimu Commercial Bank",
+  // Nyingine
+  "Tanzania Tea Packers", "Tanzania Portland Cement",
+  "NICOL", "Tanzania Oxygen", "Coastal Aviation",
 ];
 
 export const NEWS_KEYWORDS = {

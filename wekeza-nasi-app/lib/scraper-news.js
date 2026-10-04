@@ -33,29 +33,20 @@ export function classifyNews(title, content) {
   return { level: "kawaida", score: 0 };
 }
 
-// FILTER YA TABAKA 4 — KALI ZAIDI
-// Hatua 1: Lazima iwe na maneno ya SOKO LA HISA
-// Hatua 2: Lazima iwe na KAMPUNI YA DSE au DSE au CMSA PEKEE
 export function isMarketNews(title, description) {
   const text = (title + " " + description).toLowerCase();
   
-  // Hatua 1: Maneno ya soko la hisa
+  // Hatua 1: Maneno ya soko
   let hasMarketWord = false;
   for (const kw of MARKET_WORDS) {
-    if (text.includes(kw.toLowerCase())) {
-      hasMarketWord = true;
-      break;
-    }
+    if (text.includes(kw.toLowerCase())) { hasMarketWord = true; break; }
   }
   if (!hasMarketWord) return false;
   
-  // Hatua 2: LAZIMA — Kampuni ya DSE au DSE au CMSA
+  // Hatua 2: Kampuni ya DSE / DSE / CMSA
   let hasTanzania = false;
   for (const kw of ONLY_TANZANIA_MARKET) {
-    if (text.includes(kw.toLowerCase())) {
-      hasTanzania = true;
-      break;
-    }
+    if (text.includes(kw.toLowerCase())) { hasTanzania = true; break; }
   }
   if (!hasTanzania) return false;
   
