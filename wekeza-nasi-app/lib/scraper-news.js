@@ -33,15 +33,20 @@ export function classifyNews(title, content) {
   return { level: "kawaida", score: 0 };
 }
 
-// Filter KALI
+// FILTER KALI — Lazima taje kampuni ya DSE, DSE, CMSA, au maneno ya soko la hisa
 export function isMarketNews(title, description) {
   const text = (title + " " + description).toLowerCase();
+  
+  // Kampuni za DSE
   for (const company of DSE_COMPANIES) {
     if (text.includes(company.toLowerCase())) return true;
   }
+  
+  // Maneno ya soko la hisa (DSE_ONLY_KEYWORDS)
   for (const kw of DSE_ONLY_KEYWORDS) {
     if (text.includes(kw.toLowerCase())) return true;
   }
+  
   return false;
 }
 
@@ -76,7 +81,9 @@ export async function fetchAllNews() {
       const xml = await fetchRss(source.rss);
       const items = parseRssItems(xml);
       for (const item of items) {
+        // Filter KALI
         if (!isMarketNews(item.title, item.description)) continue;
+        
         const c = classifyNews(item.title, item.description);
         all.push({ ...item, source: source.jina, level: c.level, score: c.score });
       }
@@ -85,7 +92,6 @@ export async function fetchAllNews() {
   return all.sort((a, b) => b.score - a.score);
 }
 
-// Siku 7
 export function filterRecentNews(news, days = 7) {
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - days);
