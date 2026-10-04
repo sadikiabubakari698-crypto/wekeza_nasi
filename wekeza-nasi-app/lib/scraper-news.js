@@ -74,6 +74,20 @@ export function parseRssItems(xml) {
   return items;
 }
 
+// Ondoa duplicates kwa title (au link)
+function dedupe(items) {
+  const seen = new Set();
+  const unique = [];
+  for (const item of items) {
+    // Normalize title kwa kulinganisha
+    const key = item.title.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 50);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(item);
+  }
+  return unique;
+}
+
 export async function fetchAllNews() {
   const all = [];
   
@@ -109,7 +123,10 @@ export async function fetchAllNews() {
     }
   } catch (e) {}
   
-  return all.sort((a, b) => b.score - a.score);
+  // Ondoa duplicates
+  const unique = dedupe(all);
+  
+  return unique.sort((a, b) => b.score - a.score);
 }
 
 export function filterRecentNews(news, days = 7) {
