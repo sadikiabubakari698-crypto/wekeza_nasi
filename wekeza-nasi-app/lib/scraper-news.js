@@ -74,12 +74,10 @@ export function parseRssItems(xml) {
   return items;
 }
 
-// Ondoa duplicates kwa title (au link)
 function dedupe(items) {
   const seen = new Set();
   const unique = [];
   for (const item of items) {
-    // Normalize title kwa kulinganisha
     const key = item.title.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 50);
     if (seen.has(key)) continue;
     seen.add(key);
@@ -91,7 +89,7 @@ function dedupe(items) {
 export async function fetchAllNews() {
   const all = [];
   
-  // 1. RSS vyanzo
+  // 1. RSS vyanzo — KWA FILTER
   const sources = Object.values(NEWS_SOURCES).filter((s) => s.rss);
   for (const source of sources) {
     try {
@@ -105,27 +103,25 @@ export async function fetchAllNews() {
     } catch (e) {}
   }
   
-  // 2. CMSA
+  // 2. CMSA — BILA FILTER (rasmi)
   try {
     const cmsa = await fetchCmsa();
     for (const item of cmsa) {
       const c = classifyNews(item.title, item.description);
-      all.push({ ...item, level: c.level, score: c.score });
+      all.push({ ...item, level: c.level || "muhimuSana", score: c.score || 3 });
     }
   } catch (e) {}
   
-  // 3. BOT
+  // 3. BOT — BILA FILTER (rasmi)
   try {
     const bot = await fetchBot();
     for (const item of bot) {
       const c = classifyNews(item.title, item.description);
-      all.push({ ...item, level: c.level, score: c.score });
+      all.push({ ...item, level: c.level || "muhimu", score: c.score || 2 });
     }
   } catch (e) {}
   
-  // Ondoa duplicates
   const unique = dedupe(all);
-  
   return unique.sort((a, b) => b.score - a.score);
 }
 
