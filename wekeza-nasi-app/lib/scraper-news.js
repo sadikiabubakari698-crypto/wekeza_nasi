@@ -1,3 +1,6 @@
+import { fetchCmsa } from "./scraper-cmsa";
+import { fetchBot } from "./scraper-bot";
+
 export function cleanHtml(text) {
   if (!text) return "";
   return text
@@ -35,21 +38,16 @@ export function classifyNews(title, content) {
 
 export function isMarketNews(title, description) {
   const text = (title + " " + description).toLowerCase();
-  
-  // Hatua 1: Maneno ya soko
   let hasMarketWord = false;
   for (const kw of MARKET_WORDS) {
     if (text.includes(kw.toLowerCase())) { hasMarketWord = true; break; }
   }
   if (!hasMarketWord) return false;
-  
-  // Hatua 2: Kampuni ya DSE / DSE / CMSA
   let hasTanzania = false;
   for (const kw of ONLY_TANZANIA_MARKET) {
     if (text.includes(kw.toLowerCase())) { hasTanzania = true; break; }
   }
   if (!hasTanzania) return false;
-  
   return true;
 }
 
@@ -77,8 +75,10 @@ export function parseRssItems(xml) {
 }
 
 export async function fetchAllNews() {
-  const sources = Object.values(NEWS_SOURCES).filter((s) => s.rss);
   const all = [];
+  
+  // 1. RSS vyanzo
+  const sources = Object.values(NEWS_SOURCES).filter((s) => s.rss);
   for (const source of sources) {
     try {
       const xml = await fetchRss(source.rss);
@@ -86,10 +86,29 @@ export async function fetchAllNews() {
       for (const item of items) {
         if (!isMarketNews(item.title, item.description)) continue;
         const c = classifyNews(item.title, item.description);
-        all.push({ ...item, source: source.jina, level: c.level, score: c.score });
+        all.push({ ...item, source: source.jina, level: c.level, score: c.score, type: "habari" });
       }
     } catch (e) {}
   }
+  
+  // 2. CMSA
+  try {
+    const cmsa = await fetchCmsa();
+    for (const item of cmsa) {
+      const c = classifyNews(item.title, item.description);
+      all.push({ ...item, level: c.level, score: c.score });
+    }
+  } catch (e) {}
+  
+  // 3. BOT
+  try {
+    const bot = await fetchBot();
+    for (const item of bot) {
+      const c = classifyNews(item.title, item.description);
+      all.push({ ...item, level: c.level, score: c.score });
+    }
+  } catch (e) {}
+  
   return all.sort((a, b) => b.score - a.score);
 }
 

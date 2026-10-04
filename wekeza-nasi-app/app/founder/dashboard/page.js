@@ -19,14 +19,12 @@ export default function FounderDashboard() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Futa ikiwa ni siku mpya
     const savedDate = localStorage.getItem(DATE_KEY);
     const today = todayStr();
     if (savedDate !== today) {
       localStorage.removeItem(STORAGE_KEY);
       localStorage.setItem(DATE_KEY, today);
     }
-
     try {
       const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
       setSelected(stored);
@@ -34,7 +32,6 @@ export default function FounderDashboard() {
       Object.keys(stored).forEach((k) => { u[k] = stored[k].uchambuziWetu || ""; });
       setUchambuzi(u);
     } catch (e) {}
-
     fetch("/api/scrape")
       .then((r) => r.json())
       .then((d) => { setNews(d.habari || []); setLoading(false); })
@@ -51,6 +48,7 @@ export default function FounderDashboard() {
         muhtasari: item.description,
         chanzo: item.source,
         tarehe: item.pubDate,
+        aina: item.type || "habari",
         uchambuziWetu: uchambuzi[item.link] || "",
         selectedAt: new Date().toISOString(),
       };
@@ -96,10 +94,7 @@ export default function FounderDashboard() {
     background: isSel ? "#f0fdf4" : "#ffffff",
     border: isSel ? "2px solid #1e7b4c" : "1px solid #e9edf2",
     borderLeft: level === "muhimuSana" ? "4px solid #d48d3b" : level === "muhimu" ? "4px solid #1e7b4c" : "4px solid #e9edf2",
-    borderRadius: "var(--radius-md)",
-    padding: "1rem 1.25rem",
-    marginBottom: "0.75rem",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+    borderRadius: "var(--radius-md)", padding: "1rem 1.25rem", marginBottom: "0.75rem", boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
   });
   const badgeStyle = (level) => {
     const c = {
@@ -109,18 +104,21 @@ export default function FounderDashboard() {
     };
     return c[level] || c.kawaida;
   };
+  const sourceBadgeStyle = (type) => {
+    const colors = {
+      "tangazo": { bg: "#fef8ee", color: "#d48d3b" },
+      "taarifa": { bg: "#e8f0f8", color: "#16633d" },
+      "habari": { bg: "#e3f0ea", color: "#1e7b4c" },
+    };
+    return colors[type] || colors.habari;
+  };
   const btnStyle = (active, color) => ({
-    display: "inline-block",
-    padding: "0.4rem 0.9rem",
+    display: "inline-block", padding: "0.4rem 0.9rem",
     background: active ? (color || "#1e7b4c") : "#ffffff",
     color: active ? "#ffffff" : "#1a1a1a",
     border: "1.5px solid " + (color || "#1e7b4c"),
-    borderRadius: "var(--radius-pill)",
-    fontSize: "0.8rem",
-    fontWeight: 600,
-    cursor: "pointer",
-    textDecoration: "none",
-    marginRight: "0.4rem",
+    borderRadius: "var(--radius-pill)", fontSize: "0.8rem", fontWeight: 600,
+    cursor: "pointer", textDecoration: "none", marginRight: "0.4rem",
   });
   const textareaStyle = { width: "100%", padding: "0.75rem", fontSize: "0.9rem", border: "1.5px solid #e9edf2", borderRadius: "var(--radius-md)", background: "#ffffff", color: "#1a1a1a", fontFamily: "inherit", minHeight: "80px", marginTop: "0.5rem", boxSizing: "border-box" };
   const aiBoxStyle = { background: "#f0f6fd", borderLeft: "4px solid #1e7b4c", borderRadius: "var(--radius-md)", padding: "0.75rem 1rem", marginTop: "0.75rem" };
@@ -133,12 +131,7 @@ export default function FounderDashboard() {
       <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>Habari za soko leo. Chagua, chambua kwa AI, na uandike uchambuzi.</p>
 
       {loading && <p style={{ color: "#888888" }}>Inapakia habari...</p>}
-
-      {error && (
-        <div style={{ background: "#fef2f2", borderLeft: "4px solid #dc2626", borderRadius: "var(--radius-md)", padding: "1rem", marginBottom: "1rem" }}>
-          <p style={{ margin: 0, color: "#991b1b", fontWeight: 600 }}>Kosa: {error}</p>
-        </div>
-      )}
+      {error && <div style={{ background: "#fef2f2", borderLeft: "4px solid #dc2626", borderRadius: "var(--radius-md)", padding: "1rem", marginBottom: "1rem" }}><p style={{ margin: 0, color: "#991b1b", fontWeight: 600 }}>Kosa: {error}</p></div>}
 
       {!loading && !error && news.length === 0 && (
         <div style={{ background: "#f3f7fb", borderRadius: "var(--radius-md)", padding: "1.5rem", textAlign: "center" }}>
@@ -156,20 +149,27 @@ export default function FounderDashboard() {
 
           {news.map((n, i) => {
             const b = badgeStyle(n.level);
+            const sb = sourceBadgeStyle(n.type || "habari");
             const isSel = !!selected[n.link];
             const isAnalyzing = analyzing[n.link];
             const ai = aiResults[n.link];
             return (
               <div key={i} style={cardStyle(isSel, n.level)}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem", marginBottom: "0.5rem", flexWrap: "wrap" }}>
-                  <span style={{ display: "inline-block", fontSize: "0.65rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", letterSpacing: "0.05em", background: b.bg, color: b.color }}>{b.text}</span>
-                  <span style={{ fontSize: "0.75rem", color: "#888888" }}>{n.source} — {new Date(n.pubDate).toLocaleDateString("sw-TZ")}</span>
+                  <div style={{ display: "flex", gap: "0.3rem", flexWrap: "wrap" }}>
+                    <span style={{ display: "inline-block", fontSize: "0.65rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", letterSpacing: "0.05em", background: b.bg, color: b.color }}>{b.text}</span>
+                    <span style={{ display: "inline-block", fontSize: "0.65rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", background: sb.bg, color: sb.color }}>{n.source}</span>
+                    {n.type === "tangazo" && <span style={{ display: "inline-block", fontSize: "0.65rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", background: "#f3e8fd", color: "#6b21a8" }}>TANGAZO</span>}
+                    {n.type === "taarifa" && <span style={{ display: "inline-block", fontSize: "0.65rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", background: "#f3e8fd", color: "#6b21a8" }}>TAARIFA</span>}
+                  </div>
+                  <span style={{ fontSize: "0.75rem", color: "#888888" }}>{new Date(n.pubDate).toLocaleDateString("sw-TZ")}</span>
                 </div>
                 <h3 style={{ margin: "0 0 0.4rem 0", fontSize: "1rem", lineHeight: 1.4 }}>{n.title}</h3>
                 {n.description && <p style={{ margin: "0 0 0.75rem 0", fontSize: "0.85rem", color: "#555555" }}>{n.description}</p>}
                 <div>
                   <button style={btnStyle(isAnalyzing, "#d48d3b")} onClick={() => handleAnalyze(n)} disabled={isAnalyzing}>{isAnalyzing ? "Inachambua..." : "Chambua kwa AI"}</button>
                   <button style={btnStyle(isSel)} onClick={() => toggle(n)}>{isSel ? "Imechaguliwa" : "Weka Soko"}</button>
+                  <a href={n.link} target="_blank" rel="noopener noreferrer" style={{ ...btnStyle(false), borderColor: "#888", color: "#555" }}>Chanzo</a>
                 </div>
                 {ai && ai.ok && (
                   <div style={aiBoxStyle}>
@@ -189,7 +189,7 @@ export default function FounderDashboard() {
                 {ai && !ai.ok && <div style={{ background: "#fef2f2", borderRadius: "var(--radius-md)", padding: "0.75rem", marginTop: "0.75rem", fontSize: "0.8rem", color: "#991b1b" }}>Kosa: {ai.error}</div>}
                 {isSel && (
                   <div style={{ marginTop: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid #e9edf2" }}>
-                    <label style={{ fontSize: "0.85rem", fontWeight: 600 }}>Uchambuzi Wetu (hariri kama unataka):</label>
+                    <label style={{ fontSize: "0.85rem", fontWeight: 600 }}>Uchambuzi Wetu:</label>
                     <textarea style={textareaStyle} placeholder="Andika au hariri uchambuzi..." value={uchambuzi[n.link] || ""} onChange={(e) => updateUchambuzi(n.link, e.target.value)} />
                   </div>
                 )}
