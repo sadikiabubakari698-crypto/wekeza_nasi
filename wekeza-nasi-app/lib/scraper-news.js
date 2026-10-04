@@ -36,7 +36,7 @@ export function parseRssItems(xml) {
       items.push({
         title: cleanHtml(title[1]),
         link: link[1].trim(),
-        description: desc ? cleanHtml(desc[1]).slice(0, 250) : "",
+        description: desc ? cleanHtml(desc[1]).slice(0, 400) : "",
         pubDate: pub ? pub[1].trim() : new Date().toISOString(),
       });
     }
@@ -60,8 +60,10 @@ export async function fetchAllNews() {
   return all.sort((a, b) => b.score - a.score);
 }
 
-export function filterTodayNews(news) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return news.filter((n) => new Date(n.pubDate) >= today);
+// Badilisha: Siku 2 (sio leo pekee)
+export function filterRecentNews(news, days = 2) {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - days);
+  cutoff.setHours(0, 0, 0, 0);
+  return news.filter((n) => new Date(n.pubDate) >= cutoff);
 }
