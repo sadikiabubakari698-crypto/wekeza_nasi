@@ -23,7 +23,7 @@ export async function fetchRss(url) {
   } catch (e) { return null; }
 }
 
-import { NEWS_SOURCES, NEWS_KEYWORDS, DSE_COMPANIES, MARKET_WORDS } from "./news-sources";
+import { NEWS_SOURCES, NEWS_KEYWORDS, MARKET_WORDS, TANZANIA_WORDS } from "./news-sources";
 
 export function classifyNews(title, content) {
   const text = (title + " " + content).toLowerCase();
@@ -33,13 +33,13 @@ export function classifyNews(title, content) {
   return { level: "kawaida", score: 0 };
 }
 
-// FILTER YA TABAKA 2
-// Hatua 1: Angalia kama kuna maneno ya SOKO LA HISA
-// Hatua 2: Kama hakuna — angalia kama kuna KAMPUNI YA DSE + maneno ya soko
+// FILTER YA TABAKA 3
+// Hatua 1: Lazima iwe na maneno ya SOKO LA HISA
+// Hatua 2: Lazima iwe na maneno ya TANZANIA (DSE, kampuni ya DSE, n.k.)
 export function isMarketNews(title, description) {
   const text = (title + " " + description).toLowerCase();
   
-  // Hatua 1: Lazima iwe na maneno ya soko la hisa
+  // Hatua 1: Maneno ya soko la hisa
   let hasMarketWord = false;
   for (const kw of MARKET_WORDS) {
     if (text.includes(kw.toLowerCase())) {
@@ -47,10 +47,18 @@ export function isMarketNews(title, description) {
       break;
     }
   }
-  
   if (!hasMarketWord) return false;
   
-  // Hatua 2: Ikiwa na maneno ya soko — inaruhusiwa
+  // Hatua 2: Maneno ya Tanzania (DSE, kampuni ya DSE, n.k.)
+  let hasTanzaniaWord = false;
+  for (const kw of TANZANIA_WORDS) {
+    if (text.includes(kw.toLowerCase())) {
+      hasTanzaniaWord = true;
+      break;
+    }
+  }
+  if (!hasTanzaniaWord) return false;
+  
   return true;
 }
 
@@ -85,9 +93,7 @@ export async function fetchAllNews() {
       const xml = await fetchRss(source.rss);
       const items = parseRssItems(xml);
       for (const item of items) {
-        // Filter kali
         if (!isMarketNews(item.title, item.description)) continue;
-        
         const c = classifyNews(item.title, item.description);
         all.push({ ...item, source: source.jina, level: c.level, score: c.score });
       }

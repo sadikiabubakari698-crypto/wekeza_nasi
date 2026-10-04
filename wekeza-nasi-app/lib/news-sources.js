@@ -11,14 +11,22 @@ export const DSE_COMPANIES = [
   "Jatu", "Mkombozi", "Maendeleo Bank", "Yetu Microfinance",
 ];
 
-// MANENO YA SOKO LA HISA — HAYA NDIO MSINGI
+// Maneno ya soko la hisa — LAZIMA
 export const MARKET_WORDS = [
   "hisa", "soko la hisa", "DSE", "Dar es Salaam Stock Exchange",
   "CMSA", "stock split", "gawio", "IPO", "uidhinishaji",
   "uorodheshaji", "bei ya hisa", "turnover", "volume ya hisa",
   "soko la mitaji", "wawekezaji wa hisa", "faida ya kampuni",
   "ripoti ya mwaka", "ripoti ya robo", "mapato ya kampuni",
-  "bei ya hisa", "kupanda kwa hisa", "kushuka kwa hisa",
+];
+
+// Maneno ya Tanzania — LAZIMA mojawapo
+export const TANZANIA_WORDS = [
+  "Tanzania", "DSE", "Dar es Salaam Stock Exchange", "CMSA",
+  "CRDB", "NMB", "TBL", "Vodacom", "VODA", "TCC", "TPCC",
+  "Swissport", "SWIS", "Tanga Cement", "TOL", "Jatu",
+  "Mkombozi", "Maendeleo Bank", "Yetu Microfinance",
+  "BOT", "Benki Kuu ya Tanzania", "soko la hisa la Tanzania",
 ];
 
 export const NEWS_KEYWORDS = {
