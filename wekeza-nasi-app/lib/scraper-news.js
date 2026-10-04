@@ -23,7 +23,7 @@ export async function fetchRss(url) {
   } catch (e) { return null; }
 }
 
-import { NEWS_SOURCES, NEWS_KEYWORDS, DSE_COMPANIES, DSE_ONLY_KEYWORDS } from "./news-sources";
+import { NEWS_SOURCES, NEWS_KEYWORDS, DSE_COMPANIES, MARKET_WORDS } from "./news-sources";
 
 export function classifyNews(title, content) {
   const text = (title + " " + content).toLowerCase();
@@ -33,21 +33,25 @@ export function classifyNews(title, content) {
   return { level: "kawaida", score: 0 };
 }
 
-// FILTER KALI — Lazima taje kampuni ya DSE, DSE, CMSA, au maneno ya soko la hisa
+// FILTER YA TABAKA 2
+// Hatua 1: Angalia kama kuna maneno ya SOKO LA HISA
+// Hatua 2: Kama hakuna — angalia kama kuna KAMPUNI YA DSE + maneno ya soko
 export function isMarketNews(title, description) {
   const text = (title + " " + description).toLowerCase();
   
-  // Kampuni za DSE
-  for (const company of DSE_COMPANIES) {
-    if (text.includes(company.toLowerCase())) return true;
+  // Hatua 1: Lazima iwe na maneno ya soko la hisa
+  let hasMarketWord = false;
+  for (const kw of MARKET_WORDS) {
+    if (text.includes(kw.toLowerCase())) {
+      hasMarketWord = true;
+      break;
+    }
   }
   
-  // Maneno ya soko la hisa (DSE_ONLY_KEYWORDS)
-  for (const kw of DSE_ONLY_KEYWORDS) {
-    if (text.includes(kw.toLowerCase())) return true;
-  }
+  if (!hasMarketWord) return false;
   
-  return false;
+  // Hatua 2: Ikiwa na maneno ya soko — inaruhusiwa
+  return true;
 }
 
 export function parseRssItems(xml) {
@@ -81,7 +85,7 @@ export async function fetchAllNews() {
       const xml = await fetchRss(source.rss);
       const items = parseRssItems(xml);
       for (const item of items) {
-        // Filter KALI
+        // Filter kali
         if (!isMarketNews(item.title, item.description)) continue;
         
         const c = classifyNews(item.title, item.description);
