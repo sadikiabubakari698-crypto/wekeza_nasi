@@ -23,7 +23,7 @@ export async function fetchRss(url) {
   } catch (e) { return null; }
 }
 
-import { NEWS_SOURCES, NEWS_KEYWORDS, MARKET_WORDS, TANZANIA_WORDS } from "./news-sources";
+import { NEWS_SOURCES, NEWS_KEYWORDS, MARKET_WORDS, ONLY_TANZANIA_MARKET } from "./news-sources";
 
 export function classifyNews(title, content) {
   const text = (title + " " + content).toLowerCase();
@@ -33,9 +33,9 @@ export function classifyNews(title, content) {
   return { level: "kawaida", score: 0 };
 }
 
-// FILTER YA TABAKA 3
+// FILTER YA TABAKA 4 — KALI ZAIDI
 // Hatua 1: Lazima iwe na maneno ya SOKO LA HISA
-// Hatua 2: Lazima iwe na maneno ya TANZANIA (DSE, kampuni ya DSE, n.k.)
+// Hatua 2: Lazima iwe na KAMPUNI YA DSE au DSE au CMSA PEKEE
 export function isMarketNews(title, description) {
   const text = (title + " " + description).toLowerCase();
   
@@ -49,15 +49,15 @@ export function isMarketNews(title, description) {
   }
   if (!hasMarketWord) return false;
   
-  // Hatua 2: Maneno ya Tanzania (DSE, kampuni ya DSE, n.k.)
-  let hasTanzaniaWord = false;
-  for (const kw of TANZANIA_WORDS) {
+  // Hatua 2: LAZIMA — Kampuni ya DSE au DSE au CMSA
+  let hasTanzania = false;
+  for (const kw of ONLY_TANZANIA_MARKET) {
     if (text.includes(kw.toLowerCase())) {
-      hasTanzaniaWord = true;
+      hasTanzania = true;
       break;
     }
   }
-  if (!hasTanzaniaWord) return false;
+  if (!hasTanzania) return false;
   
   return true;
 }
