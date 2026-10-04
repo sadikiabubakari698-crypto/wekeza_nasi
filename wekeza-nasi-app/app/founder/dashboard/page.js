@@ -2,6 +2,12 @@
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "wekeza_soko_selected";
+const DATE_KEY = "wekeza_soko_date";
+
+function todayStr() {
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+}
 
 export default function FounderDashboard() {
   const [news, setNews] = useState([]);
@@ -11,9 +17,16 @@ export default function FounderDashboard() {
   const [analyzing, setAnalyzing] = useState({});
   const [aiResults, setAiResults] = useState({});
   const [error, setError] = useState(null);
-  const [saved, setSaved] = useState(false);
 
   useEffect(() => {
+    // Futa ikiwa ni siku mpya
+    const savedDate = localStorage.getItem(DATE_KEY);
+    const today = todayStr();
+    if (savedDate !== today) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(DATE_KEY, today);
+    }
+
     try {
       const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
       setSelected(stored);
@@ -44,8 +57,6 @@ export default function FounderDashboard() {
     }
     setSelected(next);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
   };
 
   const updateUchambuzi = (link, text) => {
@@ -119,15 +130,7 @@ export default function FounderDashboard() {
   return (
     <main style={pageStyle}>
       <h1 style={{ marginBottom: "0.25rem" }}>Dashboard ya Chief</h1>
-      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>
-        Habari zilizopatikana leo. Chagua, chambua kwa AI, na uandike uchambuzi.
-      </p>
-
-      {saved && (
-        <div style={{ background: "#f0fdf4", borderLeft: "4px solid #1e7b4c", borderRadius: "var(--radius-md)", padding: "0.75rem 1rem", marginBottom: "1rem" }}>
-          <p style={{ margin: 0, color: "#166534", fontWeight: 600, fontSize: "0.9rem" }}>Imehifadhiwa.</p>
-        </div>
-      )}
+      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>Habari za soko leo. Chagua, chambua kwa AI, na uandike uchambuzi.</p>
 
       {loading && <p style={{ color: "#888888" }}>Inapakia habari...</p>}
 
@@ -162,53 +165,32 @@ export default function FounderDashboard() {
                   <span style={{ display: "inline-block", fontSize: "0.65rem", fontWeight: 700, padding: "0.15rem 0.6rem", borderRadius: "999px", letterSpacing: "0.05em", background: b.bg, color: b.color }}>{b.text}</span>
                   <span style={{ fontSize: "0.75rem", color: "#888888" }}>{n.source} — {new Date(n.pubDate).toLocaleDateString("sw-TZ")}</span>
                 </div>
-
                 <h3 style={{ margin: "0 0 0.4rem 0", fontSize: "1rem", lineHeight: 1.4 }}>{n.title}</h3>
-
-                {n.description && (
-                  <p style={{ margin: "0 0 0.75rem 0", fontSize: "0.85rem", color: "#555555" }}>{n.description}</p>
-                )}
-
+                {n.description && <p style={{ margin: "0 0 0.75rem 0", fontSize: "0.85rem", color: "#555555" }}>{n.description}</p>}
                 <div>
-                  <button style={btnStyle(isAnalyzing, "#d48d3b")} onClick={() => handleAnalyze(n)} disabled={isAnalyzing}>
-                    {isAnalyzing ? "Inachambua..." : "Chambua kwa AI"}
-                  </button>
-                  <button style={btnStyle(isSel)} onClick={() => toggle(n)}>
-                    {isSel ? "Imechaguliwa" : "Weka Soko"}
-                  </button>
+                  <button style={btnStyle(isAnalyzing, "#d48d3b")} onClick={() => handleAnalyze(n)} disabled={isAnalyzing}>{isAnalyzing ? "Inachambua..." : "Chambua kwa AI"}</button>
+                  <button style={btnStyle(isSel)} onClick={() => toggle(n)}>{isSel ? "Imechaguliwa" : "Weka Soko"}</button>
                 </div>
-
                 {ai && ai.ok && (
                   <div style={aiBoxStyle}>
-                    <p style={{ margin: 0, fontSize: "0.7rem", fontWeight: 700, color: "#1e7b4c", textTransform: "uppercase", letterSpacing: "0.05em" }}>AI Uchambuzi</p>
-                    {ai.muhtasari && <p style={{ margin: "0.4rem 0 0 0", fontSize: "0.85rem", color: "#1a1a1a" }}><strong>Muhtasari:</strong> {ai.muhtasari}</p>}
-                    {ai.uchambuzi && <p style={{ margin: "0.4rem 0 0 0", fontSize: "0.85rem", color: "#1a1a1a" }}><strong>Uchambuzi:</strong> {ai.uchambuzi}</p>}
+                    <p style={{ margin: 0, fontSize: "0.7rem", fontWeight: 700, color: "#1e7b4c", textTransform: "uppercase" }}>AI Uchambuzi</p>
+                    {ai.muhtasari && <p style={{ margin: "0.4rem 0 0 0", fontSize: "0.85rem" }}><strong>Muhtasari:</strong> {ai.muhtasari}</p>}
+                    {ai.uchambuzi && <p style={{ margin: "0.4rem 0 0 0", fontSize: "0.85rem" }}><strong>Uchambuzi:</strong> {ai.uchambuzi}</p>}
                     {ai.maswali && ai.maswali.length > 0 && (
                       <div style={{ marginTop: "0.4rem" }}>
-                        <p style={{ margin: 0, fontSize: "0.85rem", color: "#1a1a1a" }}><strong>Maswali:</strong></p>
-                        <ol style={{ margin: "0.2rem 0 0 1.2rem", padding: 0, fontSize: "0.85rem", color: "#1a1a1a" }}>
+                        <p style={{ margin: 0, fontSize: "0.85rem" }}><strong>Maswali:</strong></p>
+                        <ol style={{ margin: "0.2rem 0 0 1.2rem", padding: 0, fontSize: "0.85rem" }}>
                           {ai.maswali.map((q, j) => <li key={j}>{q}</li>)}
                         </ol>
                       </div>
                     )}
                   </div>
                 )}
-
-                {ai && !ai.ok && (
-                  <div style={{ background: "#fef2f2", borderRadius: "var(--radius-md)", padding: "0.75rem", marginTop: "0.75rem", fontSize: "0.8rem", color: "#991b1b" }}>
-                    Kosa: {ai.error}
-                  </div>
-                )}
-
+                {ai && !ai.ok && <div style={{ background: "#fef2f2", borderRadius: "var(--radius-md)", padding: "0.75rem", marginTop: "0.75rem", fontSize: "0.8rem", color: "#991b1b" }}>Kosa: {ai.error}</div>}
                 {isSel && (
                   <div style={{ marginTop: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid #e9edf2" }}>
-                    <label style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1a1a1a" }}>Uchambuzi Wetu (hariri kama unataka):</label>
-                    <textarea
-                      style={textareaStyle}
-                      placeholder="Andika au hariri uchambuzi..."
-                      value={uchambuzi[n.link] || ""}
-                      onChange={(e) => updateUchambuzi(n.link, e.target.value)}
-                    />
+                    <label style={{ fontSize: "0.85rem", fontWeight: 600 }}>Uchambuzi Wetu (hariri kama unataka):</label>
+                    <textarea style={textareaStyle} placeholder="Andika au hariri uchambuzi..." value={uchambuzi[n.link] || ""} onChange={(e) => updateUchambuzi(n.link, e.target.value)} />
                   </div>
                 )}
               </div>
@@ -217,9 +199,8 @@ export default function FounderDashboard() {
 
           {selectedCount > 0 && (
             <div style={{ background: "#f0f6fd", borderLeft: "5px solid #1e7b4c", borderRadius: "var(--radius-md)", padding: "1rem 1.25rem", marginTop: "1.5rem" }}>
-              <p style={{ margin: 0, fontWeight: 700, color: "#1a1a1a" }}>Umechagua habari {selectedCount}</p>
-              <p style={{ margin: "0.25rem 0 0.75rem 0", fontSize: "0.85rem", color: "#555555" }}>Habari hizi zitaonekana kwenye Soko.</p>
-              <a href="/soko" style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.5rem 1rem", borderRadius: "var(--radius-pill)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}>Angalia Soko →</a>
+              <p style={{ margin: 0, fontWeight: 700 }}>Umechagua habari {selectedCount}</p>
+              <a href="/soko" style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.5rem 1rem", borderRadius: "var(--radius-pill)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none", marginTop: "0.5rem" }}>Angalia Soko →</a>
             </div>
           )}
         </>

@@ -5,21 +5,20 @@ export const NEWS_SOURCES = {
   dailynews: { jina: "Daily News", url: "https://dailynews.co.tz/", rss: "https://dailynews.co.tz/feed/", lugha: "en" },
 };
 
-// Kampuni zote za DSE
 export const DSE_COMPANIES = [
   "CRDB", "NMB", "TBL", "Vodacom", "VODA", "TCC", "TPCC",
   "Swissport", "SWIS", "DSE", "Tanga Cement", "TOL",
   "Jatu", "Mkombozi", "Maendeleo Bank", "Yetu Microfinance",
-  "Mwalimu Commercial Bank", "DCB Commercial Bank",
 ];
 
-// Maneno ya soko — LAZIMA yawe soko la hisa, sio "hisa" pekee
+// Maneno ya soko la hisa — KALI
 export const DSE_ONLY_KEYWORDS = [
   "DSE", "soko la hisa", "Dar es Salaam Stock Exchange",
   "CMSA", "BOT", "Benki Kuu", "stock split", "gawio",
   "IPO", "uidhinishaji", "uorodheshaji", "bei ya hisa",
   "turnover", "volume ya hisa", "faida ya kampuni",
   "ripoti ya mwaka", "ripoti ya robo", "mapato ya kampuni",
+  "hisa za", "wawekezaji wa hisa", "soko la mitaji",
 ];
 
 export const NEWS_KEYWORDS = {

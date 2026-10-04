@@ -4,8 +4,7 @@ import { fetchAllNews, filterRecentNews } from "../../../lib/scraper-news";
 export async function GET(request) {
   try {
     const allNews = await fetchAllNews();
-    const recent = filterRecentNews(allNews, 3);
-
+    const recent = filterRecentNews(allNews, 7);
     return NextResponse.json({
       ok: true,
       jumla: allNews.length,

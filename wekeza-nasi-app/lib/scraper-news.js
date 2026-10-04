@@ -1,4 +1,3 @@
-// Safisha HTML entities
 export function cleanHtml(text) {
   if (!text) return "";
   return text
@@ -34,20 +33,15 @@ export function classifyNews(title, content) {
   return { level: "kawaida", score: 0 };
 }
 
-// Filter KALI: Lazima taje kampuni ya DSE, DSE, CMSA, BOT, au maneno ya soko
+// Filter KALI
 export function isMarketNews(title, description) {
   const text = (title + " " + description).toLowerCase();
-  
-  // 1. Kampuni za DSE
   for (const company of DSE_COMPANIES) {
     if (text.includes(company.toLowerCase())) return true;
   }
-  
-  // 2. Maneno ya DSE/CMSA/BOT
   for (const kw of DSE_ONLY_KEYWORDS) {
     if (text.includes(kw.toLowerCase())) return true;
   }
-  
   return false;
 }
 
@@ -82,9 +76,7 @@ export async function fetchAllNews() {
       const xml = await fetchRss(source.rss);
       const items = parseRssItems(xml);
       for (const item of items) {
-        // Filter KALI — soko pekee
         if (!isMarketNews(item.title, item.description)) continue;
-        
         const c = classifyNews(item.title, item.description);
         all.push({ ...item, source: source.jina, level: c.level, score: c.score });
       }
@@ -93,8 +85,8 @@ export async function fetchAllNews() {
   return all.sort((a, b) => b.score - a.score);
 }
 
-// Badilisha: Siku 3
-export function filterRecentNews(news, days = 3) {
+// Siku 7
+export function filterRecentNews(news, days = 7) {
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - days);
   cutoff.setHours(0, 0, 0, 0);
