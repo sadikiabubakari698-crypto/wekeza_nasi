@@ -1,6 +1,19 @@
+// Safisha HTML entities
 export function cleanHtml(text) {
   if (!text) return "";
-  return text.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").replace(/\s+/g, " ").trim();
+  return text
+    .replace(/<[^>]*>/g, "")
+    .replace(/&#8216;/g, "'").replace(/&#8217;/g, "'")
+    .replace(/&#8220;/g, '"').replace(/&#8221;/g, '"')
+    .replace(/&#8250;/g, ">").replace(/&#8249;/g, "<")
+    .replace(/&#8211;/g, "-").replace(/&#8212;/g, "-")
+    .replace(/&#8230;/g, "...")
+    .replace(/&#(\d+);/g, "")
+    .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "")
+    .replace(/\s+/g, " ").trim();
 }
 
 export async function fetchRss(url) {
@@ -11,7 +24,7 @@ export async function fetchRss(url) {
   } catch (e) { return null; }
 }
 
-import { NEWS_SOURCES, NEWS_KEYWORDS } from "./news-sources";
+import { NEWS_SOURCES, NEWS_KEYWORDS, DSE_COMPANIES, DSE_ONLY_KEYWORDS } from "./news-sources";
 
 export function classifyNews(title, content) {
   const text = (title + " " + content).toLowerCase();
@@ -19,6 +32,23 @@ export function classifyNews(title, content) {
   for (const kw of NEWS_KEYWORDS.muhimu) { if (text.includes(kw)) return { level: "muhimu", score: 2 }; }
   for (const kw of NEWS_KEYWORDS.kawaida) { if (text.includes(kw)) return { level: "kawaida", score: 1 }; }
   return { level: "kawaida", score: 0 };
+}
+
+// Filter KALI: Lazima taje kampuni ya DSE, DSE, CMSA, BOT, au maneno ya soko
+export function isMarketNews(title, description) {
+  const text = (title + " " + description).toLowerCase();
+  
+  // 1. Kampuni za DSE
+  for (const company of DSE_COMPANIES) {
+    if (text.includes(company.toLowerCase())) return true;
+  }
+  
+  // 2. Maneno ya DSE/CMSA/BOT
+  for (const kw of DSE_ONLY_KEYWORDS) {
+    if (text.includes(kw.toLowerCase())) return true;
+  }
+  
+  return false;
 }
 
 export function parseRssItems(xml) {
@@ -52,6 +82,9 @@ export async function fetchAllNews() {
       const xml = await fetchRss(source.rss);
       const items = parseRssItems(xml);
       for (const item of items) {
+        // Filter KALI — soko pekee
+        if (!isMarketNews(item.title, item.description)) continue;
+        
         const c = classifyNews(item.title, item.description);
         all.push({ ...item, source: source.jina, level: c.level, score: c.score });
       }
@@ -60,8 +93,8 @@ export async function fetchAllNews() {
   return all.sort((a, b) => b.score - a.score);
 }
 
-// Badilisha: Siku 2 (sio leo pekee)
-export function filterRecentNews(news, days = 2) {
+// Badilisha: Siku 3
+export function filterRecentNews(news, days = 3) {
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - days);
   cutoff.setHours(0, 0, 0, 0);
