@@ -1,16 +1,10 @@
 // ============================================================
 // GROQ AI HELPER — WEKEZA NASI
 // ============================================================
-// Inachambua habari kwa template yetu ya uchambuzi.
-// Groq ni bure na haraka — Llama 3, Mixtral.
-// ============================================================
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = "llama-3.3-70b-versatile";
+const MODEL = "llama-3.1-8b-instant";
 
-// ============================================================
-// Prompt — inafuata template yetu
-// ============================================================
 function buildPrompt(headline, content, sourceName) {
   return `Wewe ni mchambuzi wa soko la hisa Tanzania kwa WEKEZA NASI.
 
@@ -45,9 +39,6 @@ JIBU KWA MUUNDO HUU (JSON):
 Jibu JSON tu — bila maelezo mengine.`;
 }
 
-// ============================================================
-// Function kuu — analyzeNews
-// ============================================================
 export async function analyzeNews(headline, content, sourceName) {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
@@ -69,7 +60,6 @@ export async function analyzeNews(headline, content, sourceName) {
         ],
         temperature: 0.5,
         max_tokens: 2000,
-        response_format: { type: "json_object" },
       }),
     });
 
@@ -90,7 +80,6 @@ export async function analyzeNews(headline, content, sourceName) {
     try {
       parsed = JSON.parse(text);
     } catch (e) {
-      // Tafuta JSON kwenye text
       const match = text.match(/\{[\s\S]*\}/);
       if (match) {
         try {
