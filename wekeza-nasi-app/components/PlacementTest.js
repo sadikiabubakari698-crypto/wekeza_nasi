@@ -12,6 +12,7 @@ const primary = {
   display: "inline-block", padding: "0.85rem 1.4rem", background: "#1e7b4c", color: "#ffffff",
   border: "none", borderRadius: "999px", fontWeight: 700, fontSize: "1rem", cursor: "pointer", textDecoration: "none",
 };
+const para = { lineHeight: 1.7, color: "#555555", marginBottom: "1rem" };
 
 export default function PlacementTest() {
   const [started, setStarted] = useState(false);
@@ -37,12 +38,16 @@ export default function PlacementTest() {
   if (!started) {
     return (
       <div>
-        <h1 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>Pima Kiwango Chako</h1>
-        <p style={{ lineHeight: 1.6, color: "#555555" }}>
-          Una uzoefu wa uwekezaji tayari? Jibu maswali machache ili tujue unapaswa kuanzia somo gani.
-          Kama hujui jibu, chagua &quot;Sijui&quot;. Hakuna aibu, tutakuanzisha mwanzo.
+        <h1 style={{ fontSize: "1.6rem", marginBottom: "0.75rem" }}>Karibu, mwekezaji</h1>
+        <p style={para}>
+          Tuanze safari yetu pamoja. Hapa hakuna kushinda wala kushindwa. Maswali machache yatatusaidia
+          kujua tunapoanzia, ili usipoteze muda kwenye unayoyajua tayari, wala usiruke unayoyahitaji.
         </p>
-        <button style={primary} onClick={() => setStarted(true)}>Anza Mtihani</button>
+        <p style={para}>
+          Ukiona swali gumu, chagua &quot;Sijui bado&quot;. Hilo ni jibu zuri kabisa, kwa sababu
+          linatuonyesha mahali pazuri pa kukusaidia kuanzia.
+        </p>
+        <button style={primary} onClick={() => setStarted(true)}>Tuanze Pamoja</button>
       </div>
     );
   }
@@ -51,20 +56,20 @@ export default function PlacementTest() {
     const skipped = startLesson > 1;
     return (
       <div>
-        <h1 style={{ fontSize: "1.4rem", marginBottom: "0.5rem" }}>
-          Tunakushauri uanze Somo {startLesson}
+        <h1 style={{ fontSize: "1.4rem", marginBottom: "0.75rem" }}>
+          {skipped ? "Hongera! Tuanze Somo " + startLesson + " pamoja" : "Tuanze Somo 1 pamoja"}
         </h1>
-        <p style={{ lineHeight: 1.6, color: "#555555" }}>
+        <p style={para}>
           {skipped
-            ? "Umeonyesha kuwa unajua misingi ya Masomo 1 hadi " + (startLesson - 1) + ". Masomo hayo yatafunguliwa, na unaweza kuyasoma wakati wowote kwa marudio."
-            : "Tunakushauri uanze mwanzo ili kila somo lijengwe juu ya lililopita. Safari nzuri huanza hatua ya kwanza."}
+            ? "Umeonyesha kuwa unajua misingi ya Masomo 1 hadi " + (startLesson - 1) + ", kwa hiyo tutakufungulia masomo hayo. Unaweza kuyasoma wakati wowote kwa marudio, hakuna kinachopotea."
+            : "Asante kwa kujaribu. Tutaanza mwanzo ili kila hatua ijengwe juu ya iliyotangulia, na utaenda kwa kasi yako mwenyewe. Tuko pamoja."}
         </p>
         <Link href="/academy" style={primary} onClick={() => savePlacementProgress(startLesson)}>
           {skipped ? "Hifadhi na Nenda Academy" : "Nenda Academy"}
         </Link>
         <p style={{ marginTop: "1rem" }}>
           <button onClick={restart} style={{ background: "none", border: "none", color: "#1e7b4c", textDecoration: "underline", cursor: "pointer", fontSize: "1rem", padding: 0 }}>
-            Rudia mtihani
+            Napenda kujaribu tena
           </button>
         </p>
       </div>
@@ -75,7 +80,7 @@ export default function PlacementTest() {
   return (
     <div>
       <p style={{ color: "#555555", fontSize: "0.9rem" }}>
-        Kipande {stage + 1} kati ya {PLACEMENT_STAGES.length} &middot; Swali {q + 1} kati ya {PLACEMENT_STAGES[stage].questions.length}
+        Kipande {stage + 1} kati ya {PLACEMENT_STAGES.length} &middot; Swali {q + 1} kati ya {PLACEMENT_STAGES[stage].questions.length} &middot; Chukua muda wako
       </p>
       <h2 style={{ fontSize: "1.2rem", lineHeight: 1.4, margin: "0.5rem 0 1rem" }}>{current.q}</h2>
       {current.options.map((opt, i) => (
@@ -83,7 +88,7 @@ export default function PlacementTest() {
           {String.fromCharCode(97 + i)}) {opt}
         </button>
       ))}
-      <button style={{ ...btn, color: "#555555" }} onClick={() => answer(-1)}>d) Sijui</button>
+      <button style={{ ...btn, color: "#555555" }} onClick={() => answer(-1)}>d) Sijui bado</button>
     </div>
   );
 }
