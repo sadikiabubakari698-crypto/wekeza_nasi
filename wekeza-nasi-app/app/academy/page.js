@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import PlacementCard from "../../components/PlacementCard";
 import { isLessonUnlocked, hasPassed } from "../../lib/progress";
 
 const LESSONS = [
@@ -71,6 +72,7 @@ export default function Academy() {
       <Breadcrumbs items={[{ label: "Nyumbani", href: "/" }, { label: "Academy" }]} />
 
       <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>Academy</h1>
+        <PlacementCard />
       <p style={{ color: "#555555", marginTop: 0 }}>Jifunze uwekezaji hatua kwa hatua — masomo 20.</p>
 
       <div style={{ marginTop: "1.5rem" }}>
