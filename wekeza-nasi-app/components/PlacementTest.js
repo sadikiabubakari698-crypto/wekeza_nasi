@@ -13,6 +13,10 @@ const primary = {
   border: "none", borderRadius: "999px", fontWeight: 700, fontSize: "1rem", cursor: "pointer", textDecoration: "none",
 };
 const para = { lineHeight: 1.7, color: "#555555", marginBottom: "1rem" };
+const celebrate = {
+  background: "#e3f0ea", border: "1px solid #1e7b4c", borderLeft: "6px solid #1e7b4c",
+  borderRadius: "12px", padding: "1.25rem 1rem", marginBottom: "1.25rem",
+};
 
 export default function PlacementTest() {
   const [started, setStarted] = useState(false);
@@ -56,12 +60,25 @@ export default function PlacementTest() {
     const skipped = startLesson > 1;
     return (
       <div>
-        <h1 style={{ fontSize: "1.4rem", marginBottom: "0.75rem" }}>
-          {skipped ? "Hongera! Tuanze Somo " + startLesson + " pamoja" : "Tuanze Somo 1 pamoja"}
-        </h1>
+        {skipped ? (
+          <div style={celebrate}>
+            <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 700, letterSpacing: "0.08em", color: "#16633d" }}>
+              HONGERA SANA
+            </p>
+            <h1 style={{ fontSize: "1.7rem", margin: "0.35rem 0 0.5rem", color: "#16633d", lineHeight: 1.25 }}>
+              Una msingi imara tayari, mwekezaji!
+            </h1>
+            <p style={{ margin: 0, lineHeight: 1.6, color: "#1a1a1a" }}>
+              Umeonyesha kuwa unajua misingi ya Masomo 1 hadi {startLesson - 1}. Hiyo inaonyesha juhudi na
+              hamu yako ya kujifunza. Tunafurahi kuwa pamoja nawe.
+            </p>
+          </div>
+        ) : (
+          <h1 style={{ fontSize: "1.4rem", marginBottom: "0.75rem" }}>Tuanze Somo 1 pamoja</h1>
+        )}
         <p style={para}>
           {skipped
-            ? "Umeonyesha kuwa unajua misingi ya Masomo 1 hadi " + (startLesson - 1) + ", kwa hiyo tutakufungulia masomo hayo. Unaweza kuyasoma wakati wowote kwa marudio, hakuna kinachopotea."
+            ? "Tutakufungulia masomo hayo ili uanze Somo " + startLesson + " moja kwa moja. Unaweza kuyasoma wakati wowote kwa marudio, hakuna kinachopotea."
             : "Asante kwa kujaribu. Tutaanza mwanzo ili kila hatua ijengwe juu ya iliyotangulia, na utaenda kwa kasi yako mwenyewe. Tuko pamoja."}
         </p>
         <Link href="/academy" style={primary} onClick={() => savePlacementProgress(startLesson)}>
