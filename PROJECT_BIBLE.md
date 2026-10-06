@@ -1036,3 +1036,141 @@ Kwenye **Footer** — kitufe "Tuma Maoni".
 
 Feedback inaweza kuhifadhiwa kwenye database kwa tracking na analytics.
 
+
+## 40. SOKO HII LEO (AI-Assisted Market Analysis Tool)
+
+**Status:** DESIGNED, NOT STARTED. PAUSED (Oktoba 2026).
+
+**Sababu ya kusimamisha:** Tatizo kubwa la sasa ni watu kutofika kwenye WEKEZA NASI. Kipaumbele ni kuboresha tovuti iliyopo na kupata watumiaji wa kwanza. Soko Hii Leo ni zana ya Founder, si kipengele cha kuvutia watumiaji, na ni Level 4 kwenye Sehemu 26.
+
+**Kanuni ya kuanza upya:** Usianze kujenga hadi (i) tovuti ina watumiaji halisi wa kwanza, na (ii) maamuzi yaliyo kwenye 40.9 yamejibiwa.
+
+### 40.1 Lengo
+
+Kuchukua taarifa muhimu za sasa kutoka vyanzo vinavyoaminika na kuzibadilisha kuwa maarifa yanayomsaidia mwekezaji wa Tanzania kuelewa kinachoendelea. Hii SI news feed. SI mfumo wa BUY/SELL. SI mfumo wa AI kuchapisha bila ukaguzi.
+
+### 40.2 Mtiririko
+
+SOURCE → HABARI → FACTS → AI ANALYSIS → FOUNDER REVIEW → PUBLISH → INVESTOR
+
+Status flow: NEW → SCREENING → ANALYZING → AI_DRAFT → FOUNDER_REVIEW → APPROVED / EDITED → PUBLISHED. Njia nyingine: NEEDS_MORE_INFORMATION (taarifa hazitoshi), REJECTED (Founder hakubaliani).
+
+**RULE:** Hakuna automatic publishing. Founder pekee ndiye anaamua: EDIT / APPROVE / REJECT / REQUEST MORE INFORMATION.
+
+### 40.3 Nafasi ya AI
+
+AI ni "analysis assistant", si Founder. AI inapaswa: kusoma taarifa iliyotolewa; kutambua facts zilizopo kwenye source; kutenganisha FACTS na INTERPRETATION; kuchambua maana kwa mwekezaji; kutoa draft kwenye template; kuonyesha uncertainty pale taarifa haitoshi; kutotoa hitimisho ambalo source haiungi mkono.
+
+### 40.4 Template ya AI Analysis
+
+1. WHAT HAPPENED: nini kimetokea kwa lugha rahisi na sahihi.
+2. KEY FACTS: facts zilizothibitishwa na source.
+3. WHY IT MATTERS: kwa nini ni muhimu kwa investor.
+4. WHO MAY BE AFFECTED: watu, biashara, sekta au aina za kampuni.
+5. INVESTOR IMPLICATIONS: relevance kwa mwekezaji wa Tanzania. Usitabiri bei ya hisa isipokuwa source ina ushahidi wa moja kwa moja.
+6. RELEVANT SECTORS / COMPANIES: tu kama kuna msingi wa kutosha.
+7. WHAT TO WATCH: indicators, ripoti, matangazo au data za kufuatilia.
+8. WHAT WE CANNOT CONCLUDE: mambo yasiyoweza kuthibitishwa kutoka habari hii pekee.
+9. RISKS / UNCERTAINTIES: mipaka, hatari na yasiyojulikana.
+10. IMPACT: LOW / MEDIUM / HIGH (kulingana na relevance, si sensationalism).
+11. CONFIDENCE: HIGH (official source, facts wazi, taarifa za kutosha) / MEDIUM (source ya kuaminika lakini taarifa zina mipaka) / LOW (headline tu, taarifa pungufu, au source isiyo na uhakika).
+12. SOURCE / EVIDENCE: source iliyotumika ihifadhiwe. Usiunde source ya uongo.
+
+### 40.5 Nidhamu ya Ushahidi
+
+Tofauti nne zinazopaswa kuonekana wazi: SOURCE FACT (kilichosemwa na source), ANALYSIS (maana inayoweza kueleweka kutokana na fact), INVESTOR IMPLICATION (kwa nini investor afuatilie), UNCERTAINTY (kisichoweza kuthibitishwa).
+
+**Headline pekee:** USIBUNI details. AI iseme: "Information available is insufficient for a reliable full analysis. More information from the original source is required." na status iwe NEEDS_MORE_INFORMATION.
+
+### 40.6 Usanifu wa Kiufundi
+
+**Dashboard v2** tayari ipo na template (Status, Impact, Confidence, Source, Source type, Date, URL, Headline, sehemu za analysis). Usiibadilishe bila sababu.
+
+**Architecture:** WEKEZA NASI AI ENGINE → AI PROVIDER ADAPTER → CURRENT MODEL. Business logic isiwe hard-coded kwa provider mmoja.
+
+**Model:** Usibadilishe provider/model bila kwanza ku-test endpoint iliyopo. Katika test ya mwanzo: openai/gpt-oss-20b ilirudisha 200 (ok). llama-3.3-70b-versatile na llama-3.1-8b-instant zilirudisha 404, na model moja ilirudisha 400. Soma ujumbe wa kosa kabla ya kuhitimisha. Omba orodha ya models kutoka provider badala ya kubashiri majina.
+
+**Usalama:** API keys ziwe server-side environment variables tu. Usiweke API key kwenye frontend, kwenye source code, wala kwenye chat. Route ya AI na Dashboard zilindwe (angalau admin token).
+
+### 40.7 Hatua ya Kwanza Itakapoanza (Inspection, bila code)
+
+Agent achunguze na aripoti: A. files zinazohusika; B. current data flow; C. AI endpoint iliyopo inafanya nini; D. sehemu inayohitaji kubadilishwa; E. sehemu isiyopaswa kuguswa; F. model ya kwanza ya kujaribu, na kwa nini. Kisha mabadiliko madogo na salama tu, hakuna massive refactor.
+
+### 40.8 Kanuni za Mwongozo
+
+- Usigusi Academy, Company Analysis, Soko Engine, wala Somo la Mwezi.
+- Anza kwa Founder kubandika URL na maandishi ya habari mwenyewe. Kuchukua habari moja kwa moja ni Level 2 (Sehemu 26).
+- Maudhui yafuate Sehemu 35.4: hakuna "bei ya sasa", hakuna hitimisho la NUNUA/USINUNUE.
+
+### 40.9 Maamuzi Yasiyojibiwa (Lazima Yajibiwe Kabla ya Kujenga)
+
+1. Uhifadhi: AI_DRAFT na FOUNDER_REVIEW zitahifadhiwa wapi, kwa kuwa hakuna database?
+2. Chanzo: habari zinaingizwa vipi mwanzoni (kubandika kwa mkono) na baadaye?
+3. Ulinzi: admin token au login kwa Dashboard na route ya AI.
+4. Uthibitisho wa ushahidi: kila KEY FACT iambatane na kipande halisi cha maneno kutoka source, na code ithibitishe kipo kweli. Maandishi ya source ni data isiyoaminika; thibitisha muundo wa JSON ya jibu kabla ya kuonyesha.
+5. Ubora wa model: jaribu kwa vyanzo 5 halisi (kimoja headline tu, kimoja cha BOT cha Kiingereza, kimoja cha Kiswahili) kabla ya kuunganisha na Dashboard.
+
+### 40.10 Msimbo wa Awali
+
+Kama lib/groq.js ipo, ni rasimu ya awali isiyounganishwa. Mapungufu yake: inatumia llama-3.3-70b-versatile (iliyorudisha 404); inaita AI hata kama maudhui ni tupu; haina uthibitisho wa ushahidi; temperature 0.5 ni juu (0.2 inafaa); haina sehemu ya Risks/Uncertainties kwenye JSON; haina timeout.
+
+
+## 41. PLACEMENT TEST NA SAUTI YA WEKEZA NASI
+
+**Status:** Implemented (Oktoba 2026).
+
+### 41.1 Lengo
+
+Mgeni mwenye uzoefu asilazimishwe kuanza Somo 1, bila kuvunja kanuni ya mtiririko wa masomo (Sehemu 34.4). Mtu asipoteze muda kwenye anayoyajua, wala asiruke anayoyahitaji.
+
+### 41.2 Muundo wa Mtihani
+
+- Maswali 9, vipande 3: Masomo 1-5, 6-10, 11-15. Maswali 3 kila kipande.
+- Kupita kipande: majibu yote 3 sahihi.
+- Kila swali lina chaguo "Sijui bado", linahesabiwa kama kosa.
+- Kosa la kwanza linamaliza mtihani. Mtumiaji anaanzia somo la kwanza la kipande hicho. Mgeni mpya anajibu swali 1 tu.
+- Akipita vipande vyote, anaanzia Somo 16.
+- Majibu sahihi hayaonyeshwi baada ya mtihani (sawa na tabia ya quiz, Sehemu 34.3).
+
+### 41.3 Matokeo na Uhifadhi
+
+- Masomo yaliyopitwa yanaandikwa kwenye wekeza_progress ("somo1" hadi "somoN-1") PALE TU mtumiaji anapobonyeza "Hifadhi na Nenda Academy". Uhifadhi ni hiari.
+- Masomo yaliyopitwa yanabaki kusomeka wakati wowote kwa marudio.
+- Mfumo wa kufunga masomo kwenye /academy (Sehemu 34.4) haubadiliki.
+- Uhifadhi ni localStorage, unapotea akibadilisha kifaa (suluhisho ni Phase 6).
+
+### 41.4 Files
+
+- lib/placement.js: maswali na kazi ya kuhifadhi maendeleo
+- components/PlacementTest.js: kijenzi cha mtihani
+- app/academy/kiwango/page.js: ukurasa wa /academy/kiwango
+- components/PlacementCard.js: kadi kwenye /academy, inaonekana TU kama wekeza_progress ni tupu (mgeni mpya)
+- app/academy/page.js: imeongezwa import na PlacementCard chini ya kichwa cha Academy
+
+### 41.5 Kanuni
+
+- Mtihani ni nyongeza (additive). Haubadilishi masomo, lib/progress.js, wala quiz za masomo.
+- Maswali lazima yalingane na maudhui ya somo husika. Somo likibadilika, swali libadilishwe.
+- Ujumbe wa mafanikio ni callout ya kijani bila emoji (Sehemu 35.4). Mgeni anayeanza Somo 1 hapongezwi kwa jambo ambalo hajafanya; anapewa ujumbe wa upole.
+- Kadi haionekani kwa mtu mwenye maendeleo.
+
+### 41.6 Sauti ya WEKEZA NASI (Kanuni kwa Tovuti Nzima)
+
+Mtumiaji ahisi amekaribishwa na yuko salama. Mfano: "Karibu mwekezaji, tuanze safari yetu pamoja."
+
+- Tumia "tuanze pamoja" na "tuko pamoja", si maagizo makavu.
+- Hakuna lugha ya kushinda au kushindwa. "Sijui" ni jibu halali.
+- Pongeza pale tu kuna kilichofanikiwa.
+- Hakuna emoji; tumia rangi na callouts.
+- Kanuni za Sehemu 35.4 zinaendelea (heshima, hakuna hitimisho la NUNUA/USINUNUE, hakuna "bei ya sasa").
+- Maandishi yaliyopo (Hero, vitufe, ujumbe) yakaguliwe kwa kanuni hii hatua kwa hatua, si kuandikwa upya yote mara moja.
+
+### 41.7 Kazi Zinazobaki
+
+1. Kagua maswali 9 dhidi ya maudhui halisi ya Masomo 1-15.
+2. Pitia lugha ya Hero na vitufe vikuu kwa Sehemu 41.6.
+3. Waalike watu 10 wa kwanza, kisha pima kwenye Vercel: wageni wa /academy/kiwango dhidi ya /academy.
+
+---
+
+**Last Updated:** Oktoba 2026 (Sehemu 41)
