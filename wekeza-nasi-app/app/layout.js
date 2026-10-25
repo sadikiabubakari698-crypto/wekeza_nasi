@@ -8,6 +8,9 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata = {
+  verification: {
+    google: 'gihoAfK3IJnkiIhfgYLUVDaPj6VCpADAWxFRClqzM_8',
+  },
   metadataBase: new URL("https://wekeza-nasi.vercel.app"),
   title: {
     default: "WEKEZA NASI — Kujifunza Uwekezaji Tanzania",
