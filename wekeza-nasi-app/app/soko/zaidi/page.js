@@ -1,5 +1,4 @@
 import { getTimelySoko, getFrameworkSoko, getCurrentCaseStudy } from "../../../lib/soko-engine";
-import Footer from "../../../components/Footer";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 
 export const metadata = {
@@ -59,7 +58,7 @@ export default function SokoZaidi() {
         </>
       )}
 
-      <Footer />
+      
     </main>
   );
 }

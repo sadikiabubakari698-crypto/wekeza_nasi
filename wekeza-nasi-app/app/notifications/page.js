@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import Footer from "../../components/Footer";
 import { getNotifications, deleteNotification, TYPE_LABELS } from "../../lib/notifications";
 
 export default function NotificationsPage() {
@@ -96,7 +95,7 @@ export default function NotificationsPage() {
         </>
       )}
 
-      <Footer />
+      
     </main>
   );
 }

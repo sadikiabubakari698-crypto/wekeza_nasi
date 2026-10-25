@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Footer from "../../components/Footer";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default function MfukoWaMaarifa() {
@@ -97,7 +96,7 @@ export default function MfukoWaMaarifa() {
         </div>
       )}
 
-      <Footer />
+      
     </main>
   );
 }

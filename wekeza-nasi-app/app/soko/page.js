@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import SokoMuhtasari from "../../components/SokoMuhtasari";
 import { getSokoData } from "../../lib/soko-data";
-import Footer from "../../components/Footer";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 const STORAGE_KEY = "wekeza_soko_selected";
@@ -61,7 +60,7 @@ export default function Soko() {
         </div>
       )}
 
-      <Footer />
+      
     </main>
   );
 }

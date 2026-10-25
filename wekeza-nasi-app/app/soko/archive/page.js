@@ -1,5 +1,4 @@
 import { getAllCaseStudies } from "../../../lib/soko-engine";
-import Footer from "../../../components/Footer";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 
 export const metadata = {
@@ -86,7 +85,7 @@ export default function SokoArchive() {
         })
       )}
 
-      <Footer />
+      
     </main>
   );
 }

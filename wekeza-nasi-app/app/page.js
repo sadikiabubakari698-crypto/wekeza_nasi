@@ -1,6 +1,5 @@
 import { getAllPlannedItems } from "../lib/content-engine";
 import MonthlyContent from "../components/MonthlyContent";
-import Footer from "../components/Footer";
 
 export default function Home() {
   const allPlanned = getAllPlannedItems();
@@ -164,7 +163,7 @@ export default function Home() {
       <h2 style={sectionTitleStyle}>Somo (Mwezi)</h2>
       <MonthlyContent items={allPlanned} />
 
-      <Footer />
+      
     </main>
   );
 }

@@ -1,7 +1,6 @@
 import { getSokoBySlug, getAllSokoItems } from "../../../lib/soko-engine";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../../components/Breadcrumbs";
-import Footer from "../../../components/Footer";
 import TableOfContents from "../../../components/TableOfContents";
 import RelatedArticles from "../../../components/RelatedArticles";
 import ArticleActions from "../../../components/ArticleActions";
@@ -175,7 +174,7 @@ export default async function SokoItem({ params }) {
       )}
 
 
-      <Footer />
+      
 
 
 

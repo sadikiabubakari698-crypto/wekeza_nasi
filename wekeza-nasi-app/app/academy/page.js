@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Footer from "../../components/Footer";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import PlacementCard from "../../components/PlacementCard";
 import { isLessonUnlocked, hasPassed } from "../../lib/progress";
@@ -103,7 +102,7 @@ export default function Academy() {
         })}
       </div>
 
-      <Footer />
+      
     </main>
   );
 }

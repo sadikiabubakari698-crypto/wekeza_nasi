@@ -1,4 +1,3 @@
-import Footer from "../../components/Footer";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata = {
@@ -55,7 +54,7 @@ export default function Kampuni() {
         ))}
       </div>
 
-      <Footer />
+      
     </main>
   );
 }

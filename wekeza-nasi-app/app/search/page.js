@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import Footer from "../../components/Footer";
 import { searchAll, getCategories, POPULAR_SEARCHES } from "../../lib/search-index";
 
 const RECENT_KEY = "wekeza_recent_searches";
@@ -177,7 +176,7 @@ export default function SearchPage() {
         })}
       </div>
 
-      <Footer />
+      
     </main>
   );
 }
