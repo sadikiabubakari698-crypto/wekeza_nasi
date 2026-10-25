@@ -1,5 +1,6 @@
 // PLACEMENT TEST — WEKEZA NASI
 export const PROGRESS_KEY = "wekeza_progress";
+export const PLACEMENT_FLAG = "wekeza_placement_done";
 export const FINAL_START_LESSON = 16;
 
 export const PLACEMENT_STAGES = [
@@ -31,7 +32,9 @@ export const PLACEMENT_STAGES = [
 
 // Fungua masomo 1 hadi (startLesson - 1) kwa kuandika kwenye wekeza_progress
 export function savePlacementProgress(startLesson) {
-  if (typeof window === "undefined" || startLesson <= 1) return false;
+  if (typeof window === "undefined") return false;
+  try { window.localStorage.setItem(PLACEMENT_FLAG, "1"); } catch (e) {}
+  if (startLesson <= 1) return false;
   try {
     let current = [];
     try {
