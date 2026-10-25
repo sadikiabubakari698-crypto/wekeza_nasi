@@ -1,9 +1,9 @@
-// GROQ AI HELPER — WEKEZA NASI
+// GROQ AI HELPER — ASK MAISHA
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 const MODEL = "llama-3.3-70b-versatile";
 
 function buildPrompt(headline, content, sourceName) {
-  return `Wewe ni mchambuzi wa soko la hisa Tanzania kwa WEKEZA NASI.
+  return `Wewe ni mchambuzi wa soko la hisa Tanzania kwa ASK MAISHA.
 
 KANUNI:
 1. USIBUNI facts.

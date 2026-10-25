@@ -13,7 +13,7 @@ export default function FeedbackButton() {
   const handleWhatsApp = () => {
     if (!message.trim()) return;
     const typeLabel = { bug: "🐛 Bug", maoni: "💬 Maoni", ombi: "💡 Ombi" }[type];
-    const text = encodeURIComponent(`${typeLabel} kutoka WEKEZA NASI:\n\n${message}`);
+    const text = encodeURIComponent(`${typeLabel} kutoka ASK MAISHA:\n\n${message}`);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
     setSent(true);
     setTimeout(() => { setSent(false); setOpen(false); setMessage(""); }, 2000);
@@ -22,7 +22,7 @@ export default function FeedbackButton() {
   const handleEmail = () => {
     if (!message.trim()) return;
     const typeLabel = { bug: "Bug", maoni: "Maoni", ombi: "Ombi" }[type];
-    const subject = encodeURIComponent(`[${typeLabel}] WEKEZA NASI Feedback`);
+    const subject = encodeURIComponent(`[${typeLabel}] ASK MAISHA Feedback`);
     const body = encodeURIComponent(message);
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setSent(true);

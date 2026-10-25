@@ -1,4 +1,4 @@
-// Gemini API Helper — WEKEZA NASI
+// Gemini API Helper — ASK MAISHA
 // Inachambua habari kwa Kiswahili
 
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
@@ -9,7 +9,7 @@ export async function analyzeNews(title, description) {
     return { ok: false, error: "GEMINI_API_KEY haipo" };
   }
 
-  const prompt = `Wewe ni mchambuzi wa soko la hisa Tanzania kwa WEKEZA NASI.
+  const prompt = `Wewe ni mchambuzi wa soko la hisa Tanzania kwa ASK MAISHA.
 
 Habari:
 Kichwa: ${title}

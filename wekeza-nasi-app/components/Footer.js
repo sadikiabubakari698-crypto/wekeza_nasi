@@ -10,7 +10,7 @@ export default function Footer() {
     <footer style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid #e9edf2", color: "#555555", fontSize: "0.9rem" }}>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", marginBottom: "2rem" }}>
         <div style={columnStyle}>
-          <p style={{ fontWeight: 800, fontSize: "1.05rem", color: "#1e7b4c", margin: "0 0 0.5rem 0" }}>WEKEZA NASI</p>
+          <p style={{ fontWeight: 800, fontSize: "1.05rem", color: "#1e7b4c", margin: "0 0 0.5rem 0" }}>ASK MAISHA</p>
           <p style={{ margin: "0 0 1rem 0", fontSize: "0.85rem", lineHeight: 1.5, color: "#555555" }}>
             Mshirika wa safari yako ya uwekezaji. Elimu kwa Kiswahili rahisi.
           </p>
@@ -40,7 +40,7 @@ export default function Footer() {
       </div>
 
       <div style={{ paddingTop: "1.5rem", borderTop: "1px solid #e9edf2", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "0.75rem", fontSize: "0.8rem", color: "#888888" }}>
-        <span>© 2026 WEKEZA NASI. Haki zote zimehifadhiwa.</span>
+        <span>© 2026 ASK MAISHA. Haki zote zimehifadhiwa.</span>
         <span>Kwa elimu tu — sio ushauri wa kifedha.</span>
       </div>
     </footer>

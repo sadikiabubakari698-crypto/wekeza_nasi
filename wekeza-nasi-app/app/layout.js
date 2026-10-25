@@ -7,8 +7,8 @@ export const metadata = {
     google: 'gihoAfK3IJnkiIhfgYLUVDaPj6VCpADAWxFRClqzM_8',
   },
   title: {
-    template: '%s — WEKEZA NASI',
-    default: 'WEKEZA NASI',
+    template: '%s — ASK MAISHA',
+    default: 'ASK MAISHA',
   },
   description: 'Elimu ya uwekezaji kwa Kiswahili rahisi. Tanzania.',
 };

@@ -94,7 +94,7 @@ export default function DashboardV2() {
   return (
     <main style={pageStyle}>
       <h1 style={{ marginBottom: "0.25rem" }}>Dashboard ya Chief — v2</h1>
-      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>Uchambuzi wa habari kwa template ya WEKEZA NASI.</p>
+      <p style={{ color: "#555555", marginTop: 0, marginBottom: "1.5rem" }}>Uchambuzi wa habari kwa template ya ASK MAISHA.</p>
 
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
         <span style={{ background: "#f3f7fb", color: "#1a1a1a", padding: "0.3rem 0.8rem", borderRadius: "999px", fontSize: "0.8rem", fontWeight: 600 }}>

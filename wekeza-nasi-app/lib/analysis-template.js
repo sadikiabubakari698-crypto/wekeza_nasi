@@ -1,5 +1,5 @@
 // ============================================================
-// WEKEZA NASI — NEWS ANALYSIS TEMPLATE v1
+// ASK MAISHA — NEWS ANALYSIS TEMPLATE v1
 // ============================================================
 // Template hii inatumika kwa kila habari inayoingia kwenye mfumo.
 // AI inajaza sehemu hizi — sio kubuni.

@@ -17,7 +17,7 @@ export default async function Habari({ params }) {
 
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
-      <h1>WEKEZA NASI</h1>
+      <h1>ASK MAISHA</h1>
       <h2>Uchambuzi wa Soko</h2>
       <h3>{item.title}</h3>
 
@@ -60,7 +60,7 @@ export default async function Habari({ params }) {
       </div>
 
       <div className="risk-box">
-        <h3>Funzo la WEKEZA NASI</h3>
+        <h3>Funzo la ASK MAISHA</h3>
         <p>
           Usichukulie tukio la soko kama sababu ya kununua au kuuza. WEKEZA
           NASI inakuletea tukio, ushahidi, sababu, na data, wewe unatengeneza

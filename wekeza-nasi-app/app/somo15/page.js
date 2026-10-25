@@ -27,7 +27,7 @@ const quiz = [
 export default function Somo15() {
   return (
     <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
-      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>WEKEZA NASI</h1>
+      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>ASK MAISHA</h1>
       <h2 style={{ color: "#1a1a1a", marginTop: 0 }}>Somo la 15: Soko la Tanzania linafanyaje kazi?</h2>
       <LessonStepper
         steps={steps}

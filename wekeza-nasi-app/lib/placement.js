@@ -1,4 +1,4 @@
-// PLACEMENT TEST — WEKEZA NASI
+// PLACEMENT TEST — ASK MAISHA
 export const PROGRESS_KEY = "wekeza_progress";
 export const PLACEMENT_FLAG = "wekeza_placement_done";
 export const FINAL_START_LESSON = 16;

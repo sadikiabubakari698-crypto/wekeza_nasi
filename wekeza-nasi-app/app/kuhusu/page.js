@@ -2,7 +2,7 @@ export default function Kuhusu() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "WEKEZA NASI",
+    "name": "ASK MAISHA",
     "url": "https://wekeza-nasi.vercel.app",
     "founder": {
       "@type": "Person",
@@ -34,7 +34,7 @@ export default function Kuhusu() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <h1>WEKEZA NASI</h1>
+      <h1>ASK MAISHA</h1>
       <h2>Kuhusu Sisi</h2>
 
       <div style={{ padding: "1.5rem", border: "1px solid #e9edf2", borderRadius: "8px", backgroundColor: "#f7f7f7", marginBottom: "2rem" }}>
@@ -43,7 +43,7 @@ export default function Kuhusu() {
         <p style={{ margin: "0.5rem 0" }}><strong>Mahali:</strong> Dar es Salaam, Tanzania</p>
         <p style={{ margin: "0.5rem 0" }}><strong>Taarifa Binafsi:</strong> Nimezaliwa Kisarawe, Pwani. Nilisoma shule ya msingi Boga, sekondari Maneromango, kidato cha tano na sita Minaki, na kuhitimu Chuo Kikuu cha Sokoine (SUA).</p>
         <p style={{ margin: "0.5rem 0" }}>
-          "Mimi ni mwekezaji na mwanafunzi wa soko la hisa. Ninawekeza DSE kupitia Vertex International Securities na nina hisa za CRDB Bank. Nimeunda WEKEZA NASI ili kila Mtanzania apate mahali salama pa kujifunza uwekezaji kwa Kiswahili rahisi, bila hofu ya kutapeliwa."
+          "Mimi ni mwekezaji na mwanafunzi wa soko la hisa. Ninawekeza DSE kupitia Vertex International Securities na nina hisa za CRDB Bank. Nimeunda ASK MAISHA ili kila Mtanzania apate mahali salama pa kujifunza uwekezaji kwa Kiswahili rahisi, bila hofu ya kutapeliwa."
         </p>
       </div>
 
@@ -53,7 +53,7 @@ export default function Kuhusu() {
         <p>
           Taarifa, elimu, uzoefu, mawazo, na fursa za uwekezaji zimetawanyika
           sehemu mbalimbali, mitandao ya kijamii, video, watu binafsi,
-          tovuti. WEKEZA NASI inalenga kuwa eneo moja ambalo Watanzania
+          tovuti. ASK MAISHA inalenga kuwa eneo moja ambalo Watanzania
           wanaweza kukutana, kujifunza, kushirikishana, na kukua katika
           uwekezaji.
         </p>
@@ -76,7 +76,7 @@ export default function Kuhusu() {
           kujifunza kutoka kwa aliye mbele yake, na kujenga fursa pamoja.
         </p>
         <p>
-          <strong>WEKEZA NASI ilianzishwa kwa sababu kulikuwa na pengo la
+          <strong>ASK MAISHA ilianzishwa kwa sababu kulikuwa na pengo la
           jukwaa moja linalowaunganisha Watanzania katika safari nzima ya
           uwekezaji, kutoka kupata elimu, kuelewa kinachoendelea sokoni,
           kupata msaada wa AI, hadi kushirikiana na jamii ya wawekezaji.</strong>
@@ -86,7 +86,7 @@ export default function Kuhusu() {
       <div className="lesson-box">
         <h3>Falsafa Yetu</h3>
         <p>
-          WEKEZA NASI haijajengwa kwa lengo la kuiuza jamii kwa maslahi ya
+          ASK MAISHA haijajengwa kwa lengo la kuiuza jamii kwa maslahi ya
           kampuni. Lengo letu ni kuinua jamii kiuchumi na kuwasaidia watu
           kutimiza ndoto zao.
         </p>

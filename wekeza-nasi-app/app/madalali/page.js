@@ -9,7 +9,7 @@ export default function Madalali() {
   ];
   return (
     <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
-      <h1>WEKEZA NASI</h1>
+      <h1>ASK MAISHA</h1>
       <h2>Jinsi ya Kuchagua Broker Mzuri</h2>
 
       <div className="lesson-box">

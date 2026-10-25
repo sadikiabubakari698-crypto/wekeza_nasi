@@ -20,11 +20,11 @@ export default function ArticleActions({ title, path }) {
   };
 
   const handleShare = async () => {
-    const shareText = encodeURIComponent(`${title} — WEKEZA NASI`);
+    const shareText = encodeURIComponent(`${title} — ASK MAISHA`);
     const shareUrl = encodeURIComponent(url);
     if (navigator.share) {
       try {
-        await navigator.share({ title: `${title} — WEKEZA NASI`, text: "Soma hii kwenye WEKEZA NASI:", url });
+        await navigator.share({ title: `${title} — ASK MAISHA`, text: "Soma hii kwenye ASK MAISHA:", url });
         return;
       } catch {}
     }

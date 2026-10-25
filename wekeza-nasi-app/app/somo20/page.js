@@ -9,7 +9,7 @@ const steps = [
   { title: "06. Jambo la Muhimu", body: "Ripoti za fedha zinaonyesha yaliyopita — sio ya baadaye.\n\nKampuni iliyokuwa na faida mwaka jana inaweza kupata hasara mwaka huu. Ripoti ni zana ya kuanzia, sio hitimisho.\n\nLazima uangalie pia:\n• Ushindani wa sekta\n• Hali ya uchumi\n• Mabadiliko ya sera\n• Mwenendo wa soko\n\nData ya kifedha + muktadha wa soko = uchambuzi kamili.\n\nHATUA KWA HATUA:\n1. Angalia MAPATO — yamekua au yamepungua?\n2. Angalia FAIDA — faida au hasara?\n3. Angalia MADENI — yameongezeka au yamepungua?\n4. Angalia CASH FLOW — fedha zinaingia au zinatoka?\n5. Linganisha na makampuni mengine kwenye sekta.\n6. Jiulize: Kwa nini nambari zimebadilika?" },
   { title: "07. Jaribu Kufikiri", body: "Fikiria hali hii:\n\nKampuni X:\n• Income Statement inaonyesha faida ya TSh bilioni 50\n• Cash Flow inaonyesha fedha zinatoka TSh bilioni 30\n\nMaswali:\n\n1. Inawezekana vipi kampuni iwe na faida kwenye karatasi lakini haina fedha? Kwa nini?\n2. Kama wewe ni mwekezaji, ungependa kuangalia ripoti ipi kwanza? Kwa nini?\n3. Kwa nini ni muhimu kuangalia ripoti zote tatu pamoja?" },
   { title: "08. Muhtasari wa Dakika 1", body: "Ripoti tatu muhimu za fedha:\n\n1. INCOME STATEMENT — Mapato, gharama, faida.\n2. BALANCE SHEET — Mali = Madeni + Mtaji.\n3. CASH FLOW — Fedha halisi zinazoingia na kutoka.\n\nKusoma ripoti hizi ni hatua ya kwanza ya uchambuzi wa kampuni.\n\nKumbuka: ripoti zinaonyesha yaliyopita, sio ya baadaye. Unganisha na muktadha wa soko na sekta." },
-  { title: "09. Hatua Inayofuata", body: "HONGERA! Umemaliza masomo yote 20 ya Academy ya WEKEZA NASI.\n\nUmepata zana muhimu kwa safari yako ya uwekezaji:\n• Kuelewa hisa na soko\n• Kusoma data za DSE\n• Kuchambua mwenendo wa bei\n• Kusoma ripoti za fedha\n\nSasa unaweza kuanza Uchambuzi wa Kampuni — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE.\n\nPia unaweza kusoma Case Studies kwenye Uchambuzi wa Soko.\n\nSafari yako ya uwekezaji imeanza. Endelea kujifunza — kila siku." }
+  { title: "09. Hatua Inayofuata", body: "HONGERA! Umemaliza masomo yote 20 ya Academy ya ASK MAISHA.\n\nUmepata zana muhimu kwa safari yako ya uwekezaji:\n• Kuelewa hisa na soko\n• Kusoma data za DSE\n• Kuchambua mwenendo wa bei\n• Kusoma ripoti za fedha\n\nSasa unaweza kuanza Uchambuzi wa Kampuni — CRDB, NMB, TBL, Vodacom, TCC, TPCC, Swissport, DSE.\n\nPia unaweza kusoma Case Studies kwenye Uchambuzi wa Soko.\n\nSafari yako ya uwekezaji imeanza. Endelea kujifunza — kila siku." }
 ];
 
 const quiz = [
@@ -21,7 +21,7 @@ const quiz = [
 export default function Somo20() {
   return (
     <main style={{ padding: "1.75rem", maxWidth: "600px", margin: "0 auto", fontFamily: "var(--font-sans)", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff", minHeight: "100vh" }}>
-      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>WEKEZA NASI</h1>
+      <h1 style={{ color: "#1a1a1a", marginBottom: "0.25rem" }}>ASK MAISHA</h1>
       <h2 style={{ color: "#1a1a1a", marginTop: 0 }}>Somo la 20: Kusoma Ripoti za Fedha (Financial Statements)</h2>
       <LessonStepper
         steps={steps}

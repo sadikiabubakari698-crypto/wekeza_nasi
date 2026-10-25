@@ -25,7 +25,7 @@ export default function Header() {
   return (
     <header style={headerStyle}>
       <div style={innerStyle}>
-        <Link href="/" style={logoStyle}>WEKEZA NASI</Link>
+        <Link href="/" style={logoStyle}>ASK MAISHA</Link>
 
         {/* Desktop nav — links pekee (bila Tafuta) */}
         <nav style={desktopNavStyle} className="desktop-nav">

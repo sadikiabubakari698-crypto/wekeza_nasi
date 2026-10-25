@@ -54,7 +54,7 @@ export default function Soko() {
 
       {news.length === 0 && (
         <div style={{ background: "#f3f7fb", borderLeft: "5px solid #1e7b4c", borderRadius: "var(--radius-md)", padding: "1rem 1.25rem", marginTop: "1.5rem" }}>
-          <p style={{ margin: 0, color: "#1a1a1a", fontWeight: 600, fontSize: "0.9rem" }}>Karibu WEKEZA NASI</p>
+          <p style={{ margin: 0, color: "#1a1a1a", fontWeight: 600, fontSize: "0.9rem" }}>Karibu ASK MAISHA</p>
           <p style={{ margin: "0.25rem 0 0.75rem 0", color: "#555555", fontSize: "0.85rem" }}>Hujui hisa ni nini? Tunaanza hapa, hatua kwa hatua.</p>
           <a href="/somo1" style={{ display: "inline-block", background: "#1e7b4c", color: "#ffffff", padding: "0.5rem 1rem", borderRadius: "var(--radius-pill)", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}>Somo la 1: Hisa ni nini? →</a>
         </div>
