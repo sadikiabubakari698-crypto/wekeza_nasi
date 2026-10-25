@@ -1,8 +1,51 @@
 export default function Kuhusu() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "WEKEZA NASI",
+    "url": "https://wekeza-nasi.vercel.app",
+    "founder": {
+      "@type": "Person",
+      "name": "Abubakari Sadiki Kizumbilu",
+      "jobTitle": "Mwanzilishi",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Sokoine University of Agriculture"
+        }
+      ],
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Kisarawe, Pwani"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dar es Salaam",
+        "addressCountry": "TZ"
+      }
+    }
+  };
+
   return (
-    <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6 }}>
+    <main style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto", fontFamily: "sans-serif", lineHeight: 1.6, color: "#1a1a1a", background: "#ffffff" }}>
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <h1>WEKEZA NASI</h1>
       <h2>Kuhusu Sisi</h2>
+
+      <div style={{ padding: "1.5rem", border: "1px solid #e9edf2", borderRadius: "8px", backgroundColor: "#f7f7f7", marginBottom: "2rem" }}>
+        <h3 style={{ marginTop: 0, color: "#1e7b4c" }}>Mmiliki na Mwanzilishi</h3>
+        <p style={{ margin: "0.5rem 0" }}><strong>Jina:</strong> Abubakari Sadiki Kizumbilu</p>
+        <p style={{ margin: "0.5rem 0" }}><strong>Mahali:</strong> Dar es Salaam, Tanzania</p>
+        <p style={{ margin: "0.5rem 0" }}><strong>Taarifa Binafsi:</strong> Nimezaliwa Kisarawe, Pwani. Nilisoma shule ya msingi Boga, sekondari Maneromango, kidato cha tano na sita Minaki, na kuhitimu Chuo Kikuu cha Sokoine (SUA).</p>
+        <p style={{ margin: "0.5rem 0" }}>
+          "Mimi ni mwekezaji na mwanafunzi wa soko la hisa. Ninawekeza DSE kupitia Vertex International Securities na nina hisa za CRDB Bank. Nimeunda WEKEZA NASI ili kila Mtanzania apate mahali salama pa kujifunza uwekezaji kwa Kiswahili rahisi, bila hofu ya kutapeliwa."
+        </p>
+      </div>
 
       <div className="lesson-box">
         <h3>Kwa Nini Tulianzishwa</h3>
