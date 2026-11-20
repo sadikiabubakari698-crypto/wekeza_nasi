@@ -1174,3 +1174,91 @@ Mtumiaji ahisi amekaribishwa na yuko salama. Mfano: "Karibu mwekezaji, tuanze sa
 ---
 
 **Last Updated:** Oktoba 2026 (Sehemu 41)
+## 42. SEARCH SYSTEM (Utafutaji)
+
+**Status:** Implemented (Novemba 2026)
+
+### 42.1 Lengo
+Kuwezesha mtumiaji kupata maudhui haraka bila kuhangaika kupitia kurasa nyingi. Utafutaji unatafuta kwenye: Masomo (Academy), Kampuni (Company Profiles), Soko (Framework & Case Studies), na Somo la Mwezi.
+
+### 42.2 Muundo
+- **Search Index:** Kuna faili linalotengenezwa moja kwa moja (au manually) linaloorodhesha maudhui yote. 
+- **Search Page:** Ukurasa maalum wa `/search` unaoonyesha matokeo.
+- **Header Icon:** Kuna alama ya utafutaji (Search Icon) kwenye Header inayompeleka mtumiaji kwenye ukurasa wa utafutaji.
+
+### 42.3 Kanuni
+- Utafutaji unapaswa kuwa mwepesi.
+- Matokeo yanaonyesha jina la kitu na aina yake (Mfano: "Somo 1: Hisa ni nini?" - Academy).
+- Haukagui nyuma (Hakuna history ya utafutaji inayohifadhiwa kwa sasa).
+
+---
+
+## 43. SHARE BUTTONS & RELATED ARTICLES
+
+**Status:** Implemented (Novemba 2026)
+
+### 43.1 Lengo
+Kuongeza ushirikiano (Ukarasa wa kijamii) na kumfanya mtumiaji abaki kwenye tovuti kwa kumwonyesha maudhui yanayofanana.
+
+### 43.2 Share Buttons
+- **Mahali:** Chini kabisa ya makala (baada ya Related Articles, kama ilivyorekebishwa kwenye commit cceaea1).
+- **Lengo:** Kumruhusu mtumiaji kushare maudhui kwenye mitandao ya kijamii (WhatsApp, Facebook, Twitter/X) au kunakili link.
+- **Inatumika kwenye:** Somo la Mwezi, Soko Articles, na Kampuni Profiles.
+
+### 43.3 Related Articles
+- **Mahali:** Chini ya makala, kabla ya Share Buttons.
+- **Lengo:** Kuonyesha makala nyingine zinazofanana na hii (Mfano: Ukiwa kwenye Case Study ya NMB, unaweza kuona Case Study ya CRDB).
+- **Kanuni:** Related Articles zinapaswa kuwa na mantiki (Mfano: Makala za Soko zinaonyesha makala nyingine za Soko).
+
+### 43.4 Reading Progress
+- **Mahali:** Juu ya makala (au pembeni).
+- **Lengo:** Kuonyesha mtumiaji amesoma asilimia ngapi ya makala.
+- **Kanuni:** Inatumia scrolling ya mtumiaji kuhesabu progress.
+
+---
+
+**Last Updated:** Novemba 2026 (Sections 42-43 zimeongezwa)
+## 42. SEARCH SYSTEM (Utafutaji)
+
+**Status:** Implemented (Novemba 2026)
+
+### 42.1 Lengo
+Kuwezesha mtumiaji kupata maudhui haraka bila kuhangaika kupitia kurasa nyingi. Utafutaji unatafuta kwenye: Masomo (Academy), Kampuni (Company Profiles), Soko (Framework & Case Studies), na Somo la Mwezi.
+
+### 42.2 Muundo
+- **Search Index:** Kuna faili linalotengenezwa moja kwa moja (au manually) linaloorodhesha maudhui yote. 
+- **Search Page:** Ukurasa maalum wa `/search` unaoonyesha matokeo.
+- **Header Icon:** Kuna alama ya utafutaji (Search Icon) kwenye Header inayompeleka mtumiaji kwenye ukurasa wa utafutaji.
+
+### 42.3 Kanuni
+- Utafutaji unapaswa kuwa mwepesi.
+- Matokeo yanaonyesha jina la kitu na aina yake (Mfano: "Somo 1: Hisa ni nini?" - Academy).
+- Haukagui nyuma (Hakuna history ya utafutaji inayohifadhiwa kwa sasa).
+
+---
+
+## 43. SHARE BUTTONS & RELATED ARTICLES
+
+**Status:** Implemented (Novemba 2026)
+
+### 43.1 Lengo
+Kuongeza ushirikiano (Ukarasa wa kijamii) na kumfanya mtumiaji abaki kwenye tovuti kwa kumwonyesha maudhui yanayofanana.
+
+### 43.2 Share Buttons
+- **Mahali:** Chini kabisa ya makala (baada ya Related Articles, kama ilivyorekebishwa kwenye commit cceaea1).
+- **Lengo:** Kumruhusu mtumiaji kushare maudhui kwenye mitandao ya kijamii (WhatsApp, Facebook, Twitter/X) au kunakili link.
+- **Inatumika kwenye:** Somo la Mwezi, Soko Articles, na Kampuni Profiles.
+
+### 43.3 Related Articles
+- **Mahali:** Chini ya makala, kabla ya Share Buttons.
+- **Lengo:** Kuonyesha makala nyingine zinazofanana na hii (Mfano: Ukiwa kwenye Case Study ya NMB, unaweza kuona Case Study ya CRDB).
+- **Kanuni:** Related Articles zinapaswa kuwa na mantiki (Mfano: Makala za Soko zinaonyesha makala nyingine za Soko).
+
+### 43.4 Reading Progress
+- **Mahali:** Juu ya makala (au pembeni).
+- **Lengo:** Kuonyesha mtumiaji amesoma asilimia ngapi ya makala.
+- **Kanuni:** Inatumia scrolling ya mtumiaji kuhesabu progress.
+
+---
+
+**Last Updated:** Novemba 2026 (Sections 42-43 zimeongezwa)
